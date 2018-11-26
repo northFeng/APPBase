@@ -1,0 +1,38 @@
+//
+//  APPPrefixHeader.pch
+//  APPBase
+//
+//  Created by gaoyafeng on 2018/11/26.
+//  Copyright © 2018 ishansong. All rights reserved.
+//
+
+#ifndef APPPrefixHeader_pch
+#define APPPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#pragma mark - 第三方库引用
+#import "AFNetworking.h"
+#import "MJRefresh.h"
+#import "Masonry.h"
+#import "SDAutoLayout.h"
+#import "YYCache.h"
+#import "YYModel.h"
+#import "MBProgressHUD.h"
+#import "UIImageView+WebCache.h"//加载图片
+#import "UIImage+GIF.h"//加载动画拓展
+
+#pragma mark - APP内文件
+#import "APPFunctionMethod.h"//公共方法工厂
+#import "APPGlobalVariable.h"//全局变量&&宏定义
+#import "APPHttpTool.h"//网络请求类
+#import "APPManager.h"//APP管理者
+#import "APPAnalyticsHelper.h"//统计分析工具
+#import "FRLoginManager.h"//登录管理类
+
+///viewModel类
+
+
+
+#endif /* APPPrefixHeader_pch */
