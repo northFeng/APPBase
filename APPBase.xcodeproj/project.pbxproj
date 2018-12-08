@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8DAB5DFF21AB9659009662D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5DFE21AB9659009662D5 /* ViewController.m */; };
 		8DAB5E0221AB9659009662D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB5E0021AB9659009662D5 /* Main.storyboard */; };
 		8DAB5E0421AB965B009662D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB5E0321AB965B009662D5 /* Assets.xcassets */; };
 		8DAB5E0721AB965B009662D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB5E0521AB965B009662D5 /* LaunchScreen.storyboard */; };
@@ -77,8 +76,6 @@
 		37BCAF33D89376F054993B8C /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
 		6136454A595A21CCA2D817AF /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
 		8DAB5DF721AB9659009662D5 /* APPBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APPBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8DAB5DFD21AB9659009662D5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8DAB5DFE21AB9659009662D5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8DAB5E0121AB9659009662D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DAB5E0321AB965B009662D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DAB5E0621AB965B009662D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -245,8 +242,6 @@
 				8DAB5E3021AB971C009662D5 /* APPNetRequest */,
 				8DAB5E2E21AB971C009662D5 /* APPMain */,
 				8DAB5E2C21AB971C009662D5 /* APPViewController */,
-				8DAB5DFD21AB9659009662D5 /* ViewController.h */,
-				8DAB5DFE21AB9659009662D5 /* ViewController.m */,
 				8DAB5F1021AB9BB2009662D5 /* SupportingFiles */,
 			);
 			path = APPBase;
@@ -747,7 +742,6 @@
 			files = (
 				8DAB5F0C21AB9954009662D5 /* FRLoginHomeVC.m in Sources */,
 				8DAB5ECA21AB9882009662D5 /* APPBaseCell.m in Sources */,
-				8DAB5DFF21AB9659009662D5 /* ViewController.m in Sources */,
 				8DAB5ED321AB9895009662D5 /* GFNavigationController.m in Sources */,
 				8DAB5EE621AB98A6009662D5 /* APPAlertView.m in Sources */,
 				8DAB5EE421AB98A6009662D5 /* GFButton.m in Sources */,

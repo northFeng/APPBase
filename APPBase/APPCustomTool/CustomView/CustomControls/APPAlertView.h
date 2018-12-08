@@ -29,6 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///样式三（自定义标题，按钮显示）
 - (void)showAlertWithTitle:(NSString *)title brif:(NSString *)brif leftBtnTitle:(NSString *)cancleTitle rightBtnTitle:(NSString *)okTitle withBlock:(APPBackBlock)block;
 
+///样式四(左右按钮事件)
+- (void)showAlertWithTitle:(NSString *)title brif:(NSString *)brif leftBtnTitle:(NSString *)cancleTitle rightBtnTitle:(NSString *)okTitle blockleft:(APPBackBlock)blockleft blockRight:(APPBackBlock)blockRight;
+
 
 
 @end

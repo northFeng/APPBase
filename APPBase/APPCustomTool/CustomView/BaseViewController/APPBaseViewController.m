@@ -688,7 +688,13 @@
     [fsAlert showAlertWithTitle:title brif:message leftBtnTitle:cancleTitle rightBtnTitle:okTitle withBlock:block];
 }
 
-
+///自定义弹框——>自定义标题——>自定义按钮文字 ——>左右按钮事件
+- (void)showAlertCustomTitle:(NSString *)title message:(NSString *)message cancleBtnTitle:(NSString *)cancleTitle okBtnTitle:(NSString *)okTitle leftBlock:(APPBackBlock)blockLeft rightBlock:(APPBackBlock)blockRight{
+    
+    APPAlertView *fsAlert = [[APPAlertView alloc] init];
+    fsAlert.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+    [fsAlert showAlertWithTitle:title brif:message leftBtnTitle:cancleTitle rightBtnTitle:okTitle blockleft:blockRight blockRight:blockLeft];
+}
 
 ///消息确定框
 - (void)showAlertMessage:(NSString *)message title:(NSString *)title{

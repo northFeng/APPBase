@@ -195,6 +195,18 @@ typedef void (^Block) (void);
 - (void)showAlertCustomTitle:(NSString *)title message:(NSString *)message cancleBtnTitle:(NSString *)cancleTitle okBtnTitle:(NSString *)okTitle okBlock:(APPBackBlock)block;
 
 /**
+ *  @brief 自定义弹框——>自定义标题——>自定义按钮文字 ——>左右按钮事件
+ *
+ *  @param title 标题
+ *  @param message 消息
+ *  @param cancleTitle 取消按钮标题
+ *  @param okTitle 确定按钮标题
+ *  @param blockLeft 执行左按钮事件block
+ *  @param blockRight 执行右按钮事件block
+ */
+- (void)showAlertCustomTitle:(NSString *)title message:(NSString *)message cancleBtnTitle:(NSString *)cancleTitle okBtnTitle:(NSString *)okTitle leftBlock:(APPBackBlock)blockLeft rightBlock:(APPBackBlock)blockRight;
+
+/**
  *  @brief 消息提示框
  *
  *  @param message 消息默认显示在Window视图上，全APP内显示位置一样（多个控制提示可能会重叠）

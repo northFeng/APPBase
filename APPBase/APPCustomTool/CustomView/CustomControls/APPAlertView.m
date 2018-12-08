@@ -20,7 +20,9 @@
     
     UIButton *_btnOk;
     
-    APPBackBlock _block;
+    FSBackBlock _blockLeft;
+    
+    FSBackBlock _blockRight;
     
 }
 
@@ -117,17 +119,40 @@
 - (void)onClickBtnCancle{
     NSLog(@"点击取消");
     
-    [self hideAlert];
+    APPWeakSelf;
+    [UIView animateWithDuration:0.1 animations:^{
+        
+        self.backView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+        self.backView.alpha = 0.;
+        
+    } completion:^(BOOL finished) {
+        
+        self.hidden = YES;
+        if (self->_blockLeft) {
+            self->_blockLeft(YES,nil);
+        }
+        [weakSelf removeFromSuperview];//移除
+    }];
 }
 
 ///确定
 - (void)onClickBtnOk{
     NSLog(@"点击确定");
     
-    [self hideAlert];
-    if (_block) {
-        _block(YES,nil);
-    }
+    APPWeakSelf;
+    [UIView animateWithDuration:0.1 animations:^{
+        
+        self.backView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+        self.backView.alpha = 0.;
+        
+    } completion:^(BOOL finished) {
+        
+        self.hidden = YES;
+        if (self->_blockRight) {
+            self->_blockRight(YES,nil);
+        }
+        [weakSelf removeFromSuperview];//移除
+    }];
 }
 
 
@@ -140,7 +165,7 @@
     
     _labelBrif.text = title;
     
-    _block = block;
+    _blockRight = block;
     
     [self showAlert];
 }
@@ -152,7 +177,7 @@
     
     _labelBrif.text = brif;
     
-    _block = block;
+    _blockRight = block;
     
     [self showAlert];
 }
@@ -168,10 +193,29 @@
     
     [_btnOk setTitle:okTitle forState:UIControlStateNormal];
     
-    _block = block;
+    _blockRight = block;
     
     [self showAlert];
 }
+
+///样式四
+- (void)showAlertWithTitle:(NSString *)title brif:(NSString *)brif leftBtnTitle:(NSString *)cancleTitle rightBtnTitle:(NSString *)okTitle blockleft:(APPBackBlock)blockleft blockRight:(APPBackBlock)blockRight{
+    
+    _labelTitle.text = title;
+    
+    _labelBrif.text = brif;
+    
+    [_btnCancle setTitle:cancleTitle forState:UIControlStateNormal];
+    
+    [_btnOk setTitle:okTitle forState:UIControlStateNormal];
+    
+    _blockLeft = blockleft;
+    
+    _blockRight = blockRight;
+    
+    [self showAlert];
+}
+
 
 
 
