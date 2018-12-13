@@ -20,9 +20,9 @@
     
     UIButton *_btnOk;
     
-    FSBackBlock _blockLeft;
+    APPBackBlock _blockLeft;
     
-    FSBackBlock _blockRight;
+    APPBackBlock _blockRight;
     
 }
 

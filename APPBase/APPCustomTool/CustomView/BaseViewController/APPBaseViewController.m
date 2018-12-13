@@ -162,29 +162,8 @@
     
     
     //创建提示图
-    self.promptNonetView = [[FSPromptView alloc] init];
-    [self.tableView addSubview:self.promptNonetView];
-    [self.promptNonetView showDefaultPromptViewForNoNet];
+    [self addPromptView];
     
-    self.promptEmptyView = [[FSPromptView alloc] init];
-    [self.tableView addSubview:self.promptEmptyView];
-    [self.promptEmptyView showPromptImageName:@"tst_dd" promptText:@"暂无相关内容"];
-    //全部隐藏
-    self.promptNonetView.hidden = YES;
-    self.promptEmptyView.hidden = YES;
-    //在tableView没有内容时！SDLayout没有Masony好用
-    [self.promptNonetView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.tableView);
-        make.width.mas_equalTo(kScreenWidth);
-        make.height.mas_equalTo(132*KSCALE);
-    }];
-    [self.promptEmptyView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.tableView);
-        make.width.mas_equalTo(kScreenWidth);
-        make.height.mas_equalTo(132*KSCALE);
-    }];
-    
-
     //创建等待视图
     [self addWaitingView];
     
@@ -216,27 +195,35 @@
     
     
     //创建提示图
-    self.promptNonetView = [[FSPromptView alloc] init];
-    [self.tableView addSubview:self.promptNonetView];
-    [self.promptNonetView showDefaultPromptViewForNoNet];
+    [self addPromptView];
     
-    self.promptEmptyView = [[FSPromptView alloc] init];
-    [self.tableView addSubview:self.promptEmptyView];
-    [self.promptEmptyView showPromptImageName:@"tst_dd" promptText:@"暂无相关内容"];
-    //全部隐藏
-    self.promptNonetView.hidden = YES;
-    self.promptEmptyView.hidden = YES;
-    [self.promptNonetView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.tableView);
-        make.width.mas_equalTo(kScreenWidth);
-        make.height.mas_equalTo(132*KSCALE);
-    }];
-    [self.promptEmptyView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.tableView);
-        make.width.mas_equalTo(kScreenWidth);
-        make.height.mas_equalTo(132*KSCALE);
-    }];
+    //创建等待视图
+    [self addWaitingView];
+}
+
+///创建tableView无headView无占位图
+- (void)createOneTableView{
     
+    //创建tableView
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kTopNaviBarHeight, kScreenWidth, kScreenHeight - kTopNaviBarHeight) style:UITableViewStyleGrouped];
+    //背景颜色
+    self.tableView.backgroundColor = APPColor_White;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.sectionHeaderHeight = 0;
+    self.tableView.sectionFooterHeight = 0;
+    self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedSectionHeaderHeight = 0;
+    self.tableView.estimatedSectionFooterHeight = 0;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //防止UITableView被状态栏压下20
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        //self.tableView.adjustedContentInset =
+    }
+    
+    [self.view addSubview:self.tableView];
     
     //创建等待视图
     [self addWaitingView];
@@ -693,7 +680,7 @@
     
     APPAlertView *fsAlert = [[APPAlertView alloc] init];
     fsAlert.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
-    [fsAlert showAlertWithTitle:title brif:message leftBtnTitle:cancleTitle rightBtnTitle:okTitle blockleft:blockRight blockRight:blockLeft];
+    [fsAlert showAlertWithTitle:title brif:message leftBtnTitle:cancleTitle rightBtnTitle:okTitle blockleft:blockLeft blockRight:blockRight];
 }
 
 ///消息确定框

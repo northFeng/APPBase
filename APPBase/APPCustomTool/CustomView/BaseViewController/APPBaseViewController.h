@@ -69,9 +69,24 @@ typedef void (^Block) (void);
 ///创建tableView无HeadView
 - (void)createTableViewNoHeadView;
 
+///创建tableView无headView无占位图
+- (void)createOneTableView;
+
+
+///添加标题视图(在没有tableview没有tableHeadView的情况使用！！！)
+- (void)addHeadTitleView;
+
+///单独添加网络请求等待视图(最后添加！！！)
+- (void)addWaitingView;
+
+///独立添加提示图
+- (void)addPromptView;
+
+///添加上拉刷新，下拉加载功能
+- (void)addTableViewRefreshView;
+
 ///处理占位图显示 && 刷新cell
 - (void)refreshTableViewHandlePromptView;
-
 
 #pragma mark - tableView的 滚动 && 获取 && 刷新 cell
 /**
@@ -94,23 +109,6 @@ typedef void (^Block) (void);
 ///刷新指定cell
 - (void)reloadOneCellForSection:(NSInteger)section row:(NSInteger)row;
 
-
-/**
- *  @brief 添加上拉刷新，下拉加载功能
- *
- *
- */
-- (void)addTableViewRefreshView;
-
-
-///添加标题视图(在没有tableview没有tableHeadView的情况使用！！！)
-- (void)addHeadTitleView;
-
-///单独添加网络请求等待视图(最后添加！！！)
-- (void)addWaitingView;
-
-///独立添加提示图
-- (void)addPromptView;
 
 
 #pragma mark - 简版网络请求
