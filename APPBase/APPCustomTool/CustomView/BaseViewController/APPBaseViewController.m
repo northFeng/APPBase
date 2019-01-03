@@ -25,6 +25,7 @@
 {
     UIStatusBarStyle _statusStyle;
     BOOL _statusIsHide;
+    BOOL _alertViewShow;//自定义确认弹框是否显示出来
 }
 
 
@@ -77,6 +78,7 @@
     //初始化一些数据
     self.page = 1;
     self.arrayDataList = [NSMutableArray array];//分页请求存储数据数组
+    _alertViewShow = NO;
     
     //创建导航条
     self.naviBar = [[GFNavigationBarView alloc] init];
@@ -654,33 +656,61 @@
 ///自定义消息确定框
 - (void)showAlertCustomMessage:(NSString *)message okBlock:(APPBackBlock)block{
     
-    APPAlertView *fsAlert = [[APPAlertView alloc] init];
-    fsAlert.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
-    [fsAlert showAlertWithTitle:message withBlock:block];
+    if (!_alertViewShow) {
+        _alertViewShow = YES;
+        
+        APPAlertView *fsAlert = [[APPAlertView alloc] init];
+        fsAlert.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+        fsAlert.blockEnd = ^(BOOL result, id idObject) {
+            self->_alertViewShow = NO;//弹框隐藏后取消限制
+        };
+        [fsAlert showAlertWithTitle:message withBlock:block];
+    }
 }
 
 ///自定义弹框——>自定义标题
 - (void)showAlertCustomTitle:(NSString *)title message:(NSString *)message okBlock:(APPBackBlock)block{
     
-    APPAlertView *fsAlert = [[APPAlertView alloc] init];
-    fsAlert.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
-    [fsAlert showAlertWithTitle:title brif:message withBlock:block];
+    if (!_alertViewShow) {
+        _alertViewShow = YES;
+        
+        APPAlertView *fsAlert = [[APPAlertView alloc] init];
+        fsAlert.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+        fsAlert.blockEnd = ^(BOOL result, id idObject) {
+            self->_alertViewShow = NO;//弹框隐藏后取消限制
+        };
+        [fsAlert showAlertWithTitle:title brif:message withBlock:block];
+    }
 }
 
 ///自定义弹框——>自定义标题——>自定义按钮文字
 - (void)showAlertCustomTitle:(NSString *)title message:(NSString *)message cancleBtnTitle:(NSString *)cancleTitle okBtnTitle:(NSString *)okTitle okBlock:(APPBackBlock)block{
     
-    APPAlertView *fsAlert = [[APPAlertView alloc] init];
-    fsAlert.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
-    [fsAlert showAlertWithTitle:title brif:message leftBtnTitle:cancleTitle rightBtnTitle:okTitle withBlock:block];
+    if (!_alertViewShow) {
+        _alertViewShow = YES;
+        
+        APPAlertView *fsAlert = [[APPAlertView alloc] init];
+        fsAlert.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+        fsAlert.blockEnd = ^(BOOL result, id idObject) {
+            self->_alertViewShow = NO;//弹框隐藏后取消限制
+        };
+        [fsAlert showAlertWithTitle:title brif:message leftBtnTitle:cancleTitle rightBtnTitle:okTitle withBlock:block];
+    }
 }
 
 ///自定义弹框——>自定义标题——>自定义按钮文字 ——>左右按钮事件
 - (void)showAlertCustomTitle:(NSString *)title message:(NSString *)message cancleBtnTitle:(NSString *)cancleTitle okBtnTitle:(NSString *)okTitle leftBlock:(APPBackBlock)blockLeft rightBlock:(APPBackBlock)blockRight{
     
-    APPAlertView *fsAlert = [[APPAlertView alloc] init];
-    fsAlert.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
-    [fsAlert showAlertWithTitle:title brif:message leftBtnTitle:cancleTitle rightBtnTitle:okTitle blockleft:blockLeft blockRight:blockRight];
+    if (!_alertViewShow) {
+        _alertViewShow = YES;
+        
+        APPAlertView *fsAlert = [[APPAlertView alloc] init];
+        fsAlert.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+        fsAlert.blockEnd = ^(BOOL result, id idObject) {
+            self->_alertViewShow = NO;//弹框隐藏后取消限制
+        };
+        [fsAlert showAlertWithTitle:title brif:message leftBtnTitle:cancleTitle rightBtnTitle:okTitle blockleft:blockLeft blockRight:blockRight];
+    }
 }
 
 ///消息确定框

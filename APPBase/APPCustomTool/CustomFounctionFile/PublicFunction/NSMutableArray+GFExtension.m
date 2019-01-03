@@ -23,5 +23,34 @@
     }
 }
 
+///按照位置删除一个元素
+- (BOOL)gf_removeObjectAtIndex:(NSUInteger)index{
+    
+    if ((index <= self.count - 1) && (index >= 0) && (self.count > 0)) {
+        
+        [self removeObjectAtIndex:index];
+        
+        return YES;
+    }else{
+        
+        return NO;
+    }
+}
+
+///按照元素删除一个元素
+- (BOOL)gf_removeObject:(nonnull id)object{
+    
+    if ([self containsObject:object]) {
+        
+        [self removeObject:object];
+        
+        return YES;
+    }else{
+        
+        return NO;
+    }
+}
+
+
 
 @end

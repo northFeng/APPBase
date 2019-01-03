@@ -12,14 +12,13 @@
 
 - (id)gf_getItemWithIndex:(NSInteger)index{
     
-    if (self.count - 1 >= index) {
+    if ((self.count > 0) && (index >= 0) && (index <= self.count - 1)) {
         
         return self[index];
     }else{
         return nil;
     }
 }
-
 
 
 @end
