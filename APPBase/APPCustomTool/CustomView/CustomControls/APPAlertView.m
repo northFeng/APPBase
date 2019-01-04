@@ -128,9 +128,6 @@
         
         self.hidden = YES;
         [self removeFromSuperview];//移除
-        if (self.blockEnd) {
-            self.blockEnd(NO, nil);
-        }
         
         if (self->_blockLeft) {
             self->_blockLeft(YES,nil);
@@ -151,9 +148,6 @@
         
         self.hidden = YES;
         [self removeFromSuperview];//移除
-        if (self.blockEnd) {
-            self.blockEnd(YES, nil);
-        }
         
         if (self->_blockRight) {
             self->_blockRight(YES,nil);

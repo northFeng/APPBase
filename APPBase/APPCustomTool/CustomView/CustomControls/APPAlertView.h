@@ -12,9 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPAlertView : UIView
 
-///block(弹框隐藏时触发)
-@property (nonatomic,copy,nullable) FSBackBlock blockEnd;
-
 @property (nonatomic,strong) UIView *backView;
 
 
