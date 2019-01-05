@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPLoadWaitView : UIView
 
+///销毁定时器
+- (void)deallocTimer;
+
 ///开启
 - (void)startAnimation;
 

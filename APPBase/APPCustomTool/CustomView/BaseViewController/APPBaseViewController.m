@@ -39,6 +39,10 @@
 - (void)dealloc {
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    if (_waitingView) {
+       [_waitingView deallocTimer];
+    }
 }
 
 
@@ -248,15 +252,21 @@
 ///单独添加网络请求等待视图
 - (void)addWaitingView{
     
-    if (!self.waitingView) {
+    [self.view addSubview:self.waitingView];
+}
+
+///添加等待视图
+- (APPLoadWaitView *)waitingView{
+    
+    if (!_waitingView) {
         //创建等待视图
-        self.waitingView = [[APPLoadWaitView alloc] init];
-        self.waitingView.frame = CGRectMake(0, 0, 121, 121);
-        self.waitingView.center = CGPointMake(kScreenWidth/2., kScreenHeight/2.);
-        self.waitingView.layer.cornerRadius = 4;
-        self.waitingView.layer.masksToBounds = YES;
-        [self.view addSubview:self.waitingView];
+        _waitingView = [[APPLoadWaitView alloc] init];
+        _waitingView.frame = CGRectMake(0, 0, 121, 121);
+        _waitingView.center = CGPointMake(kScreenWidth/2., kScreenHeight/2.);
+        _waitingView.layer.cornerRadius = 4;
+        _waitingView.layer.masksToBounds = YES;
     }
+    return _waitingView;
 }
 
 

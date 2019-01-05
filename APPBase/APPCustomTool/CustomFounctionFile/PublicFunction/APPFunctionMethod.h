@@ -150,7 +150,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///金钱分转换
 + (NSString *)string_moneyStringToIntegerOrFloatWIthMoney:(NSInteger)moneyInt;
 
-#pragma mark - 创建定时器
+#pragma mark - 创建定时器 （一定要在delloc执行之前进行释放定时器，否则定时器不会销毁）
 + (void)timer_createTimerToViewController:(UIViewController *)VCSelf selector:(SEL)aSelector;
 
 
