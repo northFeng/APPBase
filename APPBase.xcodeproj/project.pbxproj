@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D95957722AE3A1F001A8345 /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D95957422AE3A1F001A8345 /* JPEngine.m */; };
+		8D95957822AE3A1F001A8345 /* JSPatch.js in Resources */ = {isa = PBXBuildFile; fileRef = 8D95957622AE3A1F001A8345 /* JSPatch.js */; };
 		8DAB5E0221AB9659009662D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB5E0021AB9659009662D5 /* Main.storyboard */; };
 		8DAB5E0421AB965B009662D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB5E0321AB965B009662D5 /* Assets.xcassets */; };
 		8DAB5E0721AB965B009662D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB5E0521AB965B009662D5 /* LaunchScreen.storyboard */; };
@@ -75,6 +77,9 @@
 		186A2EA8661A6C463916E258 /* libPods-APPBase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-APPBase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BCAF33D89376F054993B8C /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
 		6136454A595A21CCA2D817AF /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
+		8D95957422AE3A1F001A8345 /* JPEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPEngine.m; sourceTree = "<group>"; };
+		8D95957522AE3A1F001A8345 /* JPEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPEngine.h; sourceTree = "<group>"; };
+		8D95957622AE3A1F001A8345 /* JSPatch.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JSPatch.js; sourceTree = "<group>"; };
 		8DAB5DF721AB9659009662D5 /* APPBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APPBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DAB5E0121AB9659009662D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DAB5E0321AB965B009662D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -211,6 +216,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8D95957222AE39E9001A8345 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8D95957322AE3A1F001A8345 /* JSPatch */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		8D95957322AE3A1F001A8345 /* JSPatch */ = {
+			isa = PBXGroup;
+			children = (
+				8D95957522AE3A1F001A8345 /* JPEngine.h */,
+				8D95957422AE3A1F001A8345 /* JPEngine.m */,
+				8D95957622AE3A1F001A8345 /* JSPatch.js */,
+			);
+			path = JSPatch;
+			sourceTree = "<group>";
+		};
 		8DAB5DEE21AB9659009662D5 = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +265,7 @@
 				8DAB5E3021AB971C009662D5 /* APPNetRequest */,
 				8DAB5E2E21AB971C009662D5 /* APPMain */,
 				8DAB5E2C21AB971C009662D5 /* APPViewController */,
+				8D95957222AE39E9001A8345 /* Resource */,
 				8DAB5F1021AB9BB2009662D5 /* SupportingFiles */,
 			);
 			path = APPBase;
@@ -509,10 +533,10 @@
 		8DAB5EFD21AB993F009662D5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8DAB5EFE21AB993F009662D5 /* FROrderCellVC.h */,
 				8DAB5EFF21AB993F009662D5 /* FRHomeVC.h */,
-				8DAB5F0021AB993F009662D5 /* FROrderCellVC.m */,
 				8DAB5F0121AB993F009662D5 /* FRHomeVC.m */,
+				8DAB5EFE21AB993F009662D5 /* FROrderCellVC.h */,
+				8DAB5F0021AB993F009662D5 /* FROrderCellVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -664,6 +688,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DAB5E0721AB965B009662D5 /* LaunchScreen.storyboard in Resources */,
+				8D95957822AE3A1F001A8345 /* JSPatch.js in Resources */,
 				8DAB5F0B21AB9954009662D5 /* FRLoginHomeVC.xib in Resources */,
 				8DAB5E0421AB965B009662D5 /* Assets.xcassets in Resources */,
 				8DAB5E0221AB9659009662D5 /* Main.storyboard in Resources */,
@@ -770,6 +795,7 @@
 				8DAB5EF721AB98E3009662D5 /* AppDelegate+RootConTroller.m in Sources */,
 				8DAB5EB821AB9839009662D5 /* UIView+GFExtension.m in Sources */,
 				8DAB5F0321AB993F009662D5 /* FROrderCellVC.m in Sources */,
+				8D95957722AE3A1F001A8345 /* JPEngine.m in Sources */,
 				8DAB5EE821AB98A6009662D5 /* UILabel+Text.m in Sources */,
 				8DAB5EBB21AB9857009662D5 /* APPAnalyticsHelper.m in Sources */,
 				8DAB5EF121AB98CD009662D5 /* APPModel.m in Sources */,

@@ -24,8 +24,10 @@ pod 'IQKeyboardManager'
 
 #***************** 第三方功能框架引入**************
 #bug追踪
-pod 'Bugly'
+# pod 'Bugly','~>2.5.0'
 
+#bug追踪 & 热更新 已集成JSPatch
+pod 'BuglyHotfix','~>2.1.0'
 
 
 end

@@ -12,10 +12,14 @@
 #import "AppDelegate+RootConTroller.h"
 
 //bug统计
-#import <Bugly/Bugly.h>
+//#import <Bugly/Bugly.h>
 
+//带有热更新的Bugly
+#import <BuglyHotfix/Bugly.h>
+#import <BuglyHotfix/BuglyMender.h>
+#import "JPEngine.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<BuglyDelegate>
 
 @end
 
@@ -71,6 +75,48 @@
     //设置界面按钮只能点击一个
     [[UIButton appearance] setExclusiveTouch:YES];
     
+}
+
+
+- (void)configBugly {
+    //初始化 Bugly 异常上报
+    BuglyConfig *config = [[BuglyConfig alloc] init];
+    config.delegate = self;
+    config.debugMode = YES;
+    config.reportLogLevel = BuglyLogLevelInfo;
+    [Bugly startWithAppId:[APPKeyInfo getBuglyId]
+#if DEBUG
+        developmentDevice:YES
+#endif
+                   config:config];
+    
+    //捕获 JSPatch 异常并上报
+    [JPEngine handleException:^(NSString *msg) {
+        NSException *jspatchException = [NSException exceptionWithName:@"Hotfix Exception" reason:msg userInfo:nil];
+        [Bugly reportException:jspatchException];
+    }];
+    //检测补丁策略
+    [[BuglyMender sharedMender] checkRemoteConfigWithEventHandler:^(BuglyHotfixEvent event, NSDictionary *patchInfo) {
+        //有新补丁或本地补丁状态正常
+        if (event == BuglyHotfixEventPatchValid || event == BuglyHotfixEventNewPatch) {
+            //获取本地补丁路径
+            NSString *patchDirectory = [[BuglyMender sharedMender] patchDirectory];
+            if (patchDirectory) {
+                //指定执行的 js 脚本文件名
+                NSString *patchFileName = @"main.js";
+                NSString *patchFile = [patchDirectory stringByAppendingPathComponent:patchFileName];
+                //执行补丁加载并上报激活状态
+                if ([[NSFileManager defaultManager] fileExistsAtPath:patchFile] &&
+                    [JPEngine evaluateScriptWithPath:patchFile] != nil) {
+                    BLYLogInfo(@"evaluateScript success");
+                    [[BuglyMender sharedMender] reportPatchStatus:BuglyHotfixPatchStatusActiveSucess];
+                }else {
+                    BLYLogInfo(@"evaluateScript failed");
+                    [[BuglyMender sharedMender] reportPatchStatus:BuglyHotfixPatchStatusActiveFail];
+                }
+            }
+        }
+    }];
 }
 
 

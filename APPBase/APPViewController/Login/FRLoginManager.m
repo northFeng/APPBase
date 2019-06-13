@@ -40,6 +40,8 @@
     navi.navigationBar.hidden = YES;//隐藏系统导航条（只是隐藏的NavigationController上的naviBar，因此返回手势存在）
     
     [superViewController presentViewController:navi animated:YES completion:nil];
+    //[[UIApplication sharedApplication].delegate.window.rootViewController presentViewController:navi animated:YES completion:nil];
+
 }
 
 

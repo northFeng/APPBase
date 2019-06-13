@@ -31,9 +31,9 @@ static NSString *const APPId = @"1438700286";
 
 #pragma mark - 腾讯bugly注册APPID
 ///腾讯bugly测试统计
-static NSString *const buglyIdDevelopment = @"a8be9e6267";//线上和线下同一个账号（特别要求可以分开）
+static NSString *const buglyIdDevelopment = @"fa47d6f717";//线上和线下同一个账号（特别要求可以分开）
 ///腾讯bugly线上统计
-static NSString * const buglyIdProduct = @"a8be9e6267";
+static NSString * const buglyIdProduct = @"fa47d6f717";
 
 //百度地图秘钥
 static NSString *const baiduAK = @"kwgHEFkZ7UlpFanRZwyBGBFemv4lbXGX";
