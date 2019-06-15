@@ -31,8 +31,8 @@
 #import "APPAnalyticsHelper.h"//统计分析工具
 #import "FRLoginManager.h"//登录管理类
 
-///viewModel类
-
+///RAC MVVM数据绑定框架
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 
 #endif /* APPPrefixHeader_pch */
