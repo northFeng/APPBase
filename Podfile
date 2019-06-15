@@ -29,8 +29,8 @@ pod 'IQKeyboardManager'
 #bug追踪 & 热更新 已集成JSPatch
 pod 'BuglyHotfix','~>2.1.0'
 
-pod 'ReactiveCocoa','~>10.0.0'
-
+#RAC 数据绑定框架
+pod 'ReactiveCocoa', '~> 9.0'
 
 end
 
