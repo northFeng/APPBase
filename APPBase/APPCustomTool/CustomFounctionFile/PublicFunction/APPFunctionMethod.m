@@ -888,9 +888,9 @@
 ///post请求一个字典
 + (void)postRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block{
     
-    [APPHttpTool postWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
+    [[APPHttpTool sharedNetworking] postWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
         
-        //NSString *message = [response objectForKey:@"msg"];
+        NSString *message = [response objectForKey:@"msg"];
         //id dataDic = [response objectForKey:@"data"];
         
         id dataDic = [response objectForKey:@"data"];
@@ -904,14 +904,14 @@
             // 错误处理
             //[weakSelf showMessage:message];
             if (block) {
-                block(NO,response);
+                block(NO,message);
             }
         }
         
     } fail:^(NSError *error) {
         
         if (block) {
-            block(NO,error);
+            block(NO,error.localizedDescription);
         }
     }];
 }
@@ -919,7 +919,7 @@
 ///get请求一个字典
 + (void)getRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block{
     
-    [APPHttpTool getWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
+    [[APPHttpTool sharedNetworking] getWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
         
         //NSString *message = [response objectForKey:@"msg"];
         //id dataDic = [response objectForKey:@"data"];

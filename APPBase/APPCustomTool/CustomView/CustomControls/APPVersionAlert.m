@@ -156,4 +156,16 @@
     }
 }
 
+///弹出更新弹框
++ (void)showVersonUpdateAlertViewWithVersonInfo:(NSDictionary *)versonDic{
+    
+    //有新版本 && 进行提示
+    APPVersionAlert *alertView = [[APPVersionAlert alloc] init];
+    alertView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+    [alertView setDicModel:versonDic];
+    
+    [[UIApplication sharedApplication].delegate.window.rootViewController.view addSubview:alertView];
+}
+
+
 @end

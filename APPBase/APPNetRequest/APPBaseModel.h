@@ -4,7 +4,7 @@
 //  APP的数据模型基类
 //  Created by gaoyafeng on 2018/8/28.
 //  Copyright © 2018年 ishansong. All rights reserved.
-//
+//  转换数据 ——> 单独写一个类来处理数据的转换
 
 #import <Foundation/Foundation.h>
 

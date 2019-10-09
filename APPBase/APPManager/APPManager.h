@@ -47,6 +47,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) NSInteger loacalOrderCount;
 
 ///线上新版本号
+@property (nonatomic,copy) NSString *appstoreVersion;
+
+///线上新版本号
 @property (nonatomic,copy,nullable) NSString *serviceVersionStr;
 
 

@@ -23,6 +23,11 @@
     [button setTitle:@"hello" forState:UIControlStateNormal];
     button.frame = CGRectMake(100, 100, 100, 50);
     [self.view addSubview:button];
+    
+    
+    NSString *urlStr = [[NSURL URLWithString:@"v1/goin/list" relativeToURL:[NSURL URLWithString:@"https://www.baidu.com/"]] absoluteString];
+    
+    NSLog(@"--->%@",urlStr);
 }
 
 /*

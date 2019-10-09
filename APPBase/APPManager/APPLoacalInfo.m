@@ -35,6 +35,128 @@
     [[UIApplication sharedApplication] openURL:kURLString(appStoreUrl)];
 }
 
+///App Store商店版本号
++ (NSString *)appStoreVersion{
+    
+    NSString *url = [NSString stringWithFormat:@"http://itunes.apple.com/cn/lookup?id=%@",[APPKeyInfo getAppId]];//中国
+    
+    NSString *appStoreVersion = @"";
+    /**
+     {
+     "resultCount" : 1,
+     "results" : [{
+     "artistId" : "开发者 ID",
+     "artistName" : "开发者名称",
+     "trackCensoredName" : "审查名称",
+     "trackContentRating" : "评级",
+     "trackId" : "应用程序 ID",
+     "trackName" = "应用程序名称",
+     "trackViewUrl" = "应用程序下载网址",
+     "userRatingCount" = "用户评论数量",
+     "userRatingCountForCurrentVersion" = "当前版本的用户评论数量",
+     "version" = "版本号"
+     }]
+     }
+     */
+    NSString *appInfoString = [NSString stringWithContentsOfURL:[NSURL URLWithString:url] encoding:NSUTF8StringEncoding error:nil];
+    
+    NSData *appInfoData = [appInfoString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    if (appInfoData && appInfoData.length > 0) {
+        NSDictionary *appInfoDic = [NSJSONSerialization JSONObjectWithData:appInfoData options:NSJSONReadingMutableLeaves error:&error];
+        
+        if (!error && appInfoDic) {
+            
+            NSArray *arrayInfo = appInfoDic[@"results"];
+            
+            NSDictionary *resultDic = arrayInfo.firstObject;
+            
+            //版本号
+            NSString *version = resultDic[@"version"];
+            
+            //应用程序名称
+            //NSString *trackName = resultDic[@"trackName"];
+            appStoreVersion = version;
+        }
+    }
+    
+    return appStoreVersion;
+}
+
+///判断是否有版本更新
++ (NSString *)judgeIsHaveUpdate{
+    
+    NSString *appStoreVerson = [self appStoreVersion];
+    
+    [APPManager sharedInstance].appstoreVersion = appStoreVerson;
+    
+    NSString *appLocalVerson = [self appVerion];
+    
+    BOOL isHaveUpdate = [self compareTheTwoVersionsAPPVerson:appStoreVerson localVerson:appLocalVerson];
+    
+    if (isHaveUpdate) {
+        //新版本
+        return appStoreVerson;
+    }else{
+        return @"";
+    }
+}
+
+///比较两个版本 oneVerson > twoVerson——>YES  oneVerson <= twoVerson——>NO
++ (BOOL)compareTheTwoVersionsAPPVerson:(NSString *)storeVerson localVerson:(NSString *)localVerson{
+    
+    BOOL isHaveUpdate = NO;
+    
+    if (storeVerson.length > 0 && localVerson.length > 0 && ![storeVerson isEqualToString:localVerson]) {
+        
+        NSArray *arrayOne = [storeVerson componentsSeparatedByString:@"."];
+        
+        NSArray *arrayTwo = [localVerson componentsSeparatedByString:@"."];
+        
+        for (int i = 0; i < arrayOne.count ; i++) {
+            
+            NSString *numStrOne = [arrayOne gf_getItemWithIndex:i];
+            
+            NSString *numStrTwo = [arrayTwo gf_getItemWithIndex:i];
+            
+            if (numStrOne.length > 0 && numStrTwo.length > 0) {
+                
+                //进行比较
+                NSInteger numStore = [numStrOne integerValue];
+                
+                NSInteger numLocal = [numStrTwo integerValue];
+                
+                if (numStore > numLocal) {
+                    
+                    isHaveUpdate = YES;
+                    
+                    break;
+                }else if (numStore < numLocal){
+                    //本地版本大于商店版本 ——> 这种情况只有未上线版本会出现
+                    
+                    break;
+                }else{
+                    //相等 继续循环
+                }
+                
+            }else{
+                if (numStrOne.length == 0 && numStrTwo.length > 0) {
+                    //本地版本提前更新 && 本地版本号 长度变长
+                    
+                    break;
+                }else if (numStrOne.length > 0 && numStrTwo.length == 0){
+                    //线上版本出现新版本
+                    isHaveUpdate = YES;
+                    
+                    break;
+                }
+            }
+        }
+    }
+    
+    return isHaveUpdate;
+}
+
 
 /**
 ///联网权限
@@ -128,6 +250,22 @@
 }
  */
 
+#pragma mark - 根据SDWebImage 处理内存呢
+///获取缓存路径下文件大小
++ (NSInteger)getSDWebImageFileSize{
+    
+    //缓存
+    SDImageCache *saImage = [SDImageCache sharedImageCache];
+    
+    return saImage.getSize;
+}
+
+///清理缓存路径下的文件
++ (void)clearDiskMemory{
+    
+    [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
+    [[SDImageCache sharedImageCache] clearMemory];//可有可无
+}
 
 
 

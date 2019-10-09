@@ -13,15 +13,15 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #pragma mark - 第三方库引用
-#import "AFNetworking.h"
-#import "MJRefresh.h"
-#import "Masonry.h"
-#import "SDAutoLayout.h"
-#import "YYCache.h"
-#import "YYModel.h"
-#import "MBProgressHUD.h"
-#import "UIImageView+WebCache.h"//加载图片
-#import "UIImage+GIF.h"//加载动画拓展
+#import <AFNetworking/AFNetworking.h>
+#import <MJRefresh/MJRefresh.h>
+#import <Masonry/Masonry.h>
+#import <SDAutoLayout/SDAutoLayout.h>
+#import <YYModel/YYModel.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <SDWebImage/UIImageView+WebCache.h>//加载图片
+#import <SDWebImage/UIImage+GIF.h>//加载动画拓展
+#import <ReactiveObjC/ReactiveObjC.h>//RAC
 
 #pragma mark - APP内文件
 #import "APPFunctionMethod.h"//公共方法工厂
@@ -32,7 +32,7 @@
 #import "FRLoginManager.h"//登录管理类
 
 ///RAC MVVM数据绑定框架
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC.h>
 
 
 #endif /* APPPrefixHeader_pch */

@@ -4,16 +4,30 @@
 //
 //  Created by gaoyafeng on 2018/5/21.
 //  Copyright © 2018年 North_feng. All rights reserved.
-//
+//  获取缓存数据（url+参数——>MD5作为key） && 取消上一次请求  && 不重复请求  && 用户行为埋点统计 本地统计数据，分批次上传 减少网络请求减少耗电量
+/**
+ 针对建立连接这部分的优化就是这样的原则：能不发请求的就尽量不发请求，必须要发请求时，能合并请求的就尽量合并请求。然而，任何优化手段都是有前提的，而且也不能保证对所有需求都能起作用，有些API请求就是不符合这些优化手段前提的，那就老老实实发请求吧。不过这类API请求所占比例一般不大，大部分的请求都或多或少符合优化条件，所以针对发送请求的优化手段还是值得做的。
+ 
+ 2、针对DNS域名解析做的优化，以及建立链接的优化 —> 索性直接走IP请求，那不就绕过DNS服务的耗时了嘛
+ */
 
 #import "APPHttpTool.h"
 
 #import "GFEncryption.h"
 
-#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+#import <AFNetworking/AFNetworking.h>
 
+@interface APPHttpTool ()
+
+///AFNet网络管理者
+@property (nonatomic,strong) APPHTTPSessionManager *afNetManager;
+
+@end
 
 @implementation APPHttpTool
+
+///存储 请求任务
+static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
 
 + (instancetype)sharedNetworking{
     
@@ -25,240 +39,52 @@
     return handler;
 }
 
-///取消所有的网络请求
-+ (void)cancelAllRequest{
-    
-    AFHTTPSessionManager *manager = [self getAFManager];
-    if ([manager.tasks count] > 0) {
-        NSLog(@"返回时取消网络请求");
-        [manager.tasks makeObjectsPerformSelector:@selector(cancel)];
-        //NSLog(@"tasks = %@",manager.tasks);
-    }
-}
-
-+ (void)getWithUrl:(NSString *)url params:(NSDictionary *)params success:(Success)success fail:(Failure)fail{
-    
-    NSLog(@"请求地址----%@\n    请求参数----%@",url,params);
-    
-    //检查地址中是否有中文
-    NSString *urlStr = [NSURL URLWithString:url] ? url : [self strUTF8Encoding:url];
-    
-    AFHTTPSessionManager *manager = [self getAFManager];
-    
-    //添加公共参数
-    params = [self addPublicParameterWithDic:params];
-    
-    [manager GET:urlStr parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"请求结果=%@",responseObject);
-        
-        if (success) {
-            NSInteger code = [responseObject[@"status"] integerValue];
-            
-            //后台协商进行用户登录异常提示 && 强制用户退出
-            if (code == 300) {
-                
-                //用户登录过期 && 执行退出
-                [[APPManager sharedInstance] forcedExitUserWithShowControllerItemIndex:2];
-                
-            }
-            
-            success(responseObject,code);
-        }
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error=%@",error);
-        if ([error.domain isEqualToString:@"NSURLErrorDomain"] && error.code == NSURLErrorNotConnectedToInternet) {
-            NSLog(@"没有网络");
-        }
-        if (fail) {
-            fail(error);
-        }
-    }];
-}
-
-+ (void)postWithUrl:(NSString *)url params:(NSDictionary *)params success:(Success)success fail:(Failure)fail
+/**
+ 存储所有请求task的数组
+ */
++ (NSMutableArray *)allSessionTask
 {
-    NSLog(@"请求地址----%@\n    请求参数----%@",url,params);
-    
-    //检查地址中是否有中文
-    NSString *urlStr = [NSURL URLWithString:url] ? url : [self strUTF8Encoding:url];
-    
-    /**
-     加密处理：对字段进行json序列化进行加密成字符串，进行发送到后台
-     一定要判断请求的URL是否为上传图片，若为上传图片则不进行加密处理
-     */
-    
-    AFHTTPSessionManager *manager=[self getAFManager];
-    
-    //添加公共参数
-    params = [self addPublicParameterWithDic:params];
-    
-    [manager POST:urlStr parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"请求结果=%@",responseObject);
-        
-        if (success) {
-            
-            NSInteger code = [responseObject[@"status"] integerValue];
-            
-            //后台协商进行用户登录异常提示 && 强制用户退出
-            if (code == 300) {
-                
-                //用户登录过期 && 执行退出
-                [[APPManager sharedInstance] forcedExitUserWithShowControllerItemIndex:2];
-                
-            }
-            
-            success(responseObject,code);
-        }
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error=%@",error);
-        if (fail) {
-            fail(error);
-        }
-    }];
-}
-
-+ (void)deleteWithUrl:(NSString *)url params:(NSDictionary *)params success:(Success)success fail:(Failure)fail
-{
-    
-    NSLog(@"请求地址----%@\n    请求参数----%@",url,params);
-    //检查地址中是否有中文
-    NSString *urlStr = [NSURL URLWithString:url] ? url : [self strUTF8Encoding:url];
-    
-    AFHTTPSessionManager *manager=[self getAFManager];
-    
-    //添加公共参数
-    params = [self addPublicParameterWithDic:params];
-    
-    [manager DELETE:urlStr parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"请求结果=%@",responseObject);
-        if (success) {
-            
-            NSInteger code = [responseObject[@"status"] integerValue];
-            
-            //后台协商进行用户登录异常提示 && 强制用户退出
-            if (code == 300) {
-                
-                //用户登录过期 && 执行退出
-                [[APPManager sharedInstance] forcedExitUserWithShowControllerItemIndex:2];
-                
-            }
-            
-            success(responseObject,code);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error=%@",error);
-        if (fail) {
-            fail(error);
-        }
-    }];
-}
-
-
-#pragma mark - 上传图片和视频
-+ (void)uploadImageAndMovieName:(NSString *)fileName fileType:(NSString *)fileType filePath:(NSString *)filePath{
-    
-    //获取文件的后缀名
-    NSString *extension = [fileName componentsSeparatedByString:@"."].lastObject;
-    
-    //设置mimeType
-    NSString *mimeType;
-    if ([fileType isEqualToString:@"image"]) {
-        mimeType = [NSString stringWithFormat:@"image/%@", extension];
-    } else {
-        mimeType = [NSString stringWithFormat:@"video/%@", extension];
+    if (!_allSessionTask) {
+        _allSessionTask = [[NSMutableArray alloc] init];
     }
-    
-    //创建AFHTTPSessionManager
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-    //设置响应文件类型为JSON类型
-    manager.responseSerializer    = [AFJSONResponseSerializer serializer];
-    
-    //初始化requestSerializer
-    manager.requestSerializer     = [AFHTTPRequestSerializer serializer];
-    
-    manager.responseSerializer.acceptableContentTypes = nil;
-    
-    //设置timeout
-    [manager.requestSerializer setTimeoutInterval:20.0];
-    
-    //设置请求头类型
-    [manager.requestSerializer setValue:@"form/data" forHTTPHeaderField:@"Content-Type"];
-    
-    //设置请求头, 授权码
-    //[manager.requestSerializer setValue:@"YgAhCMxEehT4N/DmhKkA/M0npN3KO0X8PMrNl17+hogw944GDGpzvypteMemdWb9nlzz7mk1jBa/0fpOtxeZUA==" forHTTPHeaderField:@"Authentication"];
-    
-    //上传服务器接口
-    NSString *url = [NSString stringWithFormat:@"http://xxxxx.xxxx.xxx.xx.x"];
-    
-    //开始上传
-    [manager POST:url parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        
-        NSError *error;
-        BOOL success = [formData appendPartWithFileURL:[NSURL fileURLWithPath:filePath] name:fileName fileName:fileName mimeType:mimeType error:&error];
-        
-        if (!success) {
-            
-            NSLog(@"appendPartWithFileURL error: %@", error);
-        }
-        
-    } progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-        NSLog(@"上传进度: %f", uploadProgress.fractionCompleted);
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        NSLog(@"成功返回: %@", responseObject);
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-        NSLog(@"上传失败: %@", error);
-        
-    }];
+    return _allSessionTask;
 }
-
-
 
 #pragma mark - 创建AFN管理者
-+(AFHTTPSessionManager *)getAFManager{
-    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-    
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-    //请求序列化
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];//设置请求数据为json
-    manager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
-    manager.requestSerializer.timeoutInterval = 10;//超时时间
-    //请求头信息设置
-    /**
-    //本地账户的token 和 账户ID 每次请求都放到请求头中，后台做判断，有异常就返回了，强制用户退出登录
-    [manager.requestSerializer setValue:[HSAccountManager sharedAccountManager].token forHTTPHeaderField:@"token"];
-    [manager.requestSerializer setValue:[HSAccountManager sharedAccountManager].userId forHTTPHeaderField:@"userId"];
-    [manager.requestSerializer setValue:[HSAppInfo appBundleID] forHTTPHeaderField:@"packageName"];
-     */
-    
-    //响应序列化
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];//设置返回数据为json
-    //响应数据格式设置
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",
-                                                                              @"application/json;charset=UTF-8",
-                                                                              @"text/html",
-                                                                              @"text/json",
-                                                                              @"text/plain",
-                                                                              @"text/javascript",
-                                                                              @"text/xml",
-                                                                              @"image/*"]];
-    
-    return manager;
+- (APPHTTPSessionManager *)afNetManager{
+    if (!_afNetManager) {
+        
+        //_afNetManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:[APPKeyInfo hostURL]]];//[AFHTTPSessionManager manager];//初始化baseUrl 前提整个APP的请求都必须从是统一根IP
+        _afNetManager = [APPHTTPSessionManager manager];
+        //请求序列化
+        _afNetManager.requestSerializer = [AFJSONRequestSerializer serializer];//设置请求数据为json
+        _afNetManager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
+        _afNetManager.requestSerializer.timeoutInterval = 15;//超时时间
+        
+        //请求头信息设置
+        /**
+        //本地账户的token 和 账户ID 每次请求都放到请求头中，后台做判断，有异常就返回了，强制用户退出登录
+        [_afNetManager.requestSerializer setValue:[HSAccountManager sharedAccountManager].token forHTTPHeaderField:@"token"];
+        [_afNetManager.requestSerializer setValue:[HSAccountManager sharedAccountManager].userId forHTTPHeaderField:@"userId"];
+        [_afNetManager.requestSerializer setValue:[HSAppInfo appBundleID] forHTTPHeaderField:@"packageName"];
+         */
+        
+        //响应序列化
+        _afNetManager.responseSerializer = [AFJSONResponseSerializer serializer];//设置返回数据为json
+        //响应数据格式设置
+        _afNetManager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",
+                                                                            @"application/json;charset=UTF-8",
+                                                                                  @"text/html",
+                                                                                  @"text/json",
+                                                                                  @"text/plain",
+                                                                                  @"text/javascript",
+                                                                                  @"text/xml",
+                                                                                  @"image/*"]];
+    }
+    return _afNetManager;
 }
 
-+(NSString *)strUTF8Encoding:(NSString *)str{
+- (NSString *)strUTF8Encoding:(NSString *)str{
     //编码
     NSCharacterSet *allowedCharacters = [NSCharacterSet URLQueryAllowedCharacterSet];
 
@@ -268,7 +94,7 @@
 }
 
 ///添加公共参数
-+ (NSDictionary *)addPublicParameterWithDic:(NSDictionary *)dicParams{
+- (NSDictionary *)addPublicParameterWithDic:(NSDictionary *)dicParams{
     
     NSMutableDictionary *dicMutable = [dicParams mutableCopy];
     
@@ -288,7 +114,197 @@
     return [dicMutable copy];
 }
 
+#pragma mark - 统一发送请求
+///统一发送请求
+- (void)requestWithMethod:(NSString *)method URLString:(NSString *)url parameters:(NSDictionary *)parameters success:(Success)success fail:(Failure)fail {
+    
+    //检查地址中是否有中文
+    NSString *urlStr = [NSURL URLWithString:url] ? url : [self strUTF8Encoding:url];
+        
+    //添加公共参数
+    parameters = [self addPublicParameterWithDic:parameters];
+    
+    NSURLSessionTask *sessionTask = [self.afNetManager requestWithMethod:method URLString:urlStr parameters:parameters sucessCompletion:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        
+        NSLog(@"请求结果=%@",responseObject);
+        
+        if (success) {
+            NSInteger code = [responseObject[@"status"] integerValue];
+            
+            //后台协商进行用户登录异常提示 && 强制用户退出
+            if (code == 300) {
+                
+                //用户登录过期 && 执行退出
+                [[APPManager sharedInstance] forcedExitUserWithShowControllerItemIndex:2];
+                
+            }
+            
+            success(responseObject,code);
+        }
+        
+    } failCompletion:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+        
+        NSLog(@"error=%@",error);
+        if ([error.domain isEqualToString:@"NSURLErrorDomain"] && error.code == NSURLErrorNotConnectedToInternet) {
+            NSLog(@"没有网络");
+        }
+        if (fail) {
+            fail(error);
+        }
+    }];
+    
+}
 
+#pragma mark - ************************* 常规请求 *************************
+
+#pragma mark - GET方法
++ (void)getWithUrl:(NSString *)url params:(NSDictionary *)params success:(Success)success fail:(Failure)fail {
+    [[APPHttpTool sharedNetworking] getWithUrl:url params:params success:success fail:fail];
+}
+- (void)getWithUrl:(NSString *)url params:(NSDictionary *)params success:(Success)success fail:(Failure)fail {
+    
+    [self requestWithMethod:@"GET" URLString:url parameters:params success:success fail:fail];
+}
+
+#pragma mark - POST
++ (void)postWithUrl:(NSString *)url params:(NSDictionary *)params success:(Success)success fail:(Failure)fail {
+    [[APPHttpTool sharedNetworking] postWithUrl:url params:params success:success fail:fail];
+}
+- (void)postWithUrl:(NSString *)url params:(NSDictionary *)params success:(Success)success fail:(Failure)fail {
+    
+    [self requestWithMethod:@"POST" URLString:url parameters:params success:success fail:fail];
+}
+
+#pragma mark - UPLOAD上传文件
++ (void)uploadFileWithURL:(NSString *)url params:(NSDictionary *)params name:(NSString *)name filePath:(NSString *)filePath progressBlock:(Preogress)progress success:(Success)success fail:(Failure)fail {
+    [[APPHttpTool sharedNetworking] uploadFileWithURL:url params:params name:name filePath:filePath progressBlock:progress success:success fail:fail];
+}
+- (void)uploadFileWithURL:(NSString *)url params:(NSDictionary *)params name:(NSString *)name filePath:(NSString *)filePath progressBlock:(Preogress)progress success:(Success)success fail:(Failure)fail {
+    
+    //检查地址中是否有中文
+    NSString *urlStr = [NSURL URLWithString:url] ? url : [self strUTF8Encoding:url];
+    
+    /**
+     加密处理：对字段进行json序列化进行加密成字符串，进行发送到后台
+     一定要判断请求的URL是否为上传图片，若为上传图片则不进行加密处理
+     */
+        
+    //添加公共参数
+    params = [self addPublicParameterWithDic:params];
+    
+    [self.afNetManager POST:urlStr parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        NSError *error = nil;
+        [formData appendPartWithFileURL:[NSURL URLWithString:filePath] name:name error:&error];
+        if (error && fail) {
+            fail(error);
+        }
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            if (progress)
+                progress(uploadProgress);
+        });
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (success) {
+            NSInteger code = [responseObject[@"status"] integerValue];
+            success(responseObject,code);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error=%@",error);
+        if (fail) {
+            fail(error);
+        }
+    }];
+}
+
+#pragma mark - 上传图片和视频
++ (void)uploadImagesWithURL:(NSString *)url params:(NSDictionary *)params name:(NSString *)name images:(NSArray<UIImage *> *)images fileNames:(NSArray<NSString *> *)fileNames imageScale:(CGFloat)imageScale imageType:(NSString *)imageType progressBlock:(Preogress)progress success:(Success)success fail:(Failure)fail {
+    [[APPHttpTool sharedNetworking] uploadImagesWithURL:url params:params name:name images:images fileNames:fileNames imageScale:imageScale imageType:imageType progressBlock:progress success:success fail:fail];
+}
+- (void)uploadImagesWithURL:(NSString *)url params:(NSDictionary *)params name:(NSString *)name images:(NSArray<UIImage *> *)images fileNames:(NSArray<NSString *> *)fileNames imageScale:(CGFloat)imageScale imageType:(NSString *)imageType progressBlock:(Preogress)progress success:(Success)success fail:(Failure)fail {
+    
+    //检查地址中是否有中文
+    NSString *urlStr = [NSURL URLWithString:url] ? url : [self strUTF8Encoding:url];
+    
+    /**
+     加密处理：对字段进行json序列化进行加密成字符串，进行发送到后台
+     一定要判断请求的URL是否为上传图片，若为上传图片则不进行加密处理
+     */
+        
+    //添加公共参数
+    params = [self addPublicParameterWithDic:params];
+    
+    [self.afNetManager POST:urlStr parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        for (NSUInteger i = 0; i < images.count; i++) {
+            // 压缩图片
+            NSData *imageData = UIImageJPEGRepresentation(images[i], imageScale ?: 1.f);
+            // 图片名
+            NSString *fileName = fileNames ? [NSString stringWithFormat:@"%@.%@", fileNames[i], imageType ?: @"jpg"] : [NSString stringWithFormat:@"%f%ld.%@",[[NSDate date] timeIntervalSince1970], (unsigned long)i, imageType ?: @"jpg"];
+            // MIME类型
+            NSString *mimeType = [NSString stringWithFormat:@"image/%@",imageType ?: @"jpg"];
+            // 添加表单数据
+            [formData appendPartWithFileData:imageData name:name fileName:fileName mimeType:mimeType];
+        }
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            if (progress)
+                progress(uploadProgress);
+        });
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (success) {
+            NSInteger code = [responseObject[@"status"] integerValue];
+            success(responseObject,code);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error=%@",error);
+        if (fail) {
+            fail(error);
+        }
+    }];
+}
+
+
+#pragma mark - 下载
++ (void)downloadWithURL:(NSString *)url fileDir:(NSString *)fileDir progressBlock:(Preogress)progress success:(Success)success fail:(Failure)fail {
+    [[APPHttpTool sharedNetworking] downloadWithURL:url fileDir:fileDir progressBlock:progress success:success fail:fail];
+}
+- (void)downloadWithURL:(NSString *)url fileDir:(NSString *)fileDir progressBlock:(Preogress)progress success:(Success)success fail:(Failure)fail {
+    //检查地址中是否有中文
+    NSString *urlStr = [NSURL URLWithString:url] ? url : [self strUTF8Encoding:url];
+    
+    /**
+     加密处理：对字段进行json序列化进行加密成字符串，进行发送到后台
+     一定要判断请求的URL是否为上传图片，若为上传图片则不进行加密处理
+     */
+        
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
+    
+    [self.afNetManager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            if (progress)
+                progress(downloadProgress);
+        });
+    } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+        
+        // 获取本机保存目录 = 沙盒地址 + 下载目录(暂未提供自定义默认保存文件夹名)
+        NSString *downloadDir = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:fileDir ? fileDir : @"NetworkDownload"];
+        // 如果文件夹不存在则先创建
+        [[NSFileManager defaultManager] createDirectoryAtPath:downloadDir withIntermediateDirectories:YES attributes:nil error:nil];
+        // 文件保存全路径 = 本机保存地址 + NSURLResponse对象的建议文件名(其实就是原文件名)
+        NSString *filePath = [downloadDir stringByAppendingPathComponent:response.suggestedFilename];
+        
+        return [NSURL fileURLWithPath:filePath];
+    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+        if (error) {
+            if (fail) {
+                fail(error);
+            }
+        } else {
+            if (success) {
+                success(filePath.absoluteString,200);
+            }
+        }
+    }];
+}
 
 #pragma mark - ************************** 网络监测 **************************
 #pragma makr - 开始监听网络连接
@@ -335,5 +351,114 @@
 }
 
 
+#pragma mark - ************************* 根据项目需求进行快速请求 *************************
+///get请求一个字典
++ (void)getRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block{
+    
+    [APPHttpTool getWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
+        
+        //NSString *message = [response objectForKey:@"msg"];
+        //id dataDic = [response objectForKey:@"data"];
+        
+        id dataDic = [response objectForKey:@"data"];
+        
+        if (code == 200) {
+            //请求成功
+            if (block) {
+                block(YES,dataDic);
+            }
+        }else{
+            // 错误处理
+            //[weakSelf showMessage:message];
+            if (block) {
+                block(NO,response);
+            }
+        }
+        
+    } fail:^(NSError *error) {
+        
+        if (block) {
+            block(NO,error);
+        }
+    }];
+}
+
+///post请求一个字典
++ (void)postRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block{
+    
+    [APPHttpTool postWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
+        
+        NSString *message = [response objectForKey:@"msg"];
+        //id dataDic = [response objectForKey:@"data"];
+        
+        id dataDic = [response objectForKey:@"data"];
+        
+        if (code == 200) {
+            //请求成功
+            if (block) {
+                block(YES,dataDic);
+            }
+        }else{
+            // 错误处理
+            //[weakSelf showMessage:message];
+            if (block) {
+                block(NO,message);
+            }
+        }
+        
+    } fail:^(NSError *error) {
+        
+        if (block) {
+            block(NO,error.localizedDescription);
+        }
+    }];
+}
+
+#pragma mark - ************************* 特殊网络请求 *************************
+
+///取缓存数据 + 请求最新的数据&&更新缓存数据
+
+///取消上一次请求取最新次的请求
+
+///重复请求只请求第一次
+
+@end
+
+
+#pragma mark - *************************  *************************
+
+@implementation APPHTTPSessionManager
+
+- (NSURLSessionDataTask *)requestWithMethod:(NSString *)method URLString:(NSString *)URLString parameters:(id)parameters sucessCompletion:(APPNetworkTaskSucessBlock)sucessCompletion failCompletion:(APPNetworkTaskFailBlock)failCompletion {
+    
+    NSURLSessionDataTask *dataTask = [self dataTaskWithHTTPMethod:method URLString:URLString parameters:parameters uploadProgress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (sucessCompletion) {
+            sucessCompletion(task,responseObject);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failCompletion) {
+            failCompletion(task,error);
+        }
+    }];
+    /**
+    NSURLSessionDataTask *dataTask = [self dataTaskWithHTTPMethod:method URLString:URLString parameters:parameters uploadProgress:nil downloadProgress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (sucessCompletion) {
+            sucessCompletion(task,responseObject);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failCompletion) {
+            failCompletion(task,error);
+        }
+    }];
+     */
+    
+    [dataTask resume];
+    
+    return dataTask;
+}
 
 @end

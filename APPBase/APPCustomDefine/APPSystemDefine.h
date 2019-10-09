@@ -16,7 +16,7 @@
 //relese模式下不打印
 #ifdef DEBUG
 #define NSLog(...) NSLog(__VA_ARGS__)
-#define debugMethod() NSLog(@"%s", __func__)
+#define debugMethod() NSLog(@"%s 第%d行: %@", __func__, __LINE__)
 #else
 #define NSLog(...)
 #define debugMethod()

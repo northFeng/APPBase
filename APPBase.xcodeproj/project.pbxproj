@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		148459AF234E1B0A002ABA2F /* APPHttpCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 148459AE234E1B0A002ABA2F /* APPHttpCacheTool.m */; };
 		8D69D3DA22B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = 8D69D3D922B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive */; };
 		8D69D3DC22B4F9D800D4A325 /* MVVM与RAC.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = 8D69D3DB22B4F9D800D4A325 /* MVVM与RAC.webarchive */; };
 		8D95957722AE3A1F001A8345 /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D95957422AE3A1F001A8345 /* JPEngine.m */; };
@@ -76,6 +77,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		148459AD234E1B0A002ABA2F /* APPHttpCacheTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPHttpCacheTool.h; sourceTree = "<group>"; };
+		148459AE234E1B0A002ABA2F /* APPHttpCacheTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPHttpCacheTool.m; sourceTree = "<group>"; };
 		2D142DF6F5A1313473EB8EC7 /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BCAF33D89376F054993B8C /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
 		6136454A595A21CCA2D817AF /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
@@ -346,6 +349,8 @@
 			children = (
 				8DAB5EEB21AB98CD009662D5 /* APPHttpTool.h */,
 				8DAB5EEC21AB98CD009662D5 /* APPHttpTool.m */,
+				148459AD234E1B0A002ABA2F /* APPHttpCacheTool.h */,
+				148459AE234E1B0A002ABA2F /* APPHttpCacheTool.m */,
 				8DAB5EEE21AB98CD009662D5 /* APPBaseModel.h */,
 				8DAB5EE921AB98CD009662D5 /* APPBaseModel.m */,
 				8DAB5EEA21AB98CD009662D5 /* APPModel.h */,
@@ -766,6 +771,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				148459AF234E1B0A002ABA2F /* APPHttpCacheTool.m in Sources */,
 				8DAB5F0C21AB9954009662D5 /* FRLoginHomeVC.m in Sources */,
 				8DAB5ECA21AB9882009662D5 /* APPBaseCell.m in Sources */,
 				8DAB5ED321AB9895009662D5 /* GFNavigationController.m in Sources */,
@@ -978,7 +984,43 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N62AMCB22L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Aspects\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AvoidCrash\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MMKV\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDAutoLayout\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SQLCipher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel\"",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/APPBase/SupportingFiles/APPPrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Aspects/Aspects.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AvoidCrash/AvoidCrash.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MMKV/MMKV.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC/ReactiveObjC.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDAutoLayout/SDAutoLayout.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SQLCipher/SQLCipher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					SQLCipher,
+					"$(PODS_ROOT)/SQLCipher",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/APPBase/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -987,7 +1029,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.north-feng.APPBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -998,7 +1040,43 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N62AMCB22L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Aspects\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AvoidCrash\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MMKV\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDAutoLayout\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SQLCipher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel\"",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/APPBase/SupportingFiles/APPPrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Aspects/Aspects.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AvoidCrash/AvoidCrash.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MMKV/MMKV.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC/ReactiveObjC.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDAutoLayout/SDAutoLayout.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SQLCipher/SQLCipher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					SQLCipher,
+					"$(PODS_ROOT)/SQLCipher",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/APPBase/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1007,7 +1085,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.north-feng.APPBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

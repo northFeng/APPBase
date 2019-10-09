@@ -23,13 +23,13 @@
         //Aspect only debug
         //面向切面，用于界面日志的输出
         [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:0 usingBlock:^(id<AspectInfo> info){
-            NSLog(@"ViewContriller Enter \n ==================> \n %@", info.instance);
+            NSLog(@"ViewContriller Enter==================>%@", info.instance);
         } error:NULL];
         [UIViewController aspect_hookSelector:@selector(viewWillDisappear:) withOptions:0 usingBlock:^(id<AspectInfo> info){
-            NSLog(@"ViewContriller Exit \n ==================> \n %@", info.instance);
+            NSLog(@"ViewContriller Exit==================>%@", info.instance);
         } error:NULL];
         [UIViewController aspect_hookSelector:@selector(didReceiveMemoryWarning) withOptions:0 usingBlock:^(id<AspectInfo> info){
-            NSLog(@"ViewContriller didReceiveMemoryWarning \n ==================> \n %@", info.instance);
+            NSLog(@"ViewContriller didReceiveMemoryWarning==================>%@", info.instance);
         } error:NULL];
     });
 }

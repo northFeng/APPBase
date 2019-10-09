@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///赋值
 - (void)setDicModel:(NSDictionary *)dicModel;
 
+///弹出更新弹框
++ (void)showVersonUpdateAlertViewWithVersonInfo:(NSDictionary *)versonDic;
+
 @end
 
 NS_ASSUME_NONNULL_END

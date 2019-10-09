@@ -379,7 +379,7 @@
     __weak typeof(self) weakSelf = self;
     [self startWaitingAnimating];
     self.tableView.userInteractionEnabled = NO;
-    [APPHttpTool postWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
+    [[APPHttpTool sharedNetworking] postWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
         
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer endRefreshing];
@@ -446,7 +446,7 @@
     [self startWaitingAnimating];
     self.tableView.userInteractionEnabled = NO;
 
-    [APPHttpTool postWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
+    [[APPHttpTool sharedNetworking] postWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
         [weakSelf.tableView.mj_header endRefreshing];
         weakSelf.tableView.userInteractionEnabled = YES;
         ///隐藏加载动画
@@ -493,7 +493,7 @@
     __weak typeof(self) weakSelf = self;
     [self startWaitingAnimating];
 
-    [APPHttpTool postWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
+    [[APPHttpTool sharedNetworking] postWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
         
         ///隐藏加载动画
         [weakSelf stopWaitingAnimating];
@@ -530,7 +530,7 @@
     __weak typeof(self) weakSelf = self;
     [self startWaitingAnimating];
     
-    [APPHttpTool getWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
+    [[APPHttpTool sharedNetworking] getWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
         
         ///隐藏加载动画
         [weakSelf stopWaitingAnimating];
@@ -567,7 +567,7 @@
 - (void)requestNetDicDataNoWatingViewUrl:(NSString *)url params:(NSDictionary *)params{
     
     __weak typeof(self) weakSelf = self;
-    [APPHttpTool postWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
+    [[APPHttpTool sharedNetworking] postWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
         
         //NSString *message = [response objectForKey:@"msg"];
         id dataDic = [response objectForKey:@"data"];

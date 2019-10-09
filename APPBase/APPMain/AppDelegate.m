@@ -12,11 +12,11 @@
 #import "AppDelegate+RootConTroller.h"
 
 //bug统计
-//#import <Bugly/Bugly.h>
+#import <Bugly/Bugly.h>
 
 //带有热更新的Bugly
-#import <BuglyHotfix/Bugly.h>
-#import <BuglyHotfix/BuglyMender.h>
+//#import <BuglyHotfix/Bugly.h>
+//#import <BuglyHotfix/BuglyMender.h>
 #import "JPEngine.h"
 
 @interface AppDelegate ()<BuglyDelegate>
@@ -95,6 +95,7 @@
         NSException *jspatchException = [NSException exceptionWithName:@"Hotfix Exception" reason:msg userInfo:nil];
         [Bugly reportException:jspatchException];
     }];
+    /**
     //检测补丁策略
     [[BuglyMender sharedMender] checkRemoteConfigWithEventHandler:^(BuglyHotfixEvent event, NSDictionary *patchInfo) {
         //有新补丁或本地补丁状态正常
@@ -117,6 +118,7 @@
             }
         }
     }];
+    */
 }
 
 
