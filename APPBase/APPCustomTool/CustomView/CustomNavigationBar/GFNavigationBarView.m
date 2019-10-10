@@ -28,10 +28,10 @@
 @property (nonatomic,strong) UIButton *leftFirstBtn;
 
 /** 右侧第一个按钮 */
-@property (nonatomic, strong)UIButton *rightFirstBtn;
+@property (nonatomic, strong) UIButton *rightFirstBtn;
 
 /** 右侧第二个按钮 */
-@property (nonatomic, strong)UIButton *rightSecondBtn;
+@property (nonatomic, strong) UIButton *rightSecondBtn;
 
 ///** 右侧倒数第三个按钮 */
 //@property (nonatomic, strong)UIButton *rightThreeBtn;
@@ -167,9 +167,20 @@
 ///设置按钮条背景颜色
 - (void)setItemsBtnBarColor:(UIColor *)btnBarColor{
     
-    _naviBarView.backgroundColor = btnBarColor;
+    self.backgroundColor = btnBarColor;
 }
 
+///设置分割线颜色
+- (void)setSegmentationLineColor:(UIColor *)SegmentationColor {
+    
+    _segmentationLine.backgroundColor = SegmentationColor;
+}
+
+///显示导航条分割线
+- (void)showSegmentationLine:(BOOL)show{
+    
+    _segmentationLine.hidden = !show;
+}
 
 #pragma mark - 常规设置按钮
 ///设置左侧第一个按钮为返回按钮
@@ -224,8 +235,8 @@
 ///左侧第一个按钮事件
 - (void)leftFirstButtonClick:(UIButton *)button{
     
-    if([_delegate respondsToSelector:@selector(leftFirstButtonClick:)]) {
-        [_delegate leftFirstButtonClick:button];
+    if([_delegate respondsToSelector:@selector(leftFirstButtonClick)]) {
+        [_delegate leftFirstButtonClick];
     }
     
 }
@@ -233,8 +244,8 @@
 ///左侧第二个按钮事件
 - (void)rightFirstButtonClick:(UIButton *)button{
     
-    if([_delegate respondsToSelector:@selector(rightFirstButtonClick:)]) {
-        [_delegate rightFirstButtonClick:button];
+    if([_delegate respondsToSelector:@selector(rightFirstButtonClick)]) {
+        [_delegate rightFirstButtonClick];
     }
     
 }
@@ -242,10 +253,9 @@
 ///左侧第三个按钮事件
 - (void)rightSecondButtonClick:(UIButton *)button{
     
-    if([_delegate respondsToSelector:@selector(rightSecondButtonClick:)]) {
-        [_delegate rightSecondButtonClick:button];
+    if([_delegate respondsToSelector:@selector(rightSecondButtonClick)]) {
+        [_delegate rightSecondButtonClick];
     }
-    
 }
 
 

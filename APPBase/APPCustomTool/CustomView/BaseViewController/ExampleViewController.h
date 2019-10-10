@@ -6,8 +6,8 @@
 //  Copyright © 2018年 ishansong. All rights reserved.
 //
 
-#import "APPBaseViewController.h"
+#import "APPBaseController.h"
 
-@interface ExampleViewController : APPBaseViewController
+@interface ExampleViewController : APPBaseController
 
 @end

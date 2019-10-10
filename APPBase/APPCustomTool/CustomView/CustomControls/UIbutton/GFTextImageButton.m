@@ -1,14 +1,15 @@
 //
-//  GFButton.m
-//  GFAPP
+//  GFTextImageButton.m
+//  APPBase
 //
-//  Created by XinKun on 2017/11/27.
-//  Copyright © 2017年 North_feng. All rights reserved.
+//  Created by 峰 on 2019/10/10.
+//  Copyright © 2019 ishansong. All rights reserved.
 //
 
-#import "GFButton.h"
+#import "GFTextImageButton.h"
 
-@implementation GFButton
+@implementation GFTextImageButton
+
 {
     UIView *_backView;
     
@@ -17,11 +18,10 @@
     
     ///图片
     UIImageView *_imgeView;
-
+    
 }
 
-
-- (void)setTitle:(NSString *)title labelSize:(CGSize)labelSize labelFont:(UIFont *)textFont textColor:(UIColor *)textColor imageName:(NSString *)imgStr imgSize:(CGSize)imgSize viewDirection:(GFButtonType)buttonType spacing:(CGFloat)spacing{
+- (void)setTitle:(NSString *)title labelSize:(CGSize)labelSize labelFont:(UIFont *)textFont textColor:(UIColor *)textColor imageName:(NSString *)imgStr imgSize:(CGSize)imgSize viewDirection:(ButtonType)buttonType spacing:(CGFloat)spacing{
     
     _backView = [[UIView alloc] init];
     _backView.userInteractionEnabled = NO;
@@ -43,7 +43,7 @@
     CGFloat totalWidht = 0;
     CGFloat totalHeight = 0;
     switch (buttonType) {
-        case GFButtonType_Horizontal_TextImg:{
+        case ButtonType_Horizontal_TextImg:{
             //文字+图片
             _label.textAlignment = NSTextAlignmentRight;
             totalWidht = labelSize.width + imgSize.width + spacing;
@@ -58,7 +58,7 @@
             }];
         }
             break;
-        case GFButtonType_Horizontal_ImgText:{
+        case ButtonType_Horizontal_ImgText:{
             //图片+文字
             _label.textAlignment = NSTextAlignmentLeft;
             totalWidht = labelSize.width + imgSize.width + spacing;
@@ -73,7 +73,7 @@
             }];
         }
             break;
-        case GFButtonType_Vertical_TextImg:{
+        case ButtonType_Vertical_TextImg:{
             //文字+图片
             _label.textAlignment = NSTextAlignmentCenter;
             totalWidht = labelSize.width > imgSize.width ? labelSize.width : imgSize.width;
@@ -88,7 +88,7 @@
             }];
         }
             break;
-        case GFButtonType_Vertical_ImgText:{
+        case ButtonType_Vertical_ImgText:{
             //图片+文字
             _label.textAlignment = NSTextAlignmentCenter;
             totalWidht = labelSize.width > imgSize.width ? labelSize.width : imgSize.width;
@@ -112,7 +112,7 @@
         make.width.mas_equalTo(totalWidht);
         make.height.mas_equalTo(totalHeight);
     }];
-        
+    
 }
 
 
@@ -120,24 +120,30 @@
 - (void)setNewTitle:(NSString *)title{
     
     _label.text = title;
-    
 }
 
-//更新文字2
-- (void)setNewTitle:(NSString *)title textAlignment:(NSTextAlignment)textAlignment{
+//更新图片
+- (void)setNewImage:(NSString *)imgStr{
     
-    _label.text = title;
-    
-    _label.textAlignment = textAlignment;
+    _imgeView.image = [UIImage imageNamed:imgStr];
 }
 
-//更新文字和图片
+///更新文字和图片
+- (void)setNewTitle:(NSString *)title newImg:(NSString *)imgStr{
+    
+    if (title != nil) {
+        _label.text = title;
+    }
+    
+    _imgeView.image = [UIImage imageNamed:imgStr];
+}
+
+//更新文字颜色和图片
 - (void)setTextColor:(UIColor *)textColor newImg:(NSString *)imgStr{
     
     _label.textColor = textColor;
     
     _imgeView.image = [UIImage imageNamed:imgStr];
-    
 }
 
 
@@ -162,10 +168,6 @@
     if (self.defaultImage!=nil) {
         _imgeView.image = self.defaultImage;
     }
-    
-    if (self.defaultFont != nil) {
-        _label.font = self.defaultFont;
-    }
 }
 
 //设置选中
@@ -177,12 +179,6 @@
     if (self.selectImage!=nil) {
         _imgeView.image = self.selectImage;
     }
-    
-    if (self.selectFont != nil) {
-        _label.font = self.selectFont;
-    }
 }
-
-
 
 @end

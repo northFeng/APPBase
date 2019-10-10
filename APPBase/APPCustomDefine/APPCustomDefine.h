@@ -41,7 +41,7 @@ return _instance;                            \
 //***********************************************
 
 ///weakSelf宏定义  __weak typeof(self) weakSelf = self;
-#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+#define WS(weakSelf)  __weak typeof(&*self)weakSelf = self;
 #define APPWeakSelf __weak typeof(self) weakSelf = self;
 #define APPStrongSelf __strong typeof(self) strongSelf = weakSelf;
 
@@ -120,8 +120,12 @@ return _instance;                            \
 
 #define RGBS(r) [UIColor colorWithRed:(r)/255.0f green:(r)/255.0f blue:(r)/255.0f alpha:1]
 
-//rgb颜色转换（16进制->10进制）
+//rgb颜色转换（16进制->10进制） RGBX(oFFFFFF)
 #define RGBX(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+//设置color(传入16进制的颜色值)
+#define COLOR(str) COLORA(str,1.f)
+#define COLORA(str,a) [APPColorFunction colorWithHexString:str alpha:a]
 
 
 #pragma mark - APP内主体常用颜色

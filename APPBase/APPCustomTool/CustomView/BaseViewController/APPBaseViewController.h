@@ -11,7 +11,6 @@
 //导航条
 #import "GFNavigationBarView.h"
 
-#import "GFButton.h"//自定义按钮
 
 #import "APPLoadWaitView.h"//加载等待视图
 
@@ -55,77 +54,6 @@ typedef void (^Block) (void);
 ///系统等待视图
 @property (nonatomic,strong,nullable) APPLoadWaitView *waitingView;
 
-
-
-#pragma mark - 创建tableView
-
-/**
- *  @brief 创建tableView
- *
- *
- */
-- (void)createTableView;
-
-///创建tableView无HeadView
-- (void)createTableViewNoHeadView;
-
-///创建tableView无headView无占位图
-- (void)createOneTableView;
-
-
-///添加标题视图(在没有tableview没有tableHeadView的情况使用！！！)
-- (void)addHeadTitleView;
-
-///单独添加网络请求等待视图(最后添加！！！)
-- (void)addWaitingView;
-
-///独立添加提示图
-- (void)addPromptView;
-
-///添加上拉刷新，下拉加载功能
-- (void)addTableViewRefreshView;
-
-///处理占位图显示 && 刷新cell
-- (void)refreshTableViewHandlePromptView;
-
-#pragma mark - tableView的 滚动 && 获取 && 刷新 cell
-/**
- *  @brief 滚动指定tableView的位置
- *
- *  @param section 组
- *  @param row 行
- *  @param position 上 中 下
- */
-- (void)scrollTableViewToSection:(NSInteger)section row:(NSInteger)row position:(UITableViewScrollPosition)position;
-
-/**
- *  @brief 获取指定的cell
- *
- *  @param section 组
- *  @param row 行
- */
-- (UITableViewCell *)getOneCellWithSection:(NSInteger)section row:(NSInteger)row;
-
-///刷新指定cell
-- (void)reloadOneCellForSection:(NSInteger)section row:(NSInteger)row;
-
-
-
-#pragma mark - 简版网络请求
-///请求网络数据(分页请求)
-- (void)requestTableViewNetPageData:(NSString *)url params:(NSDictionary *)params;
-
-///tableView请求一个字典
-- (void)requestTableViewNetDicDataUrl:(NSString *)url params:(NSDictionary *)params;
-
-///请求一个字典
-- (void)requestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params;
-
-///get请求一个字典
-- (void)requestGetNetDicDataUrl:(NSString *)url params:(NSDictionary *)params;
-
-///请求一个字典 && 不带等待视图
-- (void)requestNetDicDataNoWatingViewUrl:(NSString *)url params:(NSDictionary *)params;
 
 
 #pragma mark - 提示框&警告框
@@ -276,104 +204,6 @@ typedef void (^Block) (void);
  *
  */
 - (void)hidePromptView;
-
-
-#pragma mark - 状态栏设置
-/**
- *  @brief 设置状态栏是否隐藏
- *
- */
-- (void)setStatusBarIsHide:(BOOL)isHide;
-
-/**
- *  @brief 设置状态栏样式为默认
- *
- */
-- (void)setStatusBarStyleDefault;
-
-/**
- *  @brief 设置状态栏样式为白色
- *
- */
-- (void)setStatusBarStyleLight;
-
-
-
-#pragma mark - 右滑返回手势的 开启  && 禁止
-///禁止返回手势
-- (void)removeBackGesture;
-
-/**
- * 恢复返回手势
- */
-- (void)resumeBackGesture;
-
-
-
-#pragma mark - 视图推进封装
-
-/**
- *  @brief 推进视图 && Xib
- *
- *  @param classString VC类的字符串
- *  @param title VC页面标题
- */
-- (void)pushViewControllerWithNibClassString:(NSString *)classString pageTitle:(NSString *)title;
-
-/**
- *  @brief 推进视图 && 无Xib
- *
- *  @param classString VC类的字符串
- *  @param title VC页面标题
- */
-- (void)pushViewControllerWithClassString:(NSString *)classString pageTitle:(NSString *)title;
-
-#pragma mark - 弹出模态视图
-
-///弹出模态视图
-- (void)presentViewController:(APPBaseViewController *)presentVC;
-
-/**
- *  @brief 弹出模态视图
- *
- *  @param presentVC VC视图
- *  @param presentStyle 弹出动画风格
- *  @param completion 动画执行完毕回调
- */
-- (void)presentViewController:(APPBaseViewController *)presentVC presentStyle:(UIModalTransitionStyle)presentStyle completionBlock:(void (^)(void))completion;
-
-
-#pragma mark - 系统方法自动添加
-
-///给按钮添加事件
-- (void)btnAddEventControlWithBtn:(UIButton *)button action:(SEL)action;
-
-///给按钮添加显示(默认状态)
-- (void)btnAddTitleWithBtn:(UIButton *)button title:(NSString *)title font:(UIFont *)font textColor:(UIColor *)color;
-
-///给按钮添加显示——设置状态
-- (void)btnAddTitleWithBtn:(UIButton *)button title:(NSString *)title font:(UIFont *)font textColor:(UIColor *)color state:(UIControlState)state;
-
-
-#pragma mark - 延时器执行方法
-
-/**
- *  @brief 延时几秒执行事件
- *
- *  @param timeOut 执行事件延时时间
- *  @param block 执行事件
- */
-- (void)performDelayerEventWithTimeOut:(NSInteger)timeOut block:(APPBackBlock)block;
-
-/**
- *  @brief 延时几秒执行事件 + 传参对象
- *
- *  @param timeOut 执行事件延时时间
- *  @param block 执行事件
- *  @param object 执行事件传的参数对象
- */
-- (void)performDelayerEventWithTimeOut:(NSInteger)timeOut block:(APPBackBlock)block withObject:(nullable id)object;
-
 
 
 @end

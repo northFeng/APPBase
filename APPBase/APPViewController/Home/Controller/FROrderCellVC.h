@@ -6,11 +6,11 @@
 //  Copyright © 2018 ishansong. All rights reserved.
 //
 
-#import "APPBaseViewController.h"
+#import "APPBaseController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FROrderCellVC : APPBaseViewController
+@interface FROrderCellVC : APPBaseController
 
 @end
 

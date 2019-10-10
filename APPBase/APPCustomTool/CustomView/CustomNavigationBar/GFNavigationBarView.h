@@ -13,15 +13,15 @@ NS_ASSUME_NONNULL_BEGIN
 //导航条按钮协议
 @protocol GFNavigationBarViewDelegate <NSObject>
 
-- (void)leftFirstButtonClick:(nullable UIButton *)button;
-- (void)rightFirstButtonClick:(nullable UIButton *)button;
-- (void)rightSecondButtonClick:(nullable UIButton *)button;
-//- (void)rightThreeButtonClickClick:(UIButton *)button;
+- (void)leftFirstButtonClick;
+- (void)rightFirstButtonClick;
+- (void)rightSecondButtonClick;
+
 
 @end
 
 
-@interface GFNavigationBarView : UIView <GFNavigationBarViewDelegate>
+@interface GFNavigationBarView : UIView
 
 ///导航条代理
 @property (nonatomic,weak) id <GFNavigationBarViewDelegate> delegate;
@@ -35,6 +35,12 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 专为iPhone X设置的方法
 ///设置按钮条背景颜色
 - (void)setItemsBtnBarColor:(UIColor *)btnBarColor;
+
+///设置分割线颜色
+- (void)setSegmentationLineColor:(UIColor *)SegmentationColor;
+
+///显示导航条分割线
+- (void)showSegmentationLine:(BOOL)show;
 
 
 #pragma mark - 常规设置按钮

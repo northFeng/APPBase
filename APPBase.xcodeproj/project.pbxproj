@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140A8FBE234F258300B31672 /* APPColorFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FBD234F258300B31672 /* APPColorFunction.m */; };
+		140A8FC1234F2ED800B31672 /* APPBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FC0234F2ED800B31672 /* APPBaseController.m */; };
+		140A8FC4234F2F7800B31672 /* GFTextImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FC3234F2F7800B31672 /* GFTextImageButton.m */; };
+		140A8FC7234F37A300B31672 /* UIButton+GFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FC6234F37A300B31672 /* UIButton+GFExtension.m */; };
+		140A8FCA234F4B6800B31672 /* APPBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FC9234F4B6800B31672 /* APPBaseTableViewController.m */; };
 		148459AF234E1B0A002ABA2F /* APPHttpCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 148459AE234E1B0A002ABA2F /* APPHttpCacheTool.m */; };
 		8D69D3DA22B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = 8D69D3D922B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive */; };
 		8D69D3DC22B4F9D800D4A325 /* MVVM与RAC.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = 8D69D3DB22B4F9D800D4A325 /* MVVM与RAC.webarchive */; };
@@ -41,7 +46,6 @@
 		8DAB5ED221AB9895009662D5 /* GFNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5ECE21AB9895009662D5 /* GFNavigationBarView.m */; };
 		8DAB5ED321AB9895009662D5 /* GFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5ECF21AB9895009662D5 /* GFNavigationController.m */; };
 		8DAB5EE321AB98A6009662D5 /* GFButtonPress.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5ED721AB98A6009662D5 /* GFButtonPress.m */; };
-		8DAB5EE421AB98A6009662D5 /* GFButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5ED821AB98A6009662D5 /* GFButton.m */; };
 		8DAB5EE521AB98A6009662D5 /* APPVersionAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EDA21AB98A6009662D5 /* APPVersionAlert.m */; };
 		8DAB5EE621AB98A6009662D5 /* APPAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EDB21AB98A6009662D5 /* APPAlertView.m */; };
 		8DAB5EE721AB98A6009662D5 /* GFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EDD21AB98A6009662D5 /* GFTextField.m */; };
@@ -78,6 +82,16 @@
 
 /* Begin PBXFileReference section */
 		140A8FB8234F1D1700B31672 /* APPToolHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPToolHeader.h; sourceTree = "<group>"; };
+		140A8FBC234F258300B31672 /* APPColorFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPColorFunction.h; sourceTree = "<group>"; };
+		140A8FBD234F258300B31672 /* APPColorFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPColorFunction.m; sourceTree = "<group>"; };
+		140A8FBF234F2ED800B31672 /* APPBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPBaseController.h; sourceTree = "<group>"; };
+		140A8FC0234F2ED800B31672 /* APPBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPBaseController.m; sourceTree = "<group>"; };
+		140A8FC2234F2F7700B31672 /* GFTextImageButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFTextImageButton.h; sourceTree = "<group>"; };
+		140A8FC3234F2F7800B31672 /* GFTextImageButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFTextImageButton.m; sourceTree = "<group>"; };
+		140A8FC5234F37A300B31672 /* UIButton+GFExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+GFExtension.h"; sourceTree = "<group>"; };
+		140A8FC6234F37A300B31672 /* UIButton+GFExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+GFExtension.m"; sourceTree = "<group>"; };
+		140A8FC8234F4B6800B31672 /* APPBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPBaseTableViewController.h; sourceTree = "<group>"; };
+		140A8FC9234F4B6800B31672 /* APPBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPBaseTableViewController.m; sourceTree = "<group>"; };
 		148459AD234E1B0A002ABA2F /* APPHttpCacheTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPHttpCacheTool.h; sourceTree = "<group>"; };
 		148459AE234E1B0A002ABA2F /* APPHttpCacheTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPHttpCacheTool.m; sourceTree = "<group>"; };
 		2D142DF6F5A1313473EB8EC7 /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,9 +162,7 @@
 		8DAB5ED021AB9895009662D5 /* GFNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFNavigationController.h; sourceTree = "<group>"; };
 		8DAB5ED121AB9895009662D5 /* GFNavigationBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFNavigationBarView.h; sourceTree = "<group>"; };
 		8DAB5ED521AB98A6009662D5 /* GFButtonPress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFButtonPress.h; sourceTree = "<group>"; };
-		8DAB5ED621AB98A6009662D5 /* GFButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFButton.h; sourceTree = "<group>"; };
 		8DAB5ED721AB98A6009662D5 /* GFButtonPress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFButtonPress.m; sourceTree = "<group>"; };
-		8DAB5ED821AB98A6009662D5 /* GFButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFButton.m; sourceTree = "<group>"; };
 		8DAB5ED921AB98A6009662D5 /* APPAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPAlertView.h; sourceTree = "<group>"; };
 		8DAB5EDA21AB98A6009662D5 /* APPVersionAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPVersionAlert.m; sourceTree = "<group>"; };
 		8DAB5EDB21AB98A6009662D5 /* APPAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPAlertView.m; sourceTree = "<group>"; };
@@ -220,6 +232,8 @@
 				8DAB5EA821AB9839009662D5 /* NSString+Hash.m */,
 				8DAB5EA721AB9839009662D5 /* UIView+GFExtension.h */,
 				8DAB5EB021AB9839009662D5 /* UIView+GFExtension.m */,
+				140A8FC5234F37A300B31672 /* UIButton+GFExtension.h */,
+				140A8FC6234F37A300B31672 /* UIButton+GFExtension.m */,
 			);
 			path = CustomExtend;
 			sourceTree = "<group>";
@@ -240,6 +254,8 @@
 			children = (
 				8DAB5EAE21AB9839009662D5 /* APPFunctionMethod.h */,
 				8DAB5EAD21AB9839009662D5 /* APPFunctionMethod.m */,
+				140A8FBC234F258300B31672 /* APPColorFunction.h */,
+				140A8FBD234F258300B31672 /* APPColorFunction.m */,
 				8DAB5EAF21AB9839009662D5 /* FSValidate.h */,
 				8DAB5EAB21AB9839009662D5 /* FSValidate.m */,
 				8DAB5EA421AB9839009662D5 /* GFEncryption.h */,
@@ -454,6 +470,10 @@
 			children = (
 				8DAB5EC621AB9882009662D5 /* APPBaseCell.h */,
 				8DAB5EC021AB9882009662D5 /* APPBaseCell.m */,
+				140A8FBF234F2ED800B31672 /* APPBaseController.h */,
+				140A8FC0234F2ED800B31672 /* APPBaseController.m */,
+				140A8FC8234F4B6800B31672 /* APPBaseTableViewController.h */,
+				140A8FC9234F4B6800B31672 /* APPBaseTableViewController.m */,
 				8DAB5EC521AB9882009662D5 /* APPBaseViewController.h */,
 				8DAB5EC321AB9882009662D5 /* APPBaseViewController.m */,
 				8DAB5EC121AB9882009662D5 /* APPLoadWaitView.h */,
@@ -471,10 +491,10 @@
 		8DAB5ED421AB98A6009662D5 /* UIbutton */ = {
 			isa = PBXGroup;
 			children = (
-				8DAB5ED621AB98A6009662D5 /* GFButton.h */,
-				8DAB5ED821AB98A6009662D5 /* GFButton.m */,
 				8DAB5ED521AB98A6009662D5 /* GFButtonPress.h */,
 				8DAB5ED721AB98A6009662D5 /* GFButtonPress.m */,
+				140A8FC2234F2F7700B31672 /* GFTextImageButton.h */,
+				140A8FC3234F2F7800B31672 /* GFTextImageButton.m */,
 			);
 			path = UIbutton;
 			sourceTree = "<group>";
@@ -775,14 +795,15 @@
 			files = (
 				148459AF234E1B0A002ABA2F /* APPHttpCacheTool.m in Sources */,
 				8DAB5F0C21AB9954009662D5 /* FRLoginHomeVC.m in Sources */,
+				140A8FCA234F4B6800B31672 /* APPBaseTableViewController.m in Sources */,
 				8DAB5ECA21AB9882009662D5 /* APPBaseCell.m in Sources */,
 				8DAB5ED321AB9895009662D5 /* GFNavigationController.m in Sources */,
 				8DAB5EE621AB98A6009662D5 /* APPAlertView.m in Sources */,
-				8DAB5EE421AB98A6009662D5 /* GFButton.m in Sources */,
 				8DAB5ECD21AB9882009662D5 /* APPLoadWaitView.m in Sources */,
 				8DAB5EB421AB9839009662D5 /* GFEncryption.m in Sources */,
 				8DAB5E3B21AB976C009662D5 /* APPKeyInfo.m in Sources */,
 				8DAB5EC921AB9882009662D5 /* MBProgressHUDTool.m in Sources */,
+				140A8FC4234F2F7800B31672 /* GFTextImageButton.m in Sources */,
 				8DAB5E0A21AB965B009662D5 /* main.m in Sources */,
 				8DAB5EB321AB9839009662D5 /* NSString+Hash.m in Sources */,
 				8DAB5EF021AB98CD009662D5 /* APPHttpTool.m in Sources */,
@@ -807,12 +828,15 @@
 				8D95957722AE3A1F001A8345 /* JPEngine.m in Sources */,
 				8DAB5EE821AB98A6009662D5 /* UILabel+Text.m in Sources */,
 				8DAB5EBB21AB9857009662D5 /* APPAnalyticsHelper.m in Sources */,
+				140A8FC1234F2ED800B31672 /* APPBaseController.m in Sources */,
 				8DAB5EF121AB98CD009662D5 /* APPModel.m in Sources */,
 				8DAB5ED221AB9895009662D5 /* GFNavigationBarView.m in Sources */,
 				8DAB5E3A21AB976C009662D5 /* APPManager.m in Sources */,
 				8DAB5EE721AB98A6009662D5 /* GFTextField.m in Sources */,
+				140A8FBE234F258300B31672 /* APPColorFunction.m in Sources */,
 				8DAB5EB121AB9839009662D5 /* NSMutableDictionary+GFExtension.m in Sources */,
 				8DAB5EF621AB98E3009662D5 /* AppDelegate.m in Sources */,
+				140A8FC7234F37A300B31672 /* UIButton+GFExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

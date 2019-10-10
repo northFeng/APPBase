@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.backgroundColor = APPColor_Blue;
+    button.backgroundColor = COLOR(@"#333333");
     [button setTitle:@"hello" forState:UIControlStateNormal];
     button.frame = CGRectMake(100, 100, 100, 50);
     [self.view addSubview:button];
