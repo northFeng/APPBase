@@ -17,6 +17,8 @@
 
 #import <AFNetworking/AFNetworking.h>
 
+#import "APPHttpCacheTool.h"//缓存存储工具
+
 @interface APPHttpTool ()
 
 ///AFNet网络管理者
@@ -42,7 +44,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
 /**
  存储所有请求task的数组
  */
-+ (NSMutableArray *)allSessionTask
+- (NSMutableArray *)allSessionTask
 {
     if (!_allSessionTask) {
         _allSessionTask = [[NSMutableArray alloc] init];
@@ -114,7 +116,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
     return [dicMutable copy];
 }
 
-#pragma mark - 统一发送请求
+#pragma mark - ************************* 统一处理请求&&取消 *************************
 ///统一发送请求
 - (void)requestWithMethod:(NSString *)method URLString:(NSString *)url parameters:(NSDictionary *)parameters success:(Success)success fail:(Failure)fail {
     
@@ -125,7 +127,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
     parameters = [self addPublicParameterWithDic:parameters];
     
     NSURLSessionTask *sessionTask = [self.afNetManager requestWithMethod:method URLString:urlStr parameters:parameters sucessCompletion:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
-        
+        [self.allSessionTask removeObject:task];//请求完成移除
         NSLog(@"请求结果=%@",responseObject);
         
         if (success) {
@@ -143,7 +145,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         }
         
     } failCompletion:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
-        
+        [self.allSessionTask removeObject:task];//请求完成移除
         NSLog(@"error=%@",error);
         if ([error.domain isEqualToString:@"NSURLErrorDomain"] && error.code == NSURLErrorNotConnectedToInternet) {
             NSLog(@"没有网络");
@@ -153,6 +155,47 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         }
     }];
     
+    [self.allSessionTask addObject:sessionTask];
+}
+
+- (void)cancelAllRequest{
+    @synchronized(self) {
+        [self.allSessionTask enumerateObjectsUsingBlock:^(NSURLSessionTask  *_Nonnull task, NSUInteger idx, BOOL * _Nonnull stop) {
+            [task cancel];
+        }];
+        [self.allSessionTask removeAllObjects];
+    }
+}
+
+- (void)cancelRequestWithURL:(NSString *)URL{
+    if (!URL) return;
+    @synchronized (self) {
+        [self.allSessionTask enumerateObjectsUsingBlock:^(NSURLSessionTask  *_Nonnull task, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([task.currentRequest.URL.absoluteString hasPrefix:URL]) {
+                [task cancel];
+                [self.allSessionTask removeObject:task];
+                *stop = YES;
+            }
+        }];
+    }
+}
+
+- (BOOL)containSessionTaskForURl:(NSString *)URL{
+    
+    __block BOOL contain = NO;
+    
+    if (!URL) return contain;
+    @synchronized (self) {
+        [self.allSessionTask enumerateObjectsUsingBlock:^(NSURLSessionTask  *_Nonnull task, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([task.currentRequest.URL.absoluteString hasPrefix:URL]) {
+                
+                contain = YES;
+                *stop = YES;
+            }
+        }];
+        
+        return contain;
+    }
 }
 
 #pragma mark - ************************* 常规请求 *************************
@@ -350,8 +393,51 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
     [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
 }
 
+@end
 
-#pragma mark - ************************* 根据项目需求进行快速请求 *************************
+#pragma mark - *************************  *************************
+
+@implementation APPHTTPSessionManager
+
+- (NSURLSessionDataTask *)requestWithMethod:(NSString *)method URLString:(NSString *)URLString parameters:(id)parameters sucessCompletion:(APPNetworkTaskSucessBlock)sucessCompletion failCompletion:(APPNetworkTaskFailBlock)failCompletion {
+    
+    NSURLSessionDataTask *dataTask = [self dataTaskWithHTTPMethod:method URLString:URLString parameters:parameters uploadProgress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (sucessCompletion) {
+            sucessCompletion(task,responseObject);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failCompletion) {
+            failCompletion(task,error);
+        }
+    }];
+    /**
+    NSURLSessionDataTask *dataTask = [self dataTaskWithHTTPMethod:method URLString:URLString parameters:parameters uploadProgress:nil downloadProgress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (sucessCompletion) {
+            sucessCompletion(task,responseObject);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (failCompletion) {
+            failCompletion(task,error);
+        }
+    }];
+     */
+    
+    [dataTask resume];
+    
+    return dataTask;
+}
+
+@end
+
+
+#pragma mark - ************************* 根据项目需求进行快速请求分类 *************************
+@implementation APPHttpTool (APPHTTPRequest)
+
+#pragma mark - ************************* 普通请求 *************************
 ///get请求一个字典
 + (void)getRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block{
     
@@ -416,49 +502,86 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
 
 #pragma mark - ************************* 特殊网络请求 *************************
 
-///取缓存数据 + 请求最新的数据&&更新缓存数据
-
-///取消上一次请求取最新次的请求
-
-///重复请求只请求第一次
-
-@end
-
-
-#pragma mark - *************************  *************************
-
-@implementation APPHTTPSessionManager
-
-- (NSURLSessionDataTask *)requestWithMethod:(NSString *)method URLString:(NSString *)URLString parameters:(id)parameters sucessCompletion:(APPNetworkTaskSucessBlock)sucessCompletion failCompletion:(APPNetworkTaskFailBlock)failCompletion {
+///GET取缓存数据 + 请求最新的数据&&更新缓存数据
++ (void)cacheGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
     
-    NSURLSessionDataTask *dataTask = [self dataTaskWithHTTPMethod:method URLString:URLString parameters:parameters uploadProgress:^(NSProgress * _Nonnull uploadProgress) {
+    id dataCache = HTTPCache(url, params);
+    
+    if (dataCache) {
+        //有缓存
+        if (block) {
+            block(YES,dataCache);
+        }
+    }else{
+        //没有缓存 ——> 请求
+        [APPHttpTool getRequestNetDicDataUrl:url params:params WithBlock:block];
+    }
+}
+
+///POST取缓存数据 + 请求最新的数据&&更新缓存数据
++ (void)cachePostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
+    
+    id dataCache = HTTPCache(url, params);
+    
+    if (dataCache) {
+        //有缓存
+        if (block) {
+            block(YES,dataCache);
+        }
+    }else{
+        //没有缓存 ——> 请求
+        [APPHttpTool postRequestNetDicDataUrl:url params:params WithBlock:block];
+    }
+}
+
+///取消上一次GET同一请求,取最新次的请求
++ (void)cancelUpGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
+    
+    [[APPHttpTool sharedNetworking] cancelRequestWithURL:url];
+    [APPHttpTool getRequestNetDicDataUrl:url params:params WithBlock:block];
+}
+
+///取消上一次POST同一请求,取最新次的请求
++ (void)cancelUpPostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
+    
+    [[APPHttpTool sharedNetworking] cancelRequestWithURL:url];
+    [APPHttpTool postRequestNetDicDataUrl:url params:params WithBlock:block];
+}
+
+///重复GET请求只请求第一次
++ (void)oneceGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
+    
+    if (![[APPHttpTool sharedNetworking] containSessionTaskForURl:url]) {
+        //没有在请求
+        [APPHttpTool getRequestNetDicDataUrl:url params:params WithBlock:block];
+    }
+}
+
+///重复POST请求只请求第一次
++ (void)onecePostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
+    
+    if (![[APPHttpTool sharedNetworking] containSessionTaskForURl:url]) {
+        //没有在请求
+        [APPHttpTool postRequestNetDicDataUrl:url params:params WithBlock:block];
+    }
+}
+
+///JSON转模型
++ (id)modelClass:(Class)class withJSONData:(id)json {
+    
+    if ([json isKindOfClass:[NSDictionary class]]) {
+        //字典
+        NSObject *model = [class yy_modelWithJSON:json];
         
-    } downloadProgress:^(NSProgress * _Nonnull downloadProgress) {
+        return model;
+    }else if ([json isKindOfClass:[NSArray class]]){
+        //数组
+        NSArray *arrayModel = [NSArray yy_modelArrayWithClass:class json:json];
         
-    } success:^(NSURLSessionDataTask *task, id responseObject) {
-        if (sucessCompletion) {
-            sucessCompletion(task,responseObject);
-        }
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        if (failCompletion) {
-            failCompletion(task,error);
-        }
-    }];
-    /**
-    NSURLSessionDataTask *dataTask = [self dataTaskWithHTTPMethod:method URLString:URLString parameters:parameters uploadProgress:nil downloadProgress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        if (sucessCompletion) {
-            sucessCompletion(task,responseObject);
-        }
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        if (failCompletion) {
-            failCompletion(task,error);
-        }
-    }];
-     */
-    
-    [dataTask resume];
-    
-    return dataTask;
+        return arrayModel;
+    }else{
+        return nil;
+    }
 }
 
 @end

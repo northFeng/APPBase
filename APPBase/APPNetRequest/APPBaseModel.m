@@ -65,31 +65,6 @@
  @end
  */
 
-
-#pragma mark - 自己封装方法使用
-
-///转换成字符串
-+ (NSString *)gf_modelToJsonStringWith:(APPBaseModel *)model{
-    
-    NSString *jsonStr = [model yy_modelToJSONString];
-    return jsonStr;
-}
-
-///转换成字典
-+ (NSDictionary *)gf_modelToJsonDictionaryWithModel:(APPBaseModel *)model{
-    
-    NSDictionary *dictonary = [model yy_modelToJSONObject];
-    return dictonary;
-}
-
-///转换成data
-+ (NSData *)gf_modelToJsonDataWithModel:(APPBaseModel *)model{
-    
-    NSData *data = [model yy_modelToJSONData];
-    return data;
-}
-
-
 #pragma mark - 黑白名单过滤
 /**
  黑名单与白名单
@@ -101,6 +76,29 @@
 // 如果实现了该方法，则处理过程中不会处理该列表外的属性。
 + (NSArray *)modelPropertyWhitelist {
     return nil;//@[@"name"];
+}
+
+#pragma mark - 自己封装方法使用
+
+///转换成字符串
+- (NSString *)gf_modelToJsonString{
+    
+    NSString *jsonStr = [self yy_modelToJSONString];
+    return jsonStr;
+}
+
+///转换成字典
+- (NSDictionary *)gf_modelToJsonDictionary{
+    
+    NSDictionary *dictonary = [self yy_modelToJSONObject];
+    return dictonary;
+}
+
+///转换成data
+- (NSData *)gf_modelToJsonData{
+    
+    NSData *data = [self yy_modelToJSONData];
+    return data;
 }
 
 @end

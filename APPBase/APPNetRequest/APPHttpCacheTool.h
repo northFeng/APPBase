@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param URL 请求的URL地址
  @param parameters 请求的参数
  */
-+ (void)setCache:(NSDictionary *)responseObject URL:(NSString *)URL parameters:(NSDictionary *)parameters;
++ (void)setCache:(id)responseObject URL:(NSString *)URL parameters:(NSDictionary *)parameters;
 
 /**
  根据请求的URL与parameters 取出缓存数据
@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param parameters 请求的参数
  @return 缓存的服务器数据
  */
-+ (NSDictionary *)cacheForURL:(NSString *)URL parameters:(NSDictionary *)parameters;
++ (id)cacheForURL:(NSString *)URL parameters:(NSDictionary *)parameters;
 
 /**
  根据请求的URL与parameters 异步取出缓存数据
@@ -52,6 +52,12 @@ NS_ASSUME_NONNULL_BEGIN
  清除网络缓存
  */
 + (void)clearCache;
+
+
+/// 请求某个URL缓存
+/// @param URL 缓存url
+/// @param parameters url的请求参数
++ (void)clearCacheForUrl:(NSString *)URL parameters:(NSDictionary *)parameters;
 
 @end
 

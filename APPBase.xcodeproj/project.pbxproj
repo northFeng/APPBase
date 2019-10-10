@@ -77,6 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		140A8FB8234F1D1700B31672 /* APPToolHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPToolHeader.h; sourceTree = "<group>"; };
 		148459AD234E1B0A002ABA2F /* APPHttpCacheTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPHttpCacheTool.h; sourceTree = "<group>"; };
 		148459AE234E1B0A002ABA2F /* APPHttpCacheTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPHttpCacheTool.m; sourceTree = "<group>"; };
 		2D142DF6F5A1313473EB8EC7 /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +207,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		140A8FB7234F1C9900B31672 /* CustomExtend */ = {
+			isa = PBXGroup;
+			children = (
+				8DAB5EA321AB9839009662D5 /* NSArray+GFExtension.h */,
+				8DAB5EAA21AB9839009662D5 /* NSArray+GFExtension.m */,
+				8DAB5EAC21AB9839009662D5 /* NSMutableArray+GFExtension.h */,
+				8DAB5EA521AB9839009662D5 /* NSMutableArray+GFExtension.m */,
+				8DAB5EA621AB9839009662D5 /* NSMutableDictionary+GFExtension.h */,
+				8DAB5EA121AB9839009662D5 /* NSMutableDictionary+GFExtension.m */,
+				8DAB5EA221AB9839009662D5 /* NSString+Hash.h */,
+				8DAB5EA821AB9839009662D5 /* NSString+Hash.m */,
+				8DAB5EA721AB9839009662D5 /* UIView+GFExtension.h */,
+				8DAB5EB021AB9839009662D5 /* UIView+GFExtension.m */,
+			);
+			path = CustomExtend;
+			sourceTree = "<group>";
+		};
+		140A8FB9234F1D7A00B31672 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				8DAB5ED921AB98A6009662D5 /* APPAlertView.h */,
+				8DAB5EDB21AB98A6009662D5 /* APPAlertView.m */,
+				8DAB5EE221AB98A6009662D5 /* APPVersionAlert.h */,
+				8DAB5EDA21AB98A6009662D5 /* APPVersionAlert.m */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
+		140A8FBA234F1DCE00B31672 /* CustomFunction */ = {
+			isa = PBXGroup;
+			children = (
+				8DAB5EAE21AB9839009662D5 /* APPFunctionMethod.h */,
+				8DAB5EAD21AB9839009662D5 /* APPFunctionMethod.m */,
+				8DAB5EAF21AB9839009662D5 /* FSValidate.h */,
+				8DAB5EAB21AB9839009662D5 /* FSValidate.m */,
+				8DAB5EA421AB9839009662D5 /* GFEncryption.h */,
+				8DAB5EA921AB9839009662D5 /* GFEncryption.m */,
+				8DAB5EBA21AB9857009662D5 /* APPAnalyticsHelper.h */,
+				8DAB5EB921AB9857009662D5 /* APPAnalyticsHelper.m */,
+			);
+			path = CustomFunction;
+			sourceTree = "<group>";
+		};
 		2C20A1A11FB28C659380DB7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,7 +356,9 @@
 		8DAB5E2D21AB971C009662D5 /* APPCustomTool */ = {
 			isa = PBXGroup;
 			children = (
-				8DAB5E9A21AB9825009662D5 /* CustomFounctionFile */,
+				140A8FB8234F1D1700B31672 /* APPToolHeader.h */,
+				140A8FBA234F1DCE00B31672 /* CustomFunction */,
+				140A8FB7234F1C9900B31672 /* CustomExtend */,
 				8DAB5E9D21AB9825009662D5 /* CustomView */,
 			);
 			path = APPCustomTool;
@@ -371,47 +417,6 @@
 			path = APPCustomDefine;
 			sourceTree = "<group>";
 		};
-		8DAB5E9A21AB9825009662D5 /* CustomFounctionFile */ = {
-			isa = PBXGroup;
-			children = (
-				8DAB5E9B21AB9825009662D5 /* PublicFunction */,
-				8DAB5E9C21AB9825009662D5 /* LocationTrack */,
-			);
-			path = CustomFounctionFile;
-			sourceTree = "<group>";
-		};
-		8DAB5E9B21AB9825009662D5 /* PublicFunction */ = {
-			isa = PBXGroup;
-			children = (
-				8DAB5EAE21AB9839009662D5 /* APPFunctionMethod.h */,
-				8DAB5EAD21AB9839009662D5 /* APPFunctionMethod.m */,
-				8DAB5EAF21AB9839009662D5 /* FSValidate.h */,
-				8DAB5EAB21AB9839009662D5 /* FSValidate.m */,
-				8DAB5EA421AB9839009662D5 /* GFEncryption.h */,
-				8DAB5EA921AB9839009662D5 /* GFEncryption.m */,
-				8DAB5EA321AB9839009662D5 /* NSArray+GFExtension.h */,
-				8DAB5EAA21AB9839009662D5 /* NSArray+GFExtension.m */,
-				8DAB5EAC21AB9839009662D5 /* NSMutableArray+GFExtension.h */,
-				8DAB5EA521AB9839009662D5 /* NSMutableArray+GFExtension.m */,
-				8DAB5EA621AB9839009662D5 /* NSMutableDictionary+GFExtension.h */,
-				8DAB5EA121AB9839009662D5 /* NSMutableDictionary+GFExtension.m */,
-				8DAB5EA221AB9839009662D5 /* NSString+Hash.h */,
-				8DAB5EA821AB9839009662D5 /* NSString+Hash.m */,
-				8DAB5EA721AB9839009662D5 /* UIView+GFExtension.h */,
-				8DAB5EB021AB9839009662D5 /* UIView+GFExtension.m */,
-			);
-			path = PublicFunction;
-			sourceTree = "<group>";
-		};
-		8DAB5E9C21AB9825009662D5 /* LocationTrack */ = {
-			isa = PBXGroup;
-			children = (
-				8DAB5EBA21AB9857009662D5 /* APPAnalyticsHelper.h */,
-				8DAB5EB921AB9857009662D5 /* APPAnalyticsHelper.m */,
-			);
-			path = LocationTrack;
-			sourceTree = "<group>";
-		};
 		8DAB5E9D21AB9825009662D5 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,10 +441,7 @@
 		8DAB5E9F21AB9825009662D5 /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
-				8DAB5ED921AB98A6009662D5 /* APPAlertView.h */,
-				8DAB5EDB21AB98A6009662D5 /* APPAlertView.m */,
-				8DAB5EE221AB98A6009662D5 /* APPVersionAlert.h */,
-				8DAB5EDA21AB98A6009662D5 /* APPVersionAlert.m */,
+				140A8FB9234F1D7A00B31672 /* AlertView */,
 				8DAB5EDC21AB98A6009662D5 /* TextField */,
 				8DAB5ED421AB98A6009662D5 /* UIbutton */,
 				8DAB5EDF21AB98A6009662D5 /* UILabel */,

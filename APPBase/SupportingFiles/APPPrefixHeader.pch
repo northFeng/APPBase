@@ -24,6 +24,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>//RAC
 
 #pragma mark - APP内文件
+#import "APPToolHeader.h"
 #import "APPFunctionMethod.h"//公共方法工厂
 #import "APPGlobalVariable.h"//全局变量&&宏定义
 #import "APPHttpTool.h"//网络请求类

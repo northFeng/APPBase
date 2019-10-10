@@ -10,13 +10,6 @@
 
 #import <UIKit/UIKit.h>
 
-#pragma mark - 自定义扩展
-#import "UIView+GFExtension.h"
-#import "UILabel+Text.h"
-#import "NSArray+GFExtension.h"
-#import "NSMutableArray+GFExtension.h"
-#import "NSMutableDictionary+GFExtension.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APPFunctionMethod : NSObject

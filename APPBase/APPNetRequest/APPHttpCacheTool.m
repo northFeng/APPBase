@@ -15,7 +15,7 @@
 
 @implementation APPHttpCacheTool
 
-static NSString *const kNetworkResponseCacheKey = @"DKNetworkResponseCache";
+static NSString *const kNetworkResponseCacheKey = @"HTTPNetworkResponseCache";
 static YYCache *_cacheManager;
 
 + (void)initialize
@@ -23,14 +23,14 @@ static YYCache *_cacheManager;
     _cacheManager = [YYCache cacheWithName:kNetworkResponseCacheKey];
 }
 
-+ (void)setCache:(NSDictionary *)responseObject URL:(NSString *)URL parameters:(NSDictionary *)parameters
++ (void)setCache:(id)responseObject URL:(NSString *)URL parameters:(NSDictionary *)parameters
 {
     [_cacheManager setObject:responseObject forKey:KCacheKey withBlock:nil];
 }
 
-+ (NSDictionary *)cacheForURL:(NSString *)URL parameters:(NSDictionary *)parameters
++ (id)cacheForURL:(NSString *)URL parameters:(NSDictionary *)parameters
 {
-    return (NSDictionary *)[_cacheManager objectForKey:KCacheKey];
+    return [_cacheManager objectForKey:KCacheKey];
 }
 
 + (void)cacheForURL:(NSString *)URL parameters:(NSDictionary *)parameters withBlock:(void(^)(id<NSCoding> object))block
@@ -59,6 +59,11 @@ static YYCache *_cacheManager;
 + (void)clearCache
 {
     [_cacheManager.diskCache removeAllObjects];
+}
+
++ (void)clearCacheForUrl:(NSString *)URL parameters:(NSDictionary *)parameters {
+    
+    [_cacheManager removeObjectForKey:KCacheKey];
 }
 
 + (NSString *)cacheKeyWithURL:(NSString *)URL parameters:(NSDictionary *)parameters

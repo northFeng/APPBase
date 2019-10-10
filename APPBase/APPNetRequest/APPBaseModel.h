@@ -16,13 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - YYmodel带的 对象 ——> JSON数据（自动过滤为nil的数据）
 ///转换成字符串
-+ (NSString *)gf_modelToJsonStringWith:(APPBaseModel *)model;
+- (NSString *)gf_modelToJsonString;
 
 ///转换成字典
-+ (NSDictionary *)gf_modelToJsonDictionaryWithModel:(APPBaseModel *)model;
+- (NSDictionary *)gf_modelToJsonDictionary;
 
 ///转换成data
-+ (NSData *)gf_modelToJsonDataWithModel:(APPBaseModel *)model;
+- (NSData *)gf_modelToJsonData;
 
 @end
 
