@@ -9,8 +9,11 @@
 #import "AppDelegate+RootConTroller.h"
 
 #import "GFNavigationController.h"
+#import "GFTabBarController.h"
 
 #import "FRHomeVC.h"//APP主页
+#import "GFMiddleController.h"
+#import "GFMineController.h"
 
 #import "APPVersionAlert.h"//版本更新提示
 
@@ -45,10 +48,31 @@
 ///设置根视图
 - (void)setRoot{
     
-    FRHomeVC *home = [[FRHomeVC alloc] init];
+    FRHomeVC *one = [[FRHomeVC alloc] init];
     
+    /**
     GFNavigationController *navi = [[GFNavigationController alloc] initWithRootViewController:home];
     navi.navigationBar.hidden = YES;//隐藏系统导航条（只是隐藏的NavigationController上的naviBar，因此返回手势存在）
+    //设置根视图
+    self.window.rootViewController = navi;
+     */
+    
+    GFMiddleController *two = [[GFMiddleController alloc] init];
+    GFMineController *thr = [[GFMineController alloc] init];
+        
+    GFTabBarController *gfTabBar = [[GFTabBarController alloc] init];
+    gfTabBar.viewControllers = @[one,two,thr];//添加子视图
+    //默认图片
+    NSArray *arrayNomal = @[@"home_n",@"order_n",@"mine_n"];
+    //选中按钮的图片
+    NSArray *arraySelect = @[@"home_s",@"order_s",@"mine_s"];
+    //item的标题
+    NSArray *arrayTitle = @[@"首页",@"订单",@"我的"];
+    
+    [gfTabBar creatItemsWithDefaultIndex:0 normalImageNameArray:arrayNomal selectImageArray:arraySelect itemsTitleArray:arrayTitle];//设置items并设置第一个显示位置
+    
+    GFNavigationController *navi = [[GFNavigationController alloc] initWithRootViewController:gfTabBar];
+    navi.navigationBarHidden = YES;//隐藏系统导航条
     //设置根视图
     self.window.rootViewController = navi;
     

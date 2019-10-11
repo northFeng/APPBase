@@ -27,11 +27,17 @@
     [self deallocTimer];
 }
 
+- (void)removeFromSuperview {
+    [super removeFromSuperview];
+    [self deallocTimer];//被移除释放定时器
+}
+
 ///销毁定时器
 - (void)deallocTimer{
     
     //销毁定时器
     if (_timer) {
+        [_timer setFireDate:[NSDate distantFuture]];
         [_timer invalidate];
         _timer = nil;
     }
@@ -109,13 +115,14 @@
 - (void)stopAnimation{
     self.hidden = YES;
     //暂停
-    [_timer setFireDate:[NSDate distantFuture]];
+    [self deallocTimer];//销毁定时器
+    
     _imgBigView.transform = CGAffineTransformMakeRotation(M_PI/18.*0);
     _count = 0;
-    _labelTitle.text = @"加载中";
+    //_labelTitle.text = @"加载中";
     
     //从父视图中移除
-    //[self removeFromSuperview];
+    [self removeFromSuperview];
 }
 
 
@@ -138,6 +145,47 @@
 - (void)setShowLabelText:(NSString *)showStr{
     
     _labelTitle.text = showStr;
+}
+
+
++ (APPLoadWaitView *)showLoadingAddedTo:(UIView *)view loadTitle:(NSString *)loadTitle {
+    APPLoadWaitView *waitingView = [[APPLoadWaitView alloc] init];
+    waitingView.frame = CGRectMake(0, 0, 121, 121);
+    waitingView.center = CGPointMake(kScreenWidth/2., kScreenHeight * 2./5.);
+    waitingView.layer.cornerRadius = 4;
+    waitingView.layer.masksToBounds = YES;
+    
+    [view addSubview:waitingView];
+    
+    [waitingView startAnimationWithTitle:loadTitle];
+    
+    return waitingView;
+}
+
++ (BOOL)hideLoadingForView:(UIView *)view endTitle:(NSString *)endTitle {
+    APPLoadWaitView *waitingView = [self loadingViewForView:view];
+    if (waitingView != nil) {
+
+        if (endTitle.length) {
+            [waitingView stopAnimationWithTitle:endTitle];
+        }else{
+            [waitingView stopAnimation];
+        }
+        return YES;
+    }
+    return NO;
+}
+
++ (APPLoadWaitView *)loadingViewForView:(UIView *)view {
+    NSEnumerator *subviewsEnum = [view.subviews reverseObjectEnumerator];
+    for (UIView *subview in subviewsEnum) {
+        if ([subview isKindOfClass:self]) {
+            APPLoadWaitView *loadView = (APPLoadWaitView *)subview;
+            
+            return loadView;
+        }
+    }
+    return nil;
 }
 
 

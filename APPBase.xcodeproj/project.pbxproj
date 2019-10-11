@@ -13,6 +13,12 @@
 		140A8FC7234F37A300B31672 /* UIButton+GFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FC6234F37A300B31672 /* UIButton+GFExtension.m */; };
 		140A8FCA234F4B6800B31672 /* APPBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FC9234F4B6800B31672 /* APPBaseTableViewController.m */; };
 		148459AF234E1B0A002ABA2F /* APPHttpCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 148459AE234E1B0A002ABA2F /* APPHttpCacheTool.m */; };
+		149265E42350CA6600A2C7FE /* APPConfirmAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 149265E32350CA6600A2C7FE /* APPConfirmAlertView.m */; };
+		14BE128623506BA50047F00B /* APPAlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BE128523506BA50047F00B /* APPAlertTool.m */; };
+		14CE0F9D235077A40093E45C /* iOS-MBProgressHUD使用.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14CE0F9C235077A40093E45C /* iOS-MBProgressHUD使用.rtf */; };
+		14CE0FA123507C520093E45C /* GFTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CE0FA023507C510093E45C /* GFTabBarController.m */; };
+		14CE0FA5235080E10093E45C /* GFMiddleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CE0FA4235080E10093E45C /* GFMiddleController.m */; };
+		14CE0FA8235080F00093E45C /* GFMineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CE0FA7235080F00093E45C /* GFMineController.m */; };
 		8D69D3DA22B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = 8D69D3D922B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive */; };
 		8D69D3DC22B4F9D800D4A325 /* MVVM与RAC.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = 8D69D3DB22B4F9D800D4A325 /* MVVM与RAC.webarchive */; };
 		8D95957722AE3A1F001A8345 /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D95957422AE3A1F001A8345 /* JPEngine.m */; };
@@ -41,7 +47,6 @@
 		8DAB5EC921AB9882009662D5 /* MBProgressHUDTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EBE21AB9882009662D5 /* MBProgressHUDTool.m */; };
 		8DAB5ECA21AB9882009662D5 /* APPBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EC021AB9882009662D5 /* APPBaseCell.m */; };
 		8DAB5ECB21AB9882009662D5 /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EC221AB9882009662D5 /* ExampleViewController.m */; };
-		8DAB5ECC21AB9882009662D5 /* APPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EC321AB9882009662D5 /* APPBaseViewController.m */; };
 		8DAB5ECD21AB9882009662D5 /* APPLoadWaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EC421AB9882009662D5 /* APPLoadWaitView.m */; };
 		8DAB5ED221AB9895009662D5 /* GFNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5ECE21AB9895009662D5 /* GFNavigationBarView.m */; };
 		8DAB5ED321AB9895009662D5 /* GFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5ECF21AB9895009662D5 /* GFNavigationController.m */; };
@@ -94,6 +99,17 @@
 		140A8FC9234F4B6800B31672 /* APPBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPBaseTableViewController.m; sourceTree = "<group>"; };
 		148459AD234E1B0A002ABA2F /* APPHttpCacheTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPHttpCacheTool.h; sourceTree = "<group>"; };
 		148459AE234E1B0A002ABA2F /* APPHttpCacheTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPHttpCacheTool.m; sourceTree = "<group>"; };
+		149265E22350CA6600A2C7FE /* APPConfirmAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPConfirmAlertView.h; sourceTree = "<group>"; };
+		149265E32350CA6600A2C7FE /* APPConfirmAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPConfirmAlertView.m; sourceTree = "<group>"; };
+		14BE128423506BA50047F00B /* APPAlertTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPAlertTool.h; sourceTree = "<group>"; };
+		14BE128523506BA50047F00B /* APPAlertTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPAlertTool.m; sourceTree = "<group>"; };
+		14CE0F9C235077A40093E45C /* iOS-MBProgressHUD使用.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "iOS-MBProgressHUD使用.rtf"; sourceTree = "<group>"; };
+		14CE0F9F23507C510093E45C /* GFTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFTabBarController.h; sourceTree = "<group>"; };
+		14CE0FA023507C510093E45C /* GFTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFTabBarController.m; sourceTree = "<group>"; };
+		14CE0FA3235080E10093E45C /* GFMiddleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFMiddleController.h; sourceTree = "<group>"; };
+		14CE0FA4235080E10093E45C /* GFMiddleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFMiddleController.m; sourceTree = "<group>"; };
+		14CE0FA6235080F00093E45C /* GFMineController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GFMineController.h; path = APPBase/APPViewController/Middle/GFMineController.h; sourceTree = SOURCE_ROOT; };
+		14CE0FA7235080F00093E45C /* GFMineController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GFMineController.m; path = APPBase/APPViewController/Middle/GFMineController.m; sourceTree = SOURCE_ROOT; };
 		2D142DF6F5A1313473EB8EC7 /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BCAF33D89376F054993B8C /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
 		6136454A595A21CCA2D817AF /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,9 +168,7 @@
 		8DAB5EC021AB9882009662D5 /* APPBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPBaseCell.m; sourceTree = "<group>"; };
 		8DAB5EC121AB9882009662D5 /* APPLoadWaitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPLoadWaitView.h; sourceTree = "<group>"; };
 		8DAB5EC221AB9882009662D5 /* ExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleViewController.m; sourceTree = "<group>"; };
-		8DAB5EC321AB9882009662D5 /* APPBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPBaseViewController.m; sourceTree = "<group>"; };
 		8DAB5EC421AB9882009662D5 /* APPLoadWaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPLoadWaitView.m; sourceTree = "<group>"; };
-		8DAB5EC521AB9882009662D5 /* APPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPBaseViewController.h; sourceTree = "<group>"; };
 		8DAB5EC621AB9882009662D5 /* APPBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPBaseCell.h; sourceTree = "<group>"; };
 		8DAB5EC721AB9882009662D5 /* ExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleViewController.h; sourceTree = "<group>"; };
 		8DAB5ECE21AB9895009662D5 /* GFNavigationBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFNavigationBarView.m; sourceTree = "<group>"; };
@@ -234,19 +248,10 @@
 				8DAB5EB021AB9839009662D5 /* UIView+GFExtension.m */,
 				140A8FC5234F37A300B31672 /* UIButton+GFExtension.h */,
 				140A8FC6234F37A300B31672 /* UIButton+GFExtension.m */,
+				8DAB5EE121AB98A6009662D5 /* UILabel+Text.h */,
+				8DAB5EE021AB98A6009662D5 /* UILabel+Text.m */,
 			);
 			path = CustomExtend;
-			sourceTree = "<group>";
-		};
-		140A8FB9234F1D7A00B31672 /* AlertView */ = {
-			isa = PBXGroup;
-			children = (
-				8DAB5ED921AB98A6009662D5 /* APPAlertView.h */,
-				8DAB5EDB21AB98A6009662D5 /* APPAlertView.m */,
-				8DAB5EE221AB98A6009662D5 /* APPVersionAlert.h */,
-				8DAB5EDA21AB98A6009662D5 /* APPVersionAlert.m */,
-			);
-			path = AlertView;
 			sourceTree = "<group>";
 		};
 		140A8FBA234F1DCE00B31672 /* CustomFunction */ = {
@@ -264,6 +269,44 @@
 				8DAB5EB921AB9857009662D5 /* APPAnalyticsHelper.m */,
 			);
 			path = CustomFunction;
+			sourceTree = "<group>";
+		};
+		14BE128723506C4B0047F00B /* CustomAlert */ = {
+			isa = PBXGroup;
+			children = (
+				14CE0F9C235077A40093E45C /* iOS-MBProgressHUD使用.rtf */,
+				14BE128423506BA50047F00B /* APPAlertTool.h */,
+				14BE128523506BA50047F00B /* APPAlertTool.m */,
+				8DAB5ED921AB98A6009662D5 /* APPAlertView.h */,
+				8DAB5EDB21AB98A6009662D5 /* APPAlertView.m */,
+				8DAB5EE221AB98A6009662D5 /* APPVersionAlert.h */,
+				8DAB5EDA21AB98A6009662D5 /* APPVersionAlert.m */,
+				8DAB5EC121AB9882009662D5 /* APPLoadWaitView.h */,
+				8DAB5EC421AB9882009662D5 /* APPLoadWaitView.m */,
+				149265E22350CA6600A2C7FE /* APPConfirmAlertView.h */,
+				149265E32350CA6600A2C7FE /* APPConfirmAlertView.m */,
+				8DAB5EBD21AB9882009662D5 /* MBProgressHUDTool.h */,
+				8DAB5EBE21AB9882009662D5 /* MBProgressHUDTool.m */,
+			);
+			path = CustomAlert;
+			sourceTree = "<group>";
+		};
+		14CE0F9E23507C210093E45C /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				14CE0F9F23507C510093E45C /* GFTabBarController.h */,
+				14CE0FA023507C510093E45C /* GFTabBarController.m */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		14CE0FA2235080620093E45C /* Middle */ = {
+			isa = PBXGroup;
+			children = (
+				14CE0FA3235080E10093E45C /* GFMiddleController.h */,
+				14CE0FA4235080E10093E45C /* GFMiddleController.m */,
+			);
+			path = Middle;
 			sourceTree = "<group>";
 		};
 		2C20A1A11FB28C659380DB7C /* Frameworks */ = {
@@ -363,8 +406,9 @@
 			children = (
 				8DAB5EF821AB9933009662D5 /* GlobalView */,
 				8DAB5EFA21AB9933009662D5 /* Home */,
-				8DAB5EF921AB9933009662D5 /* Login */,
+				14CE0FA2235080620093E45C /* Middle */,
 				8DAB5EFB21AB9933009662D5 /* Mine */,
+				8DAB5EF921AB9933009662D5 /* Login */,
 			);
 			path = APPViewController;
 			sourceTree = "<group>";
@@ -376,6 +420,7 @@
 				140A8FBA234F1DCE00B31672 /* CustomFunction */,
 				140A8FB7234F1C9900B31672 /* CustomExtend */,
 				8DAB5E9D21AB9825009662D5 /* CustomView */,
+				14BE128723506C4B0047F00B /* CustomAlert */,
 			);
 			path = APPCustomTool;
 			sourceTree = "<group>";
@@ -438,6 +483,7 @@
 			children = (
 				8DAB5EA021AB9825009662D5 /* BaseViewController */,
 				8DAB5E9E21AB9825009662D5 /* CustomNavigationBar */,
+				14CE0F9E23507C210093E45C /* CustomTabBar */,
 				8DAB5E9F21AB9825009662D5 /* CustomControls */,
 			);
 			path = CustomView;
@@ -457,10 +503,8 @@
 		8DAB5E9F21AB9825009662D5 /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
-				140A8FB9234F1D7A00B31672 /* AlertView */,
 				8DAB5EDC21AB98A6009662D5 /* TextField */,
 				8DAB5ED421AB98A6009662D5 /* UIbutton */,
-				8DAB5EDF21AB98A6009662D5 /* UILabel */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -474,16 +518,10 @@
 				140A8FC0234F2ED800B31672 /* APPBaseController.m */,
 				140A8FC8234F4B6800B31672 /* APPBaseTableViewController.h */,
 				140A8FC9234F4B6800B31672 /* APPBaseTableViewController.m */,
-				8DAB5EC521AB9882009662D5 /* APPBaseViewController.h */,
-				8DAB5EC321AB9882009662D5 /* APPBaseViewController.m */,
-				8DAB5EC121AB9882009662D5 /* APPLoadWaitView.h */,
-				8DAB5EC421AB9882009662D5 /* APPLoadWaitView.m */,
 				8DAB5EC721AB9882009662D5 /* ExampleViewController.h */,
 				8DAB5EC221AB9882009662D5 /* ExampleViewController.m */,
 				8DAB5EBF21AB9882009662D5 /* FSPromptView.h */,
 				8DAB5EBC21AB9882009662D5 /* FSPromptView.m */,
-				8DAB5EBD21AB9882009662D5 /* MBProgressHUDTool.h */,
-				8DAB5EBE21AB9882009662D5 /* MBProgressHUDTool.m */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -491,10 +529,10 @@
 		8DAB5ED421AB98A6009662D5 /* UIbutton */ = {
 			isa = PBXGroup;
 			children = (
-				8DAB5ED521AB98A6009662D5 /* GFButtonPress.h */,
-				8DAB5ED721AB98A6009662D5 /* GFButtonPress.m */,
 				140A8FC2234F2F7700B31672 /* GFTextImageButton.h */,
 				140A8FC3234F2F7800B31672 /* GFTextImageButton.m */,
+				8DAB5ED521AB98A6009662D5 /* GFButtonPress.h */,
+				8DAB5ED721AB98A6009662D5 /* GFButtonPress.m */,
 			);
 			path = UIbutton;
 			sourceTree = "<group>";
@@ -506,15 +544,6 @@
 				8DAB5EDD21AB98A6009662D5 /* GFTextField.m */,
 			);
 			path = TextField;
-			sourceTree = "<group>";
-		};
-		8DAB5EDF21AB98A6009662D5 /* UILabel */ = {
-			isa = PBXGroup;
-			children = (
-				8DAB5EE121AB98A6009662D5 /* UILabel+Text.h */,
-				8DAB5EE021AB98A6009662D5 /* UILabel+Text.m */,
-			);
-			path = UILabel;
 			sourceTree = "<group>";
 		};
 		8DAB5EF821AB9933009662D5 /* GlobalView */ = {
@@ -598,6 +627,8 @@
 		8DAB5F0F21AB996E009662D5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				14CE0FA6235080F00093E45C /* GFMineController.h */,
+				14CE0FA7235080F00093E45C /* GFMineController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -725,6 +756,7 @@
 				8D95957822AE3A1F001A8345 /* JSPatch.js in Resources */,
 				8DAB5F0B21AB9954009662D5 /* FRLoginHomeVC.xib in Resources */,
 				8DAB5E0421AB965B009662D5 /* Assets.xcassets in Resources */,
+				14CE0F9D235077A40093E45C /* iOS-MBProgressHUD使用.rtf in Resources */,
 				8D69D3DC22B4F9D800D4A325 /* MVVM与RAC.webarchive in Resources */,
 				8DAB5E0221AB9659009662D5 /* Main.storyboard in Resources */,
 			);
@@ -814,11 +846,12 @@
 				8DAB5EE521AB98A6009662D5 /* APPVersionAlert.m in Sources */,
 				8DAB5F0A21AB9954009662D5 /* FRLoginManager.m in Sources */,
 				8DAB5ECB21AB9882009662D5 /* ExampleViewController.m in Sources */,
-				8DAB5ECC21AB9882009662D5 /* APPBaseViewController.m in Sources */,
 				8DAB5E3D21AB976C009662D5 /* APPLoacalInfo.m in Sources */,
+				14CE0FA8235080F00093E45C /* GFMineController.m in Sources */,
 				8DAB5EC821AB9882009662D5 /* FSPromptView.m in Sources */,
 				8DAB5EB521AB9839009662D5 /* NSArray+GFExtension.m in Sources */,
 				8DAB5EEF21AB98CD009662D5 /* APPBaseModel.m in Sources */,
+				14CE0FA5235080E10093E45C /* GFMiddleController.m in Sources */,
 				8DAB5E4321AB9795009662D5 /* APPGlobalVariable.m in Sources */,
 				8DAB5EE321AB98A6009662D5 /* GFButtonPress.m in Sources */,
 				8DAB5F0421AB993F009662D5 /* FRHomeVC.m in Sources */,
@@ -828,14 +861,17 @@
 				8D95957722AE3A1F001A8345 /* JPEngine.m in Sources */,
 				8DAB5EE821AB98A6009662D5 /* UILabel+Text.m in Sources */,
 				8DAB5EBB21AB9857009662D5 /* APPAnalyticsHelper.m in Sources */,
+				149265E42350CA6600A2C7FE /* APPConfirmAlertView.m in Sources */,
 				140A8FC1234F2ED800B31672 /* APPBaseController.m in Sources */,
 				8DAB5EF121AB98CD009662D5 /* APPModel.m in Sources */,
 				8DAB5ED221AB9895009662D5 /* GFNavigationBarView.m in Sources */,
 				8DAB5E3A21AB976C009662D5 /* APPManager.m in Sources */,
+				14BE128623506BA50047F00B /* APPAlertTool.m in Sources */,
 				8DAB5EE721AB98A6009662D5 /* GFTextField.m in Sources */,
 				140A8FBE234F258300B31672 /* APPColorFunction.m in Sources */,
 				8DAB5EB121AB9839009662D5 /* NSMutableDictionary+GFExtension.m in Sources */,
 				8DAB5EF621AB98E3009662D5 /* AppDelegate.m in Sources */,
+				14CE0FA123507C520093E45C /* GFTabBarController.m in Sources */,
 				140A8FC7234F37A300B31672 /* UIButton+GFExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

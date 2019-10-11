@@ -19,6 +19,7 @@
 
 #pragma mark - 自定义功能文件
 #import "APPColorFunction.h"
+#import "APPAlertTool.h"//APP内全局弹框吐字工具
 
 
 #endif /* APPToolHeader_h */

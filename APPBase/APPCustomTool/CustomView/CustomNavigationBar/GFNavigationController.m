@@ -17,7 +17,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    /**
+    UIModalPresentationFullScreen = 0,
+    UIModalPresentationPageSheet ,//卡片
+    UIModalPresentationFormSheet ,//卡片
+    UIModalPresentationCurrentContext,//满屏
+    UIModalPresentationCustom,//满屏
+    UIModalPresentationOverFullScreen ,////满屏
+    UIModalPresentationOverCurrentContext ,
+    UIModalPresentationPopover ,//卡片
+    UIModalPresentationBlurOverFullScreen ,
+    UIModalPresentationNone API_AVAILABLE(ios(7.0)) = -1,
+    UIModalPresentationAutomatic API_AVAILABLE(ios(13.0)) = -2,
+         */
+    self.modalPresentationStyle = UIModalPresentationFullScreen;//模态模型为满屏
 }
 
 - (void)didReceiveMemoryWarning {
