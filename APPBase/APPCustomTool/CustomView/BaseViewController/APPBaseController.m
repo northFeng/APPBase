@@ -39,6 +39,8 @@
     //接收网络状态变化通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityNetStateChanged:) name:_kGlobal_NetworkingReachabilityChangeNotification object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeVCLightOrDarkModel) name:_kGlobal_LightOrDarkModelChange object:nil];
+    
     //统一视图背景颜色
     self.view.backgroundColor = APPColor_White;
     
@@ -96,7 +98,7 @@
 }
 ///设置状态栏样式为默认
 - (void)setStatusBarStyleDefault{
-    _statusStyle = UIStatusBarStyleDefault;
+    _statusStyle = UIStatusBarStyleDefault;//随系统改变
     //更新状态栏
     [self setNeedsStatusBarAppearanceUpdate];
 }
@@ -105,6 +107,16 @@
     _statusStyle = UIStatusBarStyleLightContent;
     //更新状态栏
     [self setNeedsStatusBarAppearanceUpdate];
+}
+
+///设置状态栏样式为暗黑
+- (void)setStatusBarStyleDark{
+    if (@available(iOS 13.0, *)) {
+        _statusStyle = UIStatusBarStyleDarkContent;
+        [self setNeedsStatusBarAppearanceUpdate];//更新状态栏
+    } else {
+        // Fallback on earlier versions
+    }
 }
 
 //是否隐藏
@@ -260,6 +272,60 @@
             
         default:
             break;
+    }
+}
+
+///改变模式通知
+- (void)changeVCLightOrDarkModel {
+
+    if (@available(iOS 13.0, *)) {
+        
+        switch ([APPManager sharedInstance].faceStyle) {
+            case 0:
+                //系统
+                self.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
+                [self setStatusBarStyleDefault];
+                break;
+            case 1:
+                //白色
+                self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+                [self setStatusBarStyleDark];//暗黑状态栏
+                break;
+            case 2:
+                //暗黑
+                self.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
+                [self setStatusBarStyleLight];//白色状态栏
+                break;
+                
+            default:
+                break;
+        }
+    } else {
+        // Fallback on earlier versions
+    }
+    /**
+    VC中self.overrideUserInterfaceStyle 只会改变VC内所有的子视图模式
+    当我们强行设置当前viewController为Dark Mode后，这个viewController下的view都是Dark Mode
+
+    由这个ViewController present出的ViewController不会受到影响，依然跟随系统的模式
+     
+    要想一键设置App下所有的ViewController都是Dark Mode，请直接在Window上执行overrideUserInterfaceStyle
+
+    对window.rootViewController强行设置Dark Mode也不会影响后续present出的ViewController的模式
+     */
+}
+
+#pragma mark - ************************* 暗黑模式改变的监听 *************************
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [super traitCollectionDidChange:previousTraitCollection];
+    
+    // trait发生了改变
+    if (@available(iOS 13.0, *)) {
+        if ([self.traitCollection hasDifferentColorAppearanceComparedToTraitCollection:previousTraitCollection]) {
+            //模式已变
+            NSLog(@"模式切换");
+            //在这里进行 layer的颜色动态改变
+        }
     }
 }
 

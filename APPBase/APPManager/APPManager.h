@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPManager : NSObject
 
+///APP内模式  0:所系统模式  1:白色模式  2:暗黑模式
+@property (nonatomic,assign) NSInteger faceStyle;
+
 /** 是否处于已登录状态 */
 @property (atomic, strong,nullable) APPUserInfoModel *userInfo;
 

@@ -9,6 +9,9 @@
 #import "APPGlobalVariable.h"
 
 #pragma mark - 全局常量
+
+NSString * const _kGlobal_LightOrDarkModelChange = @"APPLightOrDarkModelChange";
+
 /** 网络状态变化key */
 NSString * const _kGlobal_NetworkingReachabilityChangeNotification = @"GFNetworkingReachabilityDidChangeNotification";
 

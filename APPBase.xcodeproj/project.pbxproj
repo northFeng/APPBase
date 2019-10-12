@@ -12,6 +12,12 @@
 		140A8FC4234F2F7800B31672 /* GFTextImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FC3234F2F7800B31672 /* GFTextImageButton.m */; };
 		140A8FC7234F37A300B31672 /* UIButton+GFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FC6234F37A300B31672 /* UIButton+GFExtension.m */; };
 		140A8FCA234F4B6800B31672 /* APPBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FC9234F4B6800B31672 /* APPBaseTableViewController.m */; };
+		1428088C2351C5B800D24D08 /* APPNoDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428088B2351C5B800D24D08 /* APPNoDataView.m */; };
+		1428088F2351C80000D24D08 /* NSString+TextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428088E2351C80000D24D08 /* NSString+TextSize.m */; };
+		142808922351C8DD00D24D08 /* APPViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 142808912351C8DD00D24D08 /* APPViewTool.m */; };
+		142808952351CAC900D24D08 /* APPFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 142808942351CAC900D24D08 /* APPFileManager.m */; };
+		147E502A2351EBB000C2309B /* APPCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 147E50292351EBB000C2309B /* APPCache.m */; };
+		147E502C2351EBDC00C2309B /* MMKV使用.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 147E502B2351EBDC00C2309B /* MMKV使用.rtf */; };
 		148459AF234E1B0A002ABA2F /* APPHttpCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 148459AE234E1B0A002ABA2F /* APPHttpCacheTool.m */; };
 		149265E42350CA6600A2C7FE /* APPConfirmAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 149265E32350CA6600A2C7FE /* APPConfirmAlertView.m */; };
 		14BE128623506BA50047F00B /* APPAlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BE128523506BA50047F00B /* APPAlertTool.m */; };
@@ -97,6 +103,18 @@
 		140A8FC6234F37A300B31672 /* UIButton+GFExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+GFExtension.m"; sourceTree = "<group>"; };
 		140A8FC8234F4B6800B31672 /* APPBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPBaseTableViewController.h; sourceTree = "<group>"; };
 		140A8FC9234F4B6800B31672 /* APPBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPBaseTableViewController.m; sourceTree = "<group>"; };
+		1428088A2351C5B800D24D08 /* APPNoDataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPNoDataView.h; sourceTree = "<group>"; };
+		1428088B2351C5B800D24D08 /* APPNoDataView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPNoDataView.m; sourceTree = "<group>"; };
+		1428088D2351C80000D24D08 /* NSString+TextSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+TextSize.h"; sourceTree = "<group>"; };
+		1428088E2351C80000D24D08 /* NSString+TextSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextSize.m"; sourceTree = "<group>"; };
+		142808902351C8DD00D24D08 /* APPViewTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPViewTool.h; sourceTree = "<group>"; };
+		142808912351C8DD00D24D08 /* APPViewTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPViewTool.m; sourceTree = "<group>"; };
+		142808932351CAC900D24D08 /* APPFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPFileManager.h; sourceTree = "<group>"; };
+		142808942351CAC900D24D08 /* APPFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPFileManager.m; sourceTree = "<group>"; };
+		147E50282351EBB000C2309B /* APPCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPCache.h; sourceTree = "<group>"; };
+		147E50292351EBB000C2309B /* APPCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPCache.m; sourceTree = "<group>"; };
+		147E502B2351EBDC00C2309B /* MMKV使用.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "MMKV使用.rtf"; sourceTree = "<group>"; };
+		147E502D2351FBCA00C2309B /* APPThirdHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPThirdHeader.h; sourceTree = "<group>"; };
 		148459AD234E1B0A002ABA2F /* APPHttpCacheTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPHttpCacheTool.h; sourceTree = "<group>"; };
 		148459AE234E1B0A002ABA2F /* APPHttpCacheTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPHttpCacheTool.m; sourceTree = "<group>"; };
 		149265E22350CA6600A2C7FE /* APPConfirmAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPConfirmAlertView.h; sourceTree = "<group>"; };
@@ -244,6 +262,8 @@
 				8DAB5EA121AB9839009662D5 /* NSMutableDictionary+GFExtension.m */,
 				8DAB5EA221AB9839009662D5 /* NSString+Hash.h */,
 				8DAB5EA821AB9839009662D5 /* NSString+Hash.m */,
+				1428088D2351C80000D24D08 /* NSString+TextSize.h */,
+				1428088E2351C80000D24D08 /* NSString+TextSize.m */,
 				8DAB5EA721AB9839009662D5 /* UIView+GFExtension.h */,
 				8DAB5EB021AB9839009662D5 /* UIView+GFExtension.m */,
 				140A8FC5234F37A300B31672 /* UIButton+GFExtension.h */,
@@ -257,6 +277,8 @@
 		140A8FBA234F1DCE00B31672 /* CustomFunction */ = {
 			isa = PBXGroup;
 			children = (
+				142808902351C8DD00D24D08 /* APPViewTool.h */,
+				142808912351C8DD00D24D08 /* APPViewTool.m */,
 				8DAB5EAE21AB9839009662D5 /* APPFunctionMethod.h */,
 				8DAB5EAD21AB9839009662D5 /* APPFunctionMethod.m */,
 				140A8FBC234F258300B31672 /* APPColorFunction.h */,
@@ -271,20 +293,41 @@
 			path = CustomFunction;
 			sourceTree = "<group>";
 		};
+		142808962351CB4000D24D08 /* APPThirdModular */ = {
+			isa = PBXGroup;
+			children = (
+				147E502D2351FBCA00C2309B /* APPThirdHeader.h */,
+				147E50272351EB7500C2309B /* DataCache */,
+			);
+			path = APPThirdModular;
+			sourceTree = "<group>";
+		};
+		147E50272351EB7500C2309B /* DataCache */ = {
+			isa = PBXGroup;
+			children = (
+				147E502B2351EBDC00C2309B /* MMKV使用.rtf */,
+				147E50282351EBB000C2309B /* APPCache.h */,
+				147E50292351EBB000C2309B /* APPCache.m */,
+			);
+			path = DataCache;
+			sourceTree = "<group>";
+		};
 		14BE128723506C4B0047F00B /* CustomAlert */ = {
 			isa = PBXGroup;
 			children = (
 				14CE0F9C235077A40093E45C /* iOS-MBProgressHUD使用.rtf */,
 				14BE128423506BA50047F00B /* APPAlertTool.h */,
 				14BE128523506BA50047F00B /* APPAlertTool.m */,
+				8DAB5EC121AB9882009662D5 /* APPLoadWaitView.h */,
+				8DAB5EC421AB9882009662D5 /* APPLoadWaitView.m */,
 				8DAB5ED921AB98A6009662D5 /* APPAlertView.h */,
 				8DAB5EDB21AB98A6009662D5 /* APPAlertView.m */,
 				8DAB5EE221AB98A6009662D5 /* APPVersionAlert.h */,
 				8DAB5EDA21AB98A6009662D5 /* APPVersionAlert.m */,
-				8DAB5EC121AB9882009662D5 /* APPLoadWaitView.h */,
-				8DAB5EC421AB9882009662D5 /* APPLoadWaitView.m */,
 				149265E22350CA6600A2C7FE /* APPConfirmAlertView.h */,
 				149265E32350CA6600A2C7FE /* APPConfirmAlertView.m */,
+				1428088A2351C5B800D24D08 /* APPNoDataView.h */,
+				1428088B2351C5B800D24D08 /* APPNoDataView.m */,
 				8DAB5EBD21AB9882009662D5 /* MBProgressHUDTool.h */,
 				8DAB5EBE21AB9882009662D5 /* MBProgressHUDTool.m */,
 			);
@@ -373,8 +416,9 @@
 				8D69D3D922B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive */,
 				8DAB5E2F21AB971C009662D5 /* APPManager */,
 				8DAB5E3121AB971C009662D5 /* APPCustomDefine */,
-				8DAB5E2D21AB971C009662D5 /* APPCustomTool */,
 				8DAB5E3021AB971C009662D5 /* APPNetRequest */,
+				8DAB5E2D21AB971C009662D5 /* APPCustomTool */,
+				142808962351CB4000D24D08 /* APPThirdModular */,
 				8DAB5E2E21AB971C009662D5 /* APPMain */,
 				8DAB5E2C21AB971C009662D5 /* APPViewController */,
 				8D95957222AE39E9001A8345 /* Resource */,
@@ -417,9 +461,9 @@
 			isa = PBXGroup;
 			children = (
 				140A8FB8234F1D1700B31672 /* APPToolHeader.h */,
+				8DAB5E9D21AB9825009662D5 /* CustomView */,
 				140A8FBA234F1DCE00B31672 /* CustomFunction */,
 				140A8FB7234F1C9900B31672 /* CustomExtend */,
-				8DAB5E9D21AB9825009662D5 /* CustomView */,
 				14BE128723506C4B0047F00B /* CustomAlert */,
 			);
 			path = APPCustomTool;
@@ -447,6 +491,8 @@
 				8DAB5E3321AB976C009662D5 /* APPKeyInfo.m */,
 				8DAB5E3521AB976C009662D5 /* APPLoacalInfo.h */,
 				8DAB5E3921AB976C009662D5 /* APPLoacalInfo.m */,
+				142808932351CAC900D24D08 /* APPFileManager.h */,
+				142808942351CAC900D24D08 /* APPFileManager.m */,
 			);
 			path = APPManager;
 			sourceTree = "<group>";
@@ -756,6 +802,7 @@
 				8D95957822AE3A1F001A8345 /* JSPatch.js in Resources */,
 				8DAB5F0B21AB9954009662D5 /* FRLoginHomeVC.xib in Resources */,
 				8DAB5E0421AB965B009662D5 /* Assets.xcassets in Resources */,
+				147E502C2351EBDC00C2309B /* MMKV使用.rtf in Resources */,
 				14CE0F9D235077A40093E45C /* iOS-MBProgressHUD使用.rtf in Resources */,
 				8D69D3DC22B4F9D800D4A325 /* MVVM与RAC.webarchive in Resources */,
 				8DAB5E0221AB9659009662D5 /* Main.storyboard in Resources */,
@@ -830,6 +877,7 @@
 				140A8FCA234F4B6800B31672 /* APPBaseTableViewController.m in Sources */,
 				8DAB5ECA21AB9882009662D5 /* APPBaseCell.m in Sources */,
 				8DAB5ED321AB9895009662D5 /* GFNavigationController.m in Sources */,
+				1428088F2351C80000D24D08 /* NSString+TextSize.m in Sources */,
 				8DAB5EE621AB98A6009662D5 /* APPAlertView.m in Sources */,
 				8DAB5ECD21AB9882009662D5 /* APPLoadWaitView.m in Sources */,
 				8DAB5EB421AB9839009662D5 /* GFEncryption.m in Sources */,
@@ -841,6 +889,7 @@
 				8DAB5EF021AB98CD009662D5 /* APPHttpTool.m in Sources */,
 				8DAB5EB721AB9839009662D5 /* APPFunctionMethod.m in Sources */,
 				8DAB5EB621AB9839009662D5 /* FSValidate.m in Sources */,
+				147E502A2351EBB000C2309B /* APPCache.m in Sources */,
 				8DAB5EB221AB9839009662D5 /* NSMutableArray+GFExtension.m in Sources */,
 				8DAB5E3C21AB976C009662D5 /* APPUserInfoModel.m in Sources */,
 				8DAB5EE521AB98A6009662D5 /* APPVersionAlert.m in Sources */,
@@ -863,8 +912,11 @@
 				8DAB5EBB21AB9857009662D5 /* APPAnalyticsHelper.m in Sources */,
 				149265E42350CA6600A2C7FE /* APPConfirmAlertView.m in Sources */,
 				140A8FC1234F2ED800B31672 /* APPBaseController.m in Sources */,
+				142808922351C8DD00D24D08 /* APPViewTool.m in Sources */,
 				8DAB5EF121AB98CD009662D5 /* APPModel.m in Sources */,
 				8DAB5ED221AB9895009662D5 /* GFNavigationBarView.m in Sources */,
+				1428088C2351C5B800D24D08 /* APPNoDataView.m in Sources */,
+				142808952351CAC900D24D08 /* APPFileManager.m in Sources */,
 				8DAB5E3A21AB976C009662D5 /* APPManager.m in Sources */,
 				14BE128623506BA50047F00B /* APPAlertTool.m in Sources */,
 				8DAB5EE721AB98A6009662D5 /* GFTextField.m in Sources */,

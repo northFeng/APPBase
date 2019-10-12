@@ -38,6 +38,10 @@
     self.tableView.estimatedSectionHeaderHeight = 0;
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    //是否可以多选
+    //self.tableView.shouldBeginMultipleSelectionInteractionAtIndexPath = YES;
+    
     [self.view addSubview:self.tableView];
 
     //防止UITableView被状态栏压下20
@@ -160,6 +164,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
 }
+
+
 
 #pragma mark - ************************* tableView自定义方法 *************************
 ///滚动指定tableView的位置

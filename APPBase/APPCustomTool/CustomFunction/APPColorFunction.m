@@ -17,7 +17,7 @@
  *
  *    @return 返回UIColor
  */
-+(UIColor*)colorWithHexString:(NSString*)stringToConvert alpha:(CGFloat)alpha {
++ (UIColor *)colorWithHexString:(NSString*)stringToConvert alpha:(CGFloat)alpha {
     
     stringToConvert = [stringToConvert stringByReplacingOccurrencesOfString:@"#" withString:@""];
     
@@ -45,5 +45,26 @@
                             blue:((float) b / 255.0f)
                            alpha:alpha];
 }
+
+///动态颜色
++ (UIColor *)dynamicColorWithLightColor:(UIColor *)lightColor darkColor:(UIColor *)darkColor {
+    
+    //UITraitCollection.currentTraitCollection.userInterfaceStyle;
+    UIColor *color = lightColor;
+    if (@available(iOS 13.0, *)) {
+        color = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
+                return lightColor;
+            }else if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark){
+                return darkColor;
+            }else{
+                return lightColor;
+            }
+        }];
+    }
+    
+    return color;
+}
+
 
 @end

@@ -15,30 +15,51 @@
 @end
 
 @implementation FRHomeVC
+{
+    UIButton *_btnTwo;
+}
 
 - (void)dealloc{
     
     NSLog(@"---->FRHome死亡了");
 }
 
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [super traitCollectionDidChange:previousTraitCollection];
+    
+    _btnTwo.layer.borderColor = DynamicColor([UIColor redColor], [UIColor greenColor]).CGColor;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if (@available(iOS 13.0, *)) {
+        self.view.backgroundColor = [UIColor placeholderTextColor];
+    } else {
+        // Fallback on earlier versions
+        self.view.backgroundColor = [UIColor whiteColor];
+    }
+    
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.backgroundColor = COLOR(@"#333333");
+    button.backgroundColor = DynamicColor(COLOR(@"333333"), COLOR(@"FFFFFF"));
     [button setTitle:@"hello" forState:UIControlStateNormal];
+    [button setTitleColor:DynamicColor(COLOR(@"FFFFFF"), COLOR(@"333333")) forState:UIControlStateNormal];
     button.frame = CGRectMake(100, 100, 100, 50);
     [self.view addSubview:button];
     [button addTarget:self action:@selector(onClickBtn) forControlEvents:UIControlEventTouchUpInside];
     
     
+    
     UIButton *btnTwo = [UIButton buttonWithType:UIButtonTypeCustom];
     btnTwo.backgroundColor = COLOR(@"#333333");
+    btnTwo.layer.borderWidth = 2;
+    btnTwo.layer.borderColor = DynamicColor([UIColor redColor], [UIColor greenColor]).CGColor;
     [btnTwo setTitle:@"show" forState:UIControlStateNormal];
     btnTwo.frame = CGRectMake(100, 200, 100, 50);
     [self.view addSubview:btnTwo];
     [btnTwo addTarget:self action:@selector(onClickBtnTwo) forControlEvents:UIControlEventTouchUpInside];
+    _btnTwo = btnTwo;
     
     UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
     btn3.backgroundColor = COLOR(@"#333333");
@@ -46,6 +67,15 @@
     btn3.frame = CGRectMake(100, 300, 100, 50);
     [self.view addSubview:btn3];
     [btn3 addTarget:self action:@selector(onClickBtnThr) forControlEvents:UIControlEventTouchUpInside];
+    
+    UILabel *labelTitle = [[UILabel alloc] initWithFrame:kRect(100, 400, 200, 30)];
+    labelTitle.textAlignment = NSTextAlignmentLeft;
+    labelTitle.font = kFontOfCustom(kMediumFont, 20);
+    labelTitle.textColor = COLOR(@"333333");
+    NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:DynamicColor([UIColor blackColor], [UIColor redColor])};
+    NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"富文本文案" attributes:dic];
+    labelTitle.attributedText = str;
+    [self.view addSubview:labelTitle];
     
     
     NSString *urlStr = [[NSURL URLWithString:@"v1/goin/list" relativeToURL:[NSURL URLWithString:@"https://www.baidu.com/"]] absoluteString];
@@ -64,22 +94,13 @@
 ///
 - (void)onClickBtnTwo {
     
-    [APPAlertTool showCustomLoading];
+    [self pushViewControllerWithClassString:@"FROrderCellVC" pageTitle:@"第二页面"];
 }
 
 ///
 - (void)onClickBtnThr {
     
-    [APPAlertTool hideCustomLoading];
-}
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    FROrderCellVC *vc = [[FROrderCellVC alloc] init];
-    
-    GFNavigationController *navi = [[GFNavigationController alloc] initWithRootViewController:vc];
-    navi.navigationBarHidden = YES;//隐藏系统导航条
-    
-    [self presentViewController:navi animated:YES completion:nil];
 }
 
 /*

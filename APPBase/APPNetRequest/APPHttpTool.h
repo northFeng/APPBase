@@ -26,6 +26,20 @@ typedef void (^Success) (id response , NSInteger code);//成功回调
 typedef void (^Failure) (NSError *error);//失败回调
 typedef void(^Preogress)(NSProgress *progress);//进度回调
 
+///请求失败 Error 错误信息
+typedef NSString *HTTPErrorMessage;
+
+///请求取消
+extern HTTPErrorMessage const HTTPErrorCancleMessage;
+///请求超时
+extern HTTPErrorMessage const HTTPErrorTimeOutMessage;
+///网络断开
+extern HTTPErrorMessage const HTTPErrorNotConnectedMessage;
+///网络不给力
+extern HTTPErrorMessage const HTTPErrorOthersMessage;
+///服务器返回错误
+extern HTTPErrorMessage const HTTPErrorServerMessage;
+
 @interface APPHttpTool : NSObject
 
 

@@ -36,6 +36,8 @@
 ///初始化信息
 - (void)initializeData{
     
+    _faceStyle = 0;//随系统
+    
     //从本地沙盒获取用户数据（做加密处理）
     // 初始化本地用户信息(也可以指定到某个沙盒文件中去)
     id locaalData = [APPUserDefault objectForKey:Current_Login_User];

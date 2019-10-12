@@ -19,7 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
  @param alpha 透明度
  @return 返回UIColor
  */
-+(UIColor *) colorWithHexString: (NSString *) stringToConvert alpha:(CGFloat)alpha;
++ (UIColor *)colorWithHexString:(NSString *)stringToConvert alpha:(CGFloat)alpha;
+
+///动态颜色
++ (UIColor *)dynamicColorWithLightColor:(UIColor *)lightColor darkColor:(UIColor *)darkColor;
 
 @end
 

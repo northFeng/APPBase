@@ -19,6 +19,8 @@
 //#import <BuglyHotfix/BuglyMender.h>
 #import "JPEngine.h"
 
+#import "APPAnalyticsHelper.h"//统计分析工具
+
 @interface AppDelegate ()<BuglyDelegate>
 
 @end

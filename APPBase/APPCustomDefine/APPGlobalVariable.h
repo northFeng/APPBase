@@ -22,6 +22,9 @@
 
 #pragma mark - ******************* 全局常量 *******************
 
+///暗黑模式变化通知
+GFKIT_EXTERN NSString * const _kGlobal_LightOrDarkModelChange;
+
 ///通知网络变化：name值
 GFKIT_EXTERN NSString * const _kGlobal_NetworkingReachabilityChangeNotification;
 

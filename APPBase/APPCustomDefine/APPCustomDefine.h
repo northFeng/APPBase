@@ -92,6 +92,9 @@ return _instance;                            \
 #define kTabBarHeight (kStatusBarHeight > 20 ? 83. : 49.)
 #define kTabBarBottomHeight (kStatusBarHeight > 20 ? 34. : 0.)
 
+//结构体
+#define kRect(x,y,width,height) CGRectMake(x, y, width, height)
+
 
 //字符串是否为空
 #define kStringIsEmpty(str) ([str isKindOfClass:[NSNull class]] || str == nil || [str length] < 1 ? YES : NO)
@@ -126,7 +129,8 @@ return _instance;                            \
 //设置color(传入16进制的颜色值)
 #define COLOR(str) COLORA(str,1.f)
 #define COLORA(str,a) [APPColorFunction colorWithHexString:str alpha:a]
-
+//动态颜色
+#define DynamicColor(lightcolor,darkcolor) [APPColorFunction dynamicColorWithLightColor:lightcolor darkColor:darkcolor]
 
 #pragma mark - APP内主体常用颜色
 
@@ -163,7 +167,7 @@ return _instance;                            \
 ///中等字体
 #define kMediumFont @"PingFangSC-Medium"
 ///半黑体
-#define kSemibold @"PingFangSC-Semibold"
+#define kSemiboldFont @"PingFangSC-Semibold"
 
 
 #pragma mark - 图片加载宏

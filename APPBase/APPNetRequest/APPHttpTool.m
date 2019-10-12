@@ -26,6 +26,13 @@
 
 @end
 
+///请求失败 Error 错误信息
+HTTPErrorMessage const HTTPErrorCancleMessage = @"请求被取消";
+HTTPErrorMessage const HTTPErrorTimeOutMessage = @"请求超时";
+HTTPErrorMessage const HTTPErrorNotConnectedMessage = @"网络连接断开";
+HTTPErrorMessage const HTTPErrorOthersMessage = @"网络不给力";
+HTTPErrorMessage const HTTPErrorServerMessage = @"服务器错误";
+
 @implementation APPHttpTool
 
 ///存储 请求任务
@@ -443,7 +450,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
     
     [APPHttpTool getWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
         
-        //NSString *message = [response objectForKey:@"msg"];
+        NSString *errorMessage = [response objectForKey:@"msg"];
         //id dataDic = [response objectForKey:@"data"];
         
         id dataDic = [response objectForKey:@"data"];
@@ -455,16 +462,34 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
             }
         }else{
             // 错误处理
-            //[weakSelf showMessage:message];
             if (block) {
-                block(NO,response);
+                block(NO,errorMessage);
             }
         }
         
     } fail:^(NSError *error) {
         
+        NSString *errorMessage = HTTPErrorOthersMessage;//error.localizedDescription;
+        switch (error.code) {
+            case NSURLErrorCancelled:
+                //被取消
+                errorMessage = HTTPErrorCancleMessage;
+                break;
+            case NSURLErrorTimedOut:
+                //超时
+                errorMessage = HTTPErrorTimeOutMessage;
+                break;
+            case NSURLErrorNotConnectedToInternet:
+                //断网
+                errorMessage = HTTPErrorNotConnectedMessage;
+                break;
+                
+            default:
+                
+                break;
+        }
         if (block) {
-            block(NO,error);
+            block(NO,errorMessage);
         }
     }];
 }
@@ -474,7 +499,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
     
     [APPHttpTool postWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
         
-        NSString *message = [response objectForKey:@"msg"];
+        NSString *errorMessage = [response objectForKey:@"msg"];
         //id dataDic = [response objectForKey:@"data"];
         
         id dataDic = [response objectForKey:@"data"];
@@ -486,16 +511,34 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
             }
         }else{
             // 错误处理
-            //[weakSelf showMessage:message];
             if (block) {
-                block(NO,message);
+                block(NO,errorMessage);
             }
         }
         
     } fail:^(NSError *error) {
         
+        NSString *errorMessage = HTTPErrorOthersMessage;//error.localizedDescription;
+        switch (error.code) {
+            case NSURLErrorCancelled:
+                //被取消
+                errorMessage = HTTPErrorCancleMessage;
+                break;
+            case NSURLErrorTimedOut:
+                //超时
+                errorMessage = HTTPErrorTimeOutMessage;
+                break;
+            case NSURLErrorNotConnectedToInternet:
+                //断网
+                errorMessage = HTTPErrorNotConnectedMessage;
+                break;
+                
+            default:
+                
+                break;
+        }
         if (block) {
-            block(NO,error.localizedDescription);
+            block(NO,errorMessage);
         }
     }];
 }
@@ -537,21 +580,21 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
 ///取消上一次GET同一请求,取最新次的请求
 + (void)cancelUpGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
     
-    [[APPHttpTool sharedNetworking] cancelRequestWithURL:url];
+    [[APPHttpTool sharedNetworking] cancelRequestWithURL:HTTPURL(url)];
     [APPHttpTool getRequestNetDicDataUrl:url params:params WithBlock:block];
 }
 
 ///取消上一次POST同一请求,取最新次的请求
 + (void)cancelUpPostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
     
-    [[APPHttpTool sharedNetworking] cancelRequestWithURL:url];
+    [[APPHttpTool sharedNetworking] cancelRequestWithURL:HTTPURL(url)];
     [APPHttpTool postRequestNetDicDataUrl:url params:params WithBlock:block];
 }
 
 ///重复GET请求只请求第一次
 + (void)oneceGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
     
-    if (![[APPHttpTool sharedNetworking] containSessionTaskForURl:url]) {
+    if (![[APPHttpTool sharedNetworking] containSessionTaskForURl:HTTPURL(url)]) {
         //没有在请求
         [APPHttpTool getRequestNetDicDataUrl:url params:params WithBlock:block];
     }
@@ -560,7 +603,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
 ///重复POST请求只请求第一次
 + (void)onecePostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
     
-    if (![[APPHttpTool sharedNetworking] containSessionTaskForURl:url]) {
+    if (![[APPHttpTool sharedNetworking] containSessionTaskForURl:HTTPURL(url)]) {
         //没有在请求
         [APPHttpTool postRequestNetDicDataUrl:url params:params WithBlock:block];
     }

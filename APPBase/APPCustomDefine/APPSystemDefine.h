@@ -14,22 +14,12 @@
 //**********      日志输出宏定义      *************
 //***********************************************
 //relese模式下不打印
-#ifdef DEBUG
-#define NSLog(...) NSLog(__VA_ARGS__)
-#define debugMethod() NSLog(@"%s 第%d行: %@", __func__, __LINE__)
-#else
-#define NSLog(...)
-#define debugMethod()
-#endif
 
-/**
- //宏定义 nslog ------>会输出哪一个视图哪一个行
- #ifdef DEBUG
- #define NSLog(fmt,...) NSLog((@"--> %s line--%d " fmt),__PRETTY_FUNCTION__,__LINE__,##__VA_ARGS__)
- #else
- #define NSLog(fmt,...)
- #endif
- */
+#ifdef DEBUG
+# define NSLog(fmt, ...) NSLog((@"[File:%s]" "[Function:%s]" "[Line:%d]--->" fmt), [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+# define NSLog(...);
+#endif
 
 #pragma mark - 系统方法宏定义
 //***********************************************

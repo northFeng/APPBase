@@ -24,16 +24,18 @@
 #import <ReactiveObjC/ReactiveObjC.h>//RAC
 
 #pragma mark - APP内文件
-#import "APPToolHeader.h"
-#import "APPFunctionMethod.h"//公共方法工厂
-#import "APPGlobalVariable.h"//全局变量&&宏定义
-#import "APPHttpTool.h"//网络请求类
 #import "APPManager.h"//APP管理者
-#import "APPAnalyticsHelper.h"//统计分析工具
+#import "APPGlobalVariable.h"//全局变量&&宏定义
+#import "APPFunctionMethod.h"//公共方法工厂
+
+#import "APPThirdHeader.h"//第三方模块功能
+#import "APPToolHeader.h"//工具类
+
+
+#import "APPHttpTool.h"//网络请求类
 #import "FRLoginManager.h"//登录管理类
 
-///RAC MVVM数据绑定框架
-#import <ReactiveObjC.h>
+
 
 
 #endif /* APPPrefixHeader_pch */

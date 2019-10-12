@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "APPBaseViewController.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APPBaseModel : NSObject

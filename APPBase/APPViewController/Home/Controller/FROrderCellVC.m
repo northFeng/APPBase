@@ -18,10 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = DynamicColor([UIColor whiteColor], [UIColor greenColor]);
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.backgroundColor = COLOR(@"#333333");
+    button.backgroundColor = DynamicColor(COLOR(@"333333"), COLOR(@"FFFFFF"));
     [button setTitle:@"hello" forState:UIControlStateNormal];
     button.frame = CGRectMake(100, 100, 100, 50);
     [self.view addSubview:button];
