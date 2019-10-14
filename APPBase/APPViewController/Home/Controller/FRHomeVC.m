@@ -17,6 +17,7 @@
 @implementation FRHomeVC
 {
     UIButton *_btnTwo;
+    UIButton *_btn3;
 }
 
 - (void)dealloc{
@@ -27,19 +28,20 @@
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
     [super traitCollectionDidChange:previousTraitCollection];
     
-    _btnTwo.layer.borderColor = DynamicColor([UIColor redColor], [UIColor greenColor]).CGColor;
+
+    if (@available(iOS 13.0, *)) {
+    
+        
+    } else {
+        // Fallback on earlier versions
+    }
+   // _btnTwo.layer.borderColor = DynamicColor([UIColor redColor], [UIColor greenColor]).CGColor;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if (@available(iOS 13.0, *)) {
-        self.view.backgroundColor = [UIColor placeholderTextColor];
-    } else {
-        // Fallback on earlier versions
-        self.view.backgroundColor = [UIColor whiteColor];
-    }
-    
+        
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.backgroundColor = DynamicColor(COLOR(@"333333"), COLOR(@"FFFFFF"));
@@ -54,7 +56,7 @@
     UIButton *btnTwo = [UIButton buttonWithType:UIButtonTypeCustom];
     btnTwo.backgroundColor = COLOR(@"#333333");
     btnTwo.layer.borderWidth = 2;
-    btnTwo.layer.borderColor = DynamicColor([UIColor redColor], [UIColor greenColor]).CGColor;
+    LayerBorderCGColor(btnTwo, btnTwo.layer, DynamicColor([UIColor redColor], [UIColor greenColor]));
     [btnTwo setTitle:@"show" forState:UIControlStateNormal];
     btnTwo.frame = CGRectMake(100, 200, 100, 50);
     [self.view addSubview:btnTwo];
@@ -64,9 +66,12 @@
     UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
     btn3.backgroundColor = COLOR(@"#333333");
     [btn3 setTitle:@"hide" forState:UIControlStateNormal];
+    btn3.layer.borderWidth = 2;
+    LayerBorderCGColor(btn3, btn3.layer, DynamicColor([UIColor redColor], [UIColor greenColor]));
     btn3.frame = CGRectMake(100, 300, 100, 50);
     [self.view addSubview:btn3];
     [btn3 addTarget:self action:@selector(onClickBtnThr) forControlEvents:UIControlEventTouchUpInside];
+    _btn3 = btn3;
     
     UILabel *labelTitle = [[UILabel alloc] initWithFrame:kRect(100, 400, 200, 30)];
     labelTitle.textAlignment = NSTextAlignmentLeft;

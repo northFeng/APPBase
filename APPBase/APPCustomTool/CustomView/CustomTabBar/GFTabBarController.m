@@ -11,8 +11,8 @@
 //常量命名规则（驼峰式命名规则），所有的单词首字母大写和加上与类名有关的前缀:
 //文字默认和选中时颜色
 #define ColorTabBar_TextSelect RGB(67,155,247)
-#define ColorTabBar_TextNormal RGBS(174)
-#define ColorTabBar [UIColor whiteColor]
+#define ColorTabBar_TextNormal DynamicColor(RGBS(174), [UIColor grayColor])
+#define ColorTabBar DynamicColor([UIColor whiteColor], [UIColor blackColor])
 //分割线
 #define ColorSegmentation RGBS(230)
 

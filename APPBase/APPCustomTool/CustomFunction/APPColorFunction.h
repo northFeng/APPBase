@@ -24,6 +24,18 @@ NS_ASSUME_NONNULL_BEGIN
 ///动态颜色
 + (UIColor *)dynamicColorWithLightColor:(UIColor *)lightColor darkColor:(UIColor *)darkColor;
 
+
+#pragma mark - ************************* layer的CGColor赋值 *************************
+///赋值layer 边框颜色
++ (void)layerSupView:(UIView *)supview layer:(CALayer *)layer dynamicBorderColor:(UIColor *)borderColor;
+
+///赋值layer 阴影颜色
++ (void)layerSupView:(UIView *)supview layer:(CALayer *)layer dynamicShadowColor:(UIColor *)shadowColor;
+
+///赋值layer 背景颜色
++ (void)layerSupView:(UIView *)supview layer:(CALayer *)layer dynamicBackgrounColor:(UIColor *)backgrounColor;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

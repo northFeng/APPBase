@@ -42,7 +42,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeVCLightOrDarkModel) name:_kGlobal_LightOrDarkModelChange object:nil];
     
     //统一视图背景颜色
-    self.view.backgroundColor = APPColor_White;
+    self.view.backgroundColor = DynamicColor([UIColor whiteColor], [UIColor blackColor]);
     
     //设置状态栏状态数据初始状态(默认为黑色，不隐藏)
     _statusStyle = UIStatusBarStyleDefault;
@@ -275,7 +275,7 @@
     }
 }
 
-///改变模式通知
+///改变模式通知 警告！这个是单独设置个别VC的特征集合模式，设置完不受系统控制
 - (void)changeVCLightOrDarkModel {
 
     if (@available(iOS 13.0, *)) {
@@ -312,6 +312,13 @@
     要想一键设置App下所有的ViewController都是Dark Mode，请直接在Window上执行overrideUserInterfaceStyle
 
     对window.rootViewController强行设置Dark Mode也不会影响后续present出的ViewController的模式
+     
+     注意!!!
+     当我们强行设置当前viewController为Dark Mode后，这个viewController下的view都是Dark Mode
+     由这个ViewController present出的ViewController不会受到影响，依然跟随系统的模式
+     要想一键设置App下所有的ViewController都是Dark Mode，请直接在Window上执行overrideUserInterfaceStyle
+
+     对window.rootViewController强行设置Dark Mode也不会影响后续present出的ViewController的模式
      */
 }
 
@@ -325,9 +332,25 @@
             //模式已变
             NSLog(@"模式切换");
             //在这里进行 layer的颜色动态改变
+            if (_statusStyle != UIStatusBarStyleDefault) {
+                //不是系统默认
+                if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
+                    //更新暗黑模式
+                    [self setStatusBarStyleDark];
+                }else if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark){
+                    //更新亮色模式
+                    [self setStatusBarStyleLight];
+                }
+            }
         }
     }
+    /** 这些布局方法也会触发
+       - (void)drawRect;
+       - (void)viewWillLayoutSubviews;
+       - (void)viewDidLayoutSubviews;
+     */
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

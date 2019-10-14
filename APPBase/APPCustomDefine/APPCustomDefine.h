@@ -129,8 +129,16 @@ return _instance;                            \
 //设置color(传入16进制的颜色值)
 #define COLOR(str) COLORA(str,1.f)
 #define COLORA(str,a) [APPColorFunction colorWithHexString:str alpha:a]
+
+#pragma mark - 动态颜色 && layer的CGColor
 //动态颜色
 #define DynamicColor(lightcolor,darkcolor) [APPColorFunction dynamicColorWithLightColor:lightcolor darkColor:darkcolor]
+///赋值layer的边框颜色
+#define LayerBorderCGColor(supview,Layer,borderColor) [APPColorFunction layerSupView:supview layer:Layer dynamicBorderColor:borderColor]
+///赋值layer的阴影颜色
+#define LayerShadowColor(supview,Layer,shadowColor) [APPColorFunction layerSupView:supview layer:Layer dynamicShadowColor:shadowColor]
+///赋值layer的背景颜色
+#define LayerBackgroundColor(supview,Layer,backgrounColor) [APPColorFunction layerSupView:supview layer:Layer dynamicBackgrounColor:backgrounColor]
 
 #pragma mark - APP内主体常用颜色
 

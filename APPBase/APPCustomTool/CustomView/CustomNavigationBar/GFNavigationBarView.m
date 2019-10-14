@@ -12,7 +12,7 @@
 
 ///常量命名规则（驼峰式命名规则），所有的单词首字母大写和加上与类名有关的前缀:
 //导航条颜色设置
-#define ColorNaviBar [UIColor whiteColor]
+#define ColorNaviBar DynamicColor([UIColor whiteColor], [UIColor blackColor])
 #define ColorNaviBar_ItemText RGBS(51)
 #define FontNaviBar_ItemText [UIFont systemFontOfSize:12]
 
@@ -69,7 +69,7 @@
     _titleLabel.backgroundColor = [UIColor clearColor];
     _titleLabel.text = @"标题";
     _titleLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:18];
-    _titleLabel.textColor = RGBS(51);
+    _titleLabel.textColor = DynamicColor([UIColor blackColor], [UIColor grayColor]);
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     [_naviBarView addSubview:_titleLabel];
     

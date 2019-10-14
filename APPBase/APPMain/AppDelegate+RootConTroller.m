@@ -72,7 +72,7 @@
     [gfTabBar creatItemsWithDefaultIndex:0 normalImageNameArray:arrayNomal selectImageArray:arraySelect itemsTitleArray:arrayTitle];//设置items并设置第一个显示位置
     
     GFNavigationController *navi = [[GFNavigationController alloc] initWithRootViewController:gfTabBar];
-    navi.navigationBarHidden = YES;//隐藏系统导航条
+    navi.navigationBar.hidden = YES;//隐藏系统导航条
     //设置根视图
     self.window.rootViewController = navi;
     

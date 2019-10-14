@@ -53,5 +53,10 @@ pod 'Bugly','~>2.5.0'
 #RAC 数据绑定框架
 pod 'ReactiveObjC', '~>3.1.1'
 
+#Drak Model 
+pod 'XYColorOC'
+
+
+
 end
 
