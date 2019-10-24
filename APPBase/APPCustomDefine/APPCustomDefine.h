@@ -40,10 +40,11 @@ return _instance;                            \
 //**********      常用自定义宏      *************
 //***********************************************
 
-///weakSelf宏定义  __weak typeof(self) weakSelf = self;
-#define WS(weakSelf)  __weak typeof(&*self)weakSelf = self;
-#define APPWeakSelf __weak typeof(self) weakSelf = self;
-#define APPStrongSelf __strong typeof(self) strongSelf = weakSelf;
+// ----------------------------- WeakSelf & StrongSelf -----------------------------
+//__typeof__()和 __typeof()和 typeof() 都是 C 的扩展,且意思是相同的,标准C不包括这样的运算符
+#define WeakSelf(self) __weak __typeof(self) weakSelf = self;
+#define StrongSelf(weakSelf)  __strong __typeof(weakSelf) strongSelf = weakSelf;
+#define WS(weakSelf)  __weak __typeof(self)weakSelf = self;
 
 
 #pragma mark - APPManager常用宏
