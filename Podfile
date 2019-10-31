@@ -56,6 +56,8 @@ pod 'ReactiveObjC', '~>3.1.1'
 #Drak Model 
 pod 'XYColorOC'
 
+#检查内存泄漏
+pod 'MLeaksFinder'
 
 
 end
