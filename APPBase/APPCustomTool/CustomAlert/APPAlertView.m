@@ -236,7 +236,7 @@
 ///隐藏
 - (void)hideAlert{
     
-    APPWeakSelf;
+    WeakSelf(self);
     
     [UIView animateWithDuration:0.1 animations:^{
         

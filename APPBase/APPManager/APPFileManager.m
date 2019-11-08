@@ -10,4 +10,14 @@
 
 @implementation APPFileManager
 
+///创建路径
++ (void)createFilePath:(NSString *)filePath {
+    
+    NSFileManager *fm = [NSFileManager defaultManager];
+    
+    if (![fm fileExistsAtPath:filePath]) {
+        [fm createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+}
+
 @end

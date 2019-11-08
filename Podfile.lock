@@ -1,0 +1,102 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - Aspects (1.4.1)
+  - AvoidCrash (2.5.2)
+  - Bugly (2.5.0)
+  - FBRetainCycleDetector (0.1.4)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - IQKeyboardManager (6.5.3)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MJRefresh (3.2.0)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
+  - MMKV (1.0.23)
+  - ReactiveObjC (3.1.1)
+  - SDAutoLayout (2.2.1)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - XYColorOC (1.0.0)
+  - YYCache (1.0.4)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.2.1)
+  - Aspects (~> 1.4.1)
+  - AvoidCrash (~> 2.5.2)
+  - Bugly (~> 2.5.0)
+  - FMDB (~> 2.7.5)
+  - IQKeyboardManager
+  - Masonry (~> 1.1)
+  - MBProgressHUD (~> 1.1.0)
+  - MJRefresh (~> 3.1)
+  - MLeaksFinder
+  - MMKV (~> 1.0.18)
+  - ReactiveObjC (~> 3.1.1)
+  - SDAutoLayout (~> 2.1)
+  - SDWebImage (~> 4.0.0)
+  - XYColorOC
+  - YYCache (~> 1.0.4)
+  - YYModel (~> 1.0.4)
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - Aspects
+    - AvoidCrash
+    - Bugly
+    - FBRetainCycleDetector
+    - FMDB
+    - IQKeyboardManager
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MLeaksFinder
+    - MMKV
+    - ReactiveObjC
+    - SDAutoLayout
+    - SDWebImage
+    - XYColorOC
+    - YYCache
+    - YYModel
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
+  Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  IQKeyboardManager: c2f901164d56807a35788483584d09fa69192e8e
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
+  MMKV: 031ae51aedc0af1b250922f7ed8a6b6ee2f94c4c
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SDAutoLayout: 8bf6b3bbc8b01f775d4defbb4fda2ace805461be
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  XYColorOC: ac165ce0868ed5fb4c3179a680a034bf4e40d580
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: 128eb4551870ee232941f2d2c7a20aa822f43ca5
+
+COCOAPODS: 1.8.4

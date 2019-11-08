@@ -8,8 +8,6 @@
 
 #import "GFNavigationBarView.h"
 
-#import "GFNavigationBarView.h"
-
 ///常量命名规则（驼峰式命名规则），所有的单词首字母大写和加上与类名有关的前缀:
 //导航条颜色设置
 #define ColorNaviBar DynamicColor([UIColor whiteColor], [UIColor blackColor])

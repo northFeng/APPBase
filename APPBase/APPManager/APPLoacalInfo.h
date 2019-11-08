@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///app版本号
 + (NSString *)appVerion;
 
+///判断iPhone && iPad
++ (BOOL)iPhoneOrIpad;
+
 
 ///跳转到苹果商店
 + (void)gotoAppleStore;

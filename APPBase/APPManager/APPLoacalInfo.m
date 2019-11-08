@@ -28,6 +28,30 @@
     return appVerion;
 }
 
++ (BOOL)iPhoneOrIpad {
+    
+    BOOL isIphone = NO;
+    
+    switch ([[UIDevice currentDevice] userInterfaceIdiom]) {
+        case UIUserInterfaceIdiomPhone:
+            isIphone = YES;
+            break;
+        case UIUserInterfaceIdiomPad:
+            isIphone = NO;
+            break;
+        case UIUserInterfaceIdiomTV:
+            isIphone = NO;
+            break;
+        case UIUserInterfaceIdiomCarPlay:
+            isIphone = NO;
+            break;
+            
+        default:
+            break;
+    }
+    return isIphone;
+}
+
 ///跳转到苹果商店
 + (void)gotoAppleStore{
     

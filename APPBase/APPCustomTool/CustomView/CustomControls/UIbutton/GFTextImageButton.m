@@ -3,7 +3,7 @@
 //  APPBase
 //
 //  Created by 峰 on 2019/10/10.
-//  Copyright © 2019 ishansong. All rights reserved.
+//  Copyright © 2019 North_feng. All rights reserved.
 //
 
 #import "GFTextImageButton.h"

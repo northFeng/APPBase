@@ -3,7 +3,7 @@
 //  FlashSend
 //
 //  Created by gaoyafeng on 2018/10/27.
-//  Copyright © 2018 ishansong. All rights reserved.
+//  Copyright © 2018 North_feng. All rights reserved.
 //
 
 #import "GFButtonPress.h"

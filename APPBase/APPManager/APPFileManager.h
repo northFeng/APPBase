@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPFileManager : NSObject
 
+///创建路径
++ (void)createFilePath:(NSString *)filePath;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

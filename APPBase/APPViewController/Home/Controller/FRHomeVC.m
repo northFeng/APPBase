@@ -9,8 +9,12 @@
 #import "FRHomeVC.h"
 #import "FROrderCellVC.h"
 #import "GFNavigationController.h"
+#import "APPDataBase.h"//数据库
 
 @interface FRHomeVC ()
+
+///
+@property (nonatomic,strong) APPDataBase *dataBase;
 
 @end
 
@@ -25,88 +29,63 @@
     NSLog(@"---->FRHome死亡了");
 }
 
-- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-    [super traitCollectionDidChange:previousTraitCollection];
-    
-
-    if (@available(iOS 13.0, *)) {
-    
-        
-    } else {
-        // Fallback on earlier versions
-    }
-   // _btnTwo.layer.borderColor = DynamicColor([UIColor redColor], [UIColor greenColor]).CGColor;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-        
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.backgroundColor = DynamicColor(COLOR(@"333333"), COLOR(@"FFFFFF"));
-    [button setTitle:@"hello" forState:UIControlStateNormal];
-    [button setTitleColor:DynamicColor(COLOR(@"FFFFFF"), COLOR(@"333333")) forState:UIControlStateNormal];
-    button.frame = CGRectMake(100, 100, 100, 50);
-    [self.view addSubview:button];
-    [button addTarget:self action:@selector(onClickBtn) forControlEvents:UIControlEventTouchUpInside];
     
     
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [btn setTitle:@"存储" forState:UIControlStateNormal];
+    btn.frame = CGRectMake(100, 200, 50, 30);
+    [btn addTarget:self action:@selector(onClickBtnStore) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
     
-    UIButton *btnTwo = [UIButton buttonWithType:UIButtonTypeCustom];
-    btnTwo.backgroundColor = COLOR(@"#333333");
-    btnTwo.layer.borderWidth = 2;
-    LayerBorderCGColor(btnTwo, btnTwo.layer, DynamicColor([UIColor redColor], [UIColor greenColor]));
-    [btnTwo setTitle:@"show" forState:UIControlStateNormal];
-    btnTwo.frame = CGRectMake(100, 200, 100, 50);
-    [self.view addSubview:btnTwo];
-    [btnTwo addTarget:self action:@selector(onClickBtnTwo) forControlEvents:UIControlEventTouchUpInside];
-    _btnTwo = btnTwo;
+    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeSystem];
+    [btn2 setTitle:@"全部" forState:UIControlStateNormal];
+    btn2.frame = CGRectMake(200, 200, 50, 30);
+    [btn2 addTarget:self action:@selector(onClickBtnTake) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn2];
     
-    UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn3.backgroundColor = COLOR(@"#333333");
-    [btn3 setTitle:@"hide" forState:UIControlStateNormal];
-    btn3.layer.borderWidth = 2;
-    LayerBorderCGColor(btn3, btn3.layer, DynamicColor([UIColor redColor], [UIColor greenColor]));
-    btn3.frame = CGRectMake(100, 300, 100, 50);
+    UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeSystem];
+    [btn3 setTitle:@"分页" forState:UIControlStateNormal];
+    btn3.frame = CGRectMake(300, 200, 50, 30);
+    [btn3 addTarget:self action:@selector(onClickBtnTakePage) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn3];
-    [btn3 addTarget:self action:@selector(onClickBtnThr) forControlEvents:UIControlEventTouchUpInside];
-    _btn3 = btn3;
-    
-    UILabel *labelTitle = [[UILabel alloc] initWithFrame:kRect(100, 400, 200, 30)];
-    labelTitle.textAlignment = NSTextAlignmentLeft;
-    labelTitle.font = kFontOfCustom(kMediumFont, 20);
-    labelTitle.textColor = COLOR(@"333333");
-    NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:DynamicColor([UIColor blackColor], [UIColor redColor])};
-    NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"富文本文案" attributes:dic];
-    labelTitle.attributedText = str;
-    [self.view addSubview:labelTitle];
     
     
-    NSString *urlStr = [[NSURL URLWithString:@"v1/goin/list" relativeToURL:[NSURL URLWithString:@"https://www.baidu.com/"]] absoluteString];
+    _dataBase = [[APPDataBase alloc] init];
     
-    NSLog(@"--->%@",urlStr);
+    [_dataBase createDataBase];
+    [_dataBase createDataBase];
+}
+
+///存储
+- (void)onClickBtnStore {
+    
+    
+    
+    static int i = 0;
+    
+    i++;
+    NSString *name = [NSString stringWithFormat:@"王%d",i];
+    NSString *age = [NSString stringWithFormat:@"age%d",i];
+    [_dataBase insertDataName:name age:age];
+}
+
+///读取
+- (void)onClickBtnTake {
+   
+    [_dataBase getData];
+    
 }
 
 ///
-- (void)onClickBtn {
-    
-    [APPAlertTool showAlertMessage:@"弹出来了"];
-    
-    [self pushViewControllerWithClassString:@"FRHomeVC" pageTitle:@"第二页面"];
+- (void)onClickBtnTakePage {
+    static int i = 0;
+    [_dataBase getDataPage:i limit:5];
+    i ++;
 }
 
-///
-- (void)onClickBtnTwo {
-    
-    [self pushViewControllerWithClassString:@"FROrderCellVC" pageTitle:@"第二页面"];
-}
-
-///
-- (void)onClickBtnThr {
-    
-
-}
 
 /*
 #pragma mark - Navigation

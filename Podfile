@@ -41,7 +41,8 @@ pod 'IQKeyboardManager'
 pod 'AvoidCrash', '~> 2.5.2'
 
 #FMDB数据库
-pod 'FMDB/SQLCipher', '~> 2.5'
+pod 'FMDB','~>2.7.5'
+
 
 #***************** 第三方功能框架引入**************
 #bug追踪
