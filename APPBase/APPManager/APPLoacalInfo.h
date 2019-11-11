@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPLoacalInfo : NSObject
 
+///获取设备唯一标识
++ (NSString *)getDeviceIDInKeychain;
+
 ///手机系统版本号
 + (NSString *)phoneIOSVerion;
 

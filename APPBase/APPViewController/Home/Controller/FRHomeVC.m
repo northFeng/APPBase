@@ -16,6 +16,8 @@
 ///
 @property (nonatomic,strong) APPDataBase *dataBase;
 
+
+
 @end
 
 @implementation FRHomeVC
@@ -56,20 +58,15 @@
     _dataBase = [[APPDataBase alloc] init];
     
     [_dataBase createDataBase];
-    [_dataBase createDataBase];
+    
+    
 }
 
 ///存储
 - (void)onClickBtnStore {
     
-    
-    
-    static int i = 0;
-    
-    i++;
-    NSString *name = [NSString stringWithFormat:@"王%d",i];
-    NSString *age = [NSString stringWithFormat:@"age%d",i];
-    [_dataBase insertDataName:name age:age];
+    NSLog(@"---->%@",[APPLoacalInfo getDeviceIDInKeychain]);
+    //4780A8E1-8F2D-4324-B5FF-92228139AB53
 }
 
 ///读取
