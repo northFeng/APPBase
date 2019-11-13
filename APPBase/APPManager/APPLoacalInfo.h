@@ -21,6 +21,13 @@ NS_ASSUME_NONNULL_BEGIN
 ///app版本号
 + (NSString *)appVerion;
 
+///APP名称
++ (NSString *)appName;
+
+///app build版本
++ (NSString *)appBuildVersion;
+
+
 ///判断iPhone && iPad
 + (BOOL)iPhoneOrIpad;
 

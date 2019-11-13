@@ -100,6 +100,20 @@ NSString * const KEY_UDID_INSTEAD = @"com.appBase.udid";
     return appVerion;
 }
 
+///APP名称
++ (NSString *)appName {
+    
+    NSString *appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
+    return appName;
+}
+
+///app build版本
++ (NSString *)appBuildVersion {
+    
+    NSString *appBuild = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    return appBuild;
+}
+
 + (BOOL)iPhoneOrIpad {
     
     BOOL isIphone = NO;
