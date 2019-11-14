@@ -16,6 +16,16 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)createFilePath:(NSString *)filePath;
 
 
+///获取某文件夹的大小
++ (NSUInteger)getFolderSizeOfPath:(NSString *)folderPath;
+
+///获取文件大小
++ (NSUInteger)getFileSizeOfPath:(NSString *)filePath;
+
+///遍历文件下所有文件计算大小
++ (NSUInteger)getSizeOfFolderPath:(NSString *)folderPath;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

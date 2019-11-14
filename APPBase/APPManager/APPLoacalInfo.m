@@ -88,6 +88,13 @@ NSString * const KEY_UDID_INSTEAD = @"com.appBase.udid";
 
 //----------------------------------------------------------------------------------------------
 
+///设备人名字
++ (NSString *)phoneDevicesName {
+    
+    NSString *phoneDeviesName = [UIDevice currentDevice].name;
+    return phoneDeviesName;
+}
+
 ///手机系统版本号
 + (NSString *)phoneIOSVerion{
     NSString *phoneIOSVerion = [UIDevice currentDevice].systemVersion;
