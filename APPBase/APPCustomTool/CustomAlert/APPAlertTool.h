@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIViewController *)topViewControllerOfAPP;
 
 ///弹出文字提示
-+ (void)showAlertMessage:(NSString *)message;
++ (void)showMessage:(NSString *)message;
 
 ///显示菊花等待
 + (void)showLoading;

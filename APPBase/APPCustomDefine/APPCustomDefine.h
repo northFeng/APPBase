@@ -191,6 +191,8 @@ return _instance;                            \
 #define kImgViewSetGifImage(imgView,gifName) imgView.image = [UIImage sd_animatedGIFWithData:[[NSData alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:gifName ofType:@"gif"]]]
 
 
+#pragma mark - ************************* 吐字 && 弹框 *************************
+#define AlertMessage(msg) [APPAlertTool showMessage:msg]
 
 
 #endif /* APPCustomDefine_h */

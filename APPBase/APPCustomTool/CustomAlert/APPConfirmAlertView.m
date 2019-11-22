@@ -166,9 +166,9 @@
 - (void)onClickBtnOk {
     if (self->_textField.text.length > 10) {
         if (_type == 1) {
-            [APPAlertTool showAlertMessage:@"学生备注不能超过10个字"];
+            [APPAlertTool showMessage:@"学生备注不能超过10个字"];
         } else if (_type == 2) {
-            [APPAlertTool showAlertMessage:@"班级备注不能超过10个字"];
+            [APPAlertTool showMessage:@"班级备注不能超过10个字"];
         }
         return;
     }
@@ -177,7 +177,7 @@
         NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
         BOOL isMatch = [pred evaluateWithObject:_textField.text];
         if (!isMatch) {
-            [APPAlertTool showAlertMessage:@"姓名只能包含中英文、数字"];
+            [APPAlertTool showMessage:@"姓名只能包含中英文、数字"];
             return;
         }
     }

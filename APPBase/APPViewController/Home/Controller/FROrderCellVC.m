@@ -46,7 +46,7 @@
 ///
 - (void)onClickBtn {
     
-    [APPAlertTool showAlertMessage:@"弹出来了"];
+    [APPAlertTool showMessage:@"弹出来了"];
     
     [self pushViewControllerWithClassString:@"FRHomeVC" pageTitle:@"第二页面"];
 }

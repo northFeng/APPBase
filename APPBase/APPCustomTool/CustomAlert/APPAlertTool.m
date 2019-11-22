@@ -67,11 +67,23 @@
     }
 }
 
-+ (void)showAlertMessage:(NSString *)message{
++ (void)showMessage:(NSString *)message{
     
     //先取消已有的
-    [MBProgressHUD hideHUDForView:[UIApplication sharedApplication].keyWindow animated:NO];
+    //[MBProgressHUD hideHUDForView:[UIApplication sharedApplication].keyWindow animated:NO];
     
+    NSEnumerator *subviewsEnum = [[UIApplication sharedApplication].keyWindow.subviews reverseObjectEnumerator];
+    for (UIView *subview in subviewsEnum) {
+        if ([subview isKindOfClass:[MBProgressHUD class]]) {
+            MBProgressHUD *hud = (MBProgressHUD *)subview;
+            //hud.removeFromSuperViewOnHide = YES;
+            //[hud hideAnimated:NO];
+            [hud removeFromSuperview];
+            hud = nil;
+        }
+    }
+    
+    //显示新的
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
     hud.userInteractionEnabled = NO;//不阻挡下面的手势
     hud.mode = MBProgressHUDModeText;
