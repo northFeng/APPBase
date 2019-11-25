@@ -36,6 +36,34 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)layerSupView:(UIView *)supview layer:(CALayer *)layer dynamicBackgrounColor:(UIColor *)backgrounColor;
 
 
+#pragma mark - ************************* 获取颜色 *************************
+///基础黑色
++ (UIColor *)blackColor;
+
+///基础白色颜色
++ (UIColor *)whiteColor;
+
+///系统白亮文字颜色
++ (UIColor *)lightTextColor;;
+
+///系统黑暗文字颜色
++ (UIColor *)drakTextColor;
+
+
+///APP内黑色文字颜色384A74
++ (UIColor *)textBlackColor;
+
+///APP内灰色C0C0C0
++ (UIColor *)textGrayColor;
+
+///文字蓝色65BAFF
++ (UIColor *)textBlueColor;
+
+///输入框背景颜色
++ (UIColor *)textFieldBgColor;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

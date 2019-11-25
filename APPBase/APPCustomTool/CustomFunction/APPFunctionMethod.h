@@ -160,37 +160,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BOOL)url_ValidationUrlForUrlString:(NSString *)string;
 
-#pragma mark - v视图操作
-///设置视图的圆角和边框线
-+ (void)view_addBorderOnView:(UIView *)view borderWidth:(CGFloat)width borderColor:(UIColor *)color cornerRadius:(CGFloat)radius;
-
-///添加指定位置的圆角(使用前必须先设置frame)
-+ (void)view_addRoundedCornersOnView:(UIView *)view cornersPosition:(UIRectCorner)corners cornersWidth:(CGFloat)widthCorner;
-
-///添加指定位置的圆角（参数frame为CGRectMake(0, 0, weidth, height)）宽和高必须是视图显示后的尺寸！！
-+ (void)view_addRoundedCornersOnView:(UIView *)view viewFrame:(CGRect)frame cornersPosition:(UIRectCorner)corners cornersWidth:(CGFloat)widthCorner;
-
-///添加阴影 offsetSize:阴影的偏移量  shadowColor:阴影的颜色  shadowAlpha:阴影透明度
-+ (void)view_addShadowOnView:(UIView *)view shadowOffset:(CGSize)offsetSize shadowColor:(UIColor *)shadowColor shadowAlpha:(CGFloat)shadowAlpha;
-
-///创建label  参数weight为 0：不加粗  1:加粗
-+ (UILabel *)view_createLabelWith:(NSString *)text font:(CGFloat)font textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)alignment textWight:(NSInteger)weight;
-
-///创建label  参数weight为 0：不加粗  1:加粗
-+ (UILabel *)view_createLabelWith:(NSString *)text textFont:(UIFont *)font textColor:(UIColor *)textColor textAlignment:(NSTextAlignment)alignment;
-
-///创建button 参数：type 0:文字 1:图片
-+ (UIButton *)view_createButtonWithType:(NSInteger)type title:(nullable NSString *)title font:(nullable UIFont *)font titleColor:(nullable UIColor *)textColor backgroundColor:(nullable UIColor *)bgColor image:(nullable NSString *)imgStr target:(id)target action:(nullable SEL)action;
-
-///给按钮添加富文本文字
-+ (void)btn_addTitle:(NSString *)title textFont:(UIFont *)font textColor:(UIColor *)color forState:(UIControlState)state button:(UIButton *)button;
-
-///父视图主动移除所有的子视图
-+ (void)view_removeAllChildsViewFormSubView:(UIView *)subView;
-
-///添加横向的混合颜色
-+ (void)view_addHybridBackgroundColorWithColorOne:(UIColor *)colorOne andColorTwo:(UIColor *)colorTwo showOnView:(UIView *)onView;
-
 ///添加输入框
 + (UITextField *)view_createTextFieldWithPlaceholder:(NSString *)placeholderStr holderStrFont:(UIFont *)holderFont holderColor:(UIColor *)holderColor textFont:(UIFont *)textFont textColor:(UIColor *)textColor keyboardType:(UIKeyboardType)keyboardType returnKeyType:(UIReturnKeyType)returnKeyType;
 

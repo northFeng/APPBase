@@ -14,17 +14,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPViewTool : NSObject
 
+///创建view
++ (UIView *)view_createViewWithColor:(UIColor *)color;
+
 /**
  创建一个label
 
  @param text 文字
  @param font 字号
- @param fontName 字体
  @param color 颜色
  @param alignment 对齐方式
  @return label
  */
-+ (UILabel *)view_createLabelWith:(NSString *)text font:(CGFloat)font fontName:(NSString *)fontName textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment;
++ (UILabel *)view_createLabelWith:(NSString *)text font:(UIFont *)font textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment;
 
 /**
  创建一个图文按钮button
@@ -51,6 +53,22 @@ NS_ASSUME_NONNULL_BEGIN
  @param radius 边框圆角
  */
 + (void)view_addBorderOnView:(UIView *)view borderWidth:(CGFloat)width borderColor:(UIColor *)color cornerRadius:(CGFloat)radius;
+
+
+///添加指定位置的圆角(使用前必须先设置frame)
++ (void)view_addRoundedCornersOnView:(UIView *)view cornersPosition:(UIRectCorner)corners cornersWidth:(CGFloat)widthCorner;
+
+///添加指定位置的圆角（参数frame为CGRectMake(0, 0, weidth, height)）宽和高必须是视图显示后的尺寸！！
++ (void)view_addRoundedCornersOnView:(UIView *)view viewFrame:(CGRect)frame cornersPosition:(UIRectCorner)corners cornersWidth:(CGFloat)widthCorner;
+
+///添加阴影 offsetSize:阴影的偏移量  shadowColor:阴影的颜色  shadowAlpha:阴影透明度
++ (void)view_addShadowOnView:(UIView *)view shadowOffset:(CGSize)offsetSize shadowColor:(UIColor *)shadowColor shadowAlpha:(CGFloat)shadowAlpha;
+
+///父视图主动移除所有的子视图
++ (void)view_removeAllChildsViewFormSubView:(UIView *)subView;
+
+///添加横向的混合颜色
++ (void)view_addHybridBackgroundColorWithColorOne:(UIColor *)colorOne andColorTwo:(UIColor *)colorTwo showOnView:(UIView *)onView;
 
 
 @end
