@@ -28,6 +28,29 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UILabel *)view_createLabelWith:(NSString *)text font:(UIFont *)font textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment;
 
+/// 创建文字按钮
+/// @param title 标题
+/// @param textColor 文字颜色
+/// @param font 字体
+/// @param bgColor 按钮背景颜色
++ (UIButton *)view_createButtonTitle:(NSString *)title
+                           textColor:(UIColor *)textColor
+                            textFont:(UIFont *)font
+                             bgColor:(UIColor *)bgColor;
+
+/// 创建普通 文字 & 选中文字  按钮
+/// @param normalTitle 默认状态文字
+/// @param normalColor 默认文字颜色
+/// @param selectTtitle 选中文字
+/// @param selectColor 选中文字颜色
+/// @param font 字体
+/// @param bgColor 背景颜色
++ (UIButton *)view_createButtonTitleNormal:(NSString *)normalTitle normalTextColor:(UIColor *)normalColor selectTitle:(NSString *)selectTtitle selectTextColor:(UIColor *)selectColor textFont:(UIFont *)font bgColor:(UIColor *)bgColor;
+
+///创建普通图片按钮
++ (UIButton *)view_createButtonImageNormalImg:(UIImage *)normalImg selectImg:(UIImage *)selectImg;
+
+
 /**
  创建一个图文按钮button
 

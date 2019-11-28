@@ -46,25 +46,6 @@ NS_ASSUME_NONNULL_BEGIN
 ///设置字体
 + (UIFont *)font_setFontWithPingFangSC:(NSString *)fontName size:(NSInteger)size;
 
-#pragma mark - d时间操作
-///获取当前时间@"YYYY-MM-dd HH:mm
-+ (NSString *)date_getCurrentDateWithType:(NSString *)timeType;
-
-///时间戳转换时间 timeStamp:时间戳（记得转化精度为秒） timeType:转换格式(@"YYYY-MM-dd  HH:mm:ss")
-+ (NSString *)date_getDateWithTimeStamp:(NSInteger)timeStamp timeType:(NSString *)timeType;
-
-///获取当前时间戳 && 精度1000毫秒 1000000微妙
-+ (NSInteger)date_getNowTimeStampWithPrecision:(NSInteger)precision;
-
-///把日期数字换换成 年月日
-+ (NSString *)date_getTimeString:(NSString *)timeString;
-
-///把日期数字换换成 年月日 不带 ——
-+ (NSString *)date_getTimeStringTwo:(NSString *)timeString;
-
-///指定年月——>到现在的年月
-+ (NSMutableArray *)date_getDateArrayToNowWithYear:(NSInteger)startYear startMonth:(NSInteger)startMonth;
-
 #pragma mark - 加载图片 && GIF
 ///加载图片
 + (void)img_setImageWithUrl:(NSString *)url placeholderImage:(NSString *)placeholderImgName imgView:(UIImageView *)imgView;

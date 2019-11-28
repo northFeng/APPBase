@@ -16,6 +16,7 @@
 + (UIView *)view_createViewWithColor:(UIColor *)color {
     
     UIView *view = [[UIView alloc] init];
+    view.backgroundColor = color;
     return view;
 }
 
@@ -29,6 +30,58 @@
     
     return label;
 }
+
+
+///创建文字按钮
++ (UIButton *)view_createButtonTitle:(NSString *)title textColor:(UIColor *)textColor textFont:(UIFont *)font bgColor:(UIColor *)bgColor {
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    [button gf_addTitle:title textFont:font textColor:textColor forState:UIControlStateNormal];
+    
+    if (bgColor) {
+        button.backgroundColor = bgColor;
+    }
+    
+    return button;
+}
+
+///创建普通 文字 & 选中文字  按钮
++ (UIButton *)view_createButtonTitleNormal:(NSString *)normalTitle normalTextColor:(UIColor *)normalColor selectTitle:(NSString *)selectTtitle selectTextColor:(UIColor *)selectColor textFont:(UIFont *)font bgColor:(UIColor *)bgColor {
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    if (normalTitle) {
+        [button gf_addTitle:normalTitle textFont:font textColor:normalColor forState:UIControlStateNormal];
+    }
+    if (selectTtitle) {
+        [button gf_addTitle:selectTtitle textFont:font textColor:selectColor forState:UIControlStateSelected];
+    }
+    
+    if (bgColor) {
+        button.backgroundColor = bgColor;
+    }
+    
+    return button;
+}
+
+///创建普通图片按钮
++ (UIButton *)view_createButtonImageNormalImg:(UIImage *)normalImg selectImg:(UIImage *)selectImg {
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    if (normalImg) {
+        [button setImage:normalImg forState:UIControlStateNormal];
+    }
+    
+    if (selectImg) {
+        [button setImage:selectImg forState:UIControlStateSelected];
+        button.selected = NO;
+    }
+    
+    return button;
+}
+
 
 ///创建一个图文按钮
 + (GFTextImageButton *)view_createButtonWithBtnType:(ButtonType)btnType title:(NSString *)title titleSize:(CGSize)titleSize titleFont:(UIFont *)titleFont titleColor:(UIColor *)titleColor
