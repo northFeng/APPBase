@@ -20,8 +20,19 @@
     return view;
 }
 
+///创建imgView
++ (UIImageView *)view_createImageViewWithImageName:(NSString *)imgName {
+    
+    UIImageView *imgView = [[UIImageView alloc] init];
+    if (imgName) {
+        imgView.image = [UIImage imageNamed:imgName];
+    }
+    
+    return imgView;
+}
+
 ///创建label
-+ (UILabel *)view_createLabelWith:(NSString *)text font:(UIFont *)font textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment {
++ (UILabel *)view_createLabelWithText:(NSString *)text font:(UIFont *)font textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment {
     UILabel *label = [[UILabel alloc] init];
     label.text = text;
     label.font = font;
@@ -66,17 +77,29 @@
 }
 
 ///创建普通图片按钮
-+ (UIButton *)view_createButtonImageNormalImg:(UIImage *)normalImg selectImg:(UIImage *)selectImg {
++ (UIButton *)view_createButtonImageNormalImg:(NSString *)imgName_n selectImg:(NSString *)imgName_s {
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    if (normalImg) {
-        [button setImage:normalImg forState:UIControlStateNormal];
+    if (imgName_n) {
+        [button setImage:[UIImage imageNamed:imgName_n] forState:UIControlStateNormal];
     }
     
-    if (selectImg) {
-        [button setImage:selectImg forState:UIControlStateSelected];
+    if (imgName_s) {
+        [button setImage:[UIImage imageNamed:imgName_s] forState:UIControlStateSelected];
         button.selected = NO;
+    }
+    
+    return button;
+}
+
+///创建普通图片按钮
++ (UIButton *)view_createButtonImage:(NSString *)imageName {
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    if (imageName) {
+        [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     }
     
     return button;
@@ -91,6 +114,15 @@
     [btn setTitle:title labelSize:titleSize labelFont:titleFont textColor:titleColor imageName:imgName imgSize:imgSize viewDirection:btnType spacing:spacing];
     
     return btn;
+}
+
+#pragma mark - ************************* view的边角、阴影 *************************
+
+///设置四角圆角
++ (void)view_addRoundedCornersOnView:(UIView *)view cornersWidth:(CGFloat)widthCorner masksToBounds:(BOOL)bounds {
+    
+    view.layer.cornerRadius = widthCorner;
+    view.layer.masksToBounds = bounds;
 }
 
 ///设置视图的圆角和边框线

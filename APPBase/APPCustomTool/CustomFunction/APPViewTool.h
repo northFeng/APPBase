@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///创建view
 + (UIView *)view_createViewWithColor:(UIColor *)color;
 
+///创建imgView
++ (UIImageView *)view_createImageViewWithImageName:(NSString *)imgName;
+
 /**
  创建一个label
 
@@ -26,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param alignment 对齐方式
  @return label
  */
-+ (UILabel *)view_createLabelWith:(NSString *)text font:(UIFont *)font textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment;
++ (UILabel *)view_createLabelWithText:(NSString *)text font:(UIFont *)font textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment;
 
 /// 创建文字按钮
 /// @param title 标题
@@ -48,8 +51,17 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIButton *)view_createButtonTitleNormal:(NSString *)normalTitle normalTextColor:(UIColor *)normalColor selectTitle:(NSString *)selectTtitle selectTextColor:(UIColor *)selectColor textFont:(UIFont *)font bgColor:(UIColor *)bgColor;
 
 ///创建普通图片按钮
-+ (UIButton *)view_createButtonImageNormalImg:(UIImage *)normalImg selectImg:(UIImage *)selectImg;
++ (UIButton *)view_createButtonImageNormalImg:(NSString *)imgName_n selectImg:(NSString *)imgName_s;
 
+///创建普通图片按钮
++ (UIButton *)view_createButtonImage:(NSString *)imageName;
+
+
+#pragma mark - ************************* view的边角、阴影 *************************
+
+
+///设置四角圆角
++ (void)view_addRoundedCornersOnView:(UIView *)view cornersWidth:(CGFloat)widthCorner masksToBounds:(BOOL)bounds;
 
 /**
  创建一个图文按钮button
