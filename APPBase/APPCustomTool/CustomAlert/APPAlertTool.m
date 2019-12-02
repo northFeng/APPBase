@@ -100,32 +100,34 @@
 ///展示文字到某个视图上
 + (void)showMessage:(NSString *)message onView:(UIView *)view {
     
-    //先取消已有的
-    //[MBProgressHUD hideHUDForView:[UIApplication sharedApplication].keyWindow animated:NO];
-    
-    NSEnumerator *subviewsEnum = [view.subviews reverseObjectEnumerator];
-    for (UIView *subview in subviewsEnum) {
-        if ([subview isKindOfClass:[MBProgressHUD class]]) {
-            MBProgressHUD *hud = (MBProgressHUD *)subview;
-            //hud.removeFromSuperViewOnHide = YES;
-            //[hud hideAnimated:NO];
-            [hud removeFromSuperview];
-            hud = nil;
+    if (view) {
+        //先取消已有的
+        //[MBProgressHUD hideHUDForView:[UIApplication sharedApplication].keyWindow animated:NO];
+        
+        NSEnumerator *subviewsEnum = [view.subviews reverseObjectEnumerator];
+        for (UIView *subview in subviewsEnum) {
+            if ([subview isKindOfClass:[MBProgressHUD class]]) {
+                MBProgressHUD *hud = (MBProgressHUD *)subview;
+                //hud.removeFromSuperViewOnHide = YES;
+                //[hud hideAnimated:NO];
+                [hud removeFromSuperview];
+                hud = nil;
+            }
         }
+        
+        //显示新的
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+        hud.userInteractionEnabled = NO;//不阻挡下面的手势
+        hud.mode = MBProgressHUDModeText;
+        hud.detailsLabel.text = message;
+        hud.bezelView.backgroundColor = DynamicColor([UIColor blackColor],[UIColor lightGrayColor]);
+        hud.bezelView.layer.cornerRadius = 10.f;
+        hud.detailsLabel.textColor = DynamicColor([UIColor whiteColor], [UIColor blackColor]);
+        hud.detailsLabel.font = [UIFont systemFontOfSize:16];
+        hud.minShowTime = 1.5;
+        hud.offset = CGPointMake(0, -kScreenHeight*0.1);//2/5处 (5/10 - 4/10)
+        [hud hideAnimated:YES afterDelay:1.5];
     }
-    
-    //显示新的
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.userInteractionEnabled = NO;//不阻挡下面的手势
-    hud.mode = MBProgressHUDModeText;
-    hud.detailsLabel.text = message;
-    hud.bezelView.backgroundColor = DynamicColor([UIColor blackColor],[UIColor lightGrayColor]);
-    hud.bezelView.layer.cornerRadius = 10.f;
-    hud.detailsLabel.textColor = DynamicColor([UIColor whiteColor], [UIColor blackColor]);
-    hud.detailsLabel.font = [UIFont systemFontOfSize:16];
-    hud.minShowTime = 1.5;
-    hud.offset = CGPointMake(0, -kScreenHeight*0.1);//2/5处 (5/10 - 4/10)
-    [hud hideAnimated:YES afterDelay:1.5];
 }
 
 

@@ -107,7 +107,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
     
     NSMutableDictionary *dicMutable = [dicParams mutableCopy];
     
-    NSInteger timeStamp = [APPFunctionMethod date_getNowTimeStampWithPrecision:1000];
+    NSInteger timeStamp = 100000;//[APPFunctionMethod date_getNowTimeStampWithPrecision:1000];
     NSString *publicStr = [NSString stringWithFormat:@"platform=IOS&version=1.0&timeSpan=%ld&token=%@",timeStamp,APPManagerUserInfo.token];
     NSString *sign = [GFEncryption md5LowercaseString_32:publicStr];
     
@@ -446,7 +446,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
 
 #pragma mark - ************************* 普通请求 *************************
 ///get请求一个字典
-+ (void)getRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block{
++ (void)getRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block{
     
     [APPHttpTool getWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
         
@@ -458,12 +458,12 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         if (code == 200) {
             //请求成功
             if (block) {
-                block(YES,dataDic);
+                block(YES,dataDic,100);
             }
         }else{
             // 错误处理
             if (block) {
-                block(NO,errorMessage);
+                block(NO,errorMessage,101);
             }
         }
         
@@ -489,13 +489,13 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
                 break;
         }
         if (block) {
-            block(NO,errorMessage);
+            block(NO,errorMessage,99);
         }
     }];
 }
 
 ///post请求一个字典
-+ (void)postRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block{
++ (void)postRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block{
     
     [APPHttpTool postWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
         
@@ -507,12 +507,12 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         if (code == 200) {
             //请求成功
             if (block) {
-                block(YES,dataDic);
+                block(YES,dataDic,100);
             }
         }else{
             // 错误处理
             if (block) {
-                block(NO,errorMessage);
+                block(NO,errorMessage,101);
             }
         }
         
@@ -538,7 +538,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
                 break;
         }
         if (block) {
-            block(NO,errorMessage);
+            block(NO,errorMessage,99);
         }
     }];
 }
@@ -546,14 +546,14 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
 #pragma mark - ************************* 特殊网络请求 *************************
 
 ///GET取缓存数据 + 请求最新的数据&&更新缓存数据
-+ (void)cacheGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
++ (void)cacheGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block {
     
     id dataCache = HTTPCache(url, params);
     
     if (dataCache) {
         //有缓存
         if (block) {
-            block(YES,dataCache);
+            block(YES,dataCache,100);
         }
     }else{
         //没有缓存 ——> 请求
@@ -562,14 +562,14 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
 }
 
 ///POST取缓存数据 + 请求最新的数据&&更新缓存数据
-+ (void)cachePostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
++ (void)cachePostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block {
     
     id dataCache = HTTPCache(url, params);
     
     if (dataCache) {
         //有缓存
         if (block) {
-            block(YES,dataCache);
+            block(YES,dataCache,100);
         }
     }else{
         //没有缓存 ——> 请求
@@ -578,21 +578,21 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
 }
 
 ///取消上一次GET同一请求,取最新次的请求
-+ (void)cancelUpGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
++ (void)cancelUpGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block {
     
     [[APPHttpTool sharedNetworking] cancelRequestWithURL:HTTPURL(url)];
     [APPHttpTool getRequestNetDicDataUrl:url params:params WithBlock:block];
 }
 
 ///取消上一次POST同一请求,取最新次的请求
-+ (void)cancelUpPostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
++ (void)cancelUpPostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block {
     
     [[APPHttpTool sharedNetworking] cancelRequestWithURL:HTTPURL(url)];
     [APPHttpTool postRequestNetDicDataUrl:url params:params WithBlock:block];
 }
 
 ///重复GET请求只请求第一次
-+ (void)oneceGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
++ (void)oneceGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block {
     
     if (![[APPHttpTool sharedNetworking] containSessionTaskForURl:HTTPURL(url)]) {
         //没有在请求
@@ -601,7 +601,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
 }
 
 ///重复POST请求只请求第一次
-+ (void)onecePostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block {
++ (void)onecePostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block {
     
     if (![[APPHttpTool sharedNetworking] containSessionTaskForURl:HTTPURL(url)]) {
         //没有在请求

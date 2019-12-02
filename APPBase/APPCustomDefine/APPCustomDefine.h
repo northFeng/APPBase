@@ -194,5 +194,6 @@ return _instance;                            \
 #pragma mark - ************************* 吐字 && 弹框 *************************
 #define AlertMessage(msg) [APPAlertTool showMessage:msg]
 
+#define AlertMsgView(msg,view) [APPAlertTool showMessage:msg onView:view]
 
 #endif /* APPCustomDefine_h */

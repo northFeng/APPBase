@@ -152,13 +152,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)tell_phoneWithNum:(NSString *)phoneNum;
 
 
-#pragma mark - 接口请求
-///post请求一个字典
-+ (void)postRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block;
-
-///get请求一个字典
-+ (void)getRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block;
-
 
 
 

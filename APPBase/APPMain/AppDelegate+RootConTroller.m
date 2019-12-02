@@ -91,8 +91,7 @@
         if (appStoreVerson.length) {
             //App Store上有新版本
             
-            [APPFunctionMethod getRequestNetDicDataUrl:_kNet_version_check params:@{} WithBlock:^(BOOL result, id  _Nonnull idObject) {
-                
+            [APPHttpTool getRequestNetDicDataUrl:_kNet_version_check params:@{} WithBlock:^(BOOL result, id  _Nonnull idObject, NSInteger code) {
                 if (result) {
                     NSDictionary *newVersionInfo = (NSDictionary *)idObject;
                     

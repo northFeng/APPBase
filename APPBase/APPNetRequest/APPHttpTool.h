@@ -26,6 +26,14 @@ typedef void (^Success) (id response , NSInteger code);//成功回调
 typedef void (^Failure) (NSError *error);//失败回调
 typedef void(^Preogress)(NSProgress *progress);//进度回调
 
+/**
+ * 请求结果block
+ * @param result  bool值 yes请求成功  No请求失败
+ * @param idObject 请求成功后台返回数据JSON / 失败 string类型 ，描述失败原因
+ * @param code  三个值  100：成功  99：网络原因失败  101：请求成功服务器原因
+*/
+typedef void (^NetResult) (BOOL result, id idObject, NSInteger code);
+
 ///请求失败 Error 错误信息
 typedef NSString *HTTPErrorMessage;
 
@@ -259,30 +267,30 @@ typedef void(^APPNetworkTaskFailBlock)(NSURLSessionDataTask *task, NSError *erro
 
 #pragma mark - ************************* 普通请求 *************************
 ///get请求一个字典
-+ (void)getRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block;
++ (void)getRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block;
 
 ///post请求一个字典
-+ (void)postRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block;
++ (void)postRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block;
 
 
 #pragma mark - ************************* 特殊网络请求 *************************
 ///GET取缓存数据 + 请求最新的数据&&更新缓存数据
-+ (void)cacheGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block;
++ (void)cacheGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block;
 
 ///POST取缓存数据 + 请求最新的数据&&更新缓存数据
-+ (void)cachePostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block;
++ (void)cachePostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block;
 
 ///取消上一次GET同一请求,取最新次的请求
-+ (void)cancelUpGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block;
++ (void)cancelUpGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block;
 
 ///取消上一次POST同一请求,取最新次的请求
-+ (void)cancelUpPostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block;
++ (void)cancelUpPostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block;
 
 ///重复GET请求只请求第一次
-+ (void)oneceGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block;
++ (void)oneceGetRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block;
 
 ///重复POST请求只请求第一次
-+ (void)onecePostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(void(^)(BOOL result, id idObject))block;
++ (void)onecePostRequestNetDicDataUrl:(NSString *)url params:(NSDictionary *)params WithBlock:(NetResult)block;
 
 ///JSON转模型
 + (id)modelClass:(Class)class withJSONData:(id)json;
@@ -291,3 +299,4 @@ typedef void(^APPNetworkTaskFailBlock)(NSURLSessionDataTask *task, NSError *erro
 
 
 NS_ASSUME_NONNULL_END
+
