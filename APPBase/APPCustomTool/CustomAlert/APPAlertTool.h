@@ -25,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///显示菊花等待
 + (void)showLoading;
 
+///显示菊花（是否可以手势交互）
++ (void)showLoadingForInterEnabled:(BOOL)enable;
+
 ///隐藏菊花等待
 + (void)hideLoading;
 

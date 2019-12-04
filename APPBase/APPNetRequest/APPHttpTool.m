@@ -612,17 +612,22 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
 ///JSON转模型
 + (id)modelClass:(Class)class withJSONData:(id)json {
     
-    if ([json isKindOfClass:[NSDictionary class]]) {
-        //字典
-        NSObject *model = [class yy_modelWithJSON:json];
-        
-        return model;
-    }else if ([json isKindOfClass:[NSArray class]]){
-        //数组
-        NSArray *arrayModel = [NSArray yy_modelArrayWithClass:class json:json];
-        
-        return arrayModel;
-    }else{
+    @try {
+        if ([json isKindOfClass:[NSDictionary class]]) {
+            //字典
+            NSObject *model = [class yy_modelWithJSON:json];
+            
+            return model;
+        }else if ([json isKindOfClass:[NSArray class]]){
+            //数组
+            NSArray *arrayModel = [NSArray yy_modelArrayWithClass:class json:json];
+            
+            return arrayModel;
+        }else{
+            return nil;
+        }
+    } @catch (NSException *exception) {
+        NSLog(@"数据解析错误：%@",exception.reason);
         return nil;
     }
 }

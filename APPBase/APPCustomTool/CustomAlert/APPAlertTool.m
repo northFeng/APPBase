@@ -145,6 +145,21 @@
     }
 }
 
++ (void)showLoadingForInterEnabled:(BOOL)enable{
+    
+    UIView *view = [self topViewOfTopVC];
+    if (view) {
+        [MBProgressHUD hideHUDForView:view animated:YES];
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+        hud.mode = MBProgressHUDModeIndeterminate;
+        hud.userInteractionEnabled = !enable;
+        hud.bezelView.backgroundColor = DynamicColor([UIColor whiteColor], [UIColor blackColor]);
+        hud.contentColor = [UIColor lightGrayColor];//菊花颜色
+        hud.offset = CGPointMake(0, -kScreenHeight*0.1);//2/5处 (5/10 - 4/10)
+    }
+}
+
 + (void)hideLoading{
     
     UIView *view = [self topViewOfTopVC];

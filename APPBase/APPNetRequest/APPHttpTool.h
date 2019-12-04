@@ -300,3 +300,64 @@ typedef void(^APPNetworkTaskFailBlock)(NSURLSessionDataTask *task, NSError *erro
 
 NS_ASSUME_NONNULL_END
 
+/**
+///获取网络数据
++ (void)getData<#XXXX#> blockResult:(APPBackBlock)blockResult {
+    
+    NSMutableDictionary *dicJson = [NSMutableDictionary dictionary];
+    [dicJson gf_setObject:@"" withKey:@""];
+    
+    [APPHttpTool <#Ttype#>RequestNetDicDataUrl:@"lucidababyshow" params:dicJson WithBlock:^(BOOL result, id  _Nonnull idObject) {
+        
+        if (result) {
+            NSDictionary *dic = (NSDictionary *)idObject;
+            NSArray *list = dic[@"lucidaBabyList"];
+            NSMutableArray *arrayModel = [NSMutableArray array];
+            if (list.count && [list isKindOfClass:[NSArray class]]) {
+                for (NSDictionary *json in list) {
+                    [arrayModel addObject:[<#Model#> yy_modelWithJSON:json]];
+                }
+            }
+            
+            blockResult(YES,arrayModel);
+        }else{
+            blockResult(NO,(NSString *)idObject);
+        }
+    }];
+}
+
+///上拉请求
+- (void)getDataFormNet {
+    if (_page == 1) {
+        [_dataModelArray removeAllObjects];//清空数据
+    }
+    
+    [CBHomeClassroomModel getRecommendClassroomDataWithPage:_page pageSize:10 classFlag:_indexVC WithBlockData:^(BOOL result, id idObject, NSInteger code) {
+        if (result) {
+            [self.dataModelArray addObjectsFromArray:(NSArray *)idObject];
+            if (((NSArray *)idObject).count < 10) {
+                self.collectionView.mj_footer.hidden = YES;
+            }else{
+                self.collectionView.mj_footer.hidden = NO;
+            }
+        }else{
+            AlertMsgView((NSString *)idObject, self.view);
+        }
+        
+        if (self.dataModelArray.count) {
+            //隐藏  占位图 && 网络占位图
+            
+        }else{
+            if (code == 100) {
+                //显示无数据占位图
+            }else{
+                //显示无网络占位图
+            }
+        }
+    
+        [self.collectionView reloadData];
+        [self.collectionView.mj_header endRefreshing];
+        [self.collectionView.mj_footer endRefreshing];
+    }];
+}
+ */

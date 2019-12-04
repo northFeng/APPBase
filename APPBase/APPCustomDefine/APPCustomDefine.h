@@ -196,4 +196,12 @@ return _instance;                            \
 
 #define AlertMsgView(msg,view) [APPAlertTool showMessage:msg onView:view]
 
+//显示可以交互的 菊花
+#define AlertLoading [APPAlertTool showLoading]
+
+///是否可交互的菊花
+#define AlertLoadingEnable(enable) [APPAlertTool showLoadingForInterEnabled:enable]
+
+#define AlertHideLoading [APPAlertTool hideLoading]
+
 #endif /* APPCustomDefine_h */
