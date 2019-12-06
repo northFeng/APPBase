@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPViewTool : NSObject
 
+///文字比例适配
++ (CGFloat)iPhoneAndIpadTextAdapter;
+
 ///创建view
 + (UIView *)view_createViewWithColor:(UIColor *)color;
 

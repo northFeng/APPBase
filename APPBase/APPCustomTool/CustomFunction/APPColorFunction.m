@@ -94,6 +94,12 @@
     return COLOR(@"000000");
 }
 
+///弹框背景黑色
++ (UIColor *)blackAlertColor {
+    
+    return COLOR(@"#2C2C2C");
+}
+
 ///基础白色颜色
 + (UIColor *)whiteColor {
     

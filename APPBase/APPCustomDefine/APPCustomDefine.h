@@ -85,6 +85,9 @@ return _instance;                            \
 #define kScaleW kScreenWidth/375.0
 #define kScaleH kScreenHeight/667.0
 
+///iPhone 1.  iPad 1.5
+#define kIpadScale ([APPViewTool iPhoneAndIpadTextAdapter])
+
 //顶部条以及tabBar条的宽度，以及工具条距离安全区域的距离
 #define kNaviBar_ItemBarHeight 44.
 #define kTabBar_ItemsHeight 49.

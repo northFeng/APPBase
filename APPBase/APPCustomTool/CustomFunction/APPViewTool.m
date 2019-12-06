@@ -10,6 +10,16 @@
 
 @implementation APPViewTool
 
+///文字比例适配
++ (CGFloat)iPhoneAndIpadTextAdapter {
+    
+    if (kIsiPhone) {
+        return 1.;
+    }else{
+        return 1.5;
+    }
+}
+
 #pragma mark - ************************* 创建视图 *************************
 
 ///创建view

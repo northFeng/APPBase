@@ -20,6 +20,8 @@
     
     UIButton *_btnOk;
     
+    UIView *_lineS;//竖线
+    
     APPBackBlock _blockLeft;
     
     APPBackBlock _blockRight;
@@ -84,9 +86,9 @@
     lineH.backgroundColor = APPColor_CellLine;
     [_backView addSubview:lineH];
     
-    UIView *lineS = [[UIView alloc] init];
-    lineS.backgroundColor = APPColor_CellLine;
-    [_backView addSubview:lineS];
+    _lineS = [[UIView alloc] init];
+    _lineS.backgroundColor = APPColor_CellLine;
+    [_backView addSubview:_lineS];
     
     
     //添加约束
@@ -106,9 +108,9 @@
     }];
     
     lineH.sd_layout.leftEqualToView(_backView).rightEqualToView(_backView).bottomSpaceToView(_backView, 46).heightIs(1);
-    lineS.sd_layout.centerXEqualToView(_backView).topSpaceToView(lineH, 0).bottomEqualToView(_backView).widthIs(1);
-    _btnCancle.sd_layout.leftEqualToView(_backView).bottomEqualToView(_backView).heightIs(46).rightSpaceToView(lineS, 0);
-    _btnOk.sd_layout.rightEqualToView(_backView).bottomEqualToView(_backView).heightIs(46).leftSpaceToView(lineS, 0);
+    _lineS.sd_layout.centerXEqualToView(_backView).topSpaceToView(lineH, 0).bottomEqualToView(_backView).widthIs(1);
+    _btnCancle.sd_layout.leftEqualToView(_backView).bottomEqualToView(_backView).heightIs(46).rightSpaceToView(_lineS, 0);
+    _btnOk.sd_layout.rightEqualToView(_backView).bottomEqualToView(_backView).heightIs(46).leftSpaceToView(_lineS, 0);
 }
 
 
@@ -161,9 +163,9 @@
 ///弹出来
 
 ///样式一
-- (void)showAlertWithTitle:(NSString *)title withBlock:(APPBackBlock)block{
+- (void)showAlertWithMessage:(NSString *)message withBlock:(APPBackBlock)block{
     
-    _labelBrif.text = title;
+    _labelBrif.text = message;
     
     _blockRight = block;
     
@@ -216,7 +218,23 @@
     [self showAlert];
 }
 
-
+///样式5（只有确定按钮）
+- (void)showAlertWithTitle:(NSString *)title brif:(NSString *)brif okBtnTitle:(NSString *)okTitle withOkBlock:(APPBackBlock)okBlock {
+    
+    _labelTitle.text = title;
+    
+    _labelBrif.text = brif;
+    
+    [_btnOk setTitle:okTitle forState:UIControlStateNormal];
+    
+    _blockRight = okBlock;
+    
+    _lineS.hidden = YES;
+    _btnCancle.hidden = YES;
+    _btnOk.sd_resetLayout.leftEqualToView(_backView).rightEqualToView(_backView).bottomEqualToView(_backView).heightIs(48*kIpadScale);
+    
+    [self showAlert];
+}
 
 
 ///显示处理啊

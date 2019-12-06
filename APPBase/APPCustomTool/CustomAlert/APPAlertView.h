@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 ///样式一（默认标题和按钮演示）
-- (void)showAlertWithTitle:(NSString *)title withBlock:(APPBackBlock)block;
+- (void)showAlertWithMessage:(NSString *)message withBlock:(APPBackBlock)block;
 
 
 ///隐藏
@@ -31,6 +31,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///样式四(左右按钮事件)
 - (void)showAlertWithTitle:(NSString *)title brif:(NSString *)brif leftBtnTitle:(NSString *)cancleTitle rightBtnTitle:(NSString *)okTitle blockleft:(APPBackBlock)blockleft blockRight:(APPBackBlock)blockRight;
+
+///样式5（只有确定按钮）
+- (void)showAlertWithTitle:(NSString *)title brif:(NSString *)brif okBtnTitle:(NSString *)okTitle withOkBlock:(APPBackBlock)okBlock;
 
 
 

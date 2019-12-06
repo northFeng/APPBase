@@ -78,9 +78,9 @@
 //获取当前语言
 #define kAPP_CurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])
 //判断是否为iPhone
-#define kISiPhone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define kIsiPhone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 //判断是否为iPad
-#define kISiPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define kIsiPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 //************ 以下路径末尾是不带 / 这个符号的 ************
 //获取沙盒Document路径

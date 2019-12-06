@@ -90,6 +90,17 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)showAlertCustomTitle:(NSString *)title message:(NSString *)message cancleBtnTitle:(NSString *)cancleTitle okBtnTitle:(NSString *)okTitle leftBlock:(APPBackBlock)blockLeft rightBlock:(APPBackBlock)blockRight;
 
 /**
+ * @brief 自定义弹框——>自定义标题——>自定义消息——>确定按钮
+ * @param title 标题
+ * @param message 消息
+ * @param okTitle 确定按钮标题
+ * @okBlock 确定按钮block
+ */
++ (void)showAlertCustomTitle:(NSString *)title message:(NSString *)message okBtnTitle:(NSString *)okTitle okBlock:(APPBackBlock)okBlock;
+
+#pragma mark - ************************* 系统提示弹框 *************************
+
+/**
  *  @brief 消息提示框
  *
  *  @param message 消息默认显示在Window视图上，全APP内显示位置一样（多个控制提示可能会重叠）
