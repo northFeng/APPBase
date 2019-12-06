@@ -87,6 +87,18 @@
 }
 
 ///创建普通图片按钮
++ (UIButton *)view_createButtonImage:(NSString *)imageName {
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    if (imageName) {
+        [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    }
+    
+    return button;
+}
+
+///创建普通图片按钮
 + (UIButton *)view_createButtonImageNormalImg:(NSString *)imgName_n selectImg:(NSString *)imgName_s {
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -103,19 +115,6 @@
     return button;
 }
 
-///创建普通图片按钮
-+ (UIButton *)view_createButtonImage:(NSString *)imageName {
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    
-    if (imageName) {
-        [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
-    }
-    
-    return button;
-}
-
-
 ///创建一个图文按钮
 + (GFTextImageButton *)view_createButtonWithBtnType:(ButtonType)btnType title:(NSString *)title titleSize:(CGSize)titleSize titleFont:(UIFont *)titleFont titleColor:(UIColor *)titleColor
                              imgName:(NSString *)imgName imgSize:(CGSize)imgSize spacing:(CGFloat)spacing{
@@ -128,18 +127,11 @@
 
 #pragma mark - ************************* view的边角、阴影 *************************
 
-///设置四角圆角
+///一：普通四角圆角
 + (void)view_addRoundedCornersOnView:(UIView *)view cornersWidth:(CGFloat)widthCorner masksToBounds:(BOOL)bounds {
     
     view.layer.cornerRadius = widthCorner;
     view.layer.masksToBounds = bounds;
-}
-
-///设置视图的圆角和边框线
-+ (void)view_addBorderOnView:(UIView *)view borderWidth:(CGFloat)width borderColor:(UIColor *)color cornerRadius:(CGFloat)radius{
-    view.layer.cornerRadius = radius;
-    view.layer.borderWidth = width;
-    view.layer.borderColor = color.CGColor;
 }
 
 ///添加指定位置的圆角
@@ -163,6 +155,15 @@
     maskLayer.path = maskPath.CGPath;
     view.layer.mask = maskLayer;
 }
+
+
+///设置视图的圆角和边框线
++ (void)view_addBorderOnView:(UIView *)view borderWidth:(CGFloat)width borderColor:(UIColor *)color cornerRadius:(CGFloat)radius{
+    view.layer.cornerRadius = radius;
+    view.layer.borderWidth = width;
+    view.layer.borderColor = color.CGColor;
+}
+
 
 ///添加阴影
 + (void)view_addShadowOnView:(UIView *)view shadowOffset:(CGSize)offsetSize shadowColor:(UIColor *)shadowColor shadowAlpha:(CGFloat)shadowAlpha{

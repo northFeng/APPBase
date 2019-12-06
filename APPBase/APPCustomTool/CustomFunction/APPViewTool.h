@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UILabel *)view_createLabelWithText:(NSString *)text font:(UIFont *)font textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment;
 
-/// 创建文字按钮
+/// 一：文字按钮
 /// @param title 标题
 /// @param textColor 文字颜色
 /// @param font 字体
@@ -44,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
                             textFont:(UIFont *)font
                              bgColor:(UIColor *)bgColor;
 
-/// 创建普通 文字 & 选中文字  按钮
+/// 二： 文字 & 选中文字  按钮
 /// @param normalTitle 默认状态文字
 /// @param normalColor 默认文字颜色
 /// @param selectTtitle 选中文字
@@ -53,21 +53,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param bgColor 背景颜色
 + (UIButton *)view_createButtonTitleNormal:(NSString *)normalTitle normalTextColor:(UIColor *)normalColor selectTitle:(NSString *)selectTtitle selectTextColor:(UIColor *)selectColor textFont:(UIFont *)font bgColor:(UIColor *)bgColor;
 
-///创建普通图片按钮
-+ (UIButton *)view_createButtonImageNormalImg:(NSString *)imgName_n selectImg:(NSString *)imgName_s;
-
-///创建普通图片按钮
+///三：图片按钮
 + (UIButton *)view_createButtonImage:(NSString *)imageName;
 
-
-#pragma mark - ************************* view的边角、阴影 *************************
-
-
-///设置四角圆角
-+ (void)view_addRoundedCornersOnView:(UIView *)view cornersWidth:(CGFloat)widthCorner masksToBounds:(BOOL)bounds;
+///四：图片 & 选中图片 按钮
++ (UIButton *)view_createButtonImageNormalImg:(NSString *)imgName_n selectImg:(NSString *)imgName_s;
 
 /**
- 创建一个图文按钮button
+ 五：图文 按钮
 
  @param btnType btn上图文的排列类型
  @param title btn文字
@@ -82,22 +75,22 @@ NS_ASSUME_NONNULL_BEGIN
 + (GFTextImageButton *)view_createButtonWithBtnType:(ButtonType)btnType title:(NSString *)title titleSize:(CGSize)titleSize titleFont:(UIFont *)titleFont titleColor:(UIColor *)titleColor
                                    imgName:(NSString *)imgName imgSize:(CGSize)imgSize spacing:(CGFloat)spacing;
 
-/**
- 添加边框
 
- @param view view
- @param width 边框宽度
- @param color 边框颜色
- @param radius 边框圆角
- */
-+ (void)view_addBorderOnView:(UIView *)view borderWidth:(CGFloat)width borderColor:(UIColor *)color cornerRadius:(CGFloat)radius;
+#pragma mark - ************************* view的边角、阴影 *************************
 
 
-///添加指定位置的圆角(使用前必须先设置frame)
+///一：普通四角圆角
++ (void)view_addRoundedCornersOnView:(UIView *)view cornersWidth:(CGFloat)widthCorner masksToBounds:(BOOL)bounds;
+
+///二：添加指定位置的圆角  (使用前必须先设置frame)
 + (void)view_addRoundedCornersOnView:(UIView *)view cornersPosition:(UIRectCorner)corners cornersWidth:(CGFloat)widthCorner;
 
-///添加指定位置的圆角（参数frame为CGRectMake(0, 0, weidth, height)）宽和高必须是视图显示后的尺寸！！
+///三：添加指定位置的圆角  (传入view的frame)
 + (void)view_addRoundedCornersOnView:(UIView *)view viewFrame:(CGRect)frame cornersPosition:(UIRectCorner)corners cornersWidth:(CGFloat)widthCorner;
+
+///添加边框和四角
++ (void)view_addBorderOnView:(UIView *)view borderWidth:(CGFloat)width borderColor:(UIColor *)color cornerRadius:(CGFloat)radius;
+
 
 ///添加阴影 offsetSize:阴影的偏移量  shadowColor:阴影的颜色  shadowAlpha:阴影透明度
 + (void)view_addShadowOnView:(UIView *)view shadowOffset:(CGSize)offsetSize shadowColor:(UIColor *)shadowColor shadowAlpha:(CGFloat)shadowAlpha;

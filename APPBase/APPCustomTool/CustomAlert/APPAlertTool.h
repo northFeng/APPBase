@@ -50,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 自定义消息确认弹框
 /**
- *  @brief 自定义消息框 && 确定按钮执行事件
+ *  @brief 一 ：自定义消息 + 确定回调
  *
  *  @param message 消息
  *  @param block 执行按钮事件block
@@ -58,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)showAlertCustomMessage:(NSString *)message okBlock:(APPBackBlock)block;
 
 /**
- *  @brief 自定义弹框——>自定义标题
+ *  @brief 二：自定义标题 + 消息 + 确定回调
  *
  *  @param title 标题
  *  @param message 消息
@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)showAlertCustomTitle:(NSString *)title message:(NSString *)message okBlock:(APPBackBlock)block;
 
 /**
- *  @brief 自定义弹框——>自定义标题——>自定义按钮文字
+ *  @brief 三：自定义 标题 + 消息 + （取消文字 + 确定文字）  +  确定回调
  *
  *  @param title 标题
  *  @param message 消息
@@ -78,7 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)showAlertCustomTitle:(NSString *)title message:(NSString *)message cancleBtnTitle:(NSString *)cancleTitle okBtnTitle:(NSString *)okTitle okBlock:(APPBackBlock)block;
 
 /**
- *  @brief 自定义弹框——>自定义标题——>自定义按钮文字 ——>左右按钮事件
+ *  @brief 四： 自定义 标题 + 消息 + （取消文字 + 确定文字）  +  （取消回调 + 确定回调 ）
  *
  *  @param title 标题
  *  @param message 消息
@@ -90,7 +90,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)showAlertCustomTitle:(NSString *)title message:(NSString *)message cancleBtnTitle:(NSString *)cancleTitle okBtnTitle:(NSString *)okTitle leftBlock:(APPBackBlock)blockLeft rightBlock:(APPBackBlock)blockRight;
 
 /**
- * @brief 自定义弹框——>自定义标题——>自定义消息——>确定按钮
+ * @brief 五：自定义 标题 + 消息 + （确定文字）  +   确定回调
  * @param title 标题
  * @param message 消息
  * @param okTitle 确定按钮标题
