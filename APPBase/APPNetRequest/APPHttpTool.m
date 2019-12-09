@@ -138,17 +138,21 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         NSLog(@"请求结果=%@",responseObject);
         
         if (success) {
-            NSInteger code = [responseObject[@"status"] integerValue];
-            
-            //后台协商进行用户登录异常提示 && 强制用户退出
-            if (code == 300) {
+            @try {
+                NSInteger code = [responseObject[@"status"] integerValue];
                 
-                //用户登录过期 && 执行退出
-                [[APPManager sharedInstance] forcedExitUserWithShowControllerItemIndex:2];
+                //后台协商进行用户登录异常提示 && 强制用户退出
+                if (code == 300) {
+                    
+                    //用户登录过期 && 执行退出
+                    [[APPManager sharedInstance] forcedExitUserWithShowControllerItemIndex:2];
+                    
+                }
                 
+                success(responseObject,code);
+            } @catch (NSException *exception) {
+                success(@"服务器异常",101);
             }
-            
-            success(responseObject,code);
         }
         
     } failCompletion:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
@@ -450,20 +454,27 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
     
     [APPHttpTool getWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
         
-        NSString *errorMessage = [response objectForKey:@"msg"];
-        //id dataDic = [response objectForKey:@"data"];
-        
-        id dataDic = [response objectForKey:@"data"];
-        
-        if (code == 200) {
-            //请求成功
-            if (block) {
-                block(YES,dataDic,100);
+        if (code != 101) {
+            NSString *errorMessage = [response objectForKey:@"msg"];
+            //id dataDic = [response objectForKey:@"data"];
+            
+            id dataDic = [response objectForKey:@"data"];
+            
+            if (code == 200) {
+                //请求成功
+                if (block) {
+                    block(YES,dataDic,100);
+                }
+            }else{
+                // 错误处理
+                if (block) {
+                    block(NO,errorMessage,101);
+                }
             }
         }else{
             // 错误处理
             if (block) {
-                block(NO,errorMessage,101);
+                block(NO,@"服务器异常",101);
             }
         }
         
@@ -499,20 +510,27 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
     
     [APPHttpTool postWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
         
-        NSString *errorMessage = [response objectForKey:@"msg"];
-        //id dataDic = [response objectForKey:@"data"];
-        
-        id dataDic = [response objectForKey:@"data"];
-        
-        if (code == 200) {
-            //请求成功
-            if (block) {
-                block(YES,dataDic,100);
+        if (code != 101) {
+            NSString *errorMessage = [response objectForKey:@"msg"];
+            //id dataDic = [response objectForKey:@"data"];
+            
+            id dataDic = [response objectForKey:@"data"];
+            
+            if (code == 200) {
+                //请求成功
+                if (block) {
+                    block(YES,dataDic,100);
+                }
+            }else{
+                // 错误处理
+                if (block) {
+                    block(NO,errorMessage,101);
+                }
             }
         }else{
             // 错误处理
             if (block) {
-                block(NO,errorMessage,101);
+                block(NO,@"服务器异常",101);
             }
         }
         
