@@ -62,7 +62,7 @@
     return time;
 }
 
-///年月日字符转换时间时间戳 precision精度 1秒、1000毫秒、1000000微秒
+///年月日字符转换时间时间戳 precision精度 1秒、1000毫秒、1000000微秒 (默认格式yyyy-MM-dd HH:mm:ss)
 + (NSInteger)date_getTimeStampFormDateString:(NSString *)dateStr precision:(NSInteger)precision{
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -75,6 +75,25 @@
     
     return time;
 }
+
+///年月日字符转换时间时间戳  timeType(时间格式 默认格式yyyy-MM-dd HH:mm:ss)    precision精度 1秒、1000毫秒、1000000微秒
++ (NSInteger)date_getTimeStampFormDateString:(NSString *)dateStr timeType:(NSString *)timeType precision:(NSInteger)precision {
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    if (timeType.length) {
+        [dateFormatter setDateFormat:timeType];
+    }else{
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    }
+    NSDate *dateTime = [dateFormatter dateFromString:dateStr];
+    
+    NSTimeInterval timeNum = dateTime.timeIntervalSince1970 * precision;
+    
+    NSInteger time = timeNum / 1;
+    
+    return time;
+}
+
 
 
 ///指定年月——>到现在的年月

@@ -47,7 +47,6 @@
     _backView = [[UIView alloc] initWithFrame:CGRectMake((kScreenWidth - 280)/2., kScreenHeight*0.35, 280, 154)];
     _backView.backgroundColor = APPColor_White;
     _backView.layer.cornerRadius = 5;
-    _backView.transform = CGAffineTransformMakeScale(0.5, 0.5);
     _backView.alpha = 0.;
     [self addSubview:_backView];
     
@@ -236,12 +235,53 @@
     [self showAlert];
 }
 
+///样式六  （万能版本）
+- (void)showAlert6WithTitle:(NSString *)title brifStr:(NSString *)brifStr leftBtnTitle:(NSString *)cancleTitle rightBtnTitle:(NSString *)okTitle blockleft:(APPBackBlock)blockleft blockRight:(APPBackBlock)blockRight  {
+    
+    if (title.length) {
+        _labelTitle.text = title;
+    }else{
+        _labelTitle.hidden = YES;
+        [_labelTitle mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.backView).offset(0);
+            make.height.mas_equalTo(0);
+        }];
+        [_labelBrif mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self->_labelTitle.mas_bottom).offset(32*kIpadScale);
+            //make.height.mas_equalTo(40.);
+        }];
+        _backView.frame = CGRectMake((kScreenWidth - 255*kIpadScale)/2., kScreenHeight*0.35, 255*kIpadScale, 255*kIpadScale*(130./255.));
+    }
+    
+    if (brifStr.length) {
+        _labelBrif.text = brifStr;
+    }
+    
+    if (cancleTitle.length) {
+        [_btnCancle setTitle:cancleTitle forState:UIControlStateNormal];
+        _blockLeft = blockleft;
+    }else{
+        //隐藏左侧按钮
+        _lineS.hidden = YES;
+        _btnCancle.hidden = YES;
+        
+        _btnOk.sd_resetLayout.leftEqualToView(_backView).rightEqualToView(_backView).bottomEqualToView(_backView).heightIs(48*kIpadScale);
+    }
+    
+    
+    _blockRight = blockRight;
+    [_btnOk setTitle:okTitle forState:UIControlStateNormal];
+    
+    [self showAlert];
+}
+
 
 ///显示处理啊
 - (void)showAlert{
     
     [[UIApplication sharedApplication].delegate.window addSubview:self];
     
+    _backView.transform = CGAffineTransformMakeScale(0.5, 0.5);
     [UIView animateWithDuration:0.1 animations:^{
         
         self.backView.transform = CGAffineTransformMakeScale(1, 1);

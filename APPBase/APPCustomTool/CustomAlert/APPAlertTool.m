@@ -238,6 +238,14 @@
     [fsAlert showAlertWithTitle:title brif:message okBtnTitle:okTitle withOkBlock:okBlock];
 }
 
+///自定义弹框——>任何样式
++ (void)showAlertCustom6Title:(NSString *)title message:(NSString *)message  cancleBtnTitle:(NSString *)cancleTitle okBtnTitle:(NSString *)okTitle leftBlock:(APPBackBlock)blockLeft rightBlock:(APPBackBlock)blockRight{
+    
+   APPAlertView *fsAlert = [[APPAlertView alloc] init];
+    fsAlert.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+    [fsAlert showAlert6WithTitle:title brifStr:message leftBtnTitle:cancleTitle rightBtnTitle:okTitle blockleft:blockLeft blockRight:blockRight];
+}
+
 #pragma mark - ************************* 系统提示弹框 *************************
 
 ///消息确定框
