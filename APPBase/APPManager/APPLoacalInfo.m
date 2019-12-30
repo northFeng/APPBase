@@ -154,7 +154,7 @@ NSString * const KEY_UDID_INSTEAD = @"com.appBase.udid";
 
 ///App Store商店版本号
 + (NSString *)appStoreVersion{
-    
+    //http://itunes.apple.com/lookup?id=%@   //全球
     NSString *url = [NSString stringWithFormat:@"http://itunes.apple.com/cn/lookup?id=%@",[APPKeyInfo getAppId]];//中国
     
     NSString *appStoreVersion = @"";

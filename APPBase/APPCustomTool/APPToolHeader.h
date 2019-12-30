@@ -17,6 +17,7 @@
 #import "NSMutableArray+GFExtension.h"
 #import "NSMutableDictionary+GFExtension.h"
 #import "UIButton+GFExtension.h"
+#import "NSURl+Category.h"
 
 #pragma mark - 自定义功能文件
 #import "APPViewTool.h"//view工厂

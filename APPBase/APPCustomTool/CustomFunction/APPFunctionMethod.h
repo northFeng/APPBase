@@ -42,6 +42,15 @@ NS_ASSUME_NONNULL_BEGIN
 ///解码----->原Data
 + (NSData *)base64_decodeBase64DataWithBase64Data:(NSData *)base64Data;
 
+///字符串编码
++ (NSString *)string_encodeWithString:(NSString *)string;
+
+///字符串解码
++ (NSString *)string_deCodeWithString:(NSString *)string;
+
+///手机号处理  120****1234
++ (NSString *)string_getPrivacyPhoneNumFromMobileStr:(NSString *)mobileStr;
+
 #pragma mark - 字体操作
 ///设置字体
 + (UIFont *)font_setFontWithPingFangSC:(NSString *)fontName size:(NSInteger)size;

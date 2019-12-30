@@ -21,7 +21,7 @@
     return timeString;
 }
 
-///时间戳转换时间
+///时间戳转换时间 timeStamp:时间戳（记得转化精度为秒） timeType:转换格式(@"yyyy-MM-dd  HH:mm:ss" / yyyy年MM月dd日)
 + (NSString *)date_getDateWithTimeStamp:(NSInteger)timeStamp timeType:(NSString *)timeType{
     
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeStamp];

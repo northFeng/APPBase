@@ -106,6 +106,34 @@
     return decodeData;
 }
 
+///字符串编码
++ (NSString *)string_encodeWithString:(NSString *)string {
+    
+    //编码
+    NSCharacterSet *allowedCharacters = [NSCharacterSet URLQueryAllowedCharacterSet];
+
+    return [string stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
+}
+
+///字符串解码
++ (NSString *)string_deCodeWithString:(NSString *)string {
+    
+    //解码
+    return [string stringByRemovingPercentEncoding];
+}
+
+///手机号处理
++ (NSString *)string_getPrivacyPhoneNumFromMobileStr:(NSString *)mobileStr {
+    
+    NSString *newStr = @"";
+    
+    if (mobileStr.length >= 11) {
+        newStr = [NSString stringWithFormat:@"%@****%@",[mobileStr substringToIndex:3],[mobileStr substringWithRange:NSMakeRange(7, 4)]];
+    }
+    
+    return newStr;
+}
+
 #pragma mark - 字体操作
 ///设置字体
 + (UIFont *)font_setFontWithPingFangSC:(NSString *)fontName size:(NSInteger)size{
