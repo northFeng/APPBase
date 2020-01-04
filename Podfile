@@ -60,6 +60,26 @@ pod 'XYColorOC'
 #检查内存泄漏
 pod 'MLeaksFinder'
 
+#音频播放器框架
+pod 'FreeStreamer','~>4.0.0'
+
+#微信SDK
+pod 'WechatOpenSDK','~>1.8.6'
+
+#阿里OSS
+pod 'AliyunOSSiOS','~> 2.10.7'
+
+#友盟公共组件
+pod 'UMCCommon','~>2.1.1'
+#友盟安全组件
+pod 'UMCSecurityPlugins','~>1.0.6'
+#友盟统计组件
+pod 'UMCAnalytics','~>6.0.5'
+
+
+
+
+
 
 end
 

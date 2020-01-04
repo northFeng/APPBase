@@ -25,6 +25,9 @@
 		14CE0FA123507C520093E45C /* GFTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CE0FA023507C510093E45C /* GFTabBarController.m */; };
 		14CE0FA5235080E10093E45C /* GFMiddleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CE0FA4235080E10093E45C /* GFMiddleController.m */; };
 		14CE0FA8235080F00093E45C /* GFMineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CE0FA7235080F00093E45C /* GFMineController.m */; };
+		8346B46423C04377001154A7 /* APPOssInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46323C04377001154A7 /* APPOssInterface.m */; };
+		8346B46823C045C6001154A7 /* APPWXInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46723C045C6001154A7 /* APPWXInterface.m */; };
+		8346B46C23C04AD0001154A7 /* APPUMInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46B23C04AD0001154A7 /* APPUMInterface.m */; };
 		839B993223B30D3E006A8049 /* NSURL+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 839B993123B30D3E006A8049 /* NSURL+Category.m */; };
 		83A1E785238F6B6A0020F626 /* APPDateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A1E783238F6B6A0020F626 /* APPDateTool.m */; };
 		83B594892372CDF600B7514E /* APPDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B594882372CDF600B7514E /* APPDataBase.m */; };
@@ -135,6 +138,12 @@
 		2D142DF6F5A1313473EB8EC7 /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BCAF33D89376F054993B8C /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
 		6136454A595A21CCA2D817AF /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
+		8346B46223C04377001154A7 /* APPOssInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPOssInterface.h; sourceTree = "<group>"; };
+		8346B46323C04377001154A7 /* APPOssInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPOssInterface.m; sourceTree = "<group>"; };
+		8346B46623C045C6001154A7 /* APPWXInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPWXInterface.h; sourceTree = "<group>"; };
+		8346B46723C045C6001154A7 /* APPWXInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPWXInterface.m; sourceTree = "<group>"; };
+		8346B46A23C04AD0001154A7 /* APPUMInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPUMInterface.h; sourceTree = "<group>"; };
+		8346B46B23C04AD0001154A7 /* APPUMInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPUMInterface.m; sourceTree = "<group>"; };
 		839B993023B30D3E006A8049 /* NSURL+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+Category.h"; sourceTree = "<group>"; };
 		839B993123B30D3E006A8049 /* NSURL+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Category.m"; sourceTree = "<group>"; };
 		83A1E783238F6B6A0020F626 /* APPDateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPDateTool.m; sourceTree = "<group>"; };
@@ -312,6 +321,9 @@
 			isa = PBXGroup;
 			children = (
 				147E502D2351FBCA00C2309B /* APPThirdHeader.h */,
+				8346B46923C04AA8001154A7 /* UM */,
+				8346B46523C045AC001154A7 /* WX */,
+				8346B46123C04358001154A7 /* OSS */,
 				147E50272351EB7500C2309B /* DataCache */,
 				83B594862372CDBD00B7514E /* FMDB */,
 			);
@@ -383,6 +395,33 @@
 				37BCAF33D89376F054993B8C /* Pods-APPBase.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8346B46123C04358001154A7 /* OSS */ = {
+			isa = PBXGroup;
+			children = (
+				8346B46223C04377001154A7 /* APPOssInterface.h */,
+				8346B46323C04377001154A7 /* APPOssInterface.m */,
+			);
+			path = OSS;
+			sourceTree = "<group>";
+		};
+		8346B46523C045AC001154A7 /* WX */ = {
+			isa = PBXGroup;
+			children = (
+				8346B46623C045C6001154A7 /* APPWXInterface.h */,
+				8346B46723C045C6001154A7 /* APPWXInterface.m */,
+			);
+			path = WX;
+			sourceTree = "<group>";
+		};
+		8346B46923C04AA8001154A7 /* UM */ = {
+			isa = PBXGroup;
+			children = (
+				8346B46A23C04AD0001154A7 /* APPUMInterface.h */,
+				8346B46B23C04AD0001154A7 /* APPUMInterface.m */,
+			);
+			path = UM;
 			sourceTree = "<group>";
 		};
 		83B594862372CDBD00B7514E /* FMDB */ = {
@@ -936,6 +975,7 @@
 				8DAB5F0421AB993F009662D5 /* FRHomeVC.m in Sources */,
 				8DAB5EF721AB98E3009662D5 /* AppDelegate+RootConTroller.m in Sources */,
 				8DAB5EB821AB9839009662D5 /* UIView+GFExtension.m in Sources */,
+				8346B46423C04377001154A7 /* APPOssInterface.m in Sources */,
 				8DAB5F0321AB993F009662D5 /* FROrderCellVC.m in Sources */,
 				8D95957722AE3A1F001A8345 /* JPEngine.m in Sources */,
 				8DAB5EE821AB98A6009662D5 /* UILabel+Text.m in Sources */,
@@ -952,8 +992,10 @@
 				8DAB5EE721AB98A6009662D5 /* GFTextField.m in Sources */,
 				140A8FBE234F258300B31672 /* APPColorFunction.m in Sources */,
 				8DAB5EB121AB9839009662D5 /* NSMutableDictionary+GFExtension.m in Sources */,
+				8346B46823C045C6001154A7 /* APPWXInterface.m in Sources */,
 				8DAB5EF621AB98E3009662D5 /* AppDelegate.m in Sources */,
 				14CE0FA123507C520093E45C /* GFTabBarController.m in Sources */,
+				8346B46C23C04AD0001154A7 /* APPUMInterface.m in Sources */,
 				140A8FC7234F37A300B31672 /* UIButton+GFExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1127,7 +1169,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6429YCE522;
+				DEVELOPMENT_TEAM = T5N252L7YD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking\"",
@@ -1183,7 +1225,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6429YCE522;
+				DEVELOPMENT_TEAM = T5N252L7YD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking\"",
