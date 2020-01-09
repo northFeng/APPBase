@@ -145,6 +145,22 @@
     }
 }
 
+///显示菊花在指定view上
++ (void)showLoadingOnView:(UIView *)onView {
+    
+    if (onView) {
+        [MBProgressHUD hideHUDForView:onView animated:YES];
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:onView animated:YES];
+        hud.mode = MBProgressHUDModeIndeterminate;
+        hud.userInteractionEnabled = NO;
+        hud.bezelView.backgroundColor = DynamicColor([UIColor blackColor], COLOR(@"#2C2C2C"));
+        hud.contentColor = [UIColor whiteColor];//菊花颜色
+        hud.offset = CGPointMake(0, -kScreenHeight*0.1);//2/5处 (5/10 - 4/10)
+    }
+}
+
+///显示菊花在当前VC的view上是否可触摸
 + (void)showLoadingForInterEnabled:(BOOL)enable{
     
     UIView *view = [self topViewOfTopVC];
@@ -160,6 +176,7 @@
     }
 }
 
+///隐藏当前VC的view上的菊花
 + (void)hideLoading{
     
     UIView *view = [self topViewOfTopVC];
@@ -168,6 +185,15 @@
         [MBProgressHUD hideHUDForView:view animated:YES];
     }
 }
+
+///隐藏指定view上的菊花
++ (void)hideLoadingOnView:(UIView *)onView {
+    
+    if (onView) {
+        [MBProgressHUD hideHUDForView:onView animated:YES];
+    }
+}
+
 
 + (void)showCustomLoading {
     [self showCustomLoadingWithTitle:@"加载中"];

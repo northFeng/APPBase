@@ -25,11 +25,17 @@ NS_ASSUME_NONNULL_BEGIN
 ///显示菊花等待
 + (void)showLoading;
 
+///显示菊花在指定view上
++ (void)showLoadingOnView:(UIView *)onView;
+
 ///显示菊花（是否可以手势交互）
 + (void)showLoadingForInterEnabled:(BOOL)enable;
 
-///隐藏菊花等待
+///隐藏当前VC的view上的菊花
 + (void)hideLoading;
+
+///隐藏指定view上的菊花
++ (void)hideLoadingOnView:(UIView *)onView;
 
 
 #pragma mark - 自定义 ——> loadingView

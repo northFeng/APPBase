@@ -204,9 +204,16 @@ return _instance;                            \
 //显示可以交互的 菊花
 #define AlertLoading [APPAlertTool showLoading]
 
+///显示菊花在指定view
+#define AlertLoadingOnView(onView) [APPAlertTool showLoadingOnView:onView]
+
 ///是否可交互的菊花
 #define AlertLoadingEnable(enable) [APPAlertTool showLoadingForInterEnabled:enable]
 
+///隐藏当前view上的菊花
 #define AlertHideLoading [APPAlertTool hideLoading]
+
+///隐藏指定view上的菊花
+#define AlertHideLoadingOnView(onView) [APPAlertTool hideLoadingOnView:onView]
 
 #endif /* APPCustomDefine_h */

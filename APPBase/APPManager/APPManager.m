@@ -8,6 +8,8 @@
 
 #import "APPManager.h"
 
+#import "GFTabBarController.h"
+
 #define Current_Login_User @"current_login_user"
 
 #define Current_Default_laocal @"current_default_local"
@@ -149,6 +151,8 @@
     
     //最后弹出
     [rootNavi popToRootViewControllerAnimated:YES];//直接弹到最上层
+    
+    [[GFTabBarController sharedInstance] setSelectItemBtnIndex:index];
     
     //进行发送通知刷新所有的界面（利用通知进行刷新根VC）
     [APPNotificationCenter postNotificationName:_kGlobal_LoginStateChange object:nil];
