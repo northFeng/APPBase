@@ -130,6 +130,32 @@
     }
 }
 
+///吐字带菊花不自动隐藏
++ (void)showLoadingWithMessage:(NSString *)message onView:(UIView *)view {
+    
+    NSEnumerator *subviewsEnum = [view.subviews reverseObjectEnumerator];
+    for (UIView *subview in subviewsEnum) {
+        if ([subview isKindOfClass:[MBProgressHUD class]]) {
+            MBProgressHUD *hud = (MBProgressHUD *)subview;
+            [hud removeFromSuperview];
+            hud = nil;
+        }
+    }
+    
+    //显示新的
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.userInteractionEnabled = NO;//不阻挡下面的手势
+    hud.bezelView.backgroundColor = DynamicColor([UIColor blackColor], COLOR(@"#2C2C2C"));
+    hud.contentColor = [UIColor whiteColor];//菊花颜色
+    
+    hud.detailsLabel.text = message;
+    hud.bezelView.backgroundColor = DynamicColor([UIColor blackColor],[UIColor lightGrayColor]);
+    hud.bezelView.layer.cornerRadius = 10.f;
+    hud.detailsLabel.textColor = DynamicColor([UIColor whiteColor], [UIColor blackColor]);
+    hud.detailsLabel.font = [UIFont systemFontOfSize:16];
+    hud.offset = CGPointMake(0, -kScreenHeight*0.1);//2/5处 (5/10 - 4/10)
+}
+
 
 + (void)showLoading{
     

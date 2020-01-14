@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///展示文字到某个视图上
 + (void)showMessage:(NSString *)message onView:(UIView *)view;
 
+///吐字带菊花不自动隐藏
++ (void)showLoadingWithMessage:(NSString *)message onView:(UIView *)view;
+
 ///显示菊花等待
 + (void)showLoading;
 

@@ -201,6 +201,9 @@ return _instance;                            \
 
 #define AlertMsgView(msg,view) [APPAlertTool showMessage:msg onView:view]
 
+//显示菊花&&文字
+#define AlertLoadingMsg(msg,view) [APPAlertTool showLoadingWithMessage:msg onView:view]
+
 //显示可以交互的 菊花
 #define AlertLoading [APPAlertTool showLoading]
 
