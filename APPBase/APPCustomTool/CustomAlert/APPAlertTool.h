@@ -152,6 +152,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)showAlertMessage:(NSString *)message title:(NSString *)title btnLeftTitle:(NSString *)leftTitle leftBlock:(APPBackBlock)leftBlock btnRightTitle:(NSString *)rightTitle rightBlock:(APPBackBlock)rightBlock;
 
 
+///消息提示列表选择
++ (void)showAlertListWithTitle:(nullable NSString *)title message:(nullable NSString *)message listTitleArray:(NSArray *)listArray blockResult:(APPBackBlock)blockAction;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
