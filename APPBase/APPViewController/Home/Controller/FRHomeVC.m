@@ -67,6 +67,10 @@
     
     NSLog(@"---->%@",[APPLoacalInfo getDeviceIDInKeychain]);
     //4780A8E1-8F2D-4324-B5FF-92228139AB53
+    
+    OneSwiftController *swiftVC = [[OneSwiftController alloc] init];
+    swiftVC.infoStr = @"OC传的消息";
+    [self.navigationController pushViewController:swiftVC animated:YES];
 }
 
 ///读取

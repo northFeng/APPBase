@@ -15,8 +15,6 @@
 
 #import "GFEncryption.h"
 
-#import <AFNetworking/AFNetworking.h>
-
 #import "APPHttpCacheTool.h"//缓存存储工具
 
 @interface APPHttpTool ()

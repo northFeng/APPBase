@@ -28,6 +28,9 @@
 		8346B46423C04377001154A7 /* APPOssInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46323C04377001154A7 /* APPOssInterface.m */; };
 		8346B46823C045C6001154A7 /* APPWXInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46723C045C6001154A7 /* APPWXInterface.m */; };
 		8346B46C23C04AD0001154A7 /* APPUMInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46B23C04AD0001154A7 /* APPUMInterface.m */; };
+		8354DE6623D58445006B09C6 /* OneSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE6523D58445006B09C6 /* OneSwiftController.swift */; };
+		8354DE6923D59000006B09C6 /* TwoSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE6823D59000006B09C6 /* TwoSwiftController.swift */; };
+		8354DE6B23D5B4B8006B09C6 /* ClassHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE6A23D5B4B8006B09C6 /* ClassHead.swift */; };
 		839B993223B30D3E006A8049 /* NSURL+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 839B993123B30D3E006A8049 /* NSURL+Category.m */; };
 		83A1E785238F6B6A0020F626 /* APPDateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A1E783238F6B6A0020F626 /* APPDateTool.m */; };
 		83B594892372CDF600B7514E /* APPDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B594882372CDF600B7514E /* APPDataBase.m */; };
@@ -144,6 +147,11 @@
 		8346B46723C045C6001154A7 /* APPWXInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPWXInterface.m; sourceTree = "<group>"; };
 		8346B46A23C04AD0001154A7 /* APPUMInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPUMInterface.h; sourceTree = "<group>"; };
 		8346B46B23C04AD0001154A7 /* APPUMInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPUMInterface.m; sourceTree = "<group>"; };
+		8354DE6423D58445006B09C6 /* APPBase-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APPBase-Bridging-Header.h"; sourceTree = "<group>"; };
+		8354DE6523D58445006B09C6 /* OneSwiftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSwiftController.swift; sourceTree = "<group>"; };
+		8354DE6723D58AB9006B09C6 /* SwiftClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftClass.h; sourceTree = "<group>"; };
+		8354DE6823D59000006B09C6 /* TwoSwiftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSwiftController.swift; sourceTree = "<group>"; };
+		8354DE6A23D5B4B8006B09C6 /* ClassHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassHead.swift; sourceTree = "<group>"; };
 		839B993023B30D3E006A8049 /* NSURL+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+Category.h"; sourceTree = "<group>"; };
 		839B993123B30D3E006A8049 /* NSURL+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Category.m"; sourceTree = "<group>"; };
 		83A1E783238F6B6A0020F626 /* APPDateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPDateTool.m; sourceTree = "<group>"; };
@@ -424,6 +432,18 @@
 			path = UM;
 			sourceTree = "<group>";
 		};
+		8354DE6323D58350006B09C6 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				8354DE6723D58AB9006B09C6 /* SwiftClass.h */,
+				8354DE6423D58445006B09C6 /* APPBase-Bridging-Header.h */,
+				8354DE6A23D5B4B8006B09C6 /* ClassHead.swift */,
+				8354DE6523D58445006B09C6 /* OneSwiftController.swift */,
+				8354DE6823D59000006B09C6 /* TwoSwiftController.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
 		83B594862372CDBD00B7514E /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +506,7 @@
 				142808962351CB4000D24D08 /* APPThirdModular */,
 				8DAB5E2E21AB971C009662D5 /* APPMain */,
 				8DAB5E2C21AB971C009662D5 /* APPViewController */,
+				8354DE6323D58350006B09C6 /* Swift */,
 				8D95957222AE39E9001A8345 /* Resource */,
 				8DAB5F1021AB9BB2009662D5 /* SupportingFiles */,
 			);
@@ -826,6 +847,7 @@
 				TargetAttributes = {
 					8DAB5DF621AB9659009662D5 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1130;
 					};
 					8DAB5E0E21AB965B009662D5 = {
 						CreatedOnToolsVersion = 10.1;
@@ -942,6 +964,7 @@
 				83A1E785238F6B6A0020F626 /* APPDateTool.m in Sources */,
 				8DAB5F0C21AB9954009662D5 /* FRLoginHomeVC.m in Sources */,
 				140A8FCA234F4B6800B31672 /* APPBaseTableViewController.m in Sources */,
+				8354DE6B23D5B4B8006B09C6 /* ClassHead.swift in Sources */,
 				8DAB5ECA21AB9882009662D5 /* APPBaseCell.m in Sources */,
 				8DAB5ED321AB9895009662D5 /* GFNavigationController.m in Sources */,
 				1428088F2351C80000D24D08 /* NSString+TextSize.m in Sources */,
@@ -995,7 +1018,9 @@
 				8346B46823C045C6001154A7 /* APPWXInterface.m in Sources */,
 				8DAB5EF621AB98E3009662D5 /* AppDelegate.m in Sources */,
 				14CE0FA123507C520093E45C /* GFTabBarController.m in Sources */,
+				8354DE6923D59000006B09C6 /* TwoSwiftController.swift in Sources */,
 				8346B46C23C04AD0001154A7 /* APPUMInterface.m in Sources */,
+				8354DE6623D58445006B09C6 /* OneSwiftController.swift in Sources */,
 				140A8FC7234F37A300B31672 /* UIButton+GFExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1168,7 +1193,9 @@
 			baseConfigurationReference = 6136454A595A21CCA2D817AF /* Pods-APPBase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = T5N252L7YD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1208,13 +1235,16 @@
 					"$(PODS_ROOT)/SQLCipher",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/APPBase/SupportingFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.north-feng.APPBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "APPBase/Swift/APPBase-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1224,7 +1254,9 @@
 			baseConfigurationReference = 37BCAF33D89376F054993B8C /* Pods-APPBase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = T5N252L7YD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1264,13 +1296,15 @@
 					"$(PODS_ROOT)/SQLCipher",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/APPBase/SupportingFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.north-feng.APPBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "APPBase/Swift/APPBase-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1278,6 +1312,7 @@
 		8DAB5E2721AB965B009662D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = APPBaseTests/Info.plist;
@@ -1296,6 +1331,7 @@
 		8DAB5E2821AB965B009662D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = APPBaseTests/Info.plist;
@@ -1314,6 +1350,7 @@
 		8DAB5E2A21AB965B009662D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = APPBaseUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1331,6 +1368,7 @@
 		8DAB5E2B21AB965B009662D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = APPBaseUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

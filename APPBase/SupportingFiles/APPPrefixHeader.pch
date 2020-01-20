@@ -13,7 +13,6 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #pragma mark - 第三方库引用
-#import <AFNetworking/AFNetworking.h>
 #import <MJRefresh/MJRefresh.h>
 #import <Masonry/Masonry.h>
 #import <SDAutoLayout/SDAutoLayout.h>
@@ -34,6 +33,10 @@
 
 #import "APPHttpTool.h"//网络请求类
 #import "FRLoginManager.h"//登录管理类
+
+
+//swift文件用
+#import "SwiftClass.h"
 
 
 

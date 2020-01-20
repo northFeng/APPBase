@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '10.0'
 target 'APPBase' do
   #取消第三方框架中的黄色警告
   inhibit_all_warnings!
@@ -75,6 +75,24 @@ pod 'UMCCommon','~>2.1.1'
 pod 'UMCSecurityPlugins','~>1.0.6'
 #友盟统计组件
 pod 'UMCAnalytics','~>6.0.5'
+
+
+
+
+#------------------ Swift集成 ------------------------
+#布局类似Masonry
+pod 'SnapKit', '~> 5.0.0'
+
+#网络请求
+pod 'Alamofire','~>5.0.0-rc.3'
+
+#JSON模型转换
+pod 'SwiftyJSON', '~>4.0'
+
+#加载视图
+pod 'NVActivityIndicatorView','~>4.8.0'
+
+
 
 
 
