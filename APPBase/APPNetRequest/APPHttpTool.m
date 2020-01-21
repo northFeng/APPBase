@@ -17,6 +17,8 @@
 
 #import "APPHttpCacheTool.h"//缓存存储工具
 
+#import "APPDateTool.h"//日期工具
+
 @interface APPHttpTool ()
 
 ///AFNet网络管理者
