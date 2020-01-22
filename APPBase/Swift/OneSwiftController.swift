@@ -21,22 +21,17 @@ class OneSwiftController: APPBaseController {
 
         // Do any additional setup after loading the view.
                 
-        if APPManager.sharedInstance().isLogined {
-            print("已经登录")
-        }
-        
+
         APPAlertTool.showLoading(on: self.view)
         
         APPHttpTool.getRequestNetDicDataUrl("version/latest?platform=1", params:Dictionary()) { (result:Bool, idObject:Any, code:NSInteger) in
             
             APPAlertTool.hideLoading()
-            print("回调完数据:\(idObject)")
+            AlertMessage(msg: "回调完数据")
         }
         
         self.title = "SwiftOne"
-        
-        print("传过来的数据\(infoStr)")
-        
+                
         self.view.addSubview(oneView)
         
         oneView.backgroundColor = UIColor.red
@@ -65,7 +60,8 @@ class OneSwiftController: APPBaseController {
     
     
     @objc func onClickButton() {
-       print("点击了按钮")
+        
+        Print("\(infoStr)")
     }
     
 
