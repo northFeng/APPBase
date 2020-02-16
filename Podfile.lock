@@ -25,7 +25,7 @@ PODS:
   - FMDB/standard (2.7.5)
   - FreeStreamer (4.0.0):
     - Reachability (~> 3.0)
-  - IQKeyboardManager (6.5.4)
+  - IQKeyboardManager (6.5.5)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
   - MJRefresh (3.3.1)
@@ -48,7 +48,7 @@ PODS:
   - UMCCommon (2.1.1)
   - UMCSecurityPlugins (1.0.6)
   - WechatOpenSDK (1.8.6)
-  - XYColorOC (1.1.0)
+  - XYColorOC (1.1.1)
   - YYCache (1.0.4)
   - YYModel (1.0.4)
 
@@ -123,7 +123,7 @@ SPEC CHECKSUMS:
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FreeStreamer: 7e9c976045701ac2f7e9c14c17245203c37bf2ea
-  IQKeyboardManager: 72b359cd7e777e3a984cedbe05f8da45320cbb63
+  IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
@@ -140,10 +140,10 @@ SPEC CHECKSUMS:
   UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
   UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
   WechatOpenSDK: 368ae03b72ee3ea1328c4f11326fbb5d2721d118
-  XYColorOC: 834cdfa42c46db8551e6a6450ce6a1e41092cfa6
+  XYColorOC: f80477e6a16aa8ca452ddc004606bbb4636efa03
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: 6dd892a1c15227dc19ae13caa7650843738f075f
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.8.3
