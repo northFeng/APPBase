@@ -22,3 +22,12 @@
 
 
 @end
+
+
+@interface NSDictionary (GFExtension)
+
+
+- (id)gf_objectForKey:(NSString *)key;
+
+
+@end

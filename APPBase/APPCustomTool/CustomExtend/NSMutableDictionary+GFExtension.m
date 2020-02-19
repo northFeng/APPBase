@@ -10,7 +10,7 @@
 
 @implementation NSMutableDictionary (GFExtension)
 
-- (BOOL)gf_setObject:(id)itemObject withKey:(NSString *)key{
+- (BOOL)gf_setObject:(id)itemObject withKey:(NSString *)key {
     
     if (![itemObject isKindOfClass:[NSNull class]] && itemObject != nil) {
         
@@ -22,5 +22,22 @@
         return NO;
     }
 }
+
+@end
+
+
+@implementation NSDictionary (GFExtension)
+
+
+- (id)gf_objectForKey:(NSString *)key {
+    NSLog(@"fffff");
+    id object;
+    if ([self isKindOfClass:[NSDictionary class]] || [self isKindOfClass:[NSMutableDictionary class]]) {
+        object = [self objectForKey:key];
+    }
+    
+    return object;
+}
+
 
 @end

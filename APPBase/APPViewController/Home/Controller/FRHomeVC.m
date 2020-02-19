@@ -70,6 +70,7 @@
     OneSwiftController *swiftVC = [[OneSwiftController alloc] init];
     swiftVC.infoStr = @"OC传的消息";
     [self.navigationController pushViewController:swiftVC animated:YES];
+
 }
 
 ///读取
