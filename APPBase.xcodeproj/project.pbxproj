@@ -35,6 +35,8 @@
 		83A1E785238F6B6A0020F626 /* APPDateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A1E783238F6B6A0020F626 /* APPDateTool.m */; };
 		83B594892372CDF600B7514E /* APPDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B594882372CDF600B7514E /* APPDataBase.m */; };
 		83B594AC23755D3900B7514E /* 分页查找.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 83B594AB23755D3900B7514E /* 分页查找.jpeg */; };
+		83BC18CE2407A698005A056D /* APPWebHybridController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BC18CD2407A698005A056D /* APPWebHybridController.m */; };
+		83BC18D12407A7FB005A056D /* CBJSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BC18D02407A7FB005A056D /* CBJSModel.m */; };
 		8D69D3DA22B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = 8D69D3D922B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive */; };
 		8D69D3DC22B4F9D800D4A325 /* MVVM与RAC.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = 8D69D3DB22B4F9D800D4A325 /* MVVM与RAC.webarchive */; };
 		8D95957722AE3A1F001A8345 /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D95957422AE3A1F001A8345 /* JPEngine.m */; };
@@ -159,6 +161,10 @@
 		83B594872372CDF600B7514E /* APPDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPDataBase.h; sourceTree = "<group>"; };
 		83B594882372CDF600B7514E /* APPDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPDataBase.m; sourceTree = "<group>"; };
 		83B594AB23755D3900B7514E /* 分页查找.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "分页查找.jpeg"; sourceTree = "<group>"; };
+		83BC18CC2407A698005A056D /* APPWebHybridController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPWebHybridController.h; sourceTree = "<group>"; };
+		83BC18CD2407A698005A056D /* APPWebHybridController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPWebHybridController.m; sourceTree = "<group>"; };
+		83BC18CF2407A7FB005A056D /* CBJSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBJSModel.h; sourceTree = "<group>"; };
+		83BC18D02407A7FB005A056D /* CBJSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBJSModel.m; sourceTree = "<group>"; };
 		8D69D3D922B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "ReactiveCocoa 讨论会 | 唐巧的博客.webarchive"; sourceTree = "<group>"; };
 		8D69D3DB22B4F9D800D4A325 /* MVVM与RAC.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "MVVM与RAC.webarchive"; sourceTree = "<group>"; };
 		8D95957422AE3A1F001A8345 /* JPEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPEngine.m; sourceTree = "<group>"; };
@@ -654,6 +660,10 @@
 				8DAB5EC221AB9882009662D5 /* ExampleViewController.m */,
 				8DAB5EBF21AB9882009662D5 /* FSPromptView.h */,
 				8DAB5EBC21AB9882009662D5 /* FSPromptView.m */,
+				83BC18CC2407A698005A056D /* APPWebHybridController.h */,
+				83BC18CD2407A698005A056D /* APPWebHybridController.m */,
+				83BC18CF2407A7FB005A056D /* CBJSModel.h */,
+				83BC18D02407A7FB005A056D /* CBJSModel.m */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -969,6 +979,7 @@
 				8DAB5ED321AB9895009662D5 /* GFNavigationController.m in Sources */,
 				1428088F2351C80000D24D08 /* NSString+TextSize.m in Sources */,
 				8DAB5EE621AB98A6009662D5 /* APPAlertView.m in Sources */,
+				83BC18CE2407A698005A056D /* APPWebHybridController.m in Sources */,
 				8DAB5ECD21AB9882009662D5 /* APPLoadWaitView.m in Sources */,
 				8DAB5EB421AB9839009662D5 /* GFEncryption.m in Sources */,
 				8DAB5E3B21AB976C009662D5 /* APPKeyInfo.m in Sources */,
@@ -1016,6 +1027,7 @@
 				140A8FBE234F258300B31672 /* APPColorFunction.m in Sources */,
 				8DAB5EB121AB9839009662D5 /* NSMutableDictionary+GFExtension.m in Sources */,
 				8346B46823C045C6001154A7 /* APPWXInterface.m in Sources */,
+				83BC18D12407A7FB005A056D /* CBJSModel.m in Sources */,
 				8DAB5EF621AB98E3009662D5 /* AppDelegate.m in Sources */,
 				14CE0FA123507C520093E45C /* GFTabBarController.m in Sources */,
 				8354DE6923D59000006B09C6 /* TwoSwiftController.swift in Sources */,
