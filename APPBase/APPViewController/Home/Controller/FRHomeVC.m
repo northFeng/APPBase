@@ -37,7 +37,7 @@
     
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [btn setTitle:@"存储" forState:UIControlStateNormal];
+    [btn setTitle:@"SwiftOne" forState:UIControlStateNormal];
     btn.frame = CGRectMake(100, 200, 50, 30);
     [btn addTarget:self action:@selector(onClickBtnStore) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];

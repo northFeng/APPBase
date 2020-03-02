@@ -24,6 +24,10 @@ class OneSwiftController: APPBaseController {
 
         APPAlertTool.showLoading(on: self.view)
         
+        APPHttpTool.getRequestNetDicDataUrl("", params: Dictionary()) { (result:Bool, idObject:Any, code:NSInteger) in
+            
+        }
+        
         APPHttpTool.getRequestNetDicDataUrl("version/latest?platform=1", params:Dictionary()) { (result:Bool, idObject:Any, code:NSInteger) in
             
             APPAlertTool.hideLoading()
@@ -53,26 +57,34 @@ class OneSwiftController: APPBaseController {
             make.width.equalTo(100)
             make.height.equalTo(50)
         }
-        
-        
+    
     }
     
     
     
     @objc func onClickButton() {
         
-        Print("\(infoStr)")
+        printNetBlock(text: "网络请求") { (result:Bool, idObject:Any, code:Int) in
+            Print("回调了网络数据：\(result)+\(idObject)+\(code)")
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    func blockAction(result:Bool) {
+        
+        Print("哈哈哈哈");
     }
-    */
+    
+    func printLogString(text:String, block:APPBackClosure) -> Void {
+        
+        Print(text)
+        block(true,2)
+    }
+    
+    func printNetBlock(text:String, block:APPNetClosure) -> Void {
+        Print(text)
+        block(true,"回调数据",100)
+    }
 
 }

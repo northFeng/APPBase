@@ -13,6 +13,13 @@ import SnapKit//布局
 import Alamofire//网络请求
 import SwiftyJSON//JSON墨香转换
 
+//MARK: ************************* 定义全局闭包函数 *************************
+///常用回调
+typealias APPBackClosure = (Bool, Any)->Void
+///网络请求回调
+typealias APPNetClosure = (Bool, Any, Int)->Void
+
+
 //MARK: ********************************* 定义常量 *********************************
 
 ///屏幕宽

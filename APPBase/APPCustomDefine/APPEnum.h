@@ -27,6 +27,9 @@ typedef NS_ENUM(NSInteger,APPEnum) {
  */
 typedef void (^APPBackBlock)(BOOL result, id idObject);
 
+///网络请求返回  code 100成功  99网络失败  101 服务器失败
+typedef void (^APPNetBlock)(BOOL result, id idObject, NSInteger code);
+
 
 /**
  *  登录类型
