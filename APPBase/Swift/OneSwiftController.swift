@@ -15,12 +15,15 @@ class OneSwiftController: APPBaseController {
     
     var oneView:UIView = UIView()
     
+    let tableView:UITableView = UITableView(frame: CGRect(origin: CGPoint(x: 10, y: 10), size: CGSize(width: 100, height: 200)), style: UITableViewStyle.grouped)
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-                
+                    
 
         APPAlertTool.showLoading(on: self.view)
         
@@ -57,12 +60,14 @@ class OneSwiftController: APPBaseController {
             make.width.equalTo(100)
             make.height.equalTo(50)
         }
+        
+        
     
     }
     
     
     
-    @objc func onClickButton() {
+    @objc func onClickButton(button:UIButton) {
         
         printNetBlock(text: "网络请求") { (result:Bool, idObject:Any, code:Int) in
             Print("回调了网络数据：\(result)+\(idObject)+\(code)")
@@ -85,6 +90,14 @@ class OneSwiftController: APPBaseController {
     func printNetBlock(text:String, block:APPNetClosure) -> Void {
         Print(text)
         block(true,"回调数据",100)
+    }
+    
+    func jsonData() -> Void {
+        
+        let jsonStr:NSString = "[{\"name\": \"hangge\", \"age\": 100, \"phones\": [{\"name\": \"公司\",\"number\": \"123456\"}, {\"name\": \"家庭\",\"number\": \"001\"}]}, {\"name\": \"big boss\",\"age\": 1,\"phones\": [{ \"name\": \"公司\",\"number\": \"111111\"}]}]"
+        
+        
+    
     }
 
 }

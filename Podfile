@@ -83,7 +83,7 @@ pod 'UMCAnalytics','~>6.0.5'
 #布局类似Masonry
 pod 'SnapKit', '~> 5.0.0'
 
-#网络请求
+#网络请求 ANF的swift版本
 pod 'Alamofire','~>5.0.0-rc.3'
 
 #JSON模型转换
@@ -92,7 +92,8 @@ pod 'SwiftyJSON', '~>4.0'
 #加载视图
 pod 'NVActivityIndicatorView','~>4.8.0'
 
-
+#图片加载
+pod 'Kingfisher','5.13.1'
 
 
 
