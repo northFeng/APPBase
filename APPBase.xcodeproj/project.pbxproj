@@ -32,6 +32,7 @@
 		8354DE6923D59000006B09C6 /* TwoSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE6823D59000006B09C6 /* TwoSwiftController.swift */; };
 		8354DE6B23D5B4B8006B09C6 /* ClassHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE6A23D5B4B8006B09C6 /* ClassHead.swift */; };
 		839B993223B30D3E006A8049 /* NSURL+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 839B993123B30D3E006A8049 /* NSURL+Category.m */; };
+		839CDC9F2411193D00617294 /* APPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839CDC9E2411193D00617294 /* APPRequest.swift */; };
 		83A1E785238F6B6A0020F626 /* APPDateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A1E783238F6B6A0020F626 /* APPDateTool.m */; };
 		83B594892372CDF600B7514E /* APPDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B594882372CDF600B7514E /* APPDataBase.m */; };
 		83B594AC23755D3900B7514E /* 分页查找.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 83B594AB23755D3900B7514E /* 分页查找.jpeg */; };
@@ -156,6 +157,7 @@
 		8354DE6A23D5B4B8006B09C6 /* ClassHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassHead.swift; sourceTree = "<group>"; };
 		839B993023B30D3E006A8049 /* NSURL+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+Category.h"; sourceTree = "<group>"; };
 		839B993123B30D3E006A8049 /* NSURL+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Category.m"; sourceTree = "<group>"; };
+		839CDC9E2411193D00617294 /* APPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPRequest.swift; sourceTree = "<group>"; };
 		83A1E783238F6B6A0020F626 /* APPDateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPDateTool.m; sourceTree = "<group>"; };
 		83A1E784238F6B6A0020F626 /* APPDateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPDateTool.h; sourceTree = "<group>"; };
 		83B594872372CDF600B7514E /* APPDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPDataBase.h; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				8354DE6723D58AB9006B09C6 /* SwiftClass.h */,
 				8354DE6423D58445006B09C6 /* APPBase-Bridging-Header.h */,
 				8354DE6A23D5B4B8006B09C6 /* ClassHead.swift */,
+				839CDC9E2411193D00617294 /* APPRequest.swift */,
 				8354DE6523D58445006B09C6 /* OneSwiftController.swift */,
 				8354DE6823D59000006B09C6 /* TwoSwiftController.swift */,
 			);
@@ -1022,6 +1025,7 @@
 				1428088C2351C5B800D24D08 /* APPNoDataView.m in Sources */,
 				142808952351CAC900D24D08 /* APPFileManager.m in Sources */,
 				8DAB5E3A21AB976C009662D5 /* APPManager.m in Sources */,
+				839CDC9F2411193D00617294 /* APPRequest.swift in Sources */,
 				14BE128623506BA50047F00B /* APPAlertTool.m in Sources */,
 				8DAB5EE721AB98A6009662D5 /* GFTextField.m in Sources */,
 				140A8FBE234F258300B31672 /* APPColorFunction.m in Sources */,

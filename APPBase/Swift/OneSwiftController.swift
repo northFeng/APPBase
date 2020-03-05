@@ -60,11 +60,16 @@ class OneSwiftController: APPBaseController {
             make.width.equalTo(100)
             make.height.equalTo(50)
         }
-        
-        
     
     }
     
+    struct Student:Convertible {
+        
+        var name:String = ""
+        
+        var weight:Double = 0.0
+        
+    }
     
     
     @objc func onClickButton(button:UIButton) {
@@ -72,6 +77,14 @@ class OneSwiftController: APPBaseController {
         printNetBlock(text: "网络请求") { (result:Bool, idObject:Any, code:Int) in
             Print("回调了网络数据：\(result)+\(idObject)+\(code)")
         }
+        
+        let jsonStr:[String:Any] = ["name":"张三","weight":6.66]
+        
+        let student = jsonStr.kj.model(Student.self) as? Student//调用json的model方法，传入模型类型，返回模型实例
+
+        let studen2 = model(from: jsonStr, type: Student.self) as? Student//调用一个全局函数来完成JSON转模型
+        
+        
     }
     
     
@@ -90,14 +103,6 @@ class OneSwiftController: APPBaseController {
     func printNetBlock(text:String, block:APPNetClosure) -> Void {
         Print(text)
         block(true,"回调数据",100)
-    }
-    
-    func jsonData() -> Void {
-        
-        let jsonStr:NSString = "[{\"name\": \"hangge\", \"age\": 100, \"phones\": [{\"name\": \"公司\",\"number\": \"123456\"}, {\"name\": \"家庭\",\"number\": \"001\"}]}, {\"name\": \"big boss\",\"age\": 1,\"phones\": [{ \"name\": \"公司\",\"number\": \"111111\"}]}]"
-        
-        
-    
     }
 
 }
