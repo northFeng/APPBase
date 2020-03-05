@@ -49,7 +49,11 @@
 ///把日期数字换换成 年月日
 + (NSString *)date_getTimeString:(NSString *)timeString{
     //,[timeString substringWithRange:NSMakeRange(6, 2)]
-    NSString *time = [NSString stringWithFormat:@"%@-%@-%@",[timeString substringToIndex:4],[timeString substringWithRange:NSMakeRange(4, 2)],[timeString substringWithRange:NSMakeRange(6, 2)]];
+    NSString *time = @"";
+    
+    if (timeString.length >= 6) {
+        time = [NSString stringWithFormat:@"%@-%@-%@",[timeString substringToIndex:4],[timeString substringWithRange:NSMakeRange(4, 2)],[timeString substringWithRange:NSMakeRange(6, 2)]];
+    }
     
     return time;
 }
@@ -57,7 +61,11 @@
 ///把日期数字换换成 年月日 不带 ——
 + (NSString *)date_getTimeStringTwo:(NSString *)timeString{
     //,[timeString substringWithRange:NSMakeRange(6, 2)]
-    NSString *time = [NSString stringWithFormat:@"%@年%@月",[timeString substringToIndex:4],[timeString substringWithRange:NSMakeRange(4, 2)]];
+    NSString *time = @"";
+    
+    if (timeString.length >= 6) {
+        time = [NSString stringWithFormat:@"%@年%@月",[timeString substringToIndex:4],[timeString substringWithRange:NSMakeRange(4, 2)]];
+    }
     
     return time;
 }

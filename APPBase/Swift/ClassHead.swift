@@ -11,7 +11,7 @@ import UIKit
 import SnapKit//布局
 //import HanekeSwift
 import Alamofire//网络请求
-import SwiftyJSON//JSON墨香转换
+import SwiftyJSON//JSON数据转换
 
 //MARK: ************************* 定义全局闭包函数 *************************
 ///常用回调
