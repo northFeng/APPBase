@@ -4,7 +4,7 @@
 //
 //  Created by gaoyafeng on 2018/11/21.
 //  Copyright © 2018 ishansong. All rights reserved.
-//  附带音视频播放器的版本
+//  swift混合开发版本
 
 #import <UIKit/UIKit.h>
 

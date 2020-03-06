@@ -51,7 +51,7 @@ class OneSwiftController: APPBaseController {
         let button = UIButton(type: .custom)
         button.backgroundColor = UIColor.blue
         button.setTitle("点击", for: .normal)
-        button.addTarget(self, action: #selector(onClickButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(jsonToModel), for: .touchUpInside)
         self.view.addSubview(button)
         
         button.snp.makeConstraints { (make) in
@@ -63,28 +63,11 @@ class OneSwiftController: APPBaseController {
     
     }
     
-    struct Student:Convertible {
-        
-        var name:String = ""
-        
-        var weight:Double = 0.0
-        
-    }
-    
-    
     @objc func onClickButton(button:UIButton) {
         
         printNetBlock(text: "网络请求") { (result:Bool, idObject:Any, code:Int) in
             Print("回调了网络数据：\(result)+\(idObject)+\(code)")
         }
-        
-        let jsonStr:[String:Any] = ["name":"张三","weight":6.66]
-        
-        let student = jsonStr.kj.model(Student.self) as? Student//调用json的model方法，传入模型类型，返回模型实例
-
-        let studen2 = model(from: jsonStr, type: Student.self) as? Student//调用一个全局函数来完成JSON转模型
-        
-        
     }
     
     
@@ -104,5 +87,45 @@ class OneSwiftController: APPBaseController {
         Print(text)
         block(true,"回调数据",100)
     }
+    
+    @objc func jsonToModel() {
+        let jsonStr:[String:Any] = ["name":"张三","weight":6.66]
+        
+        let one1 = jsonStr.kj.model(Student.self) //调用json的model方法，传入模型类型，返回模型实例
+
+        let one2 = model(from: jsonStr, type: Student.self)//调用一个全局函数来完成JSON转模型
+        
+        print("数据\(one1.name)")
+        
+        
+        var one3 = Demo()
+        one3.aaa()
+        
+    }
+    
+    class Student:BaseModel {
+        
+        var name:String = ""
+        
+        var weight:Double = 0.0
+        
+        func aaa() {
+            name = "哈哈哈"
+            weight = 8.2
+        }
+    }
+    
+    struct Demo {
+        
+        var name:String = ""
+        
+        var weight:Double = 0.0
+        
+        mutating func aaa() {
+            self.name = "哈哈哈"
+            self.weight = 8.2
+        }
+    }
+    
 
 }

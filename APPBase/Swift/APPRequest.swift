@@ -12,8 +12,8 @@ import Foundation
 class BaseModel: Convertible {
     
     //类的属性，最后直接初始化一个值！
-    var name: String = ""
-    var age: Int = 0
+    //var name: String = ""
+    //var age: Int = 0
     
     // 由于Swift初始化机制的原因，`Convertible`协议强制要求实现init初始化器
     // 这样框架内部才可以完整初始化一个实例
