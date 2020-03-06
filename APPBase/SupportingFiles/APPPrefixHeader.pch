@@ -23,11 +23,10 @@
 #import <ReactiveObjC/ReactiveObjC.h>//RAC
 
 #pragma mark - APP内文件
-#import "APPManager.h"//APP管理者
+#import "ManagerHeader.h"//APP管理者
 #import "APPGlobalVariable.h"//全局变量&&宏定义
 #import "APPFunctionMethod.h"//公共方法工厂
 
-#import "APPThirdHeader.h"//第三方模块功能
 #import "APPToolHeader.h"//工具类
 
 
