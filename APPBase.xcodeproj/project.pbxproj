@@ -155,6 +155,7 @@
 		8354DE6723D58AB9006B09C6 /* SwiftClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftClass.h; sourceTree = "<group>"; };
 		8354DE6823D59000006B09C6 /* TwoSwiftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSwiftController.swift; sourceTree = "<group>"; };
 		8354DE6A23D5B4B8006B09C6 /* ClassHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassHead.swift; sourceTree = "<group>"; };
+		83987FCE241237A600A71FC4 /* ManagerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerHeader.h; sourceTree = "<group>"; };
 		839B993023B30D3E006A8049 /* NSURL+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+Category.h"; sourceTree = "<group>"; };
 		839B993123B30D3E006A8049 /* NSURL+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Category.m"; sourceTree = "<group>"; };
 		839CDC9E2411193D00617294 /* APPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPRequest.swift; sourceTree = "<group>"; };
@@ -578,6 +579,7 @@
 		8DAB5E2F21AB971C009662D5 /* APPManager */ = {
 			isa = PBXGroup;
 			children = (
+				83987FCE241237A600A71FC4 /* ManagerHeader.h */,
 				8DAB5E3721AB976C009662D5 /* APPManager.h */,
 				8DAB5E3221AB976C009662D5 /* APPManager.m */,
 				8DAB5E3621AB976C009662D5 /* APPUserInfoModel.h */,

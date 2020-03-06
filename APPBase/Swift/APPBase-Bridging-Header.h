@@ -4,7 +4,7 @@
 //  1、把需要引用OC的类的头文件 在此进行引用
 
 #pragma mark - APP内文件
-#import "APPManager.h"//APP管理者
+#import "ManagerHeader.h"//APP管理者
 #import "APPGlobalVariable.h"//全局变量&&宏定义
 #import "APPFunctionMethod.h"//公共方法工厂
 
