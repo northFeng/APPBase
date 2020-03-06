@@ -150,9 +150,20 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(nullable UIWindow *)window
-{
-    return UIInterfaceOrientationMaskPortrait;
+#pragma mark - 设置APP的旋转方向
+/*  这个方法来控制APP的屏幕旋转，viewController里面的代码是来控制界面的旋转
+ 1.建议去掉General里Device Orientation的勾选用代码方式设置。
+ 2.建议在AppDelegate.h里设置公有属性，通过设置该属性来灵活改变App支持方向。
+ 3.此方法在shouldAutorotate返回YES时会触发。
+ */
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    if (self.allowRotate) {
+
+        return UIInterfaceOrientationMaskAllButUpsideDown;
+    }else {
+
+        return UIInterfaceOrientationMaskPortrait;
+    }
 }
 
 @end

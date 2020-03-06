@@ -13,4 +13,10 @@
 #import "APPCache.h"
 
 
+#import "APPAudioPlayer.h"//播放器
+
+#import "APPAudioLocalPlayer.h"//播放全局本地音频
+
+#import "CBAudioSmallAlerView.h"//全局播放小弹框
+
 #endif /* APPThirdHeader_h */

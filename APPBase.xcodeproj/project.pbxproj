@@ -31,6 +31,19 @@
 		8354DE6623D58445006B09C6 /* OneSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE6523D58445006B09C6 /* OneSwiftController.swift */; };
 		8354DE6923D59000006B09C6 /* TwoSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE6823D59000006B09C6 /* TwoSwiftController.swift */; };
 		8354DE6B23D5B4B8006B09C6 /* ClassHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE6A23D5B4B8006B09C6 /* ClassHead.swift */; };
+		83987FDE241242C100A71FC4 /* CBAudioSmallAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FD5241242C100A71FC4 /* CBAudioSmallAlerView.m */; };
+		83987FDF241242C100A71FC4 /* CBSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FD7241242C100A71FC4 /* CBSlider.m */; };
+		83987FE0241242C100A71FC4 /* CBAudioListVierw.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FD8241242C100A71FC4 /* CBAudioListVierw.m */; };
+		83987FE1241242C100A71FC4 /* APPAudioPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FD9241242C100A71FC4 /* APPAudioPlayerController.m */; };
+		83987FE2241242C100A71FC4 /* APPAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FDA241242C100A71FC4 /* APPAudioPlayer.m */; };
+		83987FE3241242C100A71FC4 /* APPAudioLocalPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FDB241242C100A71FC4 /* APPAudioLocalPlayer.m */; };
+		83987FE4241242C100A71FC4 /* APPAudioPlayerVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FDC241242C100A71FC4 /* APPAudioPlayerVM.m */; };
+		83987FF0241242C800A71FC4 /* APPVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FE8241242C800A71FC4 /* APPVideoPlayer.m */; };
+		83987FF1241242C800A71FC4 /* APPVideoPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FE9241242C800A71FC4 /* APPVideoPromptView.m */; };
+		83987FF2241242C800A71FC4 /* APPVideoInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FEA241242C800A71FC4 /* APPVideoInfoView.m */; };
+		83987FF3241242C800A71FC4 /* APPVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FEB241242C800A71FC4 /* APPVideoPlayerController.m */; };
+		83987FF4241242C800A71FC4 /* APPVideoListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FED241242C800A71FC4 /* APPVideoListView.m */; };
+		83987FF72412440100A71FC4 /* APPBaseController+ScreenRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FF62412440100A71FC4 /* APPBaseController+ScreenRotation.m */; };
 		839B993223B30D3E006A8049 /* NSURL+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 839B993123B30D3E006A8049 /* NSURL+Category.m */; };
 		839CDC9F2411193D00617294 /* APPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839CDC9E2411193D00617294 /* APPRequest.swift */; };
 		83A1E785238F6B6A0020F626 /* APPDateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A1E783238F6B6A0020F626 /* APPDateTool.m */; };
@@ -156,6 +169,32 @@
 		8354DE6823D59000006B09C6 /* TwoSwiftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSwiftController.swift; sourceTree = "<group>"; };
 		8354DE6A23D5B4B8006B09C6 /* ClassHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassHead.swift; sourceTree = "<group>"; };
 		83987FCE241237A600A71FC4 /* ManagerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerHeader.h; sourceTree = "<group>"; };
+		83987FD0241242C100A71FC4 /* APPAudioPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPAudioPlayerController.h; sourceTree = "<group>"; };
+		83987FD1241242C100A71FC4 /* CBAudioListVierw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAudioListVierw.h; sourceTree = "<group>"; };
+		83987FD2241242C100A71FC4 /* CBSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBSlider.h; sourceTree = "<group>"; };
+		83987FD3241242C100A71FC4 /* APPAudioLocalPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPAudioLocalPlayer.h; sourceTree = "<group>"; };
+		83987FD4241242C100A71FC4 /* APPAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPAudioPlayer.h; sourceTree = "<group>"; };
+		83987FD5241242C100A71FC4 /* CBAudioSmallAlerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAudioSmallAlerView.m; sourceTree = "<group>"; };
+		83987FD6241242C100A71FC4 /* APPAudioPlayerVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPAudioPlayerVM.h; sourceTree = "<group>"; };
+		83987FD7241242C100A71FC4 /* CBSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBSlider.m; sourceTree = "<group>"; };
+		83987FD8241242C100A71FC4 /* CBAudioListVierw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAudioListVierw.m; sourceTree = "<group>"; };
+		83987FD9241242C100A71FC4 /* APPAudioPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPAudioPlayerController.m; sourceTree = "<group>"; };
+		83987FDA241242C100A71FC4 /* APPAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPAudioPlayer.m; sourceTree = "<group>"; };
+		83987FDB241242C100A71FC4 /* APPAudioLocalPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPAudioLocalPlayer.m; sourceTree = "<group>"; };
+		83987FDC241242C100A71FC4 /* APPAudioPlayerVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPAudioPlayerVM.m; sourceTree = "<group>"; };
+		83987FDD241242C100A71FC4 /* CBAudioSmallAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAudioSmallAlerView.h; sourceTree = "<group>"; };
+		83987FE6241242C800A71FC4 /* APPVideoPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPVideoPlayerController.h; sourceTree = "<group>"; };
+		83987FE7241242C800A71FC4 /* APPVideoListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPVideoListView.h; sourceTree = "<group>"; };
+		83987FE8241242C800A71FC4 /* APPVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPVideoPlayer.m; sourceTree = "<group>"; };
+		83987FE9241242C800A71FC4 /* APPVideoPromptView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPVideoPromptView.m; sourceTree = "<group>"; };
+		83987FEA241242C800A71FC4 /* APPVideoInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPVideoInfoView.m; sourceTree = "<group>"; };
+		83987FEB241242C800A71FC4 /* APPVideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPVideoPlayerController.m; sourceTree = "<group>"; };
+		83987FEC241242C800A71FC4 /* APPVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPVideoPlayer.h; sourceTree = "<group>"; };
+		83987FED241242C800A71FC4 /* APPVideoListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPVideoListView.m; sourceTree = "<group>"; };
+		83987FEE241242C800A71FC4 /* APPVideoPromptView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPVideoPromptView.h; sourceTree = "<group>"; };
+		83987FEF241242C800A71FC4 /* APPVideoInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPVideoInfoView.h; sourceTree = "<group>"; };
+		83987FF52412440100A71FC4 /* APPBaseController+ScreenRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "APPBaseController+ScreenRotation.h"; sourceTree = "<group>"; };
+		83987FF62412440100A71FC4 /* APPBaseController+ScreenRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "APPBaseController+ScreenRotation.m"; sourceTree = "<group>"; };
 		839B993023B30D3E006A8049 /* NSURL+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+Category.h"; sourceTree = "<group>"; };
 		839B993123B30D3E006A8049 /* NSURL+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Category.m"; sourceTree = "<group>"; };
 		839CDC9E2411193D00617294 /* APPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPRequest.swift; sourceTree = "<group>"; };
@@ -338,6 +377,8 @@
 			isa = PBXGroup;
 			children = (
 				147E502D2351FBCA00C2309B /* APPThirdHeader.h */,
+				83987FE5241242C800A71FC4 /* VideoPlayer */,
+				83987FCF241242C100A71FC4 /* AudioPlayer */,
 				8346B46923C04AA8001154A7 /* UM */,
 				8346B46523C045AC001154A7 /* WX */,
 				8346B46123C04358001154A7 /* OSS */,
@@ -452,6 +493,44 @@
 				8354DE6823D59000006B09C6 /* TwoSwiftController.swift */,
 			);
 			path = Swift;
+			sourceTree = "<group>";
+		};
+		83987FCF241242C100A71FC4 /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				83987FD3241242C100A71FC4 /* APPAudioLocalPlayer.h */,
+				83987FDB241242C100A71FC4 /* APPAudioLocalPlayer.m */,
+				83987FD4241242C100A71FC4 /* APPAudioPlayer.h */,
+				83987FDA241242C100A71FC4 /* APPAudioPlayer.m */,
+				83987FD0241242C100A71FC4 /* APPAudioPlayerController.h */,
+				83987FD9241242C100A71FC4 /* APPAudioPlayerController.m */,
+				83987FD6241242C100A71FC4 /* APPAudioPlayerVM.h */,
+				83987FDC241242C100A71FC4 /* APPAudioPlayerVM.m */,
+				83987FD2241242C100A71FC4 /* CBSlider.h */,
+				83987FD7241242C100A71FC4 /* CBSlider.m */,
+				83987FD1241242C100A71FC4 /* CBAudioListVierw.h */,
+				83987FD8241242C100A71FC4 /* CBAudioListVierw.m */,
+				83987FDD241242C100A71FC4 /* CBAudioSmallAlerView.h */,
+				83987FD5241242C100A71FC4 /* CBAudioSmallAlerView.m */,
+			);
+			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
+		83987FE5241242C800A71FC4 /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				83987FEC241242C800A71FC4 /* APPVideoPlayer.h */,
+				83987FE8241242C800A71FC4 /* APPVideoPlayer.m */,
+				83987FE6241242C800A71FC4 /* APPVideoPlayerController.h */,
+				83987FEB241242C800A71FC4 /* APPVideoPlayerController.m */,
+				83987FE7241242C800A71FC4 /* APPVideoListView.h */,
+				83987FED241242C800A71FC4 /* APPVideoListView.m */,
+				83987FEE241242C800A71FC4 /* APPVideoPromptView.h */,
+				83987FE9241242C800A71FC4 /* APPVideoPromptView.m */,
+				83987FEF241242C800A71FC4 /* APPVideoInfoView.h */,
+				83987FEA241242C800A71FC4 /* APPVideoInfoView.m */,
+			);
+			path = VideoPlayer;
 			sourceTree = "<group>";
 		};
 		83B594862372CDBD00B7514E /* FMDB */ = {
@@ -659,6 +738,8 @@
 				8DAB5EC021AB9882009662D5 /* APPBaseCell.m */,
 				140A8FBF234F2ED800B31672 /* APPBaseController.h */,
 				140A8FC0234F2ED800B31672 /* APPBaseController.m */,
+				83987FF52412440100A71FC4 /* APPBaseController+ScreenRotation.h */,
+				83987FF62412440100A71FC4 /* APPBaseController+ScreenRotation.m */,
 				140A8FC8234F4B6800B31672 /* APPBaseTableViewController.h */,
 				140A8FC9234F4B6800B31672 /* APPBaseTableViewController.m */,
 				8DAB5EC721AB9882009662D5 /* ExampleViewController.h */,
@@ -978,9 +1059,13 @@
 				148459AF234E1B0A002ABA2F /* APPHttpCacheTool.m in Sources */,
 				83A1E785238F6B6A0020F626 /* APPDateTool.m in Sources */,
 				8DAB5F0C21AB9954009662D5 /* FRLoginHomeVC.m in Sources */,
+				83987FF0241242C800A71FC4 /* APPVideoPlayer.m in Sources */,
+				83987FE2241242C100A71FC4 /* APPAudioPlayer.m in Sources */,
 				140A8FCA234F4B6800B31672 /* APPBaseTableViewController.m in Sources */,
 				8354DE6B23D5B4B8006B09C6 /* ClassHead.swift in Sources */,
 				8DAB5ECA21AB9882009662D5 /* APPBaseCell.m in Sources */,
+				83987FDF241242C100A71FC4 /* CBSlider.m in Sources */,
+				83987FDE241242C100A71FC4 /* CBAudioSmallAlerView.m in Sources */,
 				8DAB5ED321AB9895009662D5 /* GFNavigationController.m in Sources */,
 				1428088F2351C80000D24D08 /* NSString+TextSize.m in Sources */,
 				8DAB5EE621AB98A6009662D5 /* APPAlertView.m in Sources */,
@@ -1006,10 +1091,12 @@
 				14CE0FA8235080F00093E45C /* GFMineController.m in Sources */,
 				8DAB5EC821AB9882009662D5 /* FSPromptView.m in Sources */,
 				8DAB5EB521AB9839009662D5 /* NSArray+GFExtension.m in Sources */,
+				83987FE0241242C100A71FC4 /* CBAudioListVierw.m in Sources */,
 				8DAB5EEF21AB98CD009662D5 /* APPBaseModel.m in Sources */,
 				14CE0FA5235080E10093E45C /* GFMiddleController.m in Sources */,
 				8DAB5E4321AB9795009662D5 /* APPGlobalVariable.m in Sources */,
 				839B993223B30D3E006A8049 /* NSURL+Category.m in Sources */,
+				83987FF72412440100A71FC4 /* APPBaseController+ScreenRotation.m in Sources */,
 				8DAB5EE321AB98A6009662D5 /* GFButtonPress.m in Sources */,
 				8DAB5F0421AB993F009662D5 /* FRHomeVC.m in Sources */,
 				8DAB5EF721AB98E3009662D5 /* AppDelegate+RootConTroller.m in Sources */,
@@ -1018,10 +1105,13 @@
 				8DAB5F0321AB993F009662D5 /* FROrderCellVC.m in Sources */,
 				8D95957722AE3A1F001A8345 /* JPEngine.m in Sources */,
 				8DAB5EE821AB98A6009662D5 /* UILabel+Text.m in Sources */,
+				83987FF1241242C800A71FC4 /* APPVideoPromptView.m in Sources */,
 				8DAB5EBB21AB9857009662D5 /* APPAnalyticsHelper.m in Sources */,
 				149265E42350CA6600A2C7FE /* APPConfirmAlertView.m in Sources */,
 				140A8FC1234F2ED800B31672 /* APPBaseController.m in Sources */,
 				142808922351C8DD00D24D08 /* APPViewTool.m in Sources */,
+				83987FE3241242C100A71FC4 /* APPAudioLocalPlayer.m in Sources */,
+				83987FF4241242C800A71FC4 /* APPVideoListView.m in Sources */,
 				8DAB5EF121AB98CD009662D5 /* APPModel.m in Sources */,
 				8DAB5ED221AB9895009662D5 /* GFNavigationBarView.m in Sources */,
 				1428088C2351C5B800D24D08 /* APPNoDataView.m in Sources */,
@@ -1030,13 +1120,17 @@
 				839CDC9F2411193D00617294 /* APPRequest.swift in Sources */,
 				14BE128623506BA50047F00B /* APPAlertTool.m in Sources */,
 				8DAB5EE721AB98A6009662D5 /* GFTextField.m in Sources */,
+				83987FF3241242C800A71FC4 /* APPVideoPlayerController.m in Sources */,
+				83987FF2241242C800A71FC4 /* APPVideoInfoView.m in Sources */,
 				140A8FBE234F258300B31672 /* APPColorFunction.m in Sources */,
 				8DAB5EB121AB9839009662D5 /* NSMutableDictionary+GFExtension.m in Sources */,
 				8346B46823C045C6001154A7 /* APPWXInterface.m in Sources */,
 				83BC18D12407A7FB005A056D /* CBJSModel.m in Sources */,
+				83987FE4241242C100A71FC4 /* APPAudioPlayerVM.m in Sources */,
 				8DAB5EF621AB98E3009662D5 /* AppDelegate.m in Sources */,
 				14CE0FA123507C520093E45C /* GFTabBarController.m in Sources */,
 				8354DE6923D59000006B09C6 /* TwoSwiftController.swift in Sources */,
+				83987FE1241242C100A71FC4 /* APPAudioPlayerController.m in Sources */,
 				8346B46C23C04AD0001154A7 /* APPUMInterface.m in Sources */,
 				8354DE6623D58445006B09C6 /* OneSwiftController.swift in Sources */,
 				140A8FC7234F37A300B31672 /* UIButton+GFExtension.m in Sources */,
