@@ -10,6 +10,10 @@
 
 #import "APPUserInfoModel.h"//用户信息Model
 
+#import "APPKeyInfo.h"//APPkey信息获取
+
+#import "APPLoacalInfo.h"//APP本地信息
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APPManager : NSObject

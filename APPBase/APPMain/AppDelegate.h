@@ -10,9 +10,6 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-///是否允许屏幕旋转
-@property (nonatomic,assign) BOOL allowRotate;
-
 @property (strong, nonatomic) UIWindow *window;
 
 

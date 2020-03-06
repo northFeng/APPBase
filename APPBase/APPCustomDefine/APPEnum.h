@@ -19,6 +19,7 @@ typedef NS_ENUM(NSInteger,APPEnum) {
     APPEnum_One = 0,
 };
 
+
 /**
  * 全局block回调
  * block会捕获外部对象指针进行拷贝，对象拥有的block在对象释放时，block会自动销毁，block里的对象也会销毁

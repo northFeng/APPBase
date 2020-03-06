@@ -40,14 +40,11 @@ NS_ASSUME_NONNULL_BEGIN
 ///基础黑色
 + (UIColor *)blackColor;
 
-///弹框背景黑色
-+ (UIColor *)blackAlertColor;
-
 ///基础白色颜色
 + (UIColor *)whiteColor;
 
 ///系统白亮文字颜色
-+ (UIColor *)lightTextColor;
++ (UIColor *)lightTextColor;;
 
 ///系统黑暗文字颜色
 + (UIColor *)drakTextColor;
