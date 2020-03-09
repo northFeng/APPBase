@@ -38,6 +38,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///样式六  （万能版本）
 - (void)showAlert6WithTitle:(NSString *)title brifStr:(NSString *)brifStr leftBtnTitle:(NSString *)cancleTitle rightBtnTitle:(NSString *)okTitle blockleft:(APPBackBlock)blockleft blockRight:(APPBackBlock)blockRight;
 
+///样式7  （万能版本2）
+- (void)showAlert7WithTitle:(NSAttributedString *)title brifStr:(NSAttributedString *)brifStr leftBtnTitle:(NSAttributedString *)cancleTitle rightBtnTitle:(NSAttributedString *)okTitle blockleft:(APPBackBlock)blockleft blockRight:(APPBackBlock)blockRight;
+
 
 @end
 

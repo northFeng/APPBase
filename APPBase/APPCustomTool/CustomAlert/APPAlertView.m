@@ -34,7 +34,7 @@
     
     if ([super init]) {
         
-        self.backgroundColor = [RGBS(28) colorWithAlphaComponent:0.5];
+        self.backgroundColor = [COLOR(@"#222F3A") colorWithAlphaComponent:0.72];
         [self createView];
     }
     return self;
@@ -44,49 +44,49 @@
 //创建视图
 - (void)createView{
     
-    _backView = [[UIView alloc] initWithFrame:CGRectMake((kScreenWidth - 280)/2., kScreenHeight*0.35, 280, 154)];
-    _backView.backgroundColor = APPColor_White;
-    _backView.layer.cornerRadius = 5;
+    _backView = [[UIView alloc] initWithFrame:CGRectMake((kScreenWidth - 285*kIpadScale)/2., kScreenHeight*0.35, 285*kIpadScale, 285*kIpadScale*(176./285.))];
+    _backView.backgroundColor = DynamicColor(APPColorFunction.whiteColor, APPColorFunction.blackAlertColor);
+    _backView.layer.cornerRadius = 16;
     _backView.alpha = 0.;
     [self addSubview:_backView];
     
     _labelTitle = [[UILabel alloc] init];
-    _labelTitle.tintColor = APPColor_BlackDeep;
-    _labelTitle.font = kFontOfCustom(kMediumFont, 20);
+    _labelTitle.tintColor = DynamicColor(APPColorFunction.textBlackColor, APPColorFunction.lightTextColor);
+    _labelTitle.font = kFontOfCustom(kMediumFont, 14*kIpadScale);
     _labelTitle.textAlignment = NSTextAlignmentCenter;
     _labelTitle.text = @"提示";
     [_backView addSubview:_labelTitle];
     
     _labelBrif = [[UILabel alloc] init];
-    _labelBrif.textColor = APPColor_BlackDeep;
-    _labelBrif.font = kFontOfSystem(14);
+    _labelBrif.textColor = DynamicColor(APPColorFunction.textBlackColor, APPColorFunction.lightTextColor);
+    _labelBrif.font = kFontOfSystem(14*kIpadScale);
     _labelBrif.textAlignment = NSTextAlignmentCenter;
-    _labelBrif.numberOfLines = 2;
+    _labelBrif.numberOfLines = 10;//最大10行文字
     [_labelBrif sizeToFit];
     [_backView addSubview:_labelBrif];
     
     _btnCancle = [UIButton buttonWithType:UIButtonTypeCustom];
     [_btnCancle setTitle:@"取消" forState:UIControlStateNormal];
-    [_btnCancle setTitleColor:APPColor_BlackDeep forState:UIControlStateNormal];
-    _btnCancle.titleLabel.font = kFontOfCustom(kSemiboldFont, 16);
+    [_btnCancle setTitleColor:DynamicColor(COLOR(@"#717B99"), APPColorFunction.lightTextColor) forState:UIControlStateNormal];
+    _btnCancle.titleLabel.font = kFontOfSystem(14*kIpadScale);
     [_backView addSubview:_btnCancle];
     [_btnCancle addTarget:self action:@selector(onClickBtnCancle) forControlEvents:UIControlEventTouchUpInside];
     
     
     _btnOk = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_btnOk setTitle:@"确定" forState:UIControlStateNormal];
-    [_btnOk setTitleColor:APPColor_Blue forState:UIControlStateNormal];
-    _btnOk.titleLabel.font = kFontOfCustom(kSemiboldFont, 16);
+    [_btnOk setTitle:@"确认" forState:UIControlStateNormal];
+    [_btnOk setTitleColor:APPColorFunction.textBlueColor forState:UIControlStateNormal];
+    _btnOk.titleLabel.font = kFontOfCustom(kSemiboldFont, 14*kIpadScale);
     [_backView addSubview:_btnOk];
     [_btnOk addTarget:self action:@selector(onClickBtnOk) forControlEvents:UIControlEventTouchUpInside];
     
     //添加横线
     UIView *lineH = [[UIView alloc] init];
-    lineH.backgroundColor = APPColor_CellLine;
+    lineH.backgroundColor = COLOR(@"#E4E4E4");
     [_backView addSubview:lineH];
     
     _lineS = [[UIView alloc] init];
-    _lineS.backgroundColor = APPColor_CellLine;
+    _lineS.backgroundColor = COLOR(@"#E4E4E4");
     [_backView addSubview:_lineS];
     
     
@@ -94,22 +94,22 @@
     //_labelTitle.sd_layout.leftSpaceToView(_backView, 28).topSpaceToView(_backView, 22).rightSpaceToView(_backView, 28).heightIs(28);
     //_labelBrif.sd_layout.leftSpaceToView(_backView, 35).rightSpaceToView(_backView, 35).topSpaceToView(_labelTitle, 4).heightIs(40);
     [_labelTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.backView).offset(28);
-        make.right.equalTo(self.backView).offset(-28);
-        make.top.equalTo(self.backView).offset(22);
-        make.height.mas_equalTo(28);
+        make.left.equalTo(self.backView).offset(15);
+        make.right.equalTo(self.backView).offset(-15);
+        make.top.equalTo(self.backView).offset(20*kIpadScale);
+        make.height.mas_equalTo(20*kIpadScale);
     }];
     [_labelBrif mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.backView).offset(28);
-        make.right.equalTo(self.backView).offset(-28);
-        make.top.equalTo(self->_labelTitle.mas_bottom).offset(2);
-        make.height.mas_equalTo(40.);
+        make.left.equalTo(self.backView).offset(15);
+        make.right.equalTo(self.backView).offset(-15);
+        make.top.equalTo(self->_labelTitle.mas_bottom).offset(15*kIpadScale);
+        //make.height.mas_equalTo(40.);
     }];
     
-    lineH.sd_layout.leftEqualToView(_backView).rightEqualToView(_backView).bottomSpaceToView(_backView, 46).heightIs(1);
-    _lineS.sd_layout.centerXEqualToView(_backView).topSpaceToView(lineH, 0).bottomEqualToView(_backView).widthIs(1);
-    _btnCancle.sd_layout.leftEqualToView(_backView).bottomEqualToView(_backView).heightIs(46).rightSpaceToView(_lineS, 0);
-    _btnOk.sd_layout.rightEqualToView(_backView).bottomEqualToView(_backView).heightIs(46).leftSpaceToView(_lineS, 0);
+    lineH.sd_layout.leftEqualToView(_backView).rightEqualToView(_backView).bottomSpaceToView(_backView, 48*kIpadScale).heightIs(0.5);
+    _lineS.sd_layout.centerXEqualToView(_backView).topSpaceToView(lineH, 0).bottomEqualToView(_backView).widthIs(0.5);
+    _btnCancle.sd_layout.leftEqualToView(_backView).bottomEqualToView(_backView).heightIs(48*kIpadScale).rightSpaceToView(_lineS, 0);
+    _btnOk.sd_layout.rightEqualToView(_backView).bottomEqualToView(_backView).heightIs(48*kIpadScale).leftSpaceToView(_lineS, 0);
 }
 
 
@@ -247,10 +247,9 @@
             make.height.mas_equalTo(0);
         }];
         [_labelBrif mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self->_labelTitle.mas_bottom).offset(32*kIpadScale);
+            make.top.equalTo(self->_labelTitle.mas_bottom).offset(28*kIpadScale);
             //make.height.mas_equalTo(40.);
         }];
-        _backView.frame = CGRectMake((kScreenWidth - 255*kIpadScale)/2., kScreenHeight*0.35, 255*kIpadScale, 255*kIpadScale*(130./255.));
     }
     
     if (brifStr.length) {
@@ -275,13 +274,77 @@
     [self showAlert];
 }
 
+///样式7  （万能版本2）
+- (void)showAlert7WithTitle:(NSAttributedString *)title brifStr:(NSAttributedString *)brifStr leftBtnTitle:(NSAttributedString *)cancleTitle rightBtnTitle:(NSAttributedString *)okTitle blockleft:(APPBackBlock)blockleft blockRight:(APPBackBlock)blockRight {
+    
+    if (title.length) {
+        _labelTitle.attributedText = [APPFunctionMethod string_getAttributeStringWithString:title.string textFont:kFontOfCustom(kMediumFont, FitIpad(14)) textColor:[self getAttrStrColorWithAttrStr:title]];
+    }else{
+        _labelTitle.hidden = YES;
+        [_labelTitle mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.backView).offset(0);
+            make.height.mas_equalTo(0);
+        }];
+        [_labelBrif mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self->_labelTitle.mas_bottom).offset(28*kIpadScale);
+            //make.height.mas_equalTo(40.);
+        }];
+    }
+    
+    if (brifStr.length) {
+        _labelBrif.attributedText = [APPFunctionMethod string_getAttributeStringWithString:brifStr.string textFont:kFontOfSystem(FitIpad(14)) textColor:[self getAttrStrColorWithAttrStr:brifStr]];;
+    }
+    
+    if (cancleTitle.length) {
+        [_btnCancle setTitle:cancleTitle.string forState:UIControlStateNormal];
+        [_btnCancle setTitleColor:[self getAttrStrColorWithAttrStr:cancleTitle] forState:UIControlStateNormal];
+        _blockLeft = blockleft;
+    }else{
+        //隐藏左侧按钮
+        _lineS.hidden = YES;
+        _btnCancle.hidden = YES;
+        
+        _btnOk.sd_resetLayout.leftEqualToView(_backView).rightEqualToView(_backView).bottomEqualToView(_backView).heightIs(48*kIpadScale);
+    }
+    
+    
+    _blockRight = blockRight;
+    if (okTitle.length) {
+        [_btnOk setTitle:okTitle.string forState:UIControlStateNormal];
+        [_btnOk setTitleColor:[self getAttrStrColorWithAttrStr:okTitle] forState:UIControlStateNormal];
+    }
+    
+    [self showAlert];
+}
+
+///获取富文本颜色
+- (UIColor *)getAttrStrColorWithAttrStr:(NSAttributedString *)attrStr {
+    
+    NSRange rang = NSMakeRange(0, attrStr.length);
+    
+    NSDictionary *dicAttr = [attrStr attributesAtIndex:0 effectiveRange:&rang];
+    UIColor *textColor = [dicAttr objectForKey:NSForegroundColorAttributeName];
+    
+    textColor = textColor ? textColor : DynamicColor(APPColorFunction.textBlackColor, APPColorFunction.lightTextColor);
+    
+    return textColor;
+}
 
 ///显示处理啊
-- (void)showAlert{
+- (void)showAlert {
+    
+    CGFloat birfHeight = [_labelBrif.text string_getTextHeightWithTextFont:kFontOfSystem(FitIpad(14)) lineSpacing:2 textWidth:285*kIpadScale - 30];
+    
+    if (_labelTitle.hidden) {
+        _backView.frame = CGRectMake((kScreenWidth - 285*kIpadScale)/2., kScreenHeight*0.35, 285*kIpadScale, FitIpad(118 - 40) + birfHeight);//没有标题，减去标题高度
+    }else{
+        _backView.frame = CGRectMake((kScreenWidth - 285*kIpadScale)/2., kScreenHeight*0.35, 285*kIpadScale, FitIpad(118) + birfHeight);
+    }
+    
+    _backView.transform = CGAffineTransformMakeScale(0.5, 0.5);
     
     [[UIApplication sharedApplication].delegate.window addSubview:self];
     
-    _backView.transform = CGAffineTransformMakeScale(0.5, 0.5);
     [UIView animateWithDuration:0.1 animations:^{
         
         self.backView.transform = CGAffineTransformMakeScale(1, 1);
@@ -295,7 +358,6 @@
 - (void)hideAlert{
     
     WeakSelf(self);
-    
     [UIView animateWithDuration:0.1 animations:^{
         
         self.backView.transform = CGAffineTransformMakeScale(0.5, 0.5);
@@ -306,6 +368,7 @@
         [weakSelf removeFromSuperview];//移除
     }];
 }
+
 
 
 
