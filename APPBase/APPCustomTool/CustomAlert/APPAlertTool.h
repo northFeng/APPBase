@@ -119,6 +119,18 @@ NS_ASSUME_NONNULL_BEGIN
 */
 + (void)showAlertCustom6Title:(NSString *)title message:(NSString *)message  cancleBtnTitle:(NSString *)cancleTitle okBtnTitle:(NSString *)okTitle leftBlock:(APPBackBlock)blockLeft rightBlock:(APPBackBlock)blockRight;
 
+/**
+*  @brief 七： 富文本！  自定义 标题 (可有可无)+ 消息 + （取消文字 + 确定文字）  +  （取消回调 + 确定回调 ）
+*
+*  @param title 标题
+*  @param message 消息
+*  @param cancleTitle 取消按钮标题
+*  @param okTitle 确定按钮标题
+*  @param blockLeft 执行左按钮事件block
+*  @param blockRight 执行右按钮事件block
+*/
++ (void)showAlertCustom7Title:(NSAttributedString *)title message:(NSAttributedString *)message  cancleBtnTitle:(NSAttributedString *)cancleTitle okBtnTitle:(NSAttributedString *)okTitle leftBlock:(APPBackBlock)blockLeft rightBlock:(APPBackBlock)blockRight;
+
 #pragma mark - ************************* 系统提示弹框 *************************
 
 /**
