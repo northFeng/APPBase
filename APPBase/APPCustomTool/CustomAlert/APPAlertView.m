@@ -82,11 +82,11 @@
     
     //添加横线
     UIView *lineH = [[UIView alloc] init];
-    lineH.backgroundColor = COLOR(@"#E4E4E4");
+    lineH.backgroundColor = APPColorFunction.lineColor;
     [_backView addSubview:lineH];
     
     _lineS = [[UIView alloc] init];
-    _lineS.backgroundColor = COLOR(@"#E4E4E4");
+    _lineS.backgroundColor = APPColorFunction.lineColor;
     [_backView addSubview:_lineS];
     
     
@@ -164,7 +164,9 @@
 ///样式一
 - (void)showAlertWithMessage:(NSString *)message withBlock:(APPBackBlock)block{
     
-    _labelBrif.text = message;
+    if (message.length) {
+        _labelBrif.attributedText = [APPFunctionMethod string_getAttributeStringWithString:message textFont:kFontOfSystem(FitIpad(14)) textColor:DynamicColor(APPColorFunction.textBlackColor, APPColorFunction.lightTextColor) lineSpace:2 textAlignment:NSTextAlignmentCenter];
+    }
     
     _blockRight = block;
     
@@ -176,7 +178,9 @@
     
     _labelTitle.text = title;
     
-    _labelBrif.text = brif;
+    if (brif.length) {
+        _labelBrif.attributedText = [APPFunctionMethod string_getAttributeStringWithString:brif textFont:kFontOfSystem(FitIpad(14)) textColor:DynamicColor(APPColorFunction.textBlackColor, APPColorFunction.lightTextColor) lineSpace:2 textAlignment:NSTextAlignmentCenter];
+    }
     
     _blockRight = block;
     
@@ -188,7 +192,9 @@
     
     _labelTitle.text = title;
     
-    _labelBrif.text = brif;
+    if (brif.length) {
+        _labelBrif.attributedText = [APPFunctionMethod string_getAttributeStringWithString:brif textFont:kFontOfSystem(FitIpad(14)) textColor:DynamicColor(APPColorFunction.textBlackColor, APPColorFunction.lightTextColor) lineSpace:2 textAlignment:NSTextAlignmentCenter];
+    }
     
     [_btnCancle setTitle:cancleTitle forState:UIControlStateNormal];
     
@@ -204,7 +210,9 @@
     
     _labelTitle.text = title;
     
-    _labelBrif.text = brif;
+    if (brif.length) {
+        _labelBrif.attributedText = [APPFunctionMethod string_getAttributeStringWithString:brif textFont:kFontOfSystem(FitIpad(14)) textColor:DynamicColor(APPColorFunction.textBlackColor, APPColorFunction.lightTextColor) lineSpace:2 textAlignment:NSTextAlignmentCenter];
+    }
     
     [_btnCancle setTitle:cancleTitle forState:UIControlStateNormal];
     
@@ -222,7 +230,9 @@
     
     _labelTitle.text = title;
     
-    _labelBrif.text = brif;
+    if (brif.length) {
+        _labelBrif.attributedText = [APPFunctionMethod string_getAttributeStringWithString:brif textFont:kFontOfSystem(FitIpad(14)) textColor:DynamicColor(APPColorFunction.textBlackColor, APPColorFunction.lightTextColor) lineSpace:2 textAlignment:NSTextAlignmentCenter];
+    }
     
     [_btnOk setTitle:okTitle forState:UIControlStateNormal];
     
@@ -253,7 +263,7 @@
     }
     
     if (brifStr.length) {
-        _labelBrif.text = brifStr;
+        _labelBrif.attributedText = [APPFunctionMethod string_getAttributeStringWithString:brifStr textFont:kFontOfSystem(FitIpad(14)) textColor:DynamicColor(APPColorFunction.textBlackColor, APPColorFunction.lightTextColor) lineSpace:2 textAlignment:NSTextAlignmentCenter];
     }
     
     if (cancleTitle.length) {
@@ -292,7 +302,7 @@
     }
     
     if (brifStr.length) {
-        _labelBrif.attributedText = [APPFunctionMethod string_getAttributeStringWithString:brifStr.string textFont:kFontOfSystem(FitIpad(14)) textColor:[self getAttrStrColorWithAttrStr:brifStr]];;
+        _labelBrif.attributedText = [APPFunctionMethod string_getAttributeStringWithString:brifStr.string textFont:kFontOfSystem(FitIpad(14)) textColor:[self getAttrStrColorWithAttrStr:brifStr] lineSpace:2 textAlignment:NSTextAlignmentCenter];
     }
     
     if (cancleTitle.length) {
@@ -333,7 +343,7 @@
 ///显示处理啊
 - (void)showAlert {
     
-    CGFloat birfHeight = [_labelBrif.text string_getTextHeightWithTextFont:kFontOfSystem(FitIpad(14)) lineSpacing:2 textWidth:285*kIpadScale - 30];
+    CGFloat birfHeight = [_labelBrif.attributedText.string string_getTextHeightWithTextFont:kFontOfSystem(FitIpad(14)) lineSpacing:2 textWidth:285*kIpadScale - 30];
     
     if (_labelTitle.hidden) {
         _backView.frame = CGRectMake((kScreenWidth - 285*kIpadScale)/2., kScreenHeight*0.35, 285*kIpadScale, FitIpad(118 - 40) + birfHeight);//没有标题，减去标题高度
