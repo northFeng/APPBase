@@ -346,9 +346,9 @@
     CGFloat birfHeight = [_labelBrif.attributedText.string string_getTextHeightWithTextFont:kFontOfSystem(FitIpad(14)) lineSpacing:2 textWidth:285*kIpadScale - 30];
     
     if (_labelTitle.hidden) {
-        _backView.frame = CGRectMake((kScreenWidth - 285*kIpadScale)/2., kScreenHeight*0.35, 285*kIpadScale, FitIpad(118 - 40) + birfHeight);//没有标题，减去标题高度
+        _backView.frame = CGRectMake((kScreenWidth - 285*kIpadScale)/2., kScreenHeight*0.35, 285*kIpadScale, FitIpad(119 - 40 + 13) + birfHeight);//没有标题，减去标题高度
     }else{
-        _backView.frame = CGRectMake((kScreenWidth - 285*kIpadScale)/2., kScreenHeight*0.35, 285*kIpadScale, FitIpad(118) + birfHeight);
+        _backView.frame = CGRectMake((kScreenWidth - 285*kIpadScale)/2., kScreenHeight*0.35, 285*kIpadScale, FitIpad(119) + birfHeight);
     }
     
     _backView.transform = CGAffineTransformMakeScale(0.5, 0.5);
