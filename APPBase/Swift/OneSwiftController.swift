@@ -95,13 +95,14 @@ class OneSwiftController: APPBaseController {
 
         let one2 = model(from: jsonStr, type: Student.self)//调用一个全局函数来完成JSON转模型
         
-        print("数据\(one1.name)")
+        print("数据1\(one1.name)数据2\(one2)")
         
         
         var one3 = Demo()
         one3.aaa()
         
     }
+
     
     class Student:BaseModel {
         

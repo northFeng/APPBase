@@ -171,3 +171,12 @@ let IOSAbove13:Bool = ((UIDevice.current.systemVersion as NSString).integerValue
 ///是否为手机（用来判断是iPhone && iPad）
 let kIsiPhone:Bool = APPLoacalInfo.iPhoneOrIpad() as Bool
 
+
+//MARK: ************************* 自定义model转换函数 *************************
+//func JsonModel(json:[String: Any], typeClass:BaseModel) -> Any {
+//
+//    let model = model(from: json, typeClass.self)
+//
+//
+//    return model;
+//}
