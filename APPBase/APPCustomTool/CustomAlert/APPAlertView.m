@@ -82,11 +82,11 @@
     
     //添加横线
     UIView *lineH = [[UIView alloc] init];
-    lineH.backgroundColor = APPColorFunction.lineColor;
+    lineH.backgroundColor = COLOR(@"#E4E4E4");
     [_backView addSubview:lineH];
     
     _lineS = [[UIView alloc] init];
-    _lineS.backgroundColor = APPColorFunction.lineColor;
+    _lineS.backgroundColor = COLOR(@"#E4E4E4");
     [_backView addSubview:_lineS];
     
     
