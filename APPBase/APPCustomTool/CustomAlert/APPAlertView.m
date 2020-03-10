@@ -54,7 +54,7 @@
     _labelTitle.tintColor = DynamicColor(APPColorFunction.textBlackColor, APPColorFunction.lightTextColor);
     _labelTitle.font = kFontOfCustom(kMediumFont, 14*kIpadScale);
     _labelTitle.textAlignment = NSTextAlignmentCenter;
-    _labelTitle.text = @"提示";
+    _labelTitle.text = @"温馨提示";
     [_backView addSubview:_labelTitle];
     
     _labelBrif = [[UILabel alloc] init];
@@ -68,7 +68,7 @@
     _btnCancle = [UIButton buttonWithType:UIButtonTypeCustom];
     [_btnCancle setTitle:@"取消" forState:UIControlStateNormal];
     [_btnCancle setTitleColor:DynamicColor(COLOR(@"#717B99"), APPColorFunction.lightTextColor) forState:UIControlStateNormal];
-    _btnCancle.titleLabel.font = kFontOfSystem(14*kIpadScale);
+    _btnCancle.titleLabel.font = kFontOfCustom(kMediumFont, 14*kIpadScale);
     [_backView addSubview:_btnCancle];
     [_btnCancle addTarget:self action:@selector(onClickBtnCancle) forControlEvents:UIControlEventTouchUpInside];
     
@@ -76,7 +76,7 @@
     _btnOk = [UIButton buttonWithType:UIButtonTypeCustom];
     [_btnOk setTitle:@"确认" forState:UIControlStateNormal];
     [_btnOk setTitleColor:APPColorFunction.textBlueColor forState:UIControlStateNormal];
-    _btnOk.titleLabel.font = kFontOfCustom(kSemiboldFont, 14*kIpadScale);
+    _btnOk.titleLabel.font = kFontOfCustom(kMediumFont, 14*kIpadScale);
     [_backView addSubview:_btnOk];
     [_btnOk addTarget:self action:@selector(onClickBtnOk) forControlEvents:UIControlEventTouchUpInside];
     
