@@ -9,7 +9,7 @@
 import Foundation
 
 //MARK: ************************* Swift中model类都集成这个基类 *************************
-//官方用法教程：https://www.cnblogs.com/mjios/p/11352776.html
+//官方用法教程：https://www.cnblogs.com/mjios/category/1526581.html
 /**
  1、 jsonString也可以是NSString、NSMutableString类型、字典类型、NSData、NSMutableData类型
  let jsonData = """
@@ -21,13 +21,19 @@ import Foundation
  let cat1 = jsonData.kj.model(Cat.self)   、  let cat2 = model(from:jsonData, Cat.self)
  
  2、Model嵌套1 ：// 让需要进行转换的模型【都遵守】`Convertible`协议
- 3、var books:Set<BaseStruct>?    Set、数组 要求存放的元素 【遵守Hashable协议】
+ 3、var books:Set<BaseStruct>?    Set 要求存放的元素 【遵守Hashable协议】
  4、递归解析
  5、泛型  let response1 = json1.kj.model(NetResponse<User>.self)
- 6、解析数据
- 7、字典里套数组
- 8、已有的model实例 ， 直接把json数据赋值给model实例
+ 6、解析数组  let cars = json.kj.modelArray(Car.self)   modelArray(from:jsonData, Car.self)
+ 7、字典里套数组 （跟普通解析一样）不用遵守Hashable协议，只是Set<>集合才遵守
+ 8、已有的model实例 ， 直接把json数据赋值给model实例  var cat = Cat() cat.kj_m.convert(json)
+ 9、监听json数据转换 前后事件   func kj_willConvertToModel(){}    func kj_didConvertToModel(){}
  */
+
+/**
+ 为了方便起见：所有的model的属性全部直接初始化！
+ */
+
 class BaseModel: Convertible {
     
     //类的属性，最后直接初始化一个值！
@@ -40,10 +46,10 @@ class BaseModel: Convertible {
     //private(set) var weight: Double = 0.0
     
     //NSNull类型
-    var data: NSNull?
+    //var data: NSNull?
     
-    //Set、数组 要求存放的元素 【遵守Hashable协议】
-    var books:Set<BaseStruct>?
+    //Set要求存放的元素 【遵守Hashable协议】
+    //var books:Set<BaseStruct>?
     
     
     // 由于Swift初始化机制的原因，`Convertible`协议强制要求实现init初始化器
@@ -92,6 +98,7 @@ class Person: Convertible {
 }
 
 //MARK: ************************* 5、泛型 *************************
+/**
 struct NetResponse<Element>: Convertible {
     let data: Element? = nil
     let msg: String = ""
@@ -103,9 +110,11 @@ struct User: Convertible {
     let nickName: String = ""
 }
 
-//let response2 = json2.kj.model(NetResponse<[Goods]>.self)
+let response2 = json2.kj.model(NetResponse<[User]>.self)
+*/
 
 //MARK: ************************* 6、数组 *************************
+/**
 struct Car: Convertible {
     var name: String = ""
     var price: Double = 0.0
@@ -119,28 +128,60 @@ let jsonCar: [[String: Any]] = [
 ]
 
 // 调用json数组的modelArray方法即可
-//let cars = json.kj.modelArray(Car.self)
+let cars = json.kj.modelArray(Car.self)
+ */
+
+//MARK: ************************* 7、字典里套数组 *************************
+/**
+class Student:BaseModel {
+    
+    var name:String = ""
+    
+    var weight:Double = 0.0
+    
+    var demos:[Demo]?
+    
+    
+    func aaa() {
+        name = "哈哈哈"
+        weight = 8.2
+    }
+}
+
+class Demo:BaseModel {
+    
+    var name:String = ""
+    
+    var weight:Double = 0.0
+}
+
+let jsonStr:[String:Any] = ["name":"张三","weight":6.66,"demos":[["name":"小猫","weight":6.66],["name":"小狗","weight":7.66]]]
+
+let one1 = jsonStr.kj.model(Student.self) //调用json的model方法，传入模型类型，返回模型实例
+ */
 
 //MARK: ************************* 8、把JSON数据转换到原本已经创建好的模型实例上 *************************
+/**
 struct Cat: Convertible {
     var name: String = ""
     var weight: Double = 0.0
 }
  
-//let json: [String: Any] = [
-//    "name": "Miaomiao",
-//    "weight": 6.66
-//]
+let json: [String: Any] = [
+    "name": "Miaomiao",
+    "weight": 6.66
+]
  
 var cat = Cat()
 // .kj_m是.kj的mutable版本，牵扯到修改实例本身都是.kj_m开头
-//cat.kj_m.convert(json)
+cat.kj_m.convert(json)
+ */
 
 //MARK: ************************* 9、监听json数据转换 前后事件 *************************
 // 有时候可能想在JSON转模型之前、之后做一些额外的操作
 // KakaJSON会在JSON转模型之前调用模型的kj_willConvertToModel方法
 // KakaJSON会在JSON转模型之后调用模型的kj_didConvertToModel方法
- 
+/**
 struct CarB: Convertible {
     var name: String = ""
     var age: Int = 0
@@ -153,3 +194,24 @@ struct CarB: Convertible {
         print("Car - kj_didConvertToModel")
     }
 }
+ */
+
+//MARK: ************************* 二、JSON转Model_02_ 数据类型(自动转换类型——>不管类型是否一致，KJ框架都会 去解析) *************************
+/**
+ 0、解析失败，所以使用默认值(属性初始值)
+ 1、Int—> 字符串 true \ TRUE \ YES \ yes 都为1，字符串 false \ FALSE \ NO \ no 都为0
+ 2、Float—> 字符串 true \ TRUE \ YES \ ye 都为1.0，字符串 false \ FALSE \ NO \ no 都为0.0
+ 3、Double—>字符串 true \ TRUE \ YES \ ye 都为1.0，字符串 false \ FALSE \ NO \ no 都为0.0
+ 4、CGFloat—>同上
+ 5、Bool—> 数值0为false，数值非0都是true(注意)  字符串  true \ TRUE \ YES \ ye  都为true  /  字符串  false \ FALSE \ NO \ no  都为false
+ 6、String—> 不管是String、NSString，还是NSMutableString，都是等效支持的    【数组或字典  相当于默认调用了数组、字典 的 description方法 】—>把数组和字典进行转换成字符串
+ 7、Decimal 、NSDecimalNumber
+ 9、NSNumber  解析成 Int、float 再转 NSNumber
+ 10、Optional  再多?都不是问题
+ 11、URL —> 支持URL和NSURL，默认会将 String 转为 URL \ NSURL
+ 12、Data—> 支持NSData 和 Data，默认会将 String 转为 Data \ NSData
+ 13、Date—> 支持Date 和 NSDate，默认会将  毫秒数  转为  Date \ NSDate  [ public typealias TimeInterval = Double —> 数值类型的 自动转 Date日期类型]
+ 14、Enum—> 遵守一下  ConvertibleEnum 协议   即可支持带有  RawValue  的Enum类型
+ 15、Enum数组  同上
+ 16、
+ */

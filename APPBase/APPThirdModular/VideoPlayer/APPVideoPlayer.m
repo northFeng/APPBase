@@ -126,10 +126,17 @@
 ///播放URL
 - (UIView *)playVideoWithUrl:(NSString *)videoUrl {
     
-    if (_player) {
-        [_player playWithURL:[NSURL gf_URLWithString:videoUrl] sameSource:YES];
+    NSURL *url;
+    
+    if ([videoUrl hasPrefix:@"http"]) {
+        url = [NSURL gf_URLWithString:videoUrl];//网络视频
     }else{
-        _player = [PLPlayer playerWithURL:[NSURL gf_URLWithString:videoUrl] option:self.option];
+        url = [NSURL fileURLWithPath:videoUrl];//本地视频
+    }
+    if (_player) {
+        [_player playWithURL:url sameSource:YES];
+    }else{
+        _player = [PLPlayer playerWithURL:url option:self.option];
         _player.delegate = self;
         [_player setBufferingEnabled:NO];//不缓存
         //_player.loopPlay = YES;//是否循环播放

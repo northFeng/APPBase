@@ -89,7 +89,43 @@ class OneSwiftController: APPBaseController {
     }
     
     @objc func jsonToModel() {
-        let jsonStr:[String:Any] = ["name":"张三","weight":6.66]
+        let json: [String: Any] = [
+            "name1": 666,
+            "name2": NSMutableString(string: "777"),
+            "name3": [1,[2,3],"4"],
+            "name4": NSDecimalNumber(string: "0.123456789012345678901234567890123456789"),
+            "name5": 6.66,
+            "name6": false,
+            "name7": NSURL(fileURLWithPath: "/users/mj/desktop"),
+            "name8": URL(string: "http://www.520suanfa.com") as Any,
+            "name9": Date(timeIntervalSince1970: 1565922866)
+        ]
+        
+        let demo2 = json.kj.model(Deno2.self)
+        
+        self.title = demo2.name3 as String
+        
+        
+    }
+    
+    
+    struct Deno2: Convertible {
+        var name1: String = ""
+        var name2: String = ""
+        var name3: NSString = ""
+        var name4: NSString = ""
+        var name5: NSMutableString = ""
+        var name6: NSMutableString = ""
+        var name7: String = ""
+        var name8: String = ""
+        var name9: String = ""
+    }
+    
+    //MARK: ************************* demo1 *************************
+    func demo1() {
+        let jsonStr:[String:Any] = ["name":"张三","weight":6.66,"demos":[["name":"小猫","weight":6.66],["name":"小狗","weight":7.66]]]
+        let jsonArray:[[String:Any]] = [["name":"小猫","weight":6.66],["name":"小狗","weight":7.66]]
+        
         
         let one1 = jsonStr.kj.model(Student.self) //调用json的model方法，传入模型类型，返回模型实例
 
@@ -97,12 +133,8 @@ class OneSwiftController: APPBaseController {
         
         print("数据1\(one1.name)数据2\(one2)")
         
-        
-        var one3 = Demo()
-        one3.aaa()
-        
+        var array:[Demo] = modelArray(from: jsonArray, Demo.self)
     }
-
     
     class Student:BaseModel {
         
@@ -110,23 +142,21 @@ class OneSwiftController: APPBaseController {
         
         var weight:Double = 0.0
         
+        var demos:[Demo]?
+        
+        
         func aaa() {
             name = "哈哈哈"
             weight = 8.2
         }
     }
-    
-    struct Demo {
+
+    struct Demo:Convertible {
         
         var name:String = ""
         
         var weight:Double = 0.0
-        
-        mutating func aaa() {
-            self.name = "哈哈哈"
-            self.weight = 8.2
-        }
     }
-    
 
 }
+
