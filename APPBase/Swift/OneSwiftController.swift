@@ -89,22 +89,6 @@ class OneSwiftController: APPBaseController {
     }
     
     @objc func jsonToModel() {
-        let json: [String: Any] = [
-            "name1": 666,
-            "name2": NSMutableString(string: "777"),
-            "name3": [1,[2,3],"4"],
-            "name4": NSDecimalNumber(string: "0.123456789012345678901234567890123456789"),
-            "name5": 6.66,
-            "name6": false,
-            "name7": NSURL(fileURLWithPath: "/users/mj/desktop"),
-            "name8": URL(string: "http://www.520suanfa.com") as Any,
-            "name9": Date(timeIntervalSince1970: 1565922866)
-        ]
-        
-        let demo2 = json.kj.model(Deno2.self)
-        
-        self.title = demo2.name3 as String
-        
         
     }
     
@@ -134,6 +118,7 @@ class OneSwiftController: APPBaseController {
         print("数据1\(one1.name)数据2\(one2)")
         
         var array:[Demo] = modelArray(from: jsonArray, Demo.self)
+        
     }
     
     class Student:BaseModel {
