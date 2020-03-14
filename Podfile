@@ -91,7 +91,7 @@ pod 'UMCAnalytics','~>6.0.5'
 pod 'SnapKit', '~> 5.0.0'
 
 #网络请求 ANF的swift版本
-pod 'Alamofire','~>5.0.0-rc.3'
+pod 'Alamofire','~>5.0'
 
 #JSON模型转换 李明杰写的 https://github.com/kakaopensource/KakaJSON
 pod 'KakaJSON', '~> 1.1.2'

@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - Alamofire (5.0.0-rc.3)
+  - Alamofire (5.0.0)
   - AliyunOSSiOS (2.10.8)
   - Aspects (1.4.1)
   - AvoidCrash (2.5.2)
@@ -61,7 +61,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.2.1)
-  - Alamofire (~> 5.0.0-rc.3)
+  - Alamofire (~> 5.0)
   - AliyunOSSiOS (~> 2.10.7)
   - Aspects (~> 1.4.1)
   - AvoidCrash (~> 2.5.2)
@@ -131,7 +131,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  Alamofire: 58ff2bfb8daaacaa233d5c36e37b10a5248f59b1
   AliyunOSSiOS: 8db92936545593b9e5c66d680ef2ac0738946651
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
@@ -163,6 +163,6 @@ SPEC CHECKSUMS:
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 663aa653707bf532ce2880429f8c6439be0ba166
+PODFILE CHECKSUM: d3b9b2250aa37617597bac76c2b004e707ba5bdc
 
 COCOAPODS: 1.8.4

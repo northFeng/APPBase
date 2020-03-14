@@ -47,6 +47,7 @@
 		839B993223B30D3E006A8049 /* NSURL+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 839B993123B30D3E006A8049 /* NSURL+Category.m */; };
 		839CDC9F2411193D00617294 /* APPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839CDC9E2411193D00617294 /* APPRequest.swift */; };
 		83A1E785238F6B6A0020F626 /* APPDateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A1E783238F6B6A0020F626 /* APPDateTool.m */; };
+		83A2658D241CE40600F4B6EB /* APPNetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2658C241CE40600F4B6EB /* APPNetTool.swift */; };
 		83B594892372CDF600B7514E /* APPDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B594882372CDF600B7514E /* APPDataBase.m */; };
 		83B594AC23755D3900B7514E /* 分页查找.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 83B594AB23755D3900B7514E /* 分页查找.jpeg */; };
 		83BC18CE2407A698005A056D /* APPWebHybridController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BC18CD2407A698005A056D /* APPWebHybridController.m */; };
@@ -200,6 +201,7 @@
 		839CDC9E2411193D00617294 /* APPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPRequest.swift; sourceTree = "<group>"; };
 		83A1E783238F6B6A0020F626 /* APPDateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPDateTool.m; sourceTree = "<group>"; };
 		83A1E784238F6B6A0020F626 /* APPDateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPDateTool.h; sourceTree = "<group>"; };
+		83A2658C241CE40600F4B6EB /* APPNetTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPNetTool.swift; sourceTree = "<group>"; };
 		83B594872372CDF600B7514E /* APPDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPDataBase.h; sourceTree = "<group>"; };
 		83B594882372CDF600B7514E /* APPDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPDataBase.m; sourceTree = "<group>"; };
 		83B594AB23755D3900B7514E /* 分页查找.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "分页查找.jpeg"; sourceTree = "<group>"; };
@@ -487,8 +489,8 @@
 			children = (
 				8354DE6723D58AB9006B09C6 /* SwiftClass.h */,
 				8354DE6423D58445006B09C6 /* APPBase-Bridging-Header.h */,
-				8354DE6A23D5B4B8006B09C6 /* ClassHead.swift */,
-				839CDC9E2411193D00617294 /* APPRequest.swift */,
+				83A2658A241CE3A600F4B6EB /* CustomDefine */,
+				83A2658B241CE3C200F4B6EB /* NetRequest */,
 				8354DE6523D58445006B09C6 /* OneSwiftController.swift */,
 				8354DE6823D59000006B09C6 /* TwoSwiftController.swift */,
 			);
@@ -531,6 +533,23 @@
 				83987FEA241242C800A71FC4 /* APPVideoInfoView.m */,
 			);
 			path = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		83A2658A241CE3A600F4B6EB /* CustomDefine */ = {
+			isa = PBXGroup;
+			children = (
+				8354DE6A23D5B4B8006B09C6 /* ClassHead.swift */,
+			);
+			path = CustomDefine;
+			sourceTree = "<group>";
+		};
+		83A2658B241CE3C200F4B6EB /* NetRequest */ = {
+			isa = PBXGroup;
+			children = (
+				83A2658C241CE40600F4B6EB /* APPNetTool.swift */,
+				839CDC9E2411193D00617294 /* APPRequest.swift */,
+			);
+			path = NetRequest;
 			sourceTree = "<group>";
 		};
 		83B594862372CDBD00B7514E /* FMDB */ = {
@@ -1109,6 +1128,7 @@
 				8DAB5EBB21AB9857009662D5 /* APPAnalyticsHelper.m in Sources */,
 				149265E42350CA6600A2C7FE /* APPConfirmAlertView.m in Sources */,
 				140A8FC1234F2ED800B31672 /* APPBaseController.m in Sources */,
+				83A2658D241CE40600F4B6EB /* APPNetTool.swift in Sources */,
 				142808922351C8DD00D24D08 /* APPViewTool.m in Sources */,
 				83987FE3241242C100A71FC4 /* APPAudioLocalPlayer.m in Sources */,
 				83987FF4241242C800A71FC4 /* APPVideoListView.m in Sources */,
