@@ -15,7 +15,10 @@ class OneSwiftController: APPBaseController {
     
     var oneView:UIView = UIView()
     
-    let tableView:UITableView = UITableView(frame: CGRect(origin: CGPoint(x: 10, y: 10), size: CGSize(width: 100, height: 200)), style: UITableViewStyle.grouped)
+    let imgview = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 350), size: CGSize(width: 200, height: 300)))
+    
+    
+    let tableView:UITableView = UITableView(frame: CGRect(origin: CGPoint(x: 10, y: 200), size: CGSize(width: 200, height: 300)), style: UITableViewStyle.grouped)
     
     
 
@@ -60,6 +63,9 @@ class OneSwiftController: APPBaseController {
             make.width.equalTo(100)
             make.height.equalTo(50)
         }
+        
+        imgview.backgroundColor = UIColor.red
+        self.view.addSubview(imgview)
     
     }
     
@@ -90,6 +96,8 @@ class OneSwiftController: APPBaseController {
     
     @objc func jsonToModel() {
         
+        ImageViewLoadImage(imgView: imgview, url: "http://t8.baidu.com/it/u=3571592872,3353494284&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1584778607&t=2b31cc8eab4398730712f963bf2cf10a", placeholderImgName: "tigger")
+
     }
     
     

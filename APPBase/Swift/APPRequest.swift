@@ -460,7 +460,7 @@ struct Student_Demo: Convertible {
  }
  */
 
-//MARK: ************************* 六、JSON转Model_06_ Model转JSON ( JSONObject(from: car)->字典 / JSONString(from: car)->字符串  / 返回指定的key 重写kj_JSONKey方法) *************************
+//MARK: ************************* 六、JSON转Model_06_ Model转JSON ( 1>JSONObject(from: car)->字典 / 2>JSONString(from: car)->字符串  / 3>返回指定的key 重写kj_JSONKey方法) / 4>Enum  遵守`ConvertibleEnum`协议 *************************
 //官方文档：https://www.cnblogs.com/mjios/p/11370361.html
 struct Car_demo: Convertible {
      var name: String = "Bently"
