@@ -36,6 +36,12 @@ class OneSwiftController: APPBaseController {
         
         APPHttpTool.getRequestNetDicDataUrl("version/latest?platform=1", params:Dictionary()) { (result:Bool, idObject:Any, code:NSInteger) in
             
+            let jsonData:[String:Any] = idObject as! [String:Any]
+            
+            let model2 = model(from: jsonData, VersionModel.self)
+            
+            let model = jsonData.kj.model(VersionModel.self)
+            
             APPAlertTool.hideLoading()
             AlertMessage(msg: "回调完数据")
         }
@@ -151,5 +157,17 @@ class OneSwiftController: APPBaseController {
         var weight:Double = 0.0
     }
 
+    class VersionModel: BaseModel {
+        var describe = ""
+        var downloadUrl = ""
+        var mustLoginAgain:Int = 0
+        var mustUpdate:Int = 0
+        var platform:Int = 0
+        var versionCode:Int = 0
+        var versionName = ""
+    }
 }
+
+
+
 
