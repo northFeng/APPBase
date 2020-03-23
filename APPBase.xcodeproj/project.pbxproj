@@ -25,6 +25,10 @@
 		14CE0FA123507C520093E45C /* GFTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CE0FA023507C510093E45C /* GFTabBarController.m */; };
 		14CE0FA5235080E10093E45C /* GFMiddleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CE0FA4235080E10093E45C /* GFMiddleController.m */; };
 		14CE0FA8235080F00093E45C /* GFMineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CE0FA7235080F00093E45C /* GFMineController.m */; };
+		83072543242871FE005D049E /* NSString+URLCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8307253B242871FE005D049E /* NSString+URLCheck.m */; };
+		83072544242871FE005D049E /* UIButton+Animate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8307253D242871FE005D049E /* UIButton+Animate.m */; };
+		83072545242871FE005D049E /* UIView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 8307253E242871FE005D049E /* UIView+Alert.m */; };
+		83072546242871FE005D049E /* NSObject+Auth.m in Sources */ = {isa = PBXBuildFile; fileRef = 83072542242871FE005D049E /* NSObject+Auth.m */; };
 		8346B46423C04377001154A7 /* APPOssInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46323C04377001154A7 /* APPOssInterface.m */; };
 		8346B46823C045C6001154A7 /* APPWXInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46723C045C6001154A7 /* APPWXInterface.m */; };
 		8346B46C23C04AD0001154A7 /* APPUMInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46B23C04AD0001154A7 /* APPUMInterface.m */; };
@@ -158,6 +162,14 @@
 		2D142DF6F5A1313473EB8EC7 /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BCAF33D89376F054993B8C /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
 		6136454A595A21CCA2D817AF /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
+		8307253B242871FE005D049E /* NSString+URLCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLCheck.m"; sourceTree = "<group>"; };
+		8307253C242871FE005D049E /* NSObject+Auth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Auth.h"; sourceTree = "<group>"; };
+		8307253D242871FE005D049E /* UIButton+Animate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Animate.m"; sourceTree = "<group>"; };
+		8307253E242871FE005D049E /* UIView+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Alert.m"; sourceTree = "<group>"; };
+		8307253F242871FE005D049E /* UIView+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Alert.h"; sourceTree = "<group>"; };
+		83072540242871FE005D049E /* NSString+URLCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLCheck.h"; sourceTree = "<group>"; };
+		83072541242871FE005D049E /* UIButton+Animate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Animate.h"; sourceTree = "<group>"; };
+		83072542242871FE005D049E /* NSObject+Auth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Auth.m"; sourceTree = "<group>"; };
 		8346B46223C04377001154A7 /* APPOssInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPOssInterface.h; sourceTree = "<group>"; };
 		8346B46323C04377001154A7 /* APPOssInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPOssInterface.m; sourceTree = "<group>"; };
 		8346B46623C045C6001154A7 /* APPWXInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPWXInterface.h; sourceTree = "<group>"; };
@@ -350,6 +362,14 @@
 				8DAB5EE021AB98A6009662D5 /* UILabel+Text.m */,
 				839B993023B30D3E006A8049 /* NSURL+Category.h */,
 				839B993123B30D3E006A8049 /* NSURL+Category.m */,
+				8307253C242871FE005D049E /* NSObject+Auth.h */,
+				83072542242871FE005D049E /* NSObject+Auth.m */,
+				83072540242871FE005D049E /* NSString+URLCheck.h */,
+				8307253B242871FE005D049E /* NSString+URLCheck.m */,
+				83072541242871FE005D049E /* UIButton+Animate.h */,
+				8307253D242871FE005D049E /* UIButton+Animate.m */,
+				8307253F242871FE005D049E /* UIView+Alert.h */,
+				8307253E242871FE005D049E /* UIView+Alert.m */,
 			);
 			path = CustomExtend;
 			sourceTree = "<group>";
@@ -1083,6 +1103,7 @@
 				140A8FCA234F4B6800B31672 /* APPBaseTableViewController.m in Sources */,
 				8354DE6B23D5B4B8006B09C6 /* ClassHead.swift in Sources */,
 				8DAB5ECA21AB9882009662D5 /* APPBaseCell.m in Sources */,
+				83072544242871FE005D049E /* UIButton+Animate.m in Sources */,
 				83987FDF241242C100A71FC4 /* CBSlider.m in Sources */,
 				83987FDE241242C100A71FC4 /* CBAudioSmallAlerView.m in Sources */,
 				8DAB5ED321AB9895009662D5 /* GFNavigationController.m in Sources */,
@@ -1125,6 +1146,7 @@
 				8D95957722AE3A1F001A8345 /* JPEngine.m in Sources */,
 				8DAB5EE821AB98A6009662D5 /* UILabel+Text.m in Sources */,
 				83987FF1241242C800A71FC4 /* APPVideoPromptView.m in Sources */,
+				83072543242871FE005D049E /* NSString+URLCheck.m in Sources */,
 				8DAB5EBB21AB9857009662D5 /* APPAnalyticsHelper.m in Sources */,
 				149265E42350CA6600A2C7FE /* APPConfirmAlertView.m in Sources */,
 				140A8FC1234F2ED800B31672 /* APPBaseController.m in Sources */,
@@ -1136,6 +1158,8 @@
 				8DAB5ED221AB9895009662D5 /* GFNavigationBarView.m in Sources */,
 				1428088C2351C5B800D24D08 /* APPNoDataView.m in Sources */,
 				142808952351CAC900D24D08 /* APPFileManager.m in Sources */,
+				83072546242871FE005D049E /* NSObject+Auth.m in Sources */,
+				83072545242871FE005D049E /* UIView+Alert.m in Sources */,
 				8DAB5E3A21AB976C009662D5 /* APPManager.m in Sources */,
 				839CDC9F2411193D00617294 /* APPRequest.swift in Sources */,
 				14BE128623506BA50047F00B /* APPAlertTool.m in Sources */,

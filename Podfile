@@ -43,6 +43,13 @@ pod 'AvoidCrash', '~> 2.5.2'
 #FMDB数据库
 pod 'FMDB','~>2.7.5'
 
+#block编程
+pod 'BlocksKit', '>= 2.2.5'
+
+#吐字弹框菊花
+pod 'MMMaterialDesignSpinner'
+pod 'JGProgressHUD'
+
 
 #***************** 第三方功能框架引入**************
 #bug追踪

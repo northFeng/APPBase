@@ -18,6 +18,21 @@ PODS:
   - AliyunOSSiOS (2.10.8)
   - Aspects (1.4.1)
   - AvoidCrash (2.5.2)
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
   - Bugly (2.5.2)
   - FBRetainCycleDetector (0.1.4)
   - FMDB (2.7.5):
@@ -26,6 +41,7 @@ PODS:
   - FreeStreamer (4.0.0):
     - Reachability (~> 3.0)
   - IQKeyboardManager (6.5.5)
+  - JGProgressHUD (2.1)
   - KakaJSON (1.1.2)
   - Kingfisher (5.13.1):
     - Kingfisher/Core (= 5.13.1)
@@ -36,6 +52,7 @@ PODS:
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
   - MMKV (1.0.24)
+  - MMMaterialDesignSpinner (0.2.5)
   - NVActivityIndicatorView (4.8.0):
     - NVActivityIndicatorView/Presenter (= 4.8.0)
   - NVActivityIndicatorView/Presenter (4.8.0)
@@ -65,10 +82,12 @@ DEPENDENCIES:
   - AliyunOSSiOS (~> 2.10.7)
   - Aspects (~> 1.4.1)
   - AvoidCrash (~> 2.5.2)
+  - BlocksKit (>= 2.2.5)
   - Bugly (~> 2.5.0)
   - FMDB (~> 2.7.5)
   - FreeStreamer (~> 4.0.0)
   - IQKeyboardManager
+  - JGProgressHUD
   - KakaJSON (~> 1.1.2)
   - Kingfisher (= 5.13.1)
   - Masonry (~> 1.1)
@@ -76,6 +95,7 @@ DEPENDENCIES:
   - MJRefresh (~> 3.1)
   - MLeaksFinder
   - MMKV (~> 1.0.18)
+  - MMMaterialDesignSpinner
   - NVActivityIndicatorView (~> 4.8.0)
   - PLPlayerKit (from `https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec`)
   - ReactiveObjC (~> 3.1.1)
@@ -98,11 +118,13 @@ SPEC REPOS:
     - AliyunOSSiOS
     - Aspects
     - AvoidCrash
+    - BlocksKit
     - Bugly
     - FBRetainCycleDetector
     - FMDB
     - FreeStreamer
     - IQKeyboardManager
+    - JGProgressHUD
     - KakaJSON
     - Kingfisher
     - Masonry
@@ -110,6 +132,7 @@ SPEC REPOS:
     - MJRefresh
     - MLeaksFinder
     - MMKV
+    - MMMaterialDesignSpinner
     - NVActivityIndicatorView
     - Reachability
     - ReactiveObjC
@@ -135,11 +158,13 @@ SPEC CHECKSUMS:
   AliyunOSSiOS: 8db92936545593b9e5c66d680ef2ac0738946651
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   Bugly: dbac48b55ad469a97cc4321045cd50df8f63d44f
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FreeStreamer: 7e9c976045701ac2f7e9c14c17245203c37bf2ea
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
+  JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   KakaJSON: cc5ff50a8c1cfbb09413db8496cb709a209e6137
   Kingfisher: f33a848445e33c543620812158dc5d47f6bf90df
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -147,6 +172,7 @@ SPEC CHECKSUMS:
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   MMKV: 758b2edee46b08bdd958db4169191afb9a6d4ebd
+  MMMaterialDesignSpinner: a548042720c2e5f04212048483085d7942ac3e81
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   PLPlayerKit: 5eecac081fbf4dc88a142887f82c4095d9095887
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
@@ -163,6 +189,6 @@ SPEC CHECKSUMS:
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: d3b9b2250aa37617597bac76c2b004e707ba5bdc
+PODFILE CHECKSUM: bc802e9db9e3bae2303e65725440510bdb7cec51
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1
