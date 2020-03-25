@@ -24,6 +24,9 @@
 ///关闭按钮
 @property (nonatomic,strong) UIButton *cloaseBtn;
 
+///进度条
+@property (nonatomic,strong) UIProgressView *loadProgressBar;
+
 
 @end
 
@@ -52,6 +55,8 @@
     // Do any additional setup after loading the view.
     
     [self createView];
+    
+    [self addProgressBarView];//添加进度条
 
     //注册JS交互监测
     [self JSToOCOneMethod];
@@ -61,7 +66,6 @@
     
     //加载
     [_webView loadRequest:request];
-    
 }
 
 ///初始化数据
@@ -162,7 +166,10 @@
 // 1、页面开始加载时调用
 -(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
     NSLog(@"1开始加载");
-    AlertLoading;
+    //AlertLoading;
+    _loadProgressBar.hidden = NO;
+    _loadProgressBar.progress = 0.;
+    
     [self.naviBar setRightFirstButtonWithImageName:@""];
 }
 
@@ -174,7 +181,8 @@
 // 3、页面加载完成之后调用
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     NSLog(@"3加载完");
-    AlertHideLoading;
+    //AlertHideLoading;
+    _loadProgressBar.hidden = YES;
     
     if (_showWebTitle) {
         self.title = _webView.title;
@@ -188,7 +196,9 @@
 // 4、页面加载失败时调用
 -(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(nonnull NSError *)error{
     NSLog(@"4加载失败");
-    AlertHideLoading;
+    //AlertHideLoading;
+    _loadProgressBar.hidden = YES;
+    
     AlertMessage(@"网络不给力...");
 }
 
@@ -343,6 +353,24 @@
     
     //注册通知
     [APPNotificationCenter addObserver:self selector:@selector(notiJSNoti:) name:Web_Share_noti object:nil];
+}
+
+///添加进度条
+- (void)addProgressBarView {
+    
+    //监听加载进度
+    _loadProgressBar = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+    _loadProgressBar.progress = 0.;
+    _loadProgressBar.hidden = YES;
+    [self.view addSubview:_loadProgressBar];
+    _loadProgressBar.sd_layout.leftEqualToView(self.view).rightEqualToView(self.view).topSpaceToView(self.view, kTopNaviBarHeight).heightIs(2);
+    @weakify(self);
+    [[self.webView rac_valuesForKeyPath:@"estimatedProgress" observer:self] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        //NSLog(@"------->%@",x);
+        NSNumber *number = (NSNumber *)x;
+        self.loadProgressBar.progress = number.floatValue;
+    }];
 }
 
 #pragma mark - ************************* JS交互通知处理 *************************

@@ -101,7 +101,7 @@
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    if (imageName) {
+    if (imageName.length) {
         [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     }
     
@@ -113,11 +113,11 @@
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    if (imgName_n) {
+    if (imgName_n.length) {
         [button setImage:[UIImage imageNamed:imgName_n] forState:UIControlStateNormal];
     }
     
-    if (imgName_s) {
+    if (imgName_s.length) {
         [button setImage:[UIImage imageNamed:imgName_s] forState:UIControlStateSelected];
         button.selected = NO;
     }

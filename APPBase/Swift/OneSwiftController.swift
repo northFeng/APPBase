@@ -60,7 +60,7 @@ class OneSwiftController: APPBaseController {
         let button = UIButton(type: .custom)
         button.backgroundColor = UIColor.blue
         button.setTitle("点击", for: .normal)
-        button.addTarget(self, action: #selector(jsonToModel), for: .touchUpInside)
+        button.addTarget(self, action: #selector(onClickButton), for: .touchUpInside)
         self.view.addSubview(button)
         
         button.snp.makeConstraints { (make) in
@@ -79,6 +79,10 @@ class OneSwiftController: APPBaseController {
         
         printNetBlock(text: "网络请求") { (result:Bool, idObject:Any, code:Int) in
             Print("回调了网络数据：\(result)+\(idObject)+\(code)")
+        }
+        
+        AF.request("https://httpbin.org/get").response { responds in
+            print("请求数据---->\(responds)")
         }
     }
     
