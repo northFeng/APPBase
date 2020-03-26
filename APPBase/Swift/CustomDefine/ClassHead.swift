@@ -160,6 +160,8 @@ func Print<T>(_ message:T, file:String = #file, funcName:String = #function, lin
     print("\(file):(\(lineNum))--\(message)");
     
     //#endif
+    
+    //debugPrint("系统debugPrint输出")
 }
 
 ///小于iOS10

@@ -167,8 +167,8 @@
 -(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
     NSLog(@"1开始加载");
     //AlertLoading;
-    _loadProgressBar.hidden = NO;
     _loadProgressBar.progress = 0.;
+    _loadProgressBar.alpha = 1.;
     
     [self.naviBar setRightFirstButtonWithImageName:@""];
 }
@@ -182,7 +182,9 @@
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     NSLog(@"3加载完");
     //AlertHideLoading;
-    _loadProgressBar.hidden = YES;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.loadProgressBar.alpha = 0.;
+    }];
     
     if (_showWebTitle) {
         self.title = _webView.title;
@@ -197,7 +199,9 @@
 -(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(nonnull NSError *)error{
     NSLog(@"4加载失败");
     //AlertHideLoading;
-    _loadProgressBar.hidden = YES;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.loadProgressBar.alpha = 0.;
+    }];
     
     AlertMessage(@"网络不给力...");
 }
@@ -361,7 +365,7 @@
     //监听加载进度
     _loadProgressBar = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
     _loadProgressBar.progress = 0.;
-    _loadProgressBar.hidden = YES;
+    _loadProgressBar.alpha = 0.;
     [self.view addSubview:_loadProgressBar];
     _loadProgressBar.sd_layout.leftEqualToView(self.view).rightEqualToView(self.view).topSpaceToView(self.view, kTopNaviBarHeight).heightIs(2);
     @weakify(self);

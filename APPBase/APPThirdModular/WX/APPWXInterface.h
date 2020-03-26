@@ -24,6 +24,20 @@ typedef NS_ENUM(NSInteger,WXPlatformType) {
     WXPlatformType_WechatTimeLine = 1,
 };
 
+/**
+ *  小程序类型
+ */
+typedef NS_ENUM(NSInteger,WXAPPType) {
+    /**
+     *  游戏1
+     */
+    WXAPPType_One = 0,
+    /**
+     *  游戏2
+     */
+    WXAPPType_Two = 1,
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APPWXInterface : NSObject <WXApiDelegate>
@@ -62,7 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 ///跳到微信小程序
-- (void)gotWxWebAPPWithAppPath:(NSString *)appPath classStr:(NSString *)classStr blockResult:(APPBackBlock)blockResult;
+- (void)gotoWxWebAPPWithAppPath:(NSString *)appPath webAppType:(WXAPPType)appType blockResult:(APPBackBlock)blockResult;
 
 
 @end

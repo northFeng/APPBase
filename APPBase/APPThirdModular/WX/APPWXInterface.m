@@ -135,7 +135,7 @@
 }
 
 ///跳到微信小程序
-- (void)gotWxWebAPPWithAppPath:(NSString *)appPath classStr:(NSString *)classStr blockResult:(APPBackBlock)blockResult {
+- (void)gotoWxWebAPPWithAppPath:(NSString *)appPath webAppType:(WXAPPType)appType blockResult:(APPBackBlock)blockResult {
     
     _type = 2;
     
@@ -148,8 +148,23 @@
     }
         
     WXLaunchMiniProgramReq *launchMiniProgramReq = [WXLaunchMiniProgramReq object];
-    launchMiniProgramReq.userName = @"gh_d0088124fc62";  //拉起的小程序的username
-    launchMiniProgramReq.path = [NSString stringWithFormat:@"%@?userId=%@&class=%@",appPath,APPManagerUserInfo.token,classStr];////拉起小程序页面的可带参路径，不填默认拉起小程序首页，对于小游戏，可以只传入 query 部分，来实现传参效果，如：传入 "?foo=bar"。
+    
+    NSString *appUserName = @"";
+    switch (appType) {
+        case WXAPPType_One:
+            //游戏
+            appUserName = @"gh_d0088124fc62";
+            break;
+        case WXAPPType_Two:
+            //鲸打卡
+            appUserName = @"gh_e91ddf2f1ccb";
+            break;
+            
+        default:
+            break;
+    }
+    launchMiniProgramReq.userName = appUserName;  //拉起的小程序的username
+    //launchMiniProgramReq.path = appPath;////拉起小程序页面的可带参路径，不填默认拉起小程序首页，对于小游戏，可以只传入 query 部分，来实现传参效果，如：传入 "?foo=bar"。
     
     launchMiniProgramReq.miniProgramType = WXMiniProgramTypeRelease; //拉起小程序的类型
     [WXApi sendReq:launchMiniProgramReq completion:^(BOOL success) {

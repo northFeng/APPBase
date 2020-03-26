@@ -77,11 +77,11 @@ class OneSwiftController: APPBaseController {
     
     @objc func onClickButton(button:UIButton) {
         
-        printNetBlock(text: "网络请求") { (result:Bool, idObject:Any, code:Int) in
-            Print("回调了网络数据：\(result)+\(idObject)+\(code)")
-        }
+//        printNetBlock(text: "网络请求") { (result:Bool, idObject:Any, code:Int) in
+//            Print("回调了网络数据：\(result)+\(idObject)+\(code)")
+//        }
         
-        AF.request("https://httpbin.org/get").response { responds in
+        AF.request("https://httpbin.org/get",method: .get).response { responds in
             print("请求数据---->\(responds)")
         }
     }
