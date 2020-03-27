@@ -164,7 +164,7 @@
             break;
     }
     launchMiniProgramReq.userName = appUserName;  //拉起的小程序的username
-    //launchMiniProgramReq.path = appPath;////拉起小程序页面的可带参路径，不填默认拉起小程序首页，对于小游戏，可以只传入 query 部分，来实现传参效果，如：传入 "?foo=bar"。
+    launchMiniProgramReq.path = appPath;////拉起小程序页面的可带参路径，不填默认拉起小程序首页，对于小游戏，可以只传入 query 部分，来实现传参效果，如：传入 "?foo=bar"。
     
     launchMiniProgramReq.miniProgramType = WXMiniProgramTypeRelease; //拉起小程序的类型
     [WXApi sendReq:launchMiniProgramReq completion:^(BOOL success) {
