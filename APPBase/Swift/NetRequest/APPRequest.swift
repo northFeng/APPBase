@@ -54,6 +54,22 @@ class BaseModel: Convertible {
     
     // 由于Swift初始化机制的原因，`Convertible`协议强制要求实现init初始化器
     // 这样框架内部才可以完整初始化一个实例
+    
+    //子类可以重写该方法，进行key的 映射匹配
+    func kj_modelKey(from property: Property) -> ModelPropertyKey {
+        // 根据属性名来返回对应的key
+        switch property.name {
+            
+        //1、模型的`nickName`属性 对应 JSON中的`nick_name`
+        //case "nickName": return "nick_name" //采用枚举形式进行返回映射的key
+            
+        //2、模型剩下的其他属性，直接用属性名作为JSON的key（属性名和key保持一致）
+        default: return property.name
+            
+        }
+    }
+    
+    
     required init() {} //所有继承 BaseModel的类，则不用写这个方法了
 }
 
