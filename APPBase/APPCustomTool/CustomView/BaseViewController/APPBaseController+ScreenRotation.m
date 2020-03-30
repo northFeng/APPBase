@@ -38,7 +38,7 @@
     return YES;
 }
 
-///VC支持的旋转方向
+///VC支持的旋转方向 (这个方法 单单控制该VC的页面旋转方向！！ 不能控制 APP的旋转方向，因此必须设置 _orientat属性！！！)
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations{
     
     return UIInterfaceOrientationMaskAllButUpsideDown;//上+左+右

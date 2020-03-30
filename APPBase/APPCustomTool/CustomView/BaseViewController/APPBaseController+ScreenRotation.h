@@ -67,9 +67,9 @@ NS_ASSUME_NONNULL_END
  }
  
  - (void)bindViewModel{
-     
+     //这步 必须有
      [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIApplicationDidBecomeActiveNotification object:nil] subscribeNext:^(NSNotification * _Nullable x) {
-         [self setScreenInterfaceOrientationRight];//屏幕横屏
+         [weakSelf setScreenInterfaceOrientationRight];//屏幕横屏
      }];
      
  }

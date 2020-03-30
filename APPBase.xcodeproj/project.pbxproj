@@ -29,6 +29,12 @@
 		83072544242871FE005D049E /* UIButton+Animate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8307253D242871FE005D049E /* UIButton+Animate.m */; };
 		83072545242871FE005D049E /* UIView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 8307253E242871FE005D049E /* UIView+Alert.m */; };
 		83072546242871FE005D049E /* NSObject+Auth.m in Sources */ = {isa = PBXBuildFile; fileRef = 83072542242871FE005D049E /* NSObject+Auth.m */; };
+		832DD2D924320A9500AD3FF1 /* UICollectionView+SideRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2CD24320A9500AD3FF1 /* UICollectionView+SideRefresh.m */; };
+		832DD2DA24320A9500AD3FF1 /* SideRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2CE24320A9500AD3FF1 /* SideRefreshHeader.m */; };
+		832DD2DB24320A9500AD3FF1 /* SideRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2CF24320A9500AD3FF1 /* SideRefreshFooter.m */; };
+		832DD2DC24320A9500AD3FF1 /* SideRefreshEmptyFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2D124320A9500AD3FF1 /* SideRefreshEmptyFooter.m */; };
+		832DD2DD24320A9500AD3FF1 /* SideRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2D224320A9500AD3FF1 /* SideRefresh.m */; };
+		832DD2DE24320A9500AD3FF1 /* UICollectionView+SideExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2D324320A9500AD3FF1 /* UICollectionView+SideExtension.m */; };
 		8346B46423C04377001154A7 /* APPOssInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46323C04377001154A7 /* APPOssInterface.m */; };
 		8346B46823C045C6001154A7 /* APPWXInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46723C045C6001154A7 /* APPWXInterface.m */; };
 		8346B46C23C04AD0001154A7 /* APPUMInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46B23C04AD0001154A7 /* APPUMInterface.m */; };
@@ -170,6 +176,18 @@
 		83072540242871FE005D049E /* NSString+URLCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLCheck.h"; sourceTree = "<group>"; };
 		83072541242871FE005D049E /* UIButton+Animate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Animate.h"; sourceTree = "<group>"; };
 		83072542242871FE005D049E /* NSObject+Auth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Auth.m"; sourceTree = "<group>"; };
+		832DD2CD24320A9500AD3FF1 /* UICollectionView+SideRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+SideRefresh.m"; sourceTree = "<group>"; };
+		832DD2CE24320A9500AD3FF1 /* SideRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideRefreshHeader.m; sourceTree = "<group>"; };
+		832DD2CF24320A9500AD3FF1 /* SideRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideRefreshFooter.m; sourceTree = "<group>"; };
+		832DD2D024320A9500AD3FF1 /* UICollectionView+SideExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+SideExtension.h"; sourceTree = "<group>"; };
+		832DD2D124320A9500AD3FF1 /* SideRefreshEmptyFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideRefreshEmptyFooter.m; sourceTree = "<group>"; };
+		832DD2D224320A9500AD3FF1 /* SideRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideRefresh.m; sourceTree = "<group>"; };
+		832DD2D324320A9500AD3FF1 /* UICollectionView+SideExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+SideExtension.m"; sourceTree = "<group>"; };
+		832DD2D424320A9500AD3FF1 /* SideRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideRefreshFooter.h; sourceTree = "<group>"; };
+		832DD2D524320A9500AD3FF1 /* SideRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideRefreshHeader.h; sourceTree = "<group>"; };
+		832DD2D624320A9500AD3FF1 /* UICollectionView+SideRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+SideRefresh.h"; sourceTree = "<group>"; };
+		832DD2D724320A9500AD3FF1 /* SideRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideRefresh.h; sourceTree = "<group>"; };
+		832DD2D824320A9500AD3FF1 /* SideRefreshEmptyFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideRefreshEmptyFooter.h; sourceTree = "<group>"; };
 		8346B46223C04377001154A7 /* APPOssInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPOssInterface.h; sourceTree = "<group>"; };
 		8346B46323C04377001154A7 /* APPOssInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPOssInterface.m; sourceTree = "<group>"; };
 		8346B46623C045C6001154A7 /* APPWXInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPWXInterface.h; sourceTree = "<group>"; };
@@ -399,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				147E502D2351FBCA00C2309B /* APPThirdHeader.h */,
+				832DD2CC24320A9500AD3FF1 /* CollectionRefresh */,
 				83987FE5241242C800A71FC4 /* VideoPlayer */,
 				83987FCF241242C100A71FC4 /* AudioPlayer */,
 				8346B46923C04AA8001154A7 /* UM */,
@@ -475,6 +494,25 @@
 				37BCAF33D89376F054993B8C /* Pods-APPBase.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		832DD2CC24320A9500AD3FF1 /* CollectionRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				832DD2D724320A9500AD3FF1 /* SideRefresh.h */,
+				832DD2D224320A9500AD3FF1 /* SideRefresh.m */,
+				832DD2D824320A9500AD3FF1 /* SideRefreshEmptyFooter.h */,
+				832DD2D124320A9500AD3FF1 /* SideRefreshEmptyFooter.m */,
+				832DD2D424320A9500AD3FF1 /* SideRefreshFooter.h */,
+				832DD2CF24320A9500AD3FF1 /* SideRefreshFooter.m */,
+				832DD2D524320A9500AD3FF1 /* SideRefreshHeader.h */,
+				832DD2CE24320A9500AD3FF1 /* SideRefreshHeader.m */,
+				832DD2D024320A9500AD3FF1 /* UICollectionView+SideExtension.h */,
+				832DD2D324320A9500AD3FF1 /* UICollectionView+SideExtension.m */,
+				832DD2D624320A9500AD3FF1 /* UICollectionView+SideRefresh.h */,
+				832DD2CD24320A9500AD3FF1 /* UICollectionView+SideRefresh.m */,
+			);
+			path = CollectionRefresh;
 			sourceTree = "<group>";
 		};
 		8346B46123C04358001154A7 /* OSS */ = {
@@ -1102,6 +1140,7 @@
 				83987FE2241242C100A71FC4 /* APPAudioPlayer.m in Sources */,
 				140A8FCA234F4B6800B31672 /* APPBaseTableViewController.m in Sources */,
 				8354DE6B23D5B4B8006B09C6 /* ClassHead.swift in Sources */,
+				832DD2DE24320A9500AD3FF1 /* UICollectionView+SideExtension.m in Sources */,
 				8DAB5ECA21AB9882009662D5 /* APPBaseCell.m in Sources */,
 				83072544242871FE005D049E /* UIButton+Animate.m in Sources */,
 				83987FDF241242C100A71FC4 /* CBSlider.m in Sources */,
@@ -1128,6 +1167,7 @@
 				8DAB5F0A21AB9954009662D5 /* FRLoginManager.m in Sources */,
 				8DAB5ECB21AB9882009662D5 /* ExampleViewController.m in Sources */,
 				8DAB5E3D21AB976C009662D5 /* APPLoacalInfo.m in Sources */,
+				832DD2D924320A9500AD3FF1 /* UICollectionView+SideRefresh.m in Sources */,
 				14CE0FA8235080F00093E45C /* GFMineController.m in Sources */,
 				8DAB5EC821AB9882009662D5 /* FSPromptView.m in Sources */,
 				8DAB5EB521AB9839009662D5 /* NSArray+GFExtension.m in Sources */,
@@ -1135,7 +1175,9 @@
 				8DAB5EEF21AB98CD009662D5 /* APPBaseModel.m in Sources */,
 				14CE0FA5235080E10093E45C /* GFMiddleController.m in Sources */,
 				8DAB5E4321AB9795009662D5 /* APPGlobalVariable.m in Sources */,
+				832DD2DB24320A9500AD3FF1 /* SideRefreshFooter.m in Sources */,
 				839B993223B30D3E006A8049 /* NSURL+Category.m in Sources */,
+				832DD2DA24320A9500AD3FF1 /* SideRefreshHeader.m in Sources */,
 				83987FF72412440100A71FC4 /* APPBaseController+ScreenRotation.m in Sources */,
 				8DAB5EE321AB98A6009662D5 /* GFButtonPress.m in Sources */,
 				8DAB5F0421AB993F009662D5 /* FRHomeVC.m in Sources */,
@@ -1160,6 +1202,7 @@
 				142808952351CAC900D24D08 /* APPFileManager.m in Sources */,
 				83072546242871FE005D049E /* NSObject+Auth.m in Sources */,
 				83072545242871FE005D049E /* UIView+Alert.m in Sources */,
+				832DD2DD24320A9500AD3FF1 /* SideRefresh.m in Sources */,
 				8DAB5E3A21AB976C009662D5 /* APPManager.m in Sources */,
 				839CDC9F2411193D00617294 /* APPRequest.swift in Sources */,
 				14BE128623506BA50047F00B /* APPAlertTool.m in Sources */,
@@ -1177,6 +1220,7 @@
 				83987FE1241242C100A71FC4 /* APPAudioPlayerController.m in Sources */,
 				8346B46C23C04AD0001154A7 /* APPUMInterface.m in Sources */,
 				8354DE6623D58445006B09C6 /* OneSwiftController.swift in Sources */,
+				832DD2DC24320A9500AD3FF1 /* SideRefreshEmptyFooter.m in Sources */,
 				140A8FC7234F37A300B31672 /* UIButton+GFExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
