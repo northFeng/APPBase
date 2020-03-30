@@ -22,6 +22,10 @@
     }
 }
 
+- (void)setAPPOrientat:(UIInterfaceOrientationMask)orientat {
+    ((AppDelegate *)[UIApplication sharedApplication].delegate).orientat = orientat;
+}
+
 - (BOOL)allowScreenRotate{
     
     return ((AppDelegate *)[UIApplication sharedApplication].delegate).allowRotate;

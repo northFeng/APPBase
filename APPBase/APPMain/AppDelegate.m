@@ -31,6 +31,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    self.allowRotate = NO;//禁止屏幕旋转
+    self.orientat = UIInterfaceOrientationMaskPortrait;//竖直方向
     
     //对APP进行一些配置
     [self appConfiguration];
@@ -158,10 +160,9 @@
  */
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
     if (self.allowRotate) {
-
-        return UIInterfaceOrientationMaskAllButUpsideDown;
+        //三个方向 UIInterfaceOrientationMaskAllButUpsideDown  UIInterfaceOrientationMaskLandscapeRight
+        return self.orientat;
     }else {
-
         return UIInterfaceOrientationMaskPortrait;
     }
 }
