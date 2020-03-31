@@ -85,6 +85,10 @@ return _instance;                            \
 #define kScaleW kScreenWidth/375.0
 #define kScaleH kScreenHeight/667.0
 
+//横版的比例
+#define kHScaleW kScreenWidth/667.
+#define kHScaleH kScreenHeight/375.
+
 ///iPhone 1.  iPad 1.5
 #define kIpadScale ([APPViewTool iPhoneAndIpadTextAdapter])
 ///适配iPad尺寸

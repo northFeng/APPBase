@@ -241,17 +241,23 @@ func AlamofireRequest() {
 //MARK: ************************* 请求工具类 *************************
 class APPNetTool {
     
-    static func HttpTool() -> Session {
-        //添加header信息
-        AF.sessionConfiguration.httpAdditionalHeaders = ["type":"ios"]
-        AF.sessionConfiguration.timeoutIntervalForRequest = 15;//请求超时15秒
-        
-        return AF
+    //创建一个静态或者全局变量，保存当前单例实例值
+    private static let singleInstance = APPNetTool()
+    
+    var AFSession:Session {
+        get{
+            AF.sessionConfiguration.httpAdditionalHeaders = ["type":"ios"]
+            AF.sessionConfiguration.timeoutIntervalForRequest = 15;//请求超时15秒
+            
+            return AF
+        }
     }
     
     ///请求数据
-    static func requestData(method:HTTPMethod, url:String, parameters:[String:Any]) {
-        
+    func requestData(method:HTTPMethod, url:String, parameters:[String:Any]) {
+        AFSession.request(url, method: method, parameters: parameters).responseJSON { response in
+            
+        }
     }
     
 }
