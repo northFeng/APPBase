@@ -239,10 +239,20 @@ func AlamofireRequest() {
 }
 
 //MARK: ************************* 请求工具类 *************************
+
+///网络请求回调
+typealias NetSuccess = (Any, Int)->Void
+typealias NetFailure = (Error)->Void
+
 class APPNetTool {
     
     //创建一个静态或者全局变量，保存当前单例实例值
     private static let singleInstance = APPNetTool()
+    
+    ///获取单利实例
+    class func defaultSingleInstance() -> APPNetTool {
+        return singleInstance
+    }
     
     var AFSession:Session {
         get{
@@ -254,10 +264,38 @@ class APPNetTool {
     }
     
     ///请求数据
-    func requestData(method:HTTPMethod, url:String, parameters:[String:Any]) {
+    func requestData(method:HTTPMethod, url:String, parameters:[String:Any], success:NetSuccess, fail:NetFailure) {
+        
         AFSession.request(url, method: method, parameters: parameters).responseJSON { response in
-            
+            switch response.result {
+            case .success:
+                print("Validation Successful")
+            case let .failure(error):
+                print(error)
+            }
         }
     }
     
+    
+    //MARK: ************************* 常规get请求 *************************
+    class func getData(url:String, params:[String:Any], success:NetSuccess, fail:NetFailure) {
+        
+        self.defaultSingleInstance().requestData(method: HTTPMethod.get, url: url, parameters: params, success: success, fail: fail )
+    }
+    
+    func getData(url:String, params:[String:Any], success:NetSuccess, fail:NetFailure) {
+        
+        self.requestData(method: HTTPMethod.get, url: url, parameters: params, success: success, fail: fail )
+    }
+    
+    //MARK: ************************* 常规post请求 *************************
+    class func postData(url:String, params:[String:Any], success:NetSuccess, fail:NetFailure) {
+        
+        self.defaultSingleInstance().requestData(method: HTTPMethod.post, url: url, parameters: params, success: success, fail: fail )
+    }
+    
+    func postData(url:String, params:[String:Any], success:NetSuccess, fail:NetFailure) {
+        
+        self.requestData(method: HTTPMethod.post, url: url, parameters: params, success: success, fail: fail )
+    }
 }
