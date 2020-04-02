@@ -37,6 +37,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UILabel *)view_createLabelWithText:(NSString *)text font:(UIFont *)font textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment;
 
+
+//button.adjustsImageWhenHighlighted = NO; ——> 设置NO后按钮 将没有点击 变暗效果
+
 /// 一：文字按钮
 /// @param title 标题
 /// @param textColor 文字颜色

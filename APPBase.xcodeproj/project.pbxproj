@@ -29,6 +29,7 @@
 		83072544242871FE005D049E /* UIButton+Animate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8307253D242871FE005D049E /* UIButton+Animate.m */; };
 		83072545242871FE005D049E /* UIView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 8307253E242871FE005D049E /* UIView+Alert.m */; };
 		83072546242871FE005D049E /* NSObject+Auth.m in Sources */ = {isa = PBXBuildFile; fileRef = 83072542242871FE005D049E /* NSObject+Auth.m */; };
+		83188D2E2435948B009EB8FF /* APPBaseLandscapeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83188D2D2435948B009EB8FF /* APPBaseLandscapeController.m */; };
 		832DD2D924320A9500AD3FF1 /* UICollectionView+SideRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2CD24320A9500AD3FF1 /* UICollectionView+SideRefresh.m */; };
 		832DD2DA24320A9500AD3FF1 /* SideRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2CE24320A9500AD3FF1 /* SideRefreshHeader.m */; };
 		832DD2DB24320A9500AD3FF1 /* SideRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2CF24320A9500AD3FF1 /* SideRefreshFooter.m */; };
@@ -176,6 +177,8 @@
 		83072540242871FE005D049E /* NSString+URLCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLCheck.h"; sourceTree = "<group>"; };
 		83072541242871FE005D049E /* UIButton+Animate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Animate.h"; sourceTree = "<group>"; };
 		83072542242871FE005D049E /* NSObject+Auth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Auth.m"; sourceTree = "<group>"; };
+		83188D2C2435948B009EB8FF /* APPBaseLandscapeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPBaseLandscapeController.h; sourceTree = "<group>"; };
+		83188D2D2435948B009EB8FF /* APPBaseLandscapeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPBaseLandscapeController.m; sourceTree = "<group>"; };
 		832DD2CD24320A9500AD3FF1 /* UICollectionView+SideRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+SideRefresh.m"; sourceTree = "<group>"; };
 		832DD2CE24320A9500AD3FF1 /* SideRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideRefreshHeader.m; sourceTree = "<group>"; };
 		832DD2CF24320A9500AD3FF1 /* SideRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideRefreshFooter.m; sourceTree = "<group>"; };
@@ -815,6 +818,8 @@
 				8DAB5EC021AB9882009662D5 /* APPBaseCell.m */,
 				140A8FBF234F2ED800B31672 /* APPBaseController.h */,
 				140A8FC0234F2ED800B31672 /* APPBaseController.m */,
+				83188D2C2435948B009EB8FF /* APPBaseLandscapeController.h */,
+				83188D2D2435948B009EB8FF /* APPBaseLandscapeController.m */,
 				83987FF52412440100A71FC4 /* APPBaseController+ScreenRotation.h */,
 				83987FF62412440100A71FC4 /* APPBaseController+ScreenRotation.m */,
 				140A8FC8234F4B6800B31672 /* APPBaseTableViewController.h */,
@@ -1169,6 +1174,7 @@
 				8DAB5E3D21AB976C009662D5 /* APPLoacalInfo.m in Sources */,
 				832DD2D924320A9500AD3FF1 /* UICollectionView+SideRefresh.m in Sources */,
 				14CE0FA8235080F00093E45C /* GFMineController.m in Sources */,
+				83188D2E2435948B009EB8FF /* APPBaseLandscapeController.m in Sources */,
 				8DAB5EC821AB9882009662D5 /* FSPromptView.m in Sources */,
 				8DAB5EB521AB9839009662D5 /* NSArray+GFExtension.m in Sources */,
 				83987FE0241242C100A71FC4 /* CBAudioListVierw.m in Sources */,

@@ -243,6 +243,7 @@ func AlamofireRequest() {
 ///网络请求回调
 typealias NetSuccess = (Any, Int)->Void
 typealias NetFailure = (Error)->Void
+typealias NetResult = (Bool, Any, Int)
 
 class APPNetTool {
     
@@ -253,6 +254,13 @@ class APPNetTool {
     class func defaultSingleInstance() -> APPNetTool {
         return singleInstance
     }
+    
+    //MARK: ************************* 网络请求失败常用语 *************************
+    static let HTTPErrorCancleMessage = "请求被取消"
+    static let HTTPErrorTimeOutMessage = "请求超时"
+    static let HTTPErrorNotConnectedMessage = "网络连接断开"
+    static let HTTPErrorOthersMessage = "网络不给力"
+    static let HTTPErrorServerMessage = "服务器繁忙"
     
     var AFSession:Session {
         get{
@@ -297,5 +305,20 @@ class APPNetTool {
     func postData(url:String, params:[String:Any], success:NetSuccess, fail:NetFailure) {
         
         self.requestData(method: HTTPMethod.post, url: url, parameters: params, success: success, fail: fail )
+    }
+    
+    
+    //MARK: ************************* 普通请求 *************************
+    class func getNetDicData(url:String, params:[String:Any], block:NetResult) {
+        
+        let httpUrl:String = APPKeyInfo.hostURL().appending(url)
+        
+        self .getData(url: httpUrl, params: params, success: { (response, code) in
+            
+            
+        }) { (error:Error) in
+            var errorMessage = HTTPErrorOthersMessage
+            
+        }
     }
 }

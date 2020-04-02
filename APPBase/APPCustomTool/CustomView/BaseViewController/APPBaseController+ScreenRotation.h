@@ -66,11 +66,9 @@ NS_ASSUME_NONNULL_END
      self.allowScreenRotate = NO;//设置VC不可旋转
  }
  
- - (void)bindViewModel{
-     //这步 必须有
-     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIApplicationDidBecomeActiveNotification object:nil] subscribeNext:^(NSNotification * _Nullable x) {
-         [weakSelf setScreenInterfaceOrientationRight];//屏幕横屏
-     }];
+ ///VC支持的旋转方向
+ - (UIInterfaceOrientationMask)supportedInterfaceOrientations{
      
+     return UIInterfaceOrientationMaskLandscapeRight;//向右横屏
  }
  */

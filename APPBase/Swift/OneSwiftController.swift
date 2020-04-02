@@ -27,7 +27,7 @@ class OneSwiftController: APPBaseController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-                    
+              
 
         APPAlertTool.showLoading(on: self.view)
         
