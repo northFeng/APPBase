@@ -20,6 +20,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    //这不必须写上，APP回到桌面 再进来，系统屏幕方向已变，返回时，底层的VC方向其实已经改变！！ 所以在这里我们 就监听APP进入活跃状态 就 使 设备的方向 横屏过来 ——> 当前VC的 之前的 VC方向就旋转了
+    @weakify(self);
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIApplicationDidBecomeActiveNotification object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
+        [self setScreenInterfaceOrientationRight];//横屏
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -35,7 +41,9 @@
 - (UIButton *)backBtn {
     if (!_backBtn) {
         _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_backBtn setImage:[UIImage imageNamed:@"back_s"] forState:UIControlStateNormal];
+        [_backBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        _backBtn.backgroundColor = UIColor.redColor;
+        [_backBtn setTitle:@"返回" forState:UIControlStateNormal];
         _backBtn.hidden = YES;
         [_backBtn addTarget:self action:@selector(leftFirstButtonClick) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_backBtn];
@@ -76,5 +84,7 @@
     
     self.allowScreenRotate = NO;//设置该VC可旋转
 }
+
+
 
 @end
