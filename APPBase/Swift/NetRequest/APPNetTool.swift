@@ -8,6 +8,8 @@
 
 import Foundation
 
+import Alamofire//网络请求
+
 //MARK: ************************* Alamofire用法 *************************
 //官方文档：https://github.com/Alamofire/Alamofire
 //https://www.cnblogs.com/jukaiit/p/9283498.html
@@ -241,9 +243,9 @@ func AlamofireRequest() {
 //MARK: ************************* 请求工具类 *************************
 
 ///网络请求回调
-typealias NetSuccess = (Any, Int)->Void
+typealias NetSuccess = (Any?, Int)->Void
 typealias NetFailure = (Error)->Void
-typealias NetResult = (Bool, Any, Int)
+typealias NetResultData = (Bool, Any?, Int)->Void
 
 class APPNetTool {
     
@@ -262,6 +264,8 @@ class APPNetTool {
     static let HTTPErrorOthersMessage = "网络不给力"
     static let HTTPErrorServerMessage = "服务器繁忙"
     
+    static let resultCode = 20000;//成功码
+    
     var AFSession:Session {
         get{
             AF.sessionConfiguration.httpAdditionalHeaders = ["type":"ios"]
@@ -277,6 +281,7 @@ class APPNetTool {
         AFSession.request(url, method: method, parameters: parameters).responseJSON { response in
             switch response.result {
             case .success:
+                
                 print("Validation Successful")
             case let .failure(error):
                 print(error)
@@ -309,16 +314,57 @@ class APPNetTool {
     
     
     //MARK: ************************* 普通请求 *************************
-    class func getNetDicData(url:String, params:[String:Any], block:NetResult) {
+    class func getNetDicData(url:String, params:[String:Any], block:NetResultData) {
         
         let httpUrl:String = APPKeyInfo.hostURL().appending(url)
         
         self .getData(url: httpUrl, params: params, success: { (response, code) in
             
+            let jsonData:[String:Any] = response as! [String:Any]
+            
+            let message:String = jsonData["message"] as! String
+            
+            var data = jsonData["data"]
+            
+            if data == nil {
+                data = [String:Any]()
+            }
+            
+            if code == resultCode {
+                block(true, data, 100)
+            }else{
+                block(false, message, code)
+            }
             
         }) { (error:Error) in
-            var errorMessage = HTTPErrorOthersMessage
+            block(false, HTTPErrorOthersMessage, 99)
+        }
+    }
+    
+    class func postNetDicData(url:String, params:[String:Any], block:NetResultData) {
+        
+        let httpUrl:String = APPKeyInfo.hostURL().appending(url)
+        
+        self .postData(url: httpUrl, params: params, success: { (response, code) in
             
+            let jsonData:[String:Any] = response as! [String:Any]
+            
+            let message:String = jsonData["message"] as! String
+            
+            var data = jsonData["data"]
+            
+            if data == nil {
+                data = [String:Any]()
+            }
+            
+            if code == resultCode {
+                block(true, data, 100)
+            }else{
+                block(false, message, code)
+            }
+            
+        }) { (error:Error) in
+            block(false, HTTPErrorOthersMessage, 99)
         }
     }
 }

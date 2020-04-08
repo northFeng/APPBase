@@ -9,7 +9,6 @@
 import UIKit
 
 @_exported import SnapKit//布局
-@_exported import Alamofire//网络请求
 @_exported import KakaJSON//JSON数据 转 Model
 
 //用法https://www.cnblogs.com/metaphors/p/9405432.html

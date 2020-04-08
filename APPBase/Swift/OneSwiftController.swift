@@ -74,7 +74,13 @@ class OneSwiftController: APPBaseController {
     
     @objc func onClickButton(button:UIButton) {
         
-
+        blockAAAAAA { (sucess, idObject) in
+            print("结果\(sucess):\(idObject)")
+        }
+    }
+    
+    func blockAAAAAA(block:APPBackClosure) {
+        block(true,"反反复复")
     }
     
 }
