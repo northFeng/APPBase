@@ -70,6 +70,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///清楚用户信息
 - (void)clearUserInfo;
 
+//设置屏幕竖屏（默认）
+- (void)setScreenInterfaceOrientationDefault;
+
 /**
    主动退出
    @prame index 显示TabBar切换的位置显示

@@ -211,6 +211,12 @@
      */
 }
 
+//设置屏幕竖屏（默认）
+- (void)setScreenInterfaceOrientationDefault {
+    
+    NSNumber *orientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+    [[UIDevice currentDevice] setValue:orientationTarget forKey:@"orientation"];
+}
 
 #pragma mark - 订单数量获取
 ///用get方法

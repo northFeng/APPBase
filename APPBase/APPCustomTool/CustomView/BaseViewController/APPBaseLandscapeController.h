@@ -4,7 +4,7 @@
 //  横屏baseVC
 //  Created by 峰 on 2020/4/2.
 //  Copyright © 2020 ishansong. All rights reserved.
-//
+//  备注：如果屏幕 方向按钮打开状态，竖屏页面 +【手机横屏放置时】 进入 横屏页面 ——> 则 进入 横屏页面不会横屏！！在 进入 横屏前 进行 【代码竖屏】  执行一次！！[APPManagerObject setScreenInterfaceOrientationDefault];//设置竖屏
 
 #import "APPBaseController.h"
 
