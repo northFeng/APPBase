@@ -48,7 +48,7 @@
         audioData = [NSData dataWithContentsOfURL:[NSURL gf_URLWithString:url]];
     }else{
         //本地音频
-        audioData = [NSData dataWithContentsOfURL:[NSURL gf_URLWithString:url]];
+        audioData = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:url]];
     }
     
     if (audioData) {

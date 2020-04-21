@@ -65,7 +65,7 @@
         stramConfig.cacheEnabled = YES;//是否可以缓存
         stramConfig.seekingFromCacheEnabled = YES;//有缓存时，是否先播放缓存
         stramConfig.maxDiskCacheSize = 101000000; //最大缓存101 MB
-        stramConfig.cacheDirectory = [APPFileManager auidoCachePath];//缓存路径(默认Document文件)
+        //stramConfig.cacheDirectory = [APPFileManager auidoCachePath];//缓存路径(默认Document文件)
         _audioStream = [[FSAudioStream alloc] initWithConfiguration:stramConfig];
         _audioStream.maxRetryCount = 1;//加载失败重连次数
     }
@@ -106,10 +106,17 @@
         if (![self isPlaying]) {
             [self.audioStream pause];
         }
-        [self.audioStream playFromURL:[NSURL gf_URLWithString:url]];
+        if ([url hasPrefix:@"http"]) {
+            //网络
+            [self.audioStream playFromURL:[NSURL gf_URLWithString:url]];
+        }else{
+            //本地
+            [self.audioStream playFromURL:[NSURL fileURLWithPath:url]];
+        }
     }else{
         //暂停播放
         [self pauseAudio];//暂停
+        AlertMessage(@"音频错误");
     }
 }
 
