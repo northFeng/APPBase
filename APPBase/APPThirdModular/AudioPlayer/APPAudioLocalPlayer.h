@@ -3,7 +3,7 @@
 //  CleverBaby
 //  专门播放本地音频
 //  Created by 峰 on 2019/12/3.
-//  Copyright © 2019 小神童. All rights reserved.
+//  Copyright © 2019 North_feng. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///播放出错
 @property (nonatomic,copy) APPBackBlock blockError;
+
+///播放本地音频文件
+- (void)playLocalAudio:(NSString *)audioName;
 
 ///播放音频
 - (void)playAudioUrl:(NSString *)url;
