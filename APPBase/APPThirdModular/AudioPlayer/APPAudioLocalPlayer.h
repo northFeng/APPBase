@@ -20,6 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///播放出错
 @property (nonatomic,copy) APPBackBlock blockError;
 
+///播放停止
+@property (nonatomic,copy) APPBackBlock blockStop;
+
 ///播放本地音频文件
 - (void)playLocalAudio:(NSString *)audioName;
 

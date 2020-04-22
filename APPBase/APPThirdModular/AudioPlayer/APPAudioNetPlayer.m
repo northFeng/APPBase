@@ -65,7 +65,7 @@
         stramConfig.cacheEnabled = YES;//是否可以缓存
         stramConfig.seekingFromCacheEnabled = YES;//有缓存时，是否先播放缓存
         stramConfig.maxDiskCacheSize = 101000000; //最大缓存101 MB
-        //stramConfig.cacheDirectory = [APPFileManager auidoCachePath];//缓存路径(默认Document文件)
+        stramConfig.cacheDirectory = [APPFileManager auidoCachePath];//缓存路径(默认Document文件)
         _audioStream = [[FSAudioStream alloc] initWithConfiguration:stramConfig];
         _audioStream.maxRetryCount = 1;//加载失败重连次数
     }
@@ -137,16 +137,24 @@
 
 ///暂停播放
 - (void)pauseAudio {
+    [self timerPause];
     
     if ([self isPlaying]) {
         [self.audioStream pause];
+        if (self.blockStop) {
+            self.blockStop(YES, @0);
+        }
     }
 }
 
 ///停止播放（停止音频流加载）
 - (void)stopAuido {
+    [self timerPause];
     
     [self.audioStream stop];
+    if (self.blockStop) {
+        self.blockStop(YES, @0);
+    }
 }
 
 #pragma mark - ************************* 事件监控 && 定时器事件 *************************
@@ -158,13 +166,13 @@
     WeakSelf(self);
     _audioStream.onCompletion = ^{
         //播放完成
+        [weakSelf timerPause];//暂停
         if (weakSelf.blockComplte) {
             weakSelf.blockComplte(YES, @0);
         }
     };
     
     //各个状态改变
-    /**
     _audioStream.onStateChange = ^(FSAudioStreamState state) {
                 
         switch (state) {
@@ -187,6 +195,7 @@
             case kFsAudioStreamPlaying:             // 播放
                 NSLog(@"播放中。。");
                 weakSelf.isError = NO;
+                [weakSelf timerStart];//开启定时器
                 
                 break;
                 
@@ -242,11 +251,10 @@
         }
                 
     };
-     */
     
     _audioStream.onFailure = ^(FSAudioStreamError error, NSString *errorDescription) {
         weakSelf.isError = YES;
-        
+        [weakSelf timerPause];//暂停
         if (weakSelf.blockError) {
             weakSelf.blockError(YES, @"播放错误");
         }

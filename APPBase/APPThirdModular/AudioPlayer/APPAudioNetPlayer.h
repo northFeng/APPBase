@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///时间回调 @[@(playbackTime),@(totalTime)]
 @property (nonatomic,copy) APPBackBlock blockTime;
 
+///播放停止
+@property (nonatomic,copy) APPBackBlock blockStop;
+
 ///使用单利时 注意：不用时 释放 block！
 + (instancetype)shareInstance;
 

@@ -117,7 +117,8 @@
     
     OSSPutObjectRequest *put = [[OSSPutObjectRequest alloc] init];
     put.bucketName = [_dicOss objectForKey:@"bucketName"];
-    put.objectKey = upId;//[NSString stringWithFormat:@"flashRiderIos%ld",[FSFunctionMethod date_getNowTimeStampWithPrecision:1000]];
+    put.objectKey = upId;//"folder/subfolder/fileName"  fileName为文字名， / 前面 都是路径
+    //put.contentType = @"application/octet-stream"; 默认类型
     
     put.uploadingData = upData;// 直接上传NSData
     

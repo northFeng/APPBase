@@ -97,6 +97,9 @@
     
     if (_audioPlayer) {
         [_audioPlayer stop];
+        if (self.blockStop) {
+            self.blockStop(YES, @0);
+        }
     }
 }
 
