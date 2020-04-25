@@ -37,6 +37,22 @@
     return audioPlayer;
 }
 
+- (void)deallocBlock {
+    self.blockComplte = ^(BOOL result, id idObject) {
+        
+    };
+    self.blockStop = ^(BOOL result, id idObject) {
+        
+    };
+    self.blockError = ^(BOOL result, id idObject) {
+        
+    };
+    self.blockTime = ^(BOOL result, id idObject) {
+        
+    };
+}
+
+
 - (instancetype)init {
     if (self = [super init]) {
         
@@ -65,7 +81,7 @@
         stramConfig.cacheEnabled = YES;//是否可以缓存
         stramConfig.seekingFromCacheEnabled = YES;//有缓存时，是否先播放缓存
         stramConfig.maxDiskCacheSize = 101000000; //最大缓存101 MB
-        stramConfig.cacheDirectory = [APPFileManager auidoCachePath];//缓存路径(默认Document文件)
+        //stramConfig.cacheDirectory = [APPFileManager auidoCachePath];//缓存路径(默认Document文件)
         _audioStream = [[FSAudioStream alloc] initWithConfiguration:stramConfig];
         _audioStream.maxRetryCount = 1;//加载失败重连次数
     }

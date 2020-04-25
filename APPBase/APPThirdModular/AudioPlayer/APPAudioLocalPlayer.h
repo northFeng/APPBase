@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPAudioLocalPlayer : NSObject
 
-+ (instancetype)shareInstance;
-
 ///播放完毕
 @property (nonatomic,copy) APPBackBlock blockComplte;
 
@@ -22,6 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///播放停止
 @property (nonatomic,copy) APPBackBlock blockStop;
+
++ (instancetype)shareInstance;
+
+///释放block
+- (void)deallocBlock;
 
 ///播放本地音频文件
 - (void)playLocalAudio:(NSString *)audioName;

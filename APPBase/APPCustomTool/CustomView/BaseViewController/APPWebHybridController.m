@@ -62,7 +62,20 @@
     [self JSToOCOneMethod];
     
     NSURL *url = [NSURL gf_URLWithString:_htmlUrl];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];
+    /**
+     NSURLRequestUseProtocolCachePolicy： 对特定的 URL 请求使用网络协议中实现的缓存逻辑。这是默认的策略。
+
+     NSURLRequestReloadIgnoringLocalCacheData：数据需要从原始地址加载。不使用现有缓存。
+
+     NSURLRequestReloadIgnoringLocalAndRemoteCacheData：不仅忽略本地缓存，同时也忽略代理服务器或其他中间介质目前已有的、协议允许的缓存。
+
+     NSURLRequestReturnCacheDataElseLoad：无论缓存是否过期，先使用本地缓存数据。如果缓存中没有请求所对应的数据，那么从原始地址加载数据。
+
+     NSURLRequestReturnCacheDataDontLoad：无论缓存是否过期，先使用本地缓存数据。如果缓存中没有请求所对应的数据，那么放弃从原始地址加载数据，请求视为失败（即：“离线”模式）。
+
+     NSURLRequestReloadRevalidatingCacheData：从原始地址确认缓存数据的合法性后，缓存数据就可以使用，否则从原始地址加载。
+     */
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20];
     
     //加载
     [_webView loadRequest:request];
@@ -159,7 +172,13 @@
 
 
 #pragma mark - ************************* 逻辑处理 *************************
-
+///存储参数
+- (void)storeH5Param {
+    
+    //往Web中存储 H5需要参数 数据，尽量通过交互进行 传输数据！！网络加载慢的原因，h5取不到
+    NSString *jsStr1 = @"sessionStorage.setItem('token','1234567890')";//[NSString stringWithFormat:@"sessionStorage.setItem('payuserauth','%@')",APPManagerUserInfo.payuserauth];
+    [self OCToJSOneMethodWithJSString:jsStr1];
+}
 
 #pragma mark - WKNavigationDelegate主要处理一些跳转、加载处理操作
 
@@ -190,9 +209,7 @@
         self.title = _webView.title;
     }
     
-    //往Web中存储 H5需要参数
-    NSString *jsStr1 = @"sessionStorage.setItem('token','1234567890')";//[NSString stringWithFormat:@"sessionStorage.setItem('payuserauth','%@')",APPManagerUserInfo.payuserauth];
-    [self OCToJSOneMethodWithJSString:jsStr1];
+    [self storeH5Param];//必须加载完网页 后进行存储! 否则 h5取不到
 }
 
 // 4、页面加载失败时调用

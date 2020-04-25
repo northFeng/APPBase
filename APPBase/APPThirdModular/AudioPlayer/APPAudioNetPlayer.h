@@ -27,6 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///使用单利时 注意：不用时 释放 block！
 + (instancetype)shareInstance;
 
+///释放block
+- (void)deallocBlock;
+
 ///播放 —> 音频URL (从头播放URL)
 - (void)playAudioFromoUrl:(NSString *)url;
 

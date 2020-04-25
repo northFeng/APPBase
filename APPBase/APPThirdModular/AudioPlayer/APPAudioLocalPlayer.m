@@ -29,6 +29,18 @@
     return audioPlayer;
 }
 
+- (void)deallocBlock {
+    self.blockComplte = ^(BOOL result, id idObject) {
+        
+    };
+    self.blockStop = ^(BOOL result, id idObject) {
+        
+    };
+    self.blockError = ^(BOOL result, id idObject) {
+        
+    };
+}
+
 #pragma mark - 视图布局
 
 ///播放本地音频文件
