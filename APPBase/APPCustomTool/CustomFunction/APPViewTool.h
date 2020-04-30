@@ -78,8 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param spacing btn上图文之间间距
  @return GFTextImageButton
  */
-+ (GFTextImageButton *)view_createButtonWithBtnType:(ButtonType)btnType title:(NSString *)title titleSize:(CGSize)titleSize titleFont:(UIFont *)titleFont titleColor:(UIColor *)titleColor
-                                   imgName:(NSString *)imgName imgSize:(CGSize)imgSize spacing:(CGFloat)spacing;
++ (GFTextImageButton *)view_createButtonWithBtnType:(ButtonType)btnType title:(NSString *)title titleSize:(CGSize)titleSize titleFont:(UIFont *)titleFont titleColor:(UIColor *)titleColor imgName:(NSString *)imgName imgSize:(CGSize)imgSize spacing:(CGFloat)spacing;
 
 
 #pragma mark - ************************* view的边角、阴影 *************************
@@ -94,7 +93,14 @@ NS_ASSUME_NONNULL_BEGIN
 ///三：添加指定位置的圆角  (传入view的frame)
 + (void)view_addRoundedCornersOnView:(UIView *)view viewFrame:(CGRect)frame cornersPosition:(UIRectCorner)corners cornersWidth:(CGFloat)widthCorner;
 
-///添加边框和四角
+/**
+添加边框
+
+@param view view
+@param width 边框宽度
+@param color 边框颜色
+@param radius 边框圆角
+*/
 + (void)view_addBorderOnView:(UIView *)view borderWidth:(CGFloat)width borderColor:(UIColor *)color cornerRadius:(CGFloat)radius;
 
 
@@ -107,6 +113,11 @@ NS_ASSUME_NONNULL_BEGIN
 ///添加横向的混合颜色
 + (void)view_addHybridBackgroundColorWithColorOne:(UIColor *)colorOne andColorTwo:(UIColor *)colorTwo showOnView:(UIView *)onView;
 
+
+@end
+
+///按钮
+@interface APPImageButtn : UIButton
 
 @end
 

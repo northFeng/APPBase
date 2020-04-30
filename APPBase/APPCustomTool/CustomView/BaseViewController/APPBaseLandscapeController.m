@@ -85,6 +85,19 @@
     self.allowScreenRotate = NO;//设置该VC可旋转
 }
 
+///添加背景图
+- (UIImageView *)addBgImgviewWithImgName:(NSString *)imgName {
+    //背景图
+    UIImageView *bgImgview = [APPViewTool view_createImageViewWithImageName:imgName];
+    [self.view addSubview:bgImgview];
+    CGSize sizeBg = bgImgview.image.size;
+    if (kIsiPhone) {
+       bgImgview.sd_layout.leftEqualToView(self.view).bottomEqualToView(self.view).rightEqualToView(self.view).heightIs(kScreenWidth * (sizeBg.height / sizeBg.width));
+    }else{
+        bgImgview.sd_layout.topEqualToView(self.view).bottomEqualToView(self.view).centerXEqualToView(self.view).widthIs(kScreenHeight * (sizeBg.width / sizeBg.height));
+    }
+    return bgImgview;
+}
 
 
 @end

@@ -132,7 +132,9 @@
     }else{
         //暂停播放
         [self pauseAudio];//暂停
-        AlertMessage(@"音频错误");
+        if (self.blockError) {
+            self.blockError(YES, @"播放链接不存在");
+        }
     }
 }
 
@@ -157,9 +159,9 @@
     
     if ([self isPlaying]) {
         [self.audioStream pause];
-        if (self.blockStop) {
-            self.blockStop(YES, @0);
-        }
+    }
+    if (self.blockStop) {
+        self.blockStop(YES, @0);
     }
 }
 

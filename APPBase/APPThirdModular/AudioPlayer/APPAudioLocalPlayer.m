@@ -54,22 +54,28 @@
 ///播放音频
 - (void)playAudioUrl:(NSString *)url {
     
-    NSData *audioData;
-    if ([url hasPrefix:@"http"]) {
-        //网络
-        audioData = [NSData dataWithContentsOfURL:[NSURL gf_URLWithString:url]];
-    }else{
-        //本地音频
-        audioData = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:url]];
-    }
-    
-    if (audioData) {
-        NSError *error;
-        _audioPlayer = [[AVAudioPlayer alloc] initWithData:audioData error:&error];
-        if (!error) {
-            _audioPlayer.delegate = self;
-            [_audioPlayer prepareToPlay];
-            [_audioPlayer play];
+    if (url.length) {
+        NSData *audioData;
+        if ([url hasPrefix:@"http"]) {
+            //网络
+            audioData = [NSData dataWithContentsOfURL:[NSURL gf_URLWithString:url]];
+        }else{
+            //本地音频
+            audioData = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:url]];
+        }
+        
+        if (audioData) {
+            NSError *error;
+            _audioPlayer = [[AVAudioPlayer alloc] initWithData:audioData error:&error];
+            if (!error) {
+                _audioPlayer.delegate = self;
+                [_audioPlayer prepareToPlay];
+                [_audioPlayer play];
+            }else{
+                if (self.blockError) {
+                    self.blockError(YES, @"播放错误");
+                }
+            }
         }else{
             if (self.blockError) {
                 self.blockError(YES, @"播放错误");
@@ -77,7 +83,7 @@
         }
     }else{
         if (self.blockError) {
-            self.blockError(YES, @"播放错误");
+            self.blockError(YES, @"播放链接不存在");
         }
     }
 }

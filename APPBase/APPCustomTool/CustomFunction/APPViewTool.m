@@ -46,6 +46,7 @@
     UIImageView *imgView = [[UIImageView alloc] init];
     if (imgName) {
         imgView.image = [UIImage imageNamed:imgName];
+        imgView.contentMode = UIViewContentModeScaleAspectFill;//比例放大填充
     }
     
     return imgView;
@@ -99,7 +100,7 @@
 ///创建普通图片按钮
 + (UIButton *)view_createButtonImage:(NSString *)imageName {
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    APPImageButtn *button = [APPImageButtn buttonWithType:UIButtonTypeCustom];
     
     if (imageName.length) {
         [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
@@ -111,7 +112,7 @@
 ///创建普通图片按钮
 + (UIButton *)view_createButtonImageNormalImg:(NSString *)imgName_n selectImg:(NSString *)imgName_s {
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    APPImageButtn *button = [APPImageButtn buttonWithType:UIButtonTypeCustom];
     
     if (imgName_n.length) {
         [button setImage:[UIImage imageNamed:imgName_n] forState:UIControlStateNormal];
@@ -199,6 +200,17 @@
     gradientLayer.frame = CGRectMake(0, 0, onView.frame.size.width, onView.frame.size.height);
     
     [onView.layer addSublayer:gradientLayer];
+}
+
+@end
+
+#pragma mark - ************************* APPImageButtn *************************
+
+@implementation APPImageButtn
+
+- (CGRect)imageRectForContentRect:(CGRect)bounds{
+    
+    return CGRectMake(0.0, 0.0, self.size.width, self.size.height);
 }
 
 @end

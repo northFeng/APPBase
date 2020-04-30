@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 ///左侧第一个按钮
 - (void)leftFirstButtonClick;
 
+///添加背景图
+- (UIImageView *)addBgImgviewWithImgName:(NSString *)imgName;
 
 @end
 
