@@ -46,6 +46,11 @@
     UIImageView *imgView = [[UIImageView alloc] init];
     if (imgName) {
         imgView.image = [UIImage imageNamed:imgName];
+        /**
+         UIViewContentModeScaleToFill, //填充满， 但是 会变形
+         UIViewContentModeScaleAspectFit, //可能会填充不满，但是 不会变形，宽 填满 、高 填满
+         UIViewContentModeScaleAspectFill, //填充满 ，也不会变形，但是填充过大，超过相框
+         */
         imgView.contentMode = UIViewContentModeScaleAspectFill;//比例放大填充
     }
     
