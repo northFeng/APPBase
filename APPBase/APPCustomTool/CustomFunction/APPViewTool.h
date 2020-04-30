@@ -65,6 +65,12 @@ NS_ASSUME_NONNULL_BEGIN
 ///四：图片 & 选中图片 按钮
 + (UIButton *)view_createButtonImageNormalImg:(NSString *)imgName_n selectImg:(NSString *)imgName_s;
 
+///三（Fill）：图片按钮
++ (UIButton *)view_createButtonImageFill:(NSString *)imageName;
+
+///四（Fill）：图片 & 选中图片 按钮
++ (UIButton *)view_createButtonImageFillNormalImg:(NSString *)imgName_n selectImg:(NSString *)imgName_s;
+
 /**
  五：图文 按钮
 

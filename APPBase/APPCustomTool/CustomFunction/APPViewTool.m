@@ -105,7 +105,7 @@
 ///创建普通图片按钮
 + (UIButton *)view_createButtonImage:(NSString *)imageName {
     
-    APPImageButtn *button = [APPImageButtn buttonWithType:UIButtonTypeCustom];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     
     if (imageName.length) {
         [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
@@ -116,6 +116,35 @@
 
 ///创建普通图片按钮
 + (UIButton *)view_createButtonImageNormalImg:(NSString *)imgName_n selectImg:(NSString *)imgName_s {
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    if (imgName_n.length) {
+        [button setImage:[UIImage imageNamed:imgName_n] forState:UIControlStateNormal];
+    }
+    
+    if (imgName_s.length) {
+        [button setImage:[UIImage imageNamed:imgName_s] forState:UIControlStateSelected];
+        button.selected = NO;
+    }
+    
+    return button;
+}
+
+///创建普通图片按钮
++ (UIButton *)view_createButtonImageFill:(NSString *)imageName {
+    
+    APPImageButtn *button = [APPImageButtn buttonWithType:UIButtonTypeCustom];
+    
+    if (imageName.length) {
+        [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    }
+    
+    return button;
+}
+
+///创建普通图片按钮
++ (UIButton *)view_createButtonImageFillNormalImg:(NSString *)imgName_n selectImg:(NSString *)imgName_s {
     
     APPImageButtn *button = [APPImageButtn buttonWithType:UIButtonTypeCustom];
     
