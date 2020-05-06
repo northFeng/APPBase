@@ -24,6 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///左侧第一个按钮
 - (void)leftFirstButtonClick;
 
+///强制退出横屏
+- (void)exitLandscape;
+
 ///添加背景图
 - (UIImageView *)addBgImgviewWithImgName:(NSString *)imgName;
 

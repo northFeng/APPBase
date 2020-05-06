@@ -9,6 +9,7 @@
 #import "APPManager.h"
 
 #import "GFTabBarController.h"
+#import "APPBaseLandscapeController.h"//横屏Base
 
 #define Current_Login_User @"current_login_user"
 
@@ -149,9 +150,17 @@
     UIWindow *mainWindow = ([UIApplication sharedApplication].delegate).window;
     UINavigationController *rootNavi = (UINavigationController *)mainWindow.rootViewController;
     
+    /**
+     //回首页 ——> 横屏 回到 竖屏
+     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+     if (orientation != UIInterfaceOrientationMaskPortrait) {
+         //不是竖屏 ——> 强制回到横屏
+         APPBaseLandscapeController *landVC = (APPBaseLandscapeController *)[APPAlertTool topViewControllerOfAPP];
+         [landVC exitLandscape];//退出横屏
+     }
+     */
     //最后弹出
     [rootNavi popToRootViewControllerAnimated:YES];//直接弹到最上层
-    
     [[GFTabBarController sharedInstance] setSelectItemBtnIndex:index];
     
     //进行发送通知刷新所有的界面（利用通知进行刷新根VC）

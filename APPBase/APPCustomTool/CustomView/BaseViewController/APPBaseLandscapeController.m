@@ -85,6 +85,19 @@
     self.allowScreenRotate = NO;//设置该VC可旋转
 }
 
+///强制退出横屏
+- (void)exitLandscape {
+    
+    //默认这个为返回按钮
+    [self resumeBackGesture];//回复返回手势
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    self.APPOrientat = UIInterfaceOrientationMaskAllButUpsideDown;//三个方向
+    [self setScreenInterfaceOrientationDefault];//恢复竖屏
+    
+    self.allowScreenRotate = NO;//设置该VC可旋转
+}
+
 ///添加背景图
 - (UIImageView *)addBgImgviewWithImgName:(NSString *)imgName {
     //背景图
