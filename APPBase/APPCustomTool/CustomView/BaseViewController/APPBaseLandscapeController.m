@@ -15,10 +15,15 @@
 @end
 
 @implementation APPBaseLandscapeController
+{
+    UIInterfaceOrientationMask _orientation;//方向
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _orientation = UIInterfaceOrientationMaskLandscapeRight;//横屏方向
 
     //这不必须写上，APP回到桌面 再进来，系统屏幕方向已变，返回时，底层的VC方向其实已经改变！！ 所以在这里我们 就监听APP进入活跃状态 就 使 设备的方向 横屏过来 ——> 当前VC的 之前的VC方向就旋转了
     @weakify(self);
@@ -28,13 +33,13 @@
     }];
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidDisappear:animated];
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     if (orientation != UIInterfaceOrientationMaskLandscapeRight) {
-        //不是横屏
-        [self setScreenInterfaceOrientationRight];//屏幕横屏
+        //不是横屏 ——> 横屏
+        [self setLandscapeModel];
     }
 }
 
@@ -57,7 +62,15 @@
     
     self.naviBar.hidden = YES;
     
+    [self setLandscapeModel];//横屏模式
+}
+
+///设置 横屏模式
+- (void)setLandscapeModel {
+    
     [self removeBackGesture];//移除返回手势
+    
+    _orientation = UIInterfaceOrientationMaskLandscapeRight;//横屏
     self.allowScreenRotate = YES;//设置该VC可旋转
     self.APPOrientat = UIInterfaceOrientationMaskLandscapeRight;//横屏
     [self setStatusBarIsHide:YES];//隐藏状态栏
@@ -65,10 +78,21 @@
     [self setScreenInterfaceOrientationRight];//屏幕横屏
 }
 
+///设置竖屏模式
+- (void)setVerticalScreenModel {
+        
+    _orientation = UIInterfaceOrientationMaskPortrait;//竖屏
+    
+    self.APPOrientat = UIInterfaceOrientationMaskAllButUpsideDown;//三个方向
+    [self setScreenInterfaceOrientationDefault];//恢复竖屏
+    
+    self.allowScreenRotate = NO;//设置该VC可旋转
+}
+
 ///VC支持的旋转方向
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations{
     
-    return UIInterfaceOrientationMaskLandscapeRight;//向右横屏
+    return _orientation;//向右横屏
 }
 
 

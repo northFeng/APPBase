@@ -21,6 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
 ///设置状态栏样式
 - (void)setNaviBarStyle;
 
+///设置 横屏模式
+- (void)setLandscapeModel;
+
+///设置竖屏模式
+- (void)setVerticalScreenModel;
+
 ///左侧第一个按钮
 - (void)leftFirstButtonClick;
 
