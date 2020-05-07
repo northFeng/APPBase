@@ -23,14 +23,21 @@
 #import <ReactiveObjC/ReactiveObjC.h>//RAC
 
 #pragma mark - APP内文件
+/**
+ 拆分 宏定义——>先拆分 系统宏 / 自定义宏
+   1系统宏  、 2自定义类  、3自定义宏
+ */
 #import "APPGlobalVariable.h"//全局变量&&宏定义
 
 #import "ManagerHeader.h"//APP管理者
 
+#import "APPGlobalDefine.h"//自定义类的 定义宏
+
 #import "APPFunctionMethod.h"//公共方法工厂
 
-#import "APPThirdHeader.h"//第三方模块功能
 #import "APPToolHeader.h"//工具类
+
+#import "APPThirdHeader.h"//第三方模块功能
 
 
 #import "APPHttpTool.h"//网络请求类

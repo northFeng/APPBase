@@ -8,11 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#import <UIKit/UIKit.h>
+
 #import "APPUserInfoModel.h"//用户信息Model
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APPManager : NSObject
+
+///状态栏高度
+@property (nonatomic,assign) CGFloat stateHeight;
 
 ///APP内模式  0:所系统模式  1:白色模式  2:暗黑模式
 @property (nonatomic,assign) NSInteger faceStyle;
@@ -57,6 +62,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (APPManager *)sharedInstance;
 
+///状态栏高度
++ (CGFloat)stateHeight;
 
 ///存储用户信息
 - (void)storUserInfo:(NSDictionary *)userInfoDic;
@@ -83,6 +90,12 @@ NS_ASSUME_NONNULL_BEGIN
 ///清楚URL缓存和web中产生的cookie
 - (void)cleanCacheAndCookie;
 
+
+///iPad比例适配
++ (CGFloat)iPhoneAndIpadTextAdapter;
+
+///大小适配
++ (CGFloat)iPhoneAndIpadTextAdapter:(CGFloat)size;
 
 @end
 

@@ -10,7 +10,13 @@
 
 #import "APPEnum.h"//宏文件
 #import "APPSystemDefine.h"//重写系统宏
+
 #import "APPCustomDefine.h"//自定义宏
+
+#import "APPColorFunction.h"//自定义颜色
+
+#import "APPAlertTool.h"//APP内全局弹框吐字工具
+
 
 #ifdef __cplusplus
 #define GFKIT_EXTERN        extern "C" __attribute__((visibility ("default")))

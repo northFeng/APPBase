@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APPColorFunction : NSObject
 
+///颜色
++ (UIColor *)colorWithHexString:(NSString *)colorStr;
+
 /**
  颜色值转换为Color
 

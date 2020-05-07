@@ -49,11 +49,11 @@ let kScaleW = kScreenWidth/375.0
 let kScaleH = kScreenHeight/667.0
 
 ///适配iPad比例 ( iPhone 1.  iPad 1.5)
-let kIpadScale = APPViewTool.iPhoneAndIpadTextAdapter()
+let kIpadScale = APPManager.iPhoneAndIpadTextAdapter()
 
 ///适配iPad尺寸
 func FitIpad(num:CGFloat) -> Float {
-    return Float(APPViewTool.iPhoneAndIpadTextAdapter(num))
+    return Float(APPManager.iPhoneAndIpadTextAdapter(num))
 }
 
 //MARK: 顶部条以及tabBar条的宽度，以及工具条距离安全区域的距离

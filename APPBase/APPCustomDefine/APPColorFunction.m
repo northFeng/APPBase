@@ -12,6 +12,12 @@
 
 @implementation APPColorFunction
 
+///颜色
++ (UIColor *)colorWithHexString:(NSString *)colorStr {
+    
+    return [self colorWithHexString:colorStr alpha:1.];
+}
+
 /**
  *    @brief  颜色值转换为Color
  *
@@ -86,24 +92,23 @@
     [layer xy_setLayerBackgroundColor:backgrounColor with:supview];
 }
 
-
 #pragma mark - ************************* 获取颜色 *************************
 ///基础黑色
 + (UIColor *)blackColor {
     
-    return COLOR(@"000000");
+    return [self colorWithHexString:@"#000000"];
 }
 
 ///弹框背景黑色
 + (UIColor *)blackAlertColor {
     
-    return COLOR(@"#2C2C2C");
+    return [self colorWithHexString:@"#2C2C2C"];
 }
 
 ///基础白色颜色
 + (UIColor *)whiteColor {
     
-    return COLOR(@"FFFFFF");
+    return [self colorWithHexString:@"#FFFFFF"];
 }
 
 ///系统白亮文字颜色
@@ -122,25 +127,25 @@
 ///APP内黑色文字颜色384A74
 + (UIColor *)textBlackColor {
     
-    return COLOR(@"#384A74");
+    return [self colorWithHexString:@"#384A74"];
 }
 
 ///APP内灰色C0C0C0
 + (UIColor *)textGrayColor {
     
-    return COLOR(@"#C0C0C0");
+    return [self colorWithHexString:@"#C0C0C0"];
 }
 
 ///文字蓝色
 + (UIColor *)textBlueColor {
     
-    return COLOR(@"#65BAFF");
+    return [self colorWithHexString:@"#65BAFF"];
 }
 
 ///输入框背景颜色
 + (UIColor *)textFieldBgColor {
     
-    return COLOR(@"#F6F6F6");
+    return [self colorWithHexString:@"#F6F6F6"];
 }
 
 @end

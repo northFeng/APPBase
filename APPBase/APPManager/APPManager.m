@@ -36,8 +36,16 @@
     return self;
 }
 
+///状态栏高度
++ (CGFloat)stateHeight {
+    
+    return [APPManager sharedInstance].stateHeight;
+}
+
 ///初始化信息
 - (void)initializeData{
+    
+    _stateHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
     
     _faceStyle = 0;//随系统
     
@@ -238,7 +246,25 @@
     return _loacalOrderCount;
 }
 
+///iPad比例适配
++ (CGFloat)iPhoneAndIpadTextAdapter {
+    
+    if (kIsiPhone) {
+        return 1.;
+    }else{
+        return 1.5;
+    }
+}
 
+///大小适配
++ (CGFloat)iPhoneAndIpadTextAdapter:(CGFloat)size {
+    
+    if (kIsiPhone) {
+        return 1.*size;
+    }else{
+        return 1.5*size;
+    }
+}
 
 
 @end

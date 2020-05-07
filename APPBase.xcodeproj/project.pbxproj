@@ -203,6 +203,7 @@
 		8354DE6723D58AB9006B09C6 /* SwiftClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftClass.h; sourceTree = "<group>"; };
 		8354DE6823D59000006B09C6 /* TwoSwiftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSwiftController.swift; sourceTree = "<group>"; };
 		8354DE6A23D5B4B8006B09C6 /* ClassHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassHead.swift; sourceTree = "<group>"; };
+		83796D422463FFB6000B77C6 /* APPGlobalDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPGlobalDefine.h; sourceTree = "<group>"; };
 		83987FCE241237A600A71FC4 /* ManagerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerHeader.h; sourceTree = "<group>"; };
 		83987FD0241242C100A71FC4 /* APPAudioPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPAudioPlayerController.h; sourceTree = "<group>"; };
 		83987FD1241242C100A71FC4 /* CBAudioListVierw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAudioListVierw.h; sourceTree = "<group>"; };
@@ -405,8 +406,6 @@
 				142808912351C8DD00D24D08 /* APPViewTool.m */,
 				8DAB5EAE21AB9839009662D5 /* APPFunctionMethod.h */,
 				8DAB5EAD21AB9839009662D5 /* APPFunctionMethod.m */,
-				140A8FBC234F258300B31672 /* APPColorFunction.h */,
-				140A8FBD234F258300B31672 /* APPColorFunction.m */,
 				8DAB5EAF21AB9839009662D5 /* FSValidate.h */,
 				8DAB5EAB21AB9839009662D5 /* FSValidate.m */,
 				8DAB5EA421AB9839009662D5 /* GFEncryption.h */,
@@ -776,11 +775,14 @@
 		8DAB5E3121AB971C009662D5 /* APPCustomDefine */ = {
 			isa = PBXGroup;
 			children = (
-				8DAB5E4221AB9795009662D5 /* APPSystemDefine.h */,
-				8DAB5E3F21AB9795009662D5 /* APPCustomDefine.h */,
 				8DAB5E4121AB9795009662D5 /* APPEnum.h */,
 				8DAB5E3E21AB9795009662D5 /* APPGlobalVariable.h */,
 				8DAB5E4021AB9795009662D5 /* APPGlobalVariable.m */,
+				8DAB5E4221AB9795009662D5 /* APPSystemDefine.h */,
+				8DAB5E3F21AB9795009662D5 /* APPCustomDefine.h */,
+				140A8FBC234F258300B31672 /* APPColorFunction.h */,
+				140A8FBD234F258300B31672 /* APPColorFunction.m */,
+				83796D422463FFB6000B77C6 /* APPGlobalDefine.h */,
 			);
 			path = APPCustomDefine;
 			sourceTree = "<group>";

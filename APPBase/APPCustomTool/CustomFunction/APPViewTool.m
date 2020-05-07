@@ -10,26 +10,6 @@
 
 @implementation APPViewTool
 
-///iPad比例适配
-+ (CGFloat)iPhoneAndIpadTextAdapter {
-    
-    if (kIsiPhone) {
-        return 1.;
-    }else{
-        return 1.5;
-    }
-}
-
-///大小适配
-+ (CGFloat)iPhoneAndIpadTextAdapter:(CGFloat)size {
-    
-    if (kIsiPhone) {
-        return 1.*size;
-    }else{
-        return 1.5*size;
-    }
-}
-
 #pragma mark - ************************* 创建视图 *************************
 
 ///创建view
