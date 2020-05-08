@@ -46,9 +46,10 @@
 ///播放本地音频文件
 - (void)playLocalAudio:(NSString *)audioName {
     
-    NSString *audioPath = [[NSBundle mainBundle] pathForResource:audioName ofType:@".mp3"];
-    
-    [self playAudioUrl:audioPath];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *audioPath = [[NSBundle mainBundle] pathForResource:audioName ofType:@".mp3"];
+        [self playAudioUrl:audioPath];
+    });
 }
 
 ///播放音频

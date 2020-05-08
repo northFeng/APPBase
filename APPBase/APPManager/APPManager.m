@@ -163,8 +163,11 @@
      UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
      if (orientation != UIInterfaceOrientationMaskPortrait) {
          //不是竖屏 ——> 强制回到横屏
-         APPBaseLandscapeController *landVC = (APPBaseLandscapeController *)[APPAlertTool topViewControllerOfAPP];
-         [landVC exitLandscape];//退出横屏
+         UIViewController *topVC = [APPAlertTool topViewControllerOfAPP];
+         if ([topVC isKindOfClass:[APPBaseLandscapeController class]]) {
+             APPBaseLandscapeController *landVC = (APPBaseLandscapeController *)topVC;
+             [landVC exitLandscape];//退出横屏
+         }
      }
      */
     //最后弹出

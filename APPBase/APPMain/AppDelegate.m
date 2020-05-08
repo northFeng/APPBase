@@ -158,6 +158,10 @@
  2.建议在AppDelegate.h里设置公有属性，通过设置该属性来灵活改变App支持方向。
  3.此方法在shouldAutorotate返回YES时会触发。
  */
+/**
+优酷视频 横竖屏控制解决： APP内所有页面都是 竖屏，VC中代理只返回竖屏值，在需要横屏的地方 则设置 APP代理中 可以旋转三个方向！在横屏的地方，进行 需要横屏的视频页面进行旋转 90度！！
+ 监听 APP旋转——> APP旋转则更改 播放界面 旋转！！（其他不需要横屏的界面，APP代理中任然 只返回竖屏值！！）
+*/
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
     if (self.allowRotate) {
         //三个方向 UIInterfaceOrientationMaskAllButUpsideDown  UIInterfaceOrientationMaskLandscapeRight
