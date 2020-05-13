@@ -37,8 +37,9 @@
     [super viewWillAppear:animated];
     
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-    if (orientation != UIInterfaceOrientationMaskLandscapeRight) {
-        //不是横屏 ——> 横屏
+    if (orientation != UIInterfaceOrientationLandscapeRight) {
+        //不是横屏 ——> 先竖屏 ——>再 横屏
+        [self setScreenInterfaceOrientationDefault];//竖屏
         [self setLandscapeModel];
     }
 }
