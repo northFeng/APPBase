@@ -133,6 +133,18 @@ NS_ASSUME_NONNULL_BEGIN
 ///金钱分转换
 + (NSString *)string_moneyStringToIntegerOrFloatWIthMoney:(NSInteger)moneyInt;
 
+/**
+ 查找子字符串在父字符串中的所有位置
+ @param contentStr 父字符串
+ @param word 子字符串
+ @return 返回位置数组
+ */
++ (NSArray *)string_getCalculateSubStringCount:(NSString *)contentStr str:(NSString *)word;
+
+///获取混合富文本字符串 （搜索显示）
++ (NSAttributedString *)string_getAttributedStringFromContent:(NSString *)content word:(NSString *)word font:(UIFont *)font normalColor:(UIColor *)normalColor selectClocor:(UIColor *)selectColor;
+
+
 #pragma mark - 创建定时器 （一定要在delloc执行之前进行释放定时器，否则定时器不会销毁）
 + (void)timer_createTimerToViewController:(UIViewController *)VCSelf selector:(SEL)aSelector;
 

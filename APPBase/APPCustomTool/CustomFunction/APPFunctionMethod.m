@@ -471,6 +471,82 @@
     return newStr;
 }
 
+/**
+ 查找子字符串在父字符串中的所有位置
+ @param contentStr 父字符串
+ @param word 子字符串
+ @return 返回位置数组
+ */
++ (NSArray *)string_getCalculateSubStringCount:(NSString *)contentStr str:(NSString *)word {
+    
+    NSMutableArray *locationArr = [NSMutableArray new];
+    NSRange range = [contentStr rangeOfString:word];
+    if (range.location == NSNotFound){
+        return locationArr;
+    }
+    //声明一个临时字符串,记录截取之后的字符串
+    NSString *subStr = contentStr;
+    
+    
+//    while (range.location != NSNotFound) {
+//        if (location == 0) {
+//            location += range.location;
+//        } else {
+//            location += range.location + word.length;
+//        }
+//        //记录位置
+//        NSNumber *number = [NSNumber numberWithUnsignedInteger:location];
+//        [locationArr addObject:number];
+//        //每次记录之后,把找到的字串截取掉
+//        subStr = [subStr substringFromIndex:range.location + range.length];
+//
+//        NSLog(@"subStr %@",subStr);
+//        range = [subStr rangeOfString:word];
+//        NSLog(@"rang %@",NSStringFromRange(range));
+//    }
+    
+    NSUInteger location = 0;
+    NSUInteger limNum = 0;
+    
+    while (range.location != NSNotFound) {
+                
+        location = limNum;
+        if (location == 0) {
+            location = range.location;
+        }
+        
+        //记录位置
+        NSNumber *number = [NSNumber numberWithUnsignedInteger:location];
+        [locationArr addObject:number];
+        
+        
+        //每次记录之后,把找到的字串截取掉
+        subStr = [subStr substringFromIndex:range.location + range.length];
+        
+        range = [subStr rangeOfString:word];//截取的字符串 的 新位置
+        
+        limNum = range.location + (location + word.length);
+    }
+    
+    return [locationArr copy];
+}
+
+
+///获取混合富文本字符串 （搜索显示）
++ (NSAttributedString *)string_getAttributedStringFromContent:(NSString *)content word:(NSString *)word font:(UIFont *)font normalColor:(UIColor *)normalColor selectClocor:(UIColor *)selectColor {
+    
+    NSArray *localArray = [self string_getCalculateSubStringCount:content str:word];
+    
+    NSMutableAttributedString *totalString = [[NSMutableAttributedString alloc] initWithString:content attributes:@{NSFontAttributeName:font,NSForegroundColorAttributeName:normalColor}];
+    
+    for (NSNumber *localtionNum in localArray) {
+        
+        [totalString setAttributes:@{NSFontAttributeName:font,NSForegroundColorAttributeName:selectColor} range:NSMakeRange(localtionNum.intValue, word.length)];
+    }
+    
+    return totalString;
+}
+
 #pragma mark - 加载图片 && GIF
 ///加载图片
 + (void)img_setImageWithUrl:(NSString *)url placeholderImage:(NSString *)placeholderImgName imgView:(UIImageView *)imgView{
