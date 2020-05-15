@@ -60,7 +60,7 @@
     
     
     
-    //STS鉴权模式
+    //STS鉴权模式  鉴权模式最后每次都请求 token，因为token会失效
     /**
     OSSFederationToken *token = [OSSFederationToken new];
     token.tAccessKey = [dicOss objectForKey:@"accessKeyId"];
@@ -72,7 +72,7 @@
     //        return token;
     //    }];
         
-    //自签名模式
+    //自签名模式  自签名模式 不需要token，不需要每次都请求接口
     // 移动端建议使用STS方式初始化OSSClient。可以通过sample中STS使用说明了解更多(https://github.com/aliyun/aliyun-oss-ios-sdk/tree/master/DemoByOC)
     id <OSSCredentialProvider> credential = [[OSSCustomSignerCredentialProvider alloc] initWithImplementedSigner:^NSString *(NSString *contentToSign, NSError *__autoreleasing *error) {
         // 您需要在这里依照OSS规定的签名算法，实现加签一串字符内容，并把得到的签名传拼接上AccessKeyId后返回

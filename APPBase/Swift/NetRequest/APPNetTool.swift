@@ -367,4 +367,9 @@ class APPNetTool {
             block(false, HTTPErrorOthersMessage, 99)
         }
     }
+    
+    
+    //MARK: ************************* 封装AFNetworking *************************
+    
+    
 }
