@@ -281,7 +281,18 @@ class APPNetTool {
         AFSession.request(url, method: method, parameters: parameters).responseJSON { response in
             switch response.result {
             case .success:
-                
+
+                //AFDataResponse
+                /**
+                 if let data = response.data {
+                             
+                     success(data,100)
+                 }
+                 print(response.request)  // original URL request
+                 print(response.response) // HTTP URL response
+                 print(response.data)     // server data
+                 print(response.result)   // result of response serialization
+                 */
                 print("Validation Successful")
             case let .failure(error):
                 print(error)
@@ -318,7 +329,7 @@ class APPNetTool {
         
         let httpUrl:String = APPKeyInfo.hostURL().appending(url)
         
-        self .getData(url: httpUrl, params: params, success: { (response, code) in
+        self.getData(url: httpUrl, params: params, success: { (response, code) in
             
             let jsonData:[String:Any] = response as! [String:Any]
             
@@ -345,7 +356,7 @@ class APPNetTool {
         
         let httpUrl:String = APPKeyInfo.hostURL().appending(url)
         
-        self .postData(url: httpUrl, params: params, success: { (response, code) in
+        self.postData(url: httpUrl, params: params, success: { (response, code) in
             
             let jsonData:[String:Any] = response as! [String:Any]
             
@@ -368,8 +379,66 @@ class APPNetTool {
         }
     }
     
-    
+    //pod 'Networking', '~> 4'  https://github.com/3lvis/Networking
     //MARK: ************************* 封装AFNetworking *************************
+    class func getNetDicData_oc(url:String, params:[String:Any], block:@escaping NetResultData) {
+        
+        let httpUrl:String = APPKeyInfo.hostURL().appending(url)
+        
+        APPHttpTool.getRequestNetDicDataUrl(httpUrl, params: params) { (result:Bool, idObject:Any, code:Int) in
+            
+            block(result, idObject, code);//逃逸闭包注意 循环引用
+        }
+    }
     
+    class func postNetDicData_oc(url:String, params:[String:Any], block:@escaping NetResultData) {
+        
+        let httpUrl:String = APPKeyInfo.hostURL().appending(url)
+       
+        APPHttpTool.postRequestNetDicDataUrl(httpUrl, params: params) { (result:Bool, idObject:Any, code:Int) in
+            
+            block(result, idObject, code);
+        }
+    }
+    
+    /**
+     逃逸闭包：@escaping  1>函数内的 【闭包(函数)】 去外部执行  2>函数的  【闭包(函数)】异步执行  —> 加 @escaping 进行修饰 “考虑循环引用”，逃逸闭包内需要 【显式引用self】、非逃逸闭包可以 【隐式引用】
+
+     当一个闭包作为参数传到一个函数中，但是这个闭包在函数返回之后才被执行，我们称该闭包从函数中逃逸。当你定义接受闭包作为参数的函数时，你可以在参数名之前标注 @escaping，用来指明这个闭包是允许“逃逸”出这个函数的。
+
+     一种能使闭包“逃逸”出函数的方法是，将这个闭包保存在一个函数外部定义的变量中。举个例子，很多启动异步操作的函数接受一个闭包参数作为 completion handler。这类函数会在异步操作开始之后立刻返回，但是闭包直到异步操作结束后才会被调用。在这种情况下，闭包需要“逃逸”出函数，因为闭包需要在函数返回之后被调用。
+     
+     例子：
+     var completionHandlers: [() -> Void] = []
+     func someFunctionWithEscapingClosure(completionHandler: @escaping () -> Void) {
+         completionHandlers.append(completionHandler)
+     }
+     
+     class SomeClass {
+         var x = 10
+         func doSomething() {
+             someFunctionWithEscapingClosure { self.x = 100 } //显式引用self
+             someFunctionWithNonescapingClosure { x = 200 } //隐式引用
+         }
+     }
+     
+     自动闭包：@autoclosure
+     自动闭包是一种自动创建的闭包，用于包装传递给函数作为参数的表达式。这种闭包不接受任何参数，当它被调用的时候，会返回被包装在其中的表达式的值。这种便利语法让你能够省略闭包的花括号，用一个普通的表达式来代替显式的闭包。
+     var customersInLine = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+     print(customersInLine.count)
+     // 打印出 "5"
+
+     let customerProvider = { customersInLine.remove(at: 0) }
+     print(customersInLine.count)
+     // 打印出 "5"
+
+     print("Now serving \(customerProvider())!")
+     // Prints "Now serving Chris!"
+     print(customersInLine.count)
+     // 打印出 "4"
+
+     作者：小驴拉磨
+     链接：https://www.jianshu.com/p/d386392fa8c0
+     */
     
 }

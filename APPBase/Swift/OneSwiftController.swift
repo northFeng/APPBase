@@ -40,7 +40,7 @@ class OneSwiftController: APPBaseController {
             let jsonData:[String:Any] = idObject as! [String:Any]
             
             APPAlertTool.hideLoading()
-            AlertMessage(msg: "回调完数据")
+            AlertMessage(msg: "回调完数据\(jsonData)")
         }
         
         self.title = "SwiftOne"

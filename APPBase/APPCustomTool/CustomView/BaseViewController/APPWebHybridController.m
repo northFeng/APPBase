@@ -361,6 +361,9 @@
     _configuration = [[WKWebViewConfiguration alloc] init];
     //禁止H5视屏自动播放,并且全屏
     _configuration.allowsInlineMediaPlayback = YES;
+    if (@available(iOS 10.0, *)) {
+        _configuration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeNone;
+    }
     
     CGRect rect = CGRectMake(0, kTopNaviBarHeight, kScreenWidth, kScreenHeight - kTopNaviBarHeight);
     
