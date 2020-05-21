@@ -49,7 +49,7 @@ static NSString *const baiduAK = @"kwgHEFkZ7UlpFanRZwyBGBFemv4lbXGX";
 ///获取App Store商店地址
 + (NSString *)getAppStoreUrlString{
     
-    NSString *urlString = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@",APPId];
+    NSString *urlString = [NSString stringWithFormat:@"https://itunes.apple.com/app/id%@",APPId];//itms-apps://itunes.apple.com/app/id%@
     return urlString;
 }
 

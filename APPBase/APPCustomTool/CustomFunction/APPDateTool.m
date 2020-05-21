@@ -46,6 +46,20 @@
     return nowStamp;
 }
 
+///获取当前时间戳 && 精度1000毫秒 1000000微妙
++ (NSString *)date_getNowTimeStampStringWithPrecision:(NSInteger)precision {
+    
+    NSDate *date = [NSDate date];
+    
+    NSTimeInterval nowTime = date.timeIntervalSince1970 * precision;
+    
+    NSString *timeStr = [NSString stringWithFormat:@"%f",nowTime];
+    
+    NSArray *arrayTime = [timeStr componentsSeparatedByString:@"."];
+        
+    return [arrayTime firstObject];
+}
+
 ///把日期数字换换成 年月日
 + (NSString *)date_getTimeString:(NSString *)timeString{
     //,[timeString substringWithRange:NSMakeRange(6, 2)]

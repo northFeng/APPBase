@@ -279,24 +279,27 @@ class APPNetTool {
     func requestData(method:HTTPMethod, url:String, parameters:[String:Any], success:NetSuccess, fail:NetFailure) {
         
         AFSession.request(url, method: method, parameters: parameters).responseJSON { response in
-            switch response.result {
-            case .success:
+            
+            /**
+             switch response.result {
+             case .success:
 
-                //AFDataResponse
-                /**
-                 if let data = response.data {
-                             
-                     success(data,100)
-                 }
-                 print(response.request)  // original URL request
-                 print(response.response) // HTTP URL response
-                 print(response.data)     // server data
-                 print(response.result)   // result of response serialization
-                 */
-                print("Validation Successful")
-            case let .failure(error):
-                print(error)
-            }
+                 //AFDataResponse
+                 /**
+                  if let data = response.data {
+                              
+                      success(data,100)
+                  }
+                  print(response.request)  // original URL request
+                  print(response.response) // HTTP URL response
+                  print(response.data)     // server data
+                  print(response.result)   // result of response serialization
+                  */
+                 print("Validation Successful")
+             case let .failure(error):
+                 print(error)
+             }
+             */
         }
     }
     
