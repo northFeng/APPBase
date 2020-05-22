@@ -36,6 +36,7 @@
     [_backView addSubview:_label];
     
     _imgeView = [[UIImageView alloc] init];
+    _imgeView.contentMode = UIViewContentModeScaleAspectFit;
     _imgeView.backgroundColor = [UIColor clearColor];
     _imgeView.image = [UIImage imageNamed:imgStr];
     [_backView addSubview:_imgeView];
