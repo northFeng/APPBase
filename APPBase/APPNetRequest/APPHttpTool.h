@@ -297,6 +297,9 @@ typedef void(^APPNetworkTaskFailBlock)(NSURLSessionDataTask *task, NSError *erro
 ///JSON转模型
 + (id)modelClass:(Class)class withJSONData:(id)json;
 
+///获取字典
++ (NSDictionary *)dictionaryWithJSOn:(id)json;
+
 @end
 
 

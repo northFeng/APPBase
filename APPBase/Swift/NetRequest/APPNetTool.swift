@@ -386,9 +386,9 @@ class APPNetTool {
     //MARK: ************************* 封装AFNetworking *************************
     class func getNetDicData_oc(url:String, params:[String:Any], block:@escaping NetResultData) {
         
-        let httpUrl:String = APPKeyInfo.hostURL().appending(url)
+        //let httpUrl:String = APPKeyInfo.hostURL().appending(url)
         
-        APPHttpTool.getRequestNetDicDataUrl(httpUrl, params: params) { (result:Bool, idObject:Any, code:Int) in
+        APPHttpTool.getRequestNetDicDataUrl(url, params: params) { (result:Bool, idObject:Any, code:Int) in
             
             block(result, idObject, code);//逃逸闭包注意 循环引用
         }
@@ -396,9 +396,9 @@ class APPNetTool {
     
     class func postNetDicData_oc(url:String, params:[String:Any], block:@escaping NetResultData) {
         
-        let httpUrl:String = APPKeyInfo.hostURL().appending(url)
+        //let httpUrl:String = APPKeyInfo.hostURL().appending(url)
        
-        APPHttpTool.postRequestNetDicDataUrl(httpUrl, params: params) { (result:Bool, idObject:Any, code:Int) in
+        APPHttpTool.postRequestNetDicDataUrl(url, params: params) { (result:Bool, idObject:Any, code:Int) in
             
             block(result, idObject, code);
         }

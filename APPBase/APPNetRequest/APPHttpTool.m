@@ -27,7 +27,7 @@
 @end
 
 ///自定义返回数据code
-NSInteger const resultCode = 200;
+NSInteger const resultCode = 20000;
 
 ///请求失败 Error 错误信息
 HTTPErrorMessage const HTTPErrorCancleMessage = @"请求被取消";
@@ -93,6 +93,16 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
                                                                                   @"text/xml",
                                                                                   @"image/*"]];
     }
+    
+    //审核期间 ——>版本号与线上版本号不同，只有审核期间的版本号 才会走测试登录
+    [_afNetManager.requestSerializer setValue:APPLoacalInfo.appVerion forHTTPHeaderField:@"appversion"];
+    
+    //APP类型
+    [_afNetManager.requestSerializer setValue:@"ios" forHTTPHeaderField:@"type"];
+    
+    //时间戳
+    [_afNetManager.requestSerializer setValue:[NSString stringWithFormat:@"%ld",(long)[APPDateTool date_getNowTimeStampWithPrecision:1000]] forHTTPHeaderField:@"timestamp"];
+    
     return _afNetManager;
 }
 
@@ -141,17 +151,16 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         NSLog(@"请求结果=%@",responseObject);
         
         if (success) {
-            NSInteger code = [responseObject[@"status"] integerValue];
+            NSInteger code = [responseObject[@"code"] integerValue];
+            success(responseObject,code);
             
             //后台协商进行用户登录异常提示 && 强制用户退出
-            if (code == 300) {
+            if (code == 20019) {
                 
                 //用户登录过期 && 执行退出
                 [[APPManager sharedInstance] forcedExitUserWithShowControllerItemIndex:2];
                 
             }
-            
-            success(responseObject,code);
         }
         
     } failCompletion:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
@@ -453,7 +462,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
     
     [APPHttpTool getWithUrl:HTTPURL(url) params:params success:^(id response, NSInteger code) {
         
-        NSString *errorMessage = [response objectForKey:@"msg"];
+        NSString *errorMessage = [response objectForKey:@"message"];
         //id dataDic = [response objectForKey:@"data"];
         
         id dataDic = [response objectForKey:@"data"];
@@ -639,6 +648,26 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         NSLog(@"数据解析错误：%@",exception.reason);
         return nil;
     }
+}
+
+///获取字典
++ (NSDictionary *)dictionaryWithJSOn:(id)json {
+    
+    if (!json || json == (id)kCFNull) return nil;
+    NSDictionary *dic = nil;
+    NSData *jsonData = nil;
+    if ([json isKindOfClass:[NSDictionary class]]) {
+        dic = json;
+    } else if ([json isKindOfClass:[NSString class]]) {
+        jsonData = [(NSString *)json dataUsingEncoding : NSUTF8StringEncoding];
+    } else if ([json isKindOfClass:[NSData class]]) {
+        jsonData = json;
+    }
+    if (jsonData) {
+        dic = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:NULL];
+        if (![dic isKindOfClass:[NSDictionary class]]) dic = nil;
+    }
+    return dic;
 }
 
 @end

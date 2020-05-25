@@ -27,21 +27,14 @@ class OneSwiftController: APPBaseController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-              
-
-        APPAlertTool.showLoading(on: self.view)
-        
-        APPHttpTool.getRequestNetDicDataUrl("", params: Dictionary()) { (result:Bool, idObject:Any, code:NSInteger) in
-            
-        }
-        
-        APPHttpTool.getRequestNetDicDataUrl("version/latest?platform=1", params:Dictionary()) { (result:Bool, idObject:Any, code:NSInteger) in
-            
-            let jsonData:[String:Any] = idObject as! [String:Any]
-            
-            APPAlertTool.hideLoading()
-            AlertMessage(msg: "回调完数据\(jsonData)")
-        }
+    
+//        APPHttpTool.getRequestNetDicDataUrl("version/latest?platform=1", params:Dictionary()) { (result:Bool, idObject:Any, code:NSInteger) in
+//
+//            let jsonData:[String:Any] = idObject as! [String:Any]
+//
+//            APPAlertTool.hideLoading()
+//            AlertMessage(msg: "回调完数据\(jsonData)")
+//        }
         
         self.title = "SwiftOne"
                 
@@ -74,13 +67,19 @@ class OneSwiftController: APPBaseController {
     
     @objc func onClickButton(button:UIButton) {
         
-        blockAAAAAA { (sucess, idObject) in
-            print("结果\(sucess):\(idObject)")
+        APPNetTool.getNetDicData_oc(url: "v2/front/tag/getTagList", params: ["tagType":1]) { (result:Bool, idObject:Any, code:Int) in
+            if result {
+                let arrayJson:[AnyObject] = idObject as! [AnyObject]
+                
+                Print("请求结果--->\(arrayJson)")
+            } else {
+                Print("请求出错--->\(idObject)")
+            }
         }
     }
     
     func blockAAAAAA(block:APPBackClosure) {
-        block(true,"反反复复")
+
     }
     
 }

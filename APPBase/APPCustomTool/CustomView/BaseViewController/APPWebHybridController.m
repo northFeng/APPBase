@@ -124,7 +124,7 @@
      iosSendLocalInfo('%@')
      
      //支付
-     window.webkit.messageHandlers.wxPay.postMessage({body: '后台拼接字符串'});
+     window.webkit.messageHandlers.wxPay.postMessage({body: '后台拼接字符串'}); // JSON 字符串
      iosSendPayInfo('%@')
      
      */
