@@ -404,6 +404,20 @@ class APPNetTool {
         }
     }
     
+    ///模型转换
+    class func jsonToModel(json:AnyObject, class:AnyClass) -> AnyObject {
+        
+        if json is [String:Any] {
+            //字典
+            //json.kj.model(class.self)
+            
+        } else if json is [Any] {
+            //数组
+        } else {
+            
+        }
+    }
+    
     /**
      逃逸闭包：@escaping  1>函数内的 【闭包(函数)】 去外部执行  2>函数的  【闭包(函数)】异步执行  —> 加 @escaping 进行修饰 “考虑循环引用”，逃逸闭包内需要 【显式引用self】、非逃逸闭包可以 【隐式引用】
 

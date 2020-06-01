@@ -670,4 +670,21 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
     return dic;
 }
 
+/**
+ 1.字符串转字典
+
+ NSString * jsonString = @"";
+
+ NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+
+ NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
+
+ 2.字典转字符串
+
+ // NSJSONWritingPrettyPrinted 转换的字符串有\n   NSJSONWritingSortedKeys:转换的没有\n
+ SData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+
+ NSString * str = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+ */
+
 @end
