@@ -155,6 +155,23 @@ NSString * const KEY_UDID_INSTEAD = @"com.appBase.udid";
 ///App Store商店版本号
 + (NSString *)appStoreVersion{
     //http://itunes.apple.com/lookup?id=%@   //全球
+    
+    /** https://www.jianshu.com/p/aad031a0bb52
+     
+     利用 iTunes Search API 获取 app 信息
+
+     其中一种方法是根据 app 的 id 来查找：
+     http://itunes.apple.com/lookup?id=appId (appId为应用 id)
+     或者
+     http://itunes.apple.com/lookup?bundleId=bundleId (bundleId为应用的 BundleId)
+
+     如果你的应用是在全世界范围内销售的话, 用上面的是没问题的
+     但是,如果仅仅是在部分地区, 比如只在中国商店提供下载,就需要在路径是加上国家的缩写 cn.
+     http://itunes.apple.com/cn/lookup?id=appId (appId为应用 id)
+     同理, 利用 bundleId 获取也是一样的, 路径上需要加上地区 cn.
+     http://itunes.apple.com/cn/lookup?bundleId=bundleId (bundleId为应用的 BundleId)
+     否则你将会得到一个 results : [] 的结果
+     */
     NSString *url = [NSString stringWithFormat:@"http://itunes.apple.com/cn/lookup?id=%@",[APPKeyInfo getAppId]];//中国
     
     NSString *appStoreVersion = @"";
