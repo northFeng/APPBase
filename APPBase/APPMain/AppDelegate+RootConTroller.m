@@ -87,6 +87,7 @@
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
+        //方法一  以APP商店为标准
         NSString *appStoreVerson = [APPLoacalInfo judgeIsHaveUpdate];
         if (appStoreVerson.length) {
             //App Store上有新版本
@@ -110,6 +111,39 @@
                 }
             }];
         }
+        
+        
+        /**
+         //方法2
+         [APPHttpTool getRequestNetDicDataUrl:@"v2/front/upgrade" params:@{@"clinentUpdateType":@(2)} WithBlock:^(BOOL result, id  _Nonnull idObject, NSInteger code) {
+             if (result) {
+                 NSDictionary *newVersionInfo = ((NSDictionary *)idObject)[@"upgrade"];
+
+                 NSString *netVerson = newVersionInfo[@"version"];//服务器版本
+                 
+                 if (kObjectEntity(netVerson)) {
+                     
+                     [APPManager sharedInstance].appstoreVersion = netVerson;
+             
+                     NSString *appLocalVerson = [APPLoacalInfo appVerion];//本地APP版本号
+                     
+                     BOOL isHaveUpdate = [APPLoacalInfo compareTheTwoVersionsAPPVerson:netVerson localVerson:appLocalVerson];
+                     
+                     if (isHaveUpdate) {
+                         //新版本
+                         //提示更新弹框
+                         dispatch_async(dispatch_get_main_queue(), ^{
+                             //有新版本 && 进行提示
+                             //[APPVersionAlertView showVersonUpdateAlertViewWithVersonInfo:newVersionInfo];
+
+                         });
+                     }
+                 }
+             }
+         }];
+         */
+        
+
     });
     
 }
