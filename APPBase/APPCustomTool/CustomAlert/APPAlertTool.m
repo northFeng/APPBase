@@ -250,6 +250,19 @@
 
 #pragma mark - ************************* 自定义消息确认弹框 *************************
 
+///去掉view上的自定义弹框
++ (void)removeAllAlertViewFromSuperView:(UIView *)superView {
+    
+    //隐藏掉提示未搜索到弹框
+    NSArray *arrayViews = [superView subviews];
+    for (UIView *subView in arrayViews) {
+        if ([subView isKindOfClass:[APPAlertView class]]) {
+            subView.hidden = YES;
+            [subView removeFromSuperview];
+        }
+    }
+}
+
 ///自定义消息确定框
 + (void)showAlertCustomMessage:(NSString *)message okBlock:(APPBackBlock)block{
     

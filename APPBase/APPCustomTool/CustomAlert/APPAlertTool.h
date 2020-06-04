@@ -58,6 +58,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 #pragma mark - 自定义消息确认弹框
+
+///去掉view上的自定义弹框
++ (void)removeAllAlertViewFromSuperView:(UIView *)superView;
+
 /**
  *  @brief 一 ：自定义消息 + 确定回调
  *
