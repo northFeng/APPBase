@@ -116,9 +116,12 @@
 - (void)uploadToOSSWithData:(NSData *)upData upId:(NSString *)upId blockResult:(APPBackBlock)blockResult {
     
     OSSPutObjectRequest *put = [[OSSPutObjectRequest alloc] init];
+    
+    //配置必填字段，其中bucketName为存储空间名称；objectKey等同于objectName，表示将文件上传到OSS时需要指定包含文件后缀在内的完整路径，例如abc/efg/123.jpg。
+    put.bucketName = @"<bucketName>";
     put.bucketName = [_dicOss objectForKey:@"bucketName"];
     put.objectKey = upId;//"folder/subfolder/fileName"  fileName为文字名， / 前面 都是路径
-    //put.contentType = @"application/octet-stream"; 默认类型
+    //put.contentType = @"application/octet-stream"; 默认类型  //音频类型 @"audio/mp3" 否则上传的链接为下载链接不能在线播放
     
     put.uploadingData = upData;// 直接上传NSData
     
