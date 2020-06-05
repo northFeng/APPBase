@@ -59,6 +59,9 @@
 		839CDC9F2411193D00617294 /* APPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839CDC9E2411193D00617294 /* APPRequest.swift */; };
 		83A1E785238F6B6A0020F626 /* APPDateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A1E783238F6B6A0020F626 /* APPDateTool.m */; };
 		83A2658D241CE40600F4B6EB /* APPNetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2658C241CE40600F4B6EB /* APPNetTool.swift */; };
+		83B2D4992489EAF0002113D8 /* GKPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B2D4932489EAF0002113D8 /* GKPageControl.m */; };
+		83B2D49A2489EAF0002113D8 /* GKCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B2D4972489EAF0002113D8 /* GKCycleScrollView.m */; };
+		83B2D49B2489EAF0002113D8 /* GKCycleScrollViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B2D4982489EAF0002113D8 /* GKCycleScrollViewCell.m */; };
 		83B594892372CDF600B7514E /* APPDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B594882372CDF600B7514E /* APPDataBase.m */; };
 		83B594AC23755D3900B7514E /* 分页查找.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 83B594AB23755D3900B7514E /* 分页查找.jpeg */; };
 		83BC18CE2407A698005A056D /* APPWebHybridController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BC18CD2407A698005A056D /* APPWebHybridController.m */; };
@@ -238,6 +241,12 @@
 		83A1E783238F6B6A0020F626 /* APPDateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPDateTool.m; sourceTree = "<group>"; };
 		83A1E784238F6B6A0020F626 /* APPDateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPDateTool.h; sourceTree = "<group>"; };
 		83A2658C241CE40600F4B6EB /* APPNetTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPNetTool.swift; sourceTree = "<group>"; };
+		83B2D4932489EAF0002113D8 /* GKPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPageControl.m; sourceTree = "<group>"; };
+		83B2D4942489EAF0002113D8 /* GKCycleScrollViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCycleScrollViewCell.h; sourceTree = "<group>"; };
+		83B2D4952489EAF0002113D8 /* GKPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPageControl.h; sourceTree = "<group>"; };
+		83B2D4962489EAF0002113D8 /* GKCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCycleScrollView.h; sourceTree = "<group>"; };
+		83B2D4972489EAF0002113D8 /* GKCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKCycleScrollView.m; sourceTree = "<group>"; };
+		83B2D4982489EAF0002113D8 /* GKCycleScrollViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKCycleScrollViewCell.m; sourceTree = "<group>"; };
 		83B594872372CDF600B7514E /* APPDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPDataBase.h; sourceTree = "<group>"; };
 		83B594882372CDF600B7514E /* APPDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPDataBase.m; sourceTree = "<group>"; };
 		83B594AB23755D3900B7514E /* 分页查找.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "分页查找.jpeg"; sourceTree = "<group>"; };
@@ -424,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				147E502D2351FBCA00C2309B /* APPThirdHeader.h */,
+				83B2D4922489EA2A002113D8 /* CardView */,
 				832DD2CC24320A9500AD3FF1 /* CollectionRefresh */,
 				83987FE5241242C800A71FC4 /* VideoPlayer */,
 				83987FCF241242C100A71FC4 /* AudioPlayer */,
@@ -617,6 +627,19 @@
 				839CDC9E2411193D00617294 /* APPRequest.swift */,
 			);
 			path = NetRequest;
+			sourceTree = "<group>";
+		};
+		83B2D4922489EA2A002113D8 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				83B2D4962489EAF0002113D8 /* GKCycleScrollView.h */,
+				83B2D4972489EAF0002113D8 /* GKCycleScrollView.m */,
+				83B2D4942489EAF0002113D8 /* GKCycleScrollViewCell.h */,
+				83B2D4982489EAF0002113D8 /* GKCycleScrollViewCell.m */,
+				83B2D4952489EAF0002113D8 /* GKPageControl.h */,
+				83B2D4932489EAF0002113D8 /* GKPageControl.m */,
+			);
+			path = CardView;
 			sourceTree = "<group>";
 		};
 		83B594862372CDBD00B7514E /* FMDB */ = {
@@ -1181,6 +1204,7 @@
 				8DAB5E3C21AB976C009662D5 /* APPUserInfoModel.m in Sources */,
 				8DAB5EE521AB98A6009662D5 /* APPVersionAlert.m in Sources */,
 				8DAB5F0A21AB9954009662D5 /* FRLoginManager.m in Sources */,
+				83B2D49B2489EAF0002113D8 /* GKCycleScrollViewCell.m in Sources */,
 				8DAB5ECB21AB9882009662D5 /* ExampleViewController.m in Sources */,
 				8DAB5E3D21AB976C009662D5 /* APPLoacalInfo.m in Sources */,
 				832DD2D924320A9500AD3FF1 /* UICollectionView+SideRefresh.m in Sources */,
@@ -1215,10 +1239,12 @@
 				83987FF4241242C800A71FC4 /* APPVideoListView.m in Sources */,
 				8DAB5EF121AB98CD009662D5 /* APPModel.m in Sources */,
 				8DAB5ED221AB9895009662D5 /* GFNavigationBarView.m in Sources */,
+				83B2D49A2489EAF0002113D8 /* GKCycleScrollView.m in Sources */,
 				1428088C2351C5B800D24D08 /* APPNoDataView.m in Sources */,
 				142808952351CAC900D24D08 /* APPFileManager.m in Sources */,
 				83072546242871FE005D049E /* NSObject+Auth.m in Sources */,
 				83072545242871FE005D049E /* UIView+Alert.m in Sources */,
+				83B2D4992489EAF0002113D8 /* GKPageControl.m in Sources */,
 				832DD2DD24320A9500AD3FF1 /* SideRefresh.m in Sources */,
 				8DAB5E3A21AB976C009662D5 /* APPManager.m in Sources */,
 				839CDC9F2411193D00617294 /* APPRequest.swift in Sources */,
