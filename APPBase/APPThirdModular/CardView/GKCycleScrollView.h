@@ -129,3 +129,115 @@ typedef NS_ENUM(NSUInteger, GKCycleScrollViewScrollDirection) {
 - (void)stopTimer;
 
 @end
+
+
+#pragma mark - ************************* 用法 *************************
+/**
+ //创建视图
+ - (void)createView{
+     
+     self.backgroundColor = DynamicColor(APPColorFunction.tableBgColor, APPColorFunction.blackColor);
+     
+     
+     // 缩放样式：Masonry布局，自定义尺寸，无限轮播
+     _scorllView = [[GKCycleScrollView alloc] init];
+     _scorllView.isAutoScroll = NO;//不自动滚动
+     _scorllView.isInfiniteLoop = NO;//不无线循环
+     _scorllView.dataSource = self;
+     _scorllView.delegate = self;
+     _scorllView.minimumCellAlpha = 0.0;
+     _scorllView.leftRightMargin = FitIpad(20);//两边间隙
+     _scorllView.topBottomMargin = FitIpad(20);//两边距离顶部/底部距离
+     [self addSubview:_scorllView];
+     _scorllView.sd_layout.leftEqualToView(self).rightEqualToView(self).topSpaceToView(self, kScaleH*23).heightIs(377*kScaleW);
+     
+     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+         [self.scorllView reloadData];//必须刷新
+     });
+ }
+
+ #pragma mark - ************************* 卡片代理 *************************
+ - (NSInteger)numberOfCellsInCycleScrollView:(GKCycleScrollView *)cycleScrollView {
+     return 10;
+ }
+
+ - (GKCycleScrollViewCell *)cycleScrollView:(GKCycleScrollView *)cycleScrollView cellForViewAtIndex:(NSInteger)index {
+     
+     CBInvitePostersCell *cell = (CBInvitePostersCell *)[cycleScrollView dequeueReusableCell];
+     if (!cell) {
+         cell = [CBInvitePostersCell new];
+         cell.layer.cornerRadius = FitIpad(20);
+         cell.layer.masksToBounds = YES;
+     }
+     
+     cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
+     
+     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:@"http://t7.baidu.com/it/u=3616242789,1098670747&fm=79&app=86&f=JPEG?w=900&h=1350"]];
+     
+     return cell;
+ }
+
+ #pragma mark - GKCycleScrollViewDelegate
+ - (CGSize)sizeForCellInCycleScrollView:(GKCycleScrollView *)cycleScrollView {
+     return CGSizeMake(212*kScaleW, 377*kScaleW);
+ }
+
+
+ - (void)cycleScrollView:(GKCycleScrollView *)cycleScrollView didScrollCellToIndex:(NSInteger)index {
+     
+ }
+
+ - (void)cycleScrollView:(GKCycleScrollView *)cycleScrollView didEndDecelerating:(UIScrollView *)scrollView {
+ }
+
+
+
+ @end
+
+ #pragma mark - ************************* 自定义卡片CBInvitePostersCell *************************
+ @implementation CBInvitePostersCell
+ {
+     UIImageView *_userImg;
+     
+     UILabel *_nameLabel;
+     
+     UIImageView *_codeImg;
+ }
+
+ - (instancetype)initWithFrame:(CGRect)frame {
+     
+     if (self = [super initWithFrame:frame]) {
+                 
+         [self createView];
+     }
+     return self;
+ }
+
+ - (void)createView {
+     
+     _userImg = [APPViewTool view_createImageViewWithImageName:@"placeholder_icon"];
+     _userImg.layer.cornerRadius = FitIpad(13);
+     _userImg.layer.masksToBounds = YES;
+     _userImg.layer.borderWidth = FitIpad(2);
+     _userImg.layer.borderColor = APPColorFunction.whiteColor.CGColor;
+     [self addSubview:_userImg];
+     
+     _nameLabel = [APPViewTool view_createLabelWithText:@"土豆君" font:kFontOfCustom(kMediumFont, FitIpad(10)) textColor:APPColorFunction.whiteColor textAlignment:(NSTextAlignmentLeft)];
+     [self addSubview:_nameLabel];
+     
+     _codeImg = [APPViewTool view_createImageViewWithImageName:@"placeholder_icon"];
+     _codeImg.layer.cornerRadius = FitIpad(8);
+     _codeImg.layer.masksToBounds = YES;
+     [self addSubview:_codeImg];
+     
+     _userImg.sd_layout.leftSpaceToView(self, 9*kScaleW).topSpaceToView(self, 9*kScaleW).widthIs(FitIpad(26)).heightIs(FitIpad(26));
+     _nameLabel.sd_layout.centerYEqualToView(_userImg).leftSpaceToView(_userImg, 8*kScaleW).heightIs(FitIpad(15)).rightSpaceToView(self, 100);
+     _codeImg.sd_layout.rightSpaceToView(self, 7*kScaleW).bottomSpaceToView(self, 10*kScaleW).widthIs(FitIpad(64)).heightIs(FitIpad(64));
+ }
+
+
+
+
+ @end
+
+ */
