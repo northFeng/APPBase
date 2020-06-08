@@ -406,16 +406,17 @@ class APPNetTool {
     
     ///模型转换
     class func jsonToModel(json:AnyObject, class:AnyClass) -> AnyObject {
-        
+
         if json is [String:Any] {
             //字典
             //json.kj.model(class.self)
-            
+
         } else if json is [Any] {
             //数组
         } else {
-            
+
         }
+        return [] as AnyObject
     }
     
     /**

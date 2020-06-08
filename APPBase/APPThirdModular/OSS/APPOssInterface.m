@@ -8,12 +8,15 @@
 
 #import "APPOssInterface.h"
 
-#import <AliyunOSSiOS/OSSService.h>
+//#import <AliyunOSSiOS/OSSService.h>
 
 @implementation APPOssInterface
 {
     ///OSS阿里云上传客户端对象（client的生命周期必须和应用的生命周期要保持一直。）
-    OSSClient *_ossClient;//请保持OSSClient对象和app的生命周期一致。如果有多个endpoint的话，就创建多个client就可以。
+    
+    /** 注销！
+     OSSClient *_ossClient;//请保持OSSClient对象和app的生命周期一致。如果有多个endpoint的话，就创建多个client就可以。
+     */
     
     NSDictionary *_dicOss;//信息
 }
@@ -35,7 +38,8 @@
 ///获取
 - (void)getOSSClientWithBlock:(APPBackBlock)blockClient {
     
-    if (!_ossClient) {
+    //!_ossClient
+    if (1) {
         //client不存在
         /**
         [[CBConfigurationData shareInstance] getDataConfigurationWithType:CBConfugurationType_oss blockResult:^(BOOL result, id idObject, NSInteger code) {
@@ -74,27 +78,30 @@
         
     //自签名模式  自签名模式 不需要token，不需要每次都请求接口
     // 移动端建议使用STS方式初始化OSSClient。可以通过sample中STS使用说明了解更多(https://github.com/aliyun/aliyun-oss-ios-sdk/tree/master/DemoByOC)
-    id <OSSCredentialProvider> credential = [[OSSCustomSignerCredentialProvider alloc] initWithImplementedSigner:^NSString *(NSString *contentToSign, NSError *__autoreleasing *error) {
-        // 您需要在这里依照OSS规定的签名算法，实现加签一串字符内容，并把得到的签名传拼接上AccessKeyId后返回
-        // 一般实现是，将字符内容post到您的业务服务器，然后返回签名
-        // 如果因为某种原因加签失败，描述error信息后，返回nil
-        NSString *signature = [OSSUtil calBase64Sha1WithData:contentToSign withSecret:[dicOss objectForKey:@"accessKeySecret"]];//这里是用SDK内的工具函数进行本地加签，建议您通过业务server实现远程加签
-        if (signature != nil) {
-            *error = nil;
-        } else {
-            *error = [NSError errorWithDomain:@"<your domain>" code:-1001 userInfo:@{}];
-            return nil;
-        }
-        return [NSString stringWithFormat:@"OSS %@:%@", [dicOss objectForKey:@"accessKeyId"], signature];
-    }];
     
-    
-    //if (!_ossClient) {
-        //上传阿里云服务器
-        NSString *endpoint = [dicOss objectForKey:@"endpoint"];//endpoint = "oss-cn-beijing.aliyuncs.com";  host = "http://w-y-audio.wdkid.net";
-        _ossClient = [[OSSClient alloc] initWithEndpoint:endpoint credentialProvider:credential];
-    //}
-    _ossClient.credentialProvider = credential;//更新这个属性
+    /** 注销！
+     id <OSSCredentialProvider> credential = [[OSSCustomSignerCredentialProvider alloc] initWithImplementedSigner:^NSString *(NSString *contentToSign, NSError *__autoreleasing *error) {
+         // 您需要在这里依照OSS规定的签名算法，实现加签一串字符内容，并把得到的签名传拼接上AccessKeyId后返回
+         // 一般实现是，将字符内容post到您的业务服务器，然后返回签名
+         // 如果因为某种原因加签失败，描述error信息后，返回nil
+         NSString *signature = [OSSUtil calBase64Sha1WithData:contentToSign withSecret:[dicOss objectForKey:@"accessKeySecret"]];//这里是用SDK内的工具函数进行本地加签，建议您通过业务server实现远程加签
+         if (signature != nil) {
+             *error = nil;
+         } else {
+             *error = [NSError errorWithDomain:@"<your domain>" code:-1001 userInfo:@{}];
+             return nil;
+         }
+         return [NSString stringWithFormat:@"OSS %@:%@", [dicOss objectForKey:@"accessKeyId"], signature];
+     }];
+     
+     
+     //if (!_ossClient) {
+         //上传阿里云服务器
+         NSString *endpoint = [dicOss objectForKey:@"endpoint"];//endpoint = "oss-cn-beijing.aliyuncs.com";  host = "http://w-y-audio.wdkid.net";
+         _ossClient = [[OSSClient alloc] initWithEndpoint:endpoint credentialProvider:credential];
+     //}
+     _ossClient.credentialProvider = credential;//更新这个属性
+     */
 }
 
 #pragma mark - ************************* 上传OSS数据 *************************
@@ -115,40 +122,42 @@
 ///上传OSS阿里云
 - (void)uploadToOSSWithData:(NSData *)upData upId:(NSString *)upId blockResult:(APPBackBlock)blockResult {
     
-    OSSPutObjectRequest *put = [[OSSPutObjectRequest alloc] init];
-    
-    //配置必填字段，其中bucketName为存储空间名称；objectKey等同于objectName，表示将文件上传到OSS时需要指定包含文件后缀在内的完整路径，例如abc/efg/123.jpg。
-    put.bucketName = @"<bucketName>";
-    put.bucketName = [_dicOss objectForKey:@"bucketName"];
-    put.objectKey = upId;//"folder/subfolder/fileName"  fileName为文字名， / 前面 都是路径
-    //put.contentType = @"application/octet-stream"; 默认类型  //音频类型 @"audio/mp3" 否则上传的链接为下载链接不能在线播放
-    
-    put.uploadingData = upData;// 直接上传NSData
-    
-    //开始上传
-    OSSTask *putTask = [_ossClient putObject:put];
-    
-    [putTask continueWithBlock:^id(OSSTask *task) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            //回到主线程
-            
-            if (!task.error) {
-                NSLog(@"upload object success!");
-                ///获取数据OSS连接
-                [self getDataPublicUrlWithDataId:upId blockResult:^(BOOL result, id idObject) {
-                    if (result) {
-                        blockResult(YES,idObject);//返回链接
-                    }else{
-                        blockResult(NO,@0);
-                    }
-                }];
-            } else {
-                NSLog(@"upload object failed, error: %@" , task.error);
-                blockResult(NO,@0);
-            }
-        });
-        return nil;
-    }];
+    /** 注销！
+     OSSPutObjectRequest *put = [[OSSPutObjectRequest alloc] init];
+     
+     //配置必填字段，其中bucketName为存储空间名称；objectKey等同于objectName，表示将文件上传到OSS时需要指定包含文件后缀在内的完整路径，例如abc/efg/123.jpg。
+     put.bucketName = @"<bucketName>";
+     put.bucketName = [_dicOss objectForKey:@"bucketName"];
+     put.objectKey = upId;//"folder/subfolder/fileName"  fileName为文字名， / 前面 都是路径
+     //put.contentType = @"application/octet-stream"; 默认类型  //音频类型 @"audio/mp3" 否则上传的链接为下载链接不能在线播放
+     
+     put.uploadingData = upData;// 直接上传NSData
+     
+     //开始上传
+     OSSTask *putTask = [_ossClient putObject:put];
+     
+     [putTask continueWithBlock:^id(OSSTask *task) {
+         dispatch_async(dispatch_get_main_queue(), ^{
+             //回到主线程
+             
+             if (!task.error) {
+                 NSLog(@"upload object success!");
+                 ///获取数据OSS连接
+                 [self getDataPublicUrlWithDataId:upId blockResult:^(BOOL result, id idObject) {
+                     if (result) {
+                         blockResult(YES,idObject);//返回链接
+                     }else{
+                         blockResult(NO,@0);
+                     }
+                 }];
+             } else {
+                 NSLog(@"upload object failed, error: %@" , task.error);
+                 blockResult(NO,@0);
+             }
+         });
+         return nil;
+     }];
+     */
 }
 
 #pragma mark - ************************* 获取OSS数据 *************************
@@ -168,11 +177,13 @@
 ///获取数据
 - (void)getDataWithDataKey:(NSString *)dataKey blockResult:(APPBackBlock)blockResult{
     
-    OSSGetObjectRequest * request = [OSSGetObjectRequest new];
-    
-    // 必填字段
-    request.bucketName = [_dicOss objectForKey:@"bucketName"];
-    request.objectKey = dataKey;
+    /** 注销！
+     OSSGetObjectRequest * request = [OSSGetObjectRequest new];
+     
+     // 必填字段
+     request.bucketName = [_dicOss objectForKey:@"bucketName"];
+     request.objectKey = dataKey;
+     */
     
     /**
      // 图片处理
@@ -186,23 +197,25 @@
      // request.downloadToFileURL = [NSURL fileURLWithPath:@"<filepath>"]; // 如果需要直接下载到文件，需要指明目标文件地址
      */
     
-    OSSTask * getTask = [_ossClient getObject:request];
-    
-    [getTask continueWithBlock:^id(OSSTask *task) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (!task.error) {
-                NSLog(@"download object success!");
-                OSSGetObjectResult * getResult = task.result;
-                //NSLog(@"download result: %@", getResult.downloadedData);
-                
-                blockResult(YES,getResult.downloadedData);//在异步进行请求的，回到主线程
-            }else{
-                NSLog(@"download object failed, error: %@" ,task.error);
-                blockResult(NO,@0);//获取失败
-            }
-        });
-        return nil;
-    }];
+    /** 注销！
+     OSSTask * getTask = [_ossClient getObject:request];
+     
+     [getTask continueWithBlock:^id(OSSTask *task) {
+         dispatch_async(dispatch_get_main_queue(), ^{
+             if (!task.error) {
+                 NSLog(@"download object success!");
+                 OSSGetObjectResult * getResult = task.result;
+                 //NSLog(@"download result: %@", getResult.downloadedData);
+                 
+                 blockResult(YES,getResult.downloadedData);//在异步进行请求的，回到主线程
+             }else{
+                 NSLog(@"download object failed, error: %@" ,task.error);
+                 blockResult(NO,@0);//获取失败
+             }
+         });
+         return nil;
+     }];
+     */
     
     // [getTask waitUntilFinished];
     
@@ -214,38 +227,42 @@
 ///删除OSS文件
 - (void)deleteOSSDataWithDataId:(NSString *)dataId blockResult:(APPBackBlock)blockResult {
     
-    [self getOSSClientWithBlock:^(BOOL result, id idObject) {
-        if (result) {
-            //删除
-            [self deleteOSSFileWithDataId:dataId blockResult:blockResult];
-        }else{
-            blockResult(NO,@0);
-        }
-    }];
+    /** 注销！
+     [self getOSSClientWithBlock:^(BOOL result, id idObject) {
+         if (result) {
+             //删除
+             [self deleteOSSFileWithDataId:dataId blockResult:blockResult];
+         }else{
+             blockResult(NO,@0);
+         }
+     }];
+     */
 }
 
 ///删除数据
 - (void)deleteOSSFileWithDataId:(NSString *)dataId  blockResult:(APPBackBlock)blockResult {
     
-    OSSDeleteObjectRequest * delete = [OSSDeleteObjectRequest new];
-    delete.bucketName = _dicOss[@"bucketName"];
-    delete.objectKey = dataId;
+    /** 注销！
+     OSSDeleteObjectRequest * delete = [OSSDeleteObjectRequest new];
+     delete.bucketName = _dicOss[@"bucketName"];
+     delete.objectKey = dataId;
 
-    OSSTask * deleteTask = [_ossClient deleteObject:delete];
+     OSSTask * deleteTask = [_ossClient deleteObject:delete];
 
-    [deleteTask continueWithBlock:^id(OSSTask *task) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (!task.error) {
-                // ...
-                blockResult(YES,@0);
-            }else{
-                NSLog(@"download object failed, error: %@" ,task.error);
-                blockResult(NO,@0);
-            }
-        });
-        
-        return nil;
-    }];
+     [deleteTask continueWithBlock:^id(OSSTask *task) {
+         dispatch_async(dispatch_get_main_queue(), ^{
+             if (!task.error) {
+                 // ...
+                 blockResult(YES,@0);
+             }else{
+                 NSLog(@"download object failed, error: %@" ,task.error);
+                 blockResult(NO,@0);
+             }
+         });
+         
+         return nil;
+     }];
+     */
 
     // [deleteTask waitUntilFinished];
 }
@@ -270,18 +287,20 @@
 ///获取URL
 - (void)getDataUrlWithDataId:(NSString *)dataId blockResult:(APPBackBlock)blockResult  {
     
-    NSString *publicURL = @"";
-    
-    // sign public url
-    OSSTask *task = [_ossClient presignPublicURLWithBucketName:_dicOss[@"bucketName"] withObjectKey:dataId];
-    
-    if (!task.error) {
-        publicURL = task.result;
-        blockResult(YES,publicURL);
-    }else{
-        NSLog(@"sign url error: %@", task.error);
-        blockResult(NO,@0);
-    }
+    /** 注销！
+     NSString *publicURL = @"";
+     
+     // sign public url
+     OSSTask *task = [_ossClient presignPublicURLWithBucketName:_dicOss[@"bucketName"] withObjectKey:dataId];
+     
+     if (!task.error) {
+         publicURL = task.result;
+         blockResult(YES,publicURL);
+     }else{
+         NSLog(@"sign url error: %@", task.error);
+         blockResult(NO,@0);
+     }
+     */
 }
 
 

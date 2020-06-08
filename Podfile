@@ -53,7 +53,7 @@ pod 'JGProgressHUD'
 
 #***************** 第三方功能框架引入**************
 #bug追踪
-pod 'Bugly','~>2.5.0'
+#pod 'Bugly','~>2.5.0'
 
 #bug追踪 & 热更新 已集成JSPatch
 #pod 'BuglyHotfix','~>2.1.0'
@@ -72,23 +72,23 @@ pod 'FreeStreamer','~>4.0.0'
 
 #视频播放器七牛
 #线上不带虚拟器指令
-#pod 'PLPlayerKit','3.4.3'
+pod 'PLPlayerKit','3.4.3'
 #七牛播放器虚拟机版本->上线前注销
-pod "PLPlayerKit", :podspec => 'https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec'
+#pod "PLPlayerKit", :podspec => 'https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec'
 
 
 #微信SDK
 pod 'WechatOpenSDK','~>1.8.6'
 
 #阿里OSS
-pod 'AliyunOSSiOS','~> 2.10.7'
+#pod 'AliyunOSSiOS','~> 2.10.7'
 
 #友盟公共组件
-pod 'UMCCommon','~>2.1.1'
+#pod 'UMCCommon','~>2.1.1'
 #友盟安全组件
-pod 'UMCSecurityPlugins','~>1.0.6'
+#pod 'UMCSecurityPlugins','~>1.0.6'
 #友盟统计组件
-pod 'UMCAnalytics','~>6.0.5'
+#pod 'UMCAnalytics','~>6.0.5'
 
 
 

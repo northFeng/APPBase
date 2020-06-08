@@ -8,9 +8,9 @@
 
 #import "APPUMInterface.h"
 
-#import <UMCommon/UMCommon.h>//友盟公共组件
+//#import <UMCommon/UMCommon.h>//友盟公共组件
 //#import <UMShare/UMShare.h>//友盟登录分享
-#import <UMAnalytics/MobClick.h>//友盟统计
+//#import <UMAnalytics/MobClick.h>//友盟统计
 
 @implementation APPUMInterface
 
@@ -18,9 +18,9 @@
 ///初始化友盟SDK
 + (void)initUMSDK {
     
-    [UMConfigure initWithAppkey:@"UMKey" channel:nil];//初始化友盟
-    [UMConfigure setEncryptEnabled:YES];//打开加密传输
-    [UMConfigure setLogEnabled:YES];//设置打开日志
+    //[UMConfigure initWithAppkey:@"UMKey" channel:nil];//初始化友盟
+    //[UMConfigure setEncryptEnabled:YES];//打开加密传输
+    //[UMConfigure setLogEnabled:YES];//设置打开日志
     
     /*
      * 打开图片水印
@@ -147,19 +147,19 @@
 ///统计页面开始
 + (void)logBeginPageViewName:(NSString *)viewName {
     
-    [MobClick beginLogPageView:viewName];
+    //[MobClick beginLogPageView:viewName];
 }
 
 ///统计页面结束
 + (void)logEndPageViewName:(NSString *)viewName {
     
-    [MobClick endLogPageView:viewName];
+    //[MobClick endLogPageView:viewName];
 }
 
 ///统计页面时长
 + (void)logPageViewName:(NSString *)viewName seconds:(int)seconds {
     
-    [MobClick logPageView:viewName seconds:seconds];
+    //[MobClick logPageView:viewName seconds:seconds];
 }
 
 //--------------------------------------------- 事件统计 ---------------------------------------------
@@ -167,25 +167,25 @@
 ///事件统计
 + (void)logEventId:(NSString *)eventId {
     
-    [MobClick event:eventId];
+    //[MobClick event:eventId];
 }
 
 ///事件分类统计
 + (void)logEventId:(NSString *)eventId eventMark:(NSString *)eventMark {
     
-    [MobClick event:eventId label:eventMark];
+    //[MobClick event:eventId label:eventMark];
 }
 
 ///事件统计附带信息
 + (void)logEventId:(NSString *)eventId attachedInfo:(NSDictionary *)info {
     
-    [MobClick event:eventId attributes:info];
+    //[MobClick event:eventId attributes:info];
 }
 
 ///事件统计附带信息&&次数
 + (void)logEventId:(NSString *)eventId attachedInfo:(NSDictionary *)info count:(int)count {
     
-    [MobClick event:eventId attributes:info counter:count];
+    //[MobClick event:eventId attributes:info counter:count];
 }
 
 
@@ -194,13 +194,13 @@
 ///事件开始统计
 + (void)logBeginEventId:(NSString *)eventId {
     
-    [MobClick beginEvent:eventId];
+    //[MobClick beginEvent:eventId];
 }
 
 ///事件结束统计
 + (void)logEndEventId:(NSString *)eventId {
     
-    [MobClick endEvent:eventId];
+    //[MobClick endEvent:eventId];
 }
 
 

@@ -12,7 +12,7 @@
 #import "AppDelegate+RootConTroller.h"
 
 //bug统计
-#import <Bugly/Bugly.h>
+//#import <Bugly/Bugly.h>
 
 //带有热更新的Bugly
 //#import <BuglyHotfix/Bugly.h>
@@ -21,7 +21,7 @@
 
 #import "APPAnalyticsHelper.h"//统计分析工具
 
-@interface AppDelegate ()<BuglyDelegate>
+@interface AppDelegate () //<BuglyDelegate>
 
 @end
 
@@ -68,7 +68,7 @@
     [self setAPPConfiguration];
     
     //bug统计
-    [Bugly startWithAppId:[APPKeyInfo getBuglyId]];
+    //[Bugly startWithAppId:[APPKeyInfo getBuglyId]];
     
 }
 
@@ -84,21 +84,24 @@
 
 - (void)configBugly {
     //初始化 Bugly 异常上报
-    BuglyConfig *config = [[BuglyConfig alloc] init];
-    config.delegate = self;
-    config.debugMode = YES;
-    config.reportLogLevel = BuglyLogLevelInfo;
-    [Bugly startWithAppId:[APPKeyInfo getBuglyId]
-#if DEBUG
-        developmentDevice:YES
-#endif
-                   config:config];
+    /**
+     BuglyConfig *config = [[BuglyConfig alloc] init];
+         config.delegate = self;
+         config.debugMode = YES;
+         config.reportLogLevel = BuglyLogLevelInfo;
+         [Bugly startWithAppId:[APPKeyInfo getBuglyId]
+     #if DEBUG
+             developmentDevice:YES
+     #endif
+                        config:config];
+         
+         //捕获 JSPatch 异常并上报
+         [JPEngine handleException:^(NSString *msg) {
+             NSException *jspatchException = [NSException exceptionWithName:@"Hotfix Exception" reason:msg userInfo:nil];
+             [Bugly reportException:jspatchException];
+         }];
+     */
     
-    //捕获 JSPatch 异常并上报
-    [JPEngine handleException:^(NSString *msg) {
-        NSException *jspatchException = [NSException exceptionWithName:@"Hotfix Exception" reason:msg userInfo:nil];
-        [Bugly reportException:jspatchException];
-    }];
     /**
     //检测补丁策略
     [[BuglyMender sharedMender] checkRemoteConfigWithEventHandler:^(BuglyHotfixEvent event, NSDictionary *patchInfo) {
