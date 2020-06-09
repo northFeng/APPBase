@@ -70,4 +70,38 @@ _tfFeng.limitStringLength = 5;//调用类型之前必须设置字数限制
  */
 
 
+/** textView 的代理使用
+ - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+     
+     if ([text isEqualToString:@"\n"]) {
+         
+         [_textView resignFirstResponder];
+     }
+     
+     return YES;
+ }
+
+ - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+     
+     NSString *text = textView.text;
+     if ([text isEqualToString:@"请输入收货地址"]) {
+         _textView.text = @"";
+         _textView.textColor = DynamicColor(APPColorFunction.textBlackColor, APPColorFunction.lightTextColor);
+     }
+     
+     return YES;
+ }
+
+ - (BOOL)textViewShouldEndEditing:(UITextView *)textView {
+   
+     if (_textView.text.length == 0) {
+         _textView.text = @"请输入收货地址";
+         _textView.textColor = DynamicColor(COLOR(@"#CCD4EB"), APPColorFunction.lightTextColor);
+     }
+     
+     return YES;
+ }
+
+ */
+
 
