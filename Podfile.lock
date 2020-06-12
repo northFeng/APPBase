@@ -55,8 +55,8 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 4.8.0)
   - NVActivityIndicatorView/Presenter (4.8.0)
   - PLPlayerKit (3.4.3):
-    - PLPlayerKit/iphoneos (= 3.4.3)
-  - PLPlayerKit/iphoneos (3.4.3)
+    - PLPlayerKit/universal (= 3.4.3)
+  - PLPlayerKit/universal (3.4.3)
   - Reachability (3.2)
   - ReactiveObjC (3.1.1)
   - SDAutoLayout (2.2.1)
@@ -89,7 +89,7 @@ DEPENDENCIES:
   - MMKV (~> 1.0.18)
   - MMMaterialDesignSpinner
   - NVActivityIndicatorView (~> 4.8.0)
-  - PLPlayerKit (= 3.4.3)
+  - PLPlayerKit (from `https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec`)
   - ReactiveObjC (~> 3.1.1)
   - SDAutoLayout (~> 2.1)
   - SDWebImage (~> 4.0.0)
@@ -121,7 +121,6 @@ SPEC REPOS:
     - MMKV
     - MMMaterialDesignSpinner
     - NVActivityIndicatorView
-    - PLPlayerKit
     - Reachability
     - ReactiveObjC
     - SDAutoLayout
@@ -132,6 +131,10 @@ SPEC REPOS:
     - XYColorOC
     - YYCache
     - YYModel
+
+EXTERNAL SOURCES:
+  PLPlayerKit:
+    :podspec: https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -153,7 +156,7 @@ SPEC CHECKSUMS:
   MMKV: 758b2edee46b08bdd958db4169191afb9a6d4ebd
   MMMaterialDesignSpinner: a548042720c2e5f04212048483085d7942ac3e81
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
-  PLPlayerKit: a44734dc78c1f8f9fb22c537fa1916612fa46b06
+  PLPlayerKit: 5eecac081fbf4dc88a142887f82c4095d9095887
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDAutoLayout: 8bf6b3bbc8b01f775d4defbb4fda2ace805461be
@@ -165,6 +168,6 @@ SPEC CHECKSUMS:
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 410131f16c978a221bb1a0a5c9bc10d51a086501
+PODFILE CHECKSUM: ee4406e1852531ec26dd4e6621300a0bf4110296
 
 COCOAPODS: 1.9.1

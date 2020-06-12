@@ -72,9 +72,9 @@ pod 'FreeStreamer','~>4.0.0'
 
 #视频播放器七牛
 #线上不带虚拟器指令
-pod 'PLPlayerKit','3.4.3'
+#pod 'PLPlayerKit','3.4.3'
 #七牛播放器虚拟机版本->上线前注销
-#pod "PLPlayerKit", :podspec => 'https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec'
+pod "PLPlayerKit", :podspec => 'https://raw.githubusercontent.com/pili-engineering/PLPlayerKit/master/PLPlayerKit-Universal.podspec'
 
 
 #微信SDK

@@ -11,7 +11,7 @@
 
 #pragma mark - 主机URL
 ///测试服务器
-static NSString *const debugHostUrl = @"http://39.106.146.74:8087/api/";
+static NSString *const debugHostUrl = @"https://api.wdkid.com.cn/api/";
 
 ///release服务器
 static NSString *const releaseHostUrl = @"https://shop.ishansong.com/seller/";

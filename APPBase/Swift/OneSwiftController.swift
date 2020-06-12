@@ -67,7 +67,9 @@ class OneSwiftController: APPBaseController {
     
     @objc func onClickButton(button:UIButton) {
         
+        AlertLoading()
         APPNetTool.getNetDicData_oc(url: "v2/front/tag/getTagList", params: ["tagType":1]) { (result:Bool, idObject:Any, code:Int) in
+            AlertHideLoading()
             if result {
                 let arrayJson:[AnyObject] = idObject as! [AnyObject]
                 
