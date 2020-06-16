@@ -467,3 +467,36 @@ class APPNetTool {
      */
     
 }
+
+/**  网络类使用 demo
+ AlertLoading()
+ APPNetTool.getNetDicData_oc(url: "v2/front/tag/getTagList", params: ["tagType":1]) { (result:Bool, idObject:Any, code:Int) in
+     AlertHideLoading()
+     if result {
+         let arrayJson:[AnyObject] = idObject as! [AnyObject]
+         
+         let model = arrayJson.kj.modelArray(AudioModel.self)
+         
+         let model2 = APPNetTool.jsonToModel(json: arrayJson, Model: AudioModel.self)
+         
+         if let array:[AnyObject] = model2 as? [AnyObject] {
+             Print("----->结果\(array)")
+         }else{
+             Print("数据转化失败")
+         }
+         /**
+          chName = "\U8eab\U4f53\U90e8\U4f4d";
+          createTime = "2019-12-12 10:42:58";
+          enName = "Body Parts";
+          picUrl = "http://wdkid-audio.oss-cn-beijing.aliyuncs.com/img/Body%20Parts.png";
+          tagId = 3443534;
+          tagStatus = 1;
+          tagType = 4;
+          updateTime = "2019-12-12 10:42:58";
+          */
+         Print("请求结果--->\(model)")
+     } else {
+         Print("请求出错--->\(idObject)")
+     }
+ }
+ */

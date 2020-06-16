@@ -68,56 +68,59 @@ class OneSwiftController: APPBaseController {
     }
     
     @objc func onClickButton(button:UIButton) {
-                
-        AlertLoading()
-        APPNetTool.getNetDicData_oc(url: "v2/front/tag/getTagList", params: ["tagType":1]) { (result:Bool, idObject:Any, code:Int) in
-            AlertHideLoading()
-            if result {
-                let arrayJson:[AnyObject] = idObject as! [AnyObject]
-                
-                let model = arrayJson.kj.modelArray(AudioModel.self)
-                
-                let model2 = APPNetTool.jsonToModel(json: arrayJson, Model: AudioModel.self)
-                
-                if let array:[AnyObject] = model2 as? [AnyObject] {
-                    Print("----->结果\(array)")
-                }else{
-                    Print("数据转化失败")
-                }
-                /**
-                 chName = "\U8eab\U4f53\U90e8\U4f4d";
-                 createTime = "2019-12-12 10:42:58";
-                 enName = "Body Parts";
-                 picUrl = "http://wdkid-audio.oss-cn-beijing.aliyuncs.com/img/Body%20Parts.png";
-                 tagId = 3443534;
-                 tagStatus = 1;
-                 tagType = 4;
-                 updateTime = "2019-12-12 10:42:58";
-                 */
-                Print("请求结果--->\(model)")
-            } else {
-                Print("请求出错--->\(idObject)")
-            }
+        
+        let dic = ["a":1,"b":2]
+        
+        for (a,b) in dic {
+            
+            print("---key:\(a)---value:\(b)")
         }
+        
+        blockAAAAAA(from: "ddd")
+        blockAAAAAA(from: "ccc", num: 10)
     }
     
-    func blockAAAAAA(block:APPBackClosure) {
+    func blockAAAAAA(from text:String, num:Int = 0) {
 
+        
     }
-}
-
-class AudioModel: BaseModel {
     
-    let chName = ""
-    let createTime = ""
-    let enName = ""
-    let picUrl = ""
-    let tagId = ""
-    let tagStatus = 0
-    let tagType = 0
-    let updateTime = ""
+    
 }
 
 
 
+
+enum PrinterError: Error {
+    case outOfPaper
+    case noToner
+    case onFire
+}
+
+func send(job: Int, toPrinter printerName: String) throws -> String {
+    if printerName == "Never Has Toner" {
+        throw PrinterError.noToner
+    }
+    return "Job sent"
+}
+
+enum Person:Int {
+     case ace = 1
+     case two, three, four, five, six, seven, eight, nine, ten
+     case jack, queen, king
+     func simpleDescription() -> String {
+         switch self {
+         case .ace:
+             return "ace"
+         case .jack:
+             return "jack"
+         case .queen:
+             return "queen"
+         case .king:
+             return "king"
+         default:
+             return String(self.rawValue)
+         }
+     }
+}
 
