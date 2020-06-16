@@ -405,18 +405,25 @@ class APPNetTool {
     }
     
     ///模型转换
-    class func jsonToModel(json:AnyObject, class:AnyClass) -> AnyObject {
+    class func jsonToModel(json:Any, Model:BaseModel.Type) -> Any? {
 
+        var model:Any?;
         if json is [String:Any] {
             //字典
-            //json.kj.model(class.self)
+            let jsonDic:[String : Any] = json as! [String : Any]
+            
+            model = jsonDic.kj.model(Model.self)//json.kj.model(model.self)
 
         } else if json is [Any] {
             //数组
+            let jsonArray:[Any] = json as! [Any]
+            
+            model = jsonArray.kj.modelArray(Model.self)
+            
         } else {
-
+            model = nil
         }
-        return [] as AnyObject
+        return model
     }
     
     /**

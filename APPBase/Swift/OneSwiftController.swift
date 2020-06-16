@@ -35,8 +35,10 @@ class OneSwiftController: APPBaseController {
 //            APPAlertTool.hideLoading()
 //            AlertMessage(msg: "回调完数据\(jsonData)")
 //        }
-        
+                
         self.title = "SwiftOne"
+        
+        
                 
         self.view.addSubview(oneView)
         
@@ -66,14 +68,33 @@ class OneSwiftController: APPBaseController {
     }
     
     @objc func onClickButton(button:UIButton) {
-        
+                
         AlertLoading()
         APPNetTool.getNetDicData_oc(url: "v2/front/tag/getTagList", params: ["tagType":1]) { (result:Bool, idObject:Any, code:Int) in
             AlertHideLoading()
             if result {
                 let arrayJson:[AnyObject] = idObject as! [AnyObject]
                 
-                Print("请求结果--->\(arrayJson)")
+                let model = arrayJson.kj.modelArray(AudioModel.self)
+                
+                let model2 = APPNetTool.jsonToModel(json: arrayJson, Model: AudioModel.self)
+                
+                if let array:[AnyObject] = model2 as? [AnyObject] {
+                    Print("----->结果\(array)")
+                }else{
+                    Print("数据转化失败")
+                }
+                /**
+                 chName = "\U8eab\U4f53\U90e8\U4f4d";
+                 createTime = "2019-12-12 10:42:58";
+                 enName = "Body Parts";
+                 picUrl = "http://wdkid-audio.oss-cn-beijing.aliyuncs.com/img/Body%20Parts.png";
+                 tagId = 3443534;
+                 tagStatus = 1;
+                 tagType = 4;
+                 updateTime = "2019-12-12 10:42:58";
+                 */
+                Print("请求结果--->\(model)")
             } else {
                 Print("请求出错--->\(idObject)")
             }
@@ -83,7 +104,18 @@ class OneSwiftController: APPBaseController {
     func blockAAAAAA(block:APPBackClosure) {
 
     }
+}
+
+class AudioModel: BaseModel {
     
+    let chName = ""
+    let createTime = ""
+    let enName = ""
+    let picUrl = ""
+    let tagId = ""
+    let tagStatus = 0
+    let tagType = 0
+    let updateTime = ""
 }
 
 
