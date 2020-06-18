@@ -42,7 +42,9 @@ class OneSwiftController: APPBaseController {
                 
         self.view.addSubview(oneView)
         
-        oneView.backgroundColor = UIColor.red
+        oneView.backgroundColor = DynamicColor(lightStylecolor: UIColor.red, darkStylecolor: UIColor.green)
+        
+        
         oneView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(100)
             make.top.equalToSuperview().offset(200)
@@ -69,22 +71,52 @@ class OneSwiftController: APPBaseController {
     
     @objc func onClickButton(button:UIButton) {
         
-        let dic = ["a":1,"b":2]
+        DispatchQueue.global().async(group: DispatchGroup.init(), execute: DispatchWorkItem.init {
+            Print("线程：\(Thread.current)")
+        })
         
-        for (a,b) in dic {
-            
-            print("---key:\(a)---value:\(b)")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            Print("延迟执行的函数")
         }
         
-        blockAAAAAA(from: "ddd")
-        blockAAAAAA(from: "ccc", num: 10)
+
+
+
     }
     
     func blockAAAAAA(from text:String, num:Int = 0) {
 
-        
-    }
     
+    }
+}
+
+
+class Demo {
+    
+    var name:String = ""
+    
+    var age:Int = 0
+    
+//    init(na:String, ag:Int) {
+//
+//        name = na
+//
+//        age = ag
+//    }
+//
+//    init(nam:String) {
+//        name = nam
+//        age = 11
+//    }
+    
+    
+}
+
+extension Demo {
+    
+    var score: Int {
+        10
+    }
     
 }
 

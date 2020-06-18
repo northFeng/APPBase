@@ -426,6 +426,22 @@ class APPNetTool {
         return model
     }
     
+    ///model 转  字典
+    class func modelToJsonObject(model:BaseModel) -> [String : Any] {
+        
+        let jsonDic:[String : Any] = model.kj.JSONObject()
+        
+        return jsonDic
+    }
+    
+    ///model 转  字符串
+    class func modelToJsonString(model:BaseModel) -> String {
+        
+        let jsonString:String = model.kj.JSONString()
+        
+        return jsonString
+    }
+    
     /**
      逃逸闭包：@escaping  1>函数内的 【闭包(函数)】 去外部执行  2>函数的  【闭包(函数)】异步执行  —> 加 @escaping 进行修饰 “考虑循环引用”，逃逸闭包内需要 【显式引用self】、非逃逸闭包可以 【隐式引用】
 

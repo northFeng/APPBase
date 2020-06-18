@@ -83,7 +83,27 @@ func COLOR(color:String) -> UIColor {
 
 ///动态颜色
 func DynamicColor(lightStylecolor:UIColor, darkStylecolor:UIColor) -> UIColor {
-    return APPColorFunction.dynamicColor(withLightColor: lightStylecolor, darkColor: darkStylecolor)
+    //return APPColorFunction.dynamicColor(withLightColor: lightStylecolor, darkColor: darkStylecolor)
+    
+    var color:UIColor = lightStylecolor
+    
+    if #available(iOS 13.0, *) {
+        color = UIColor { (traitCollection:UITraitCollection) -> UIColor in
+        
+            if traitCollection.userInterfaceStyle == .light {
+                //浅色模式
+                return lightStylecolor
+            } else if traitCollection.userInterfaceStyle == .dark  {
+                //黑暗模式
+                return darkStylecolor
+            } else {
+                //默认浅色模式
+                return lightStylecolor
+            }
+        }
+    }
+    
+    return color
 }
 
 //MARK: ******************************** 定义字体 *********************************
