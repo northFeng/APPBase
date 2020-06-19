@@ -75,8 +75,43 @@ let kBottomSafeHeight = kStatusBarHeight > 20 ? 34.0 : 0.0
 
 
 //MARK: ******************************** 定义颜色函数 *********************************
-func COLOR(color:String) -> UIColor {
-    return APPColorFunction.color(withHexString: color, alpha: 1.0)
+
+///颜色16进制字符串 —> UIColor
+func COLOR(color:String, alpha:CGFloat = 1.0) -> UIColor {
+    // return APPColorFunction.color(withHexString: color, alpha: 1.0)
+    
+    // 存储转换后的数值
+    var red: UInt32 = 0, green: UInt32 = 0, blue: UInt32 = 0
+    
+    var hex = color
+    // 如果传入的十六进制颜色有前缀，去掉前缀
+    if hex.hasPrefix("0x") || hex.hasPrefix("0X") {
+        hex = String(hex[hex.index(hex.startIndex, offsetBy: 2)...])
+    } else if hex.hasPrefix("#") {
+        hex = String(hex[hex.index(hex.startIndex, offsetBy: 1)...])
+    }
+    // 如果传入的字符数量不足6位按照后边都为0处理，当然你也可以进行其它操作
+    if hex.count < 6 {
+        for _ in 0..<6-hex.count {
+            hex += "0"
+        }
+    }
+
+    // 分别进行转换
+    // 红
+    Scanner(string: String(hex[..<hex.index(hex.startIndex, offsetBy: 2)])).scanHexInt32(&red)
+    // 绿
+    Scanner(string: String(hex[hex.index(hex.startIndex, offsetBy: 2)..<hex.index(hex.startIndex, offsetBy: 4)])).scanHexInt32(&green)
+    // 蓝
+    Scanner(string: String(hex[hex.index(hex.startIndex, offsetBy: 4)...])).scanHexInt32(&blue)
+
+    return UIColor(red: CGFloat(red)/255.0, green: CGFloat(green)/255.0, blue: CGFloat(blue)/255.0, alpha: alpha)
+}
+
+///红绿蓝 三色 数值 —> UIColor
+func RGB(r:Int, g:Int, b:Int, alpha:CGFloat = 1.0) -> UIColor {
+    
+    return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: alpha)
 }
 
 //MARK: ******************************** 定义动态颜色 *********************************
@@ -107,6 +142,16 @@ func DynamicColor(lightStylecolor:UIColor, darkStylecolor:UIColor) -> UIColor {
 }
 
 //MARK: ******************************** 定义字体 *********************************
+
+///标准字体
+let kRegularFont = "PingFangSC-Regular"
+
+///中等字体
+let kMediumFont = "PingFangSC-Medium"
+
+///半黑体
+let kSemiboldFont = "PingFangSC-Semibold"
+
 ///系统字体
 func kFontOfSystem(font:CGFloat) -> UIFont {
     return UIFont.systemFont(ofSize: font)
@@ -117,15 +162,6 @@ func kFontOfCustom(name:String,font:CGFloat) -> UIFont? {
 
     return UIFont(name: name, size: font)
 }
-
-///标准字体
-let kRegularFont = "PingFangSC-Regular"
-
-///中等字体
-let kMediumFont = "PingFangSC-Medium"
-
-///半黑体
-let kSemiboldFont = "PingFangSC-Semibold"
 
 //MARK: ************************* 吐字 && 弹框 *************************
 
@@ -191,16 +227,6 @@ let IOSAbove13:Bool = ((UIDevice.current.systemVersion as NSString).integerValue
 
 ///是否为手机（用来判断是iPhone && iPad）
 let kIsiPhone:Bool = APPLoacalInfo.iPhoneOrIpad() as Bool
-
-
-//MARK: ************************* 自定义JSON转Model函数 *************************
-//func JsonModel(json:[String: Any], typeClass:BaseModel) -> Any {
-//
-//    let model = model(from: json, typeClass.self)
-//
-//
-//    return model;
-//}
 
 
 //MARK: ************************* 图片加载框架 *************************

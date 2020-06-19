@@ -42,7 +42,7 @@ class OneSwiftController: APPBaseController {
                 
         self.view.addSubview(oneView)
         
-        oneView.backgroundColor = DynamicColor(lightStylecolor: UIColor.red, darkStylecolor: UIColor.green)
+        oneView.backgroundColor = COLOR(color: "#65BAFF")//DynamicColor(lightStylecolor: UIColor.red, darkStylecolor: UIColor.green)
         
         
         oneView.snp.makeConstraints { (make) in
@@ -80,6 +80,7 @@ class OneSwiftController: APPBaseController {
         }
         
 
+    
 
 
     }
@@ -88,6 +89,12 @@ class OneSwiftController: APPBaseController {
 
     
     }
+}
+
+enum APPEnum:Int {
+    case aa = 0
+    
+    case bb
 }
 
 
