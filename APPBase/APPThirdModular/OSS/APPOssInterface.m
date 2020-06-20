@@ -96,7 +96,7 @@
      
      
      //if (!_ossClient) {
-         //上传阿里云服务器
+         //上传阿里云服务器   endpoint 就是 域名！ 文件地址的 域名！！
          NSString *endpoint = [dicOss objectForKey:@"endpoint"];//endpoint = "oss-cn-beijing.aliyuncs.com";  host = "http://w-y-audio.wdkid.net";
          _ossClient = [[OSSClient alloc] initWithEndpoint:endpoint credentialProvider:credential];
      //}

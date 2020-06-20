@@ -88,6 +88,27 @@ NSString * const KEY_UDID_INSTEAD = @"com.appBase.udid";
 
 //----------------------------------------------------------------------------------------------
 
+///获取UUID
++ (NSString *)UUIDString {
+    
+    NSString *uuid = UIDevice.currentDevice.identifierForVendor.UUIDString;
+    return uuid;
+}
+
+///获取随机UUID
++ (NSString *)UUIDCFString {
+    
+    CFUUIDRef uuid_ref = CFUUIDCreate(NULL);
+    CFStringRef uuid_string_ref= CFUUIDCreateString(NULL, uuid_ref);
+    NSString *uuid = [NSString stringWithString:(__bridge NSString *)uuid_string_ref];
+    CFRelease(uuid_ref);
+    CFRelease(uuid_string_ref);
+    
+    NSString *CUID = [uuid lowercaseString];
+    CUID = [[CUID componentsSeparatedByString:@"-"] componentsJoinedByString:@""];
+    return CUID;
+}
+
 ///设备人名字
 + (NSString *)phoneDevicesName {
     

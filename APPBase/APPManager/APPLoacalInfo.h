@@ -18,6 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 ///获取设备唯一标识
 + (NSString *)getDeviceIDInKeychain;
 
+///获取UUID
++ (NSString *)UUIDString;
+
+///获取随机UUID
++ (NSString *)UUIDCFString;
+
 ///手机系统版本号
 + (NSString *)phoneIOSVerion;
 
