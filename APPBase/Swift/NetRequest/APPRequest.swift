@@ -8,6 +8,8 @@
 
 import Foundation
 
+import KakaJSON//JSON数据 转 Model
+
 //MARK: ************************* Swift中model类都集成这个基类 *************************
 //官方用法教程：https://www.cnblogs.com/mjios/category/1526581.html
 /**

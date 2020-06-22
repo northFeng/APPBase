@@ -60,7 +60,7 @@
     GFMiddleController *two = [[GFMiddleController alloc] init];
     GFMineController *thr = [[GFMineController alloc] init];
         
-    GFTabBarController *gfTabBar = [[GFTabBarController alloc] init];
+    GFTabBarController *gfTabBar = [GFTabBarController sharedInstance];
     gfTabBar.viewControllers = @[one,two,thr];//添加子视图
     //默认图片
     NSArray *arrayNomal = @[@"home_n",@"order_n",@"mine_n"];
