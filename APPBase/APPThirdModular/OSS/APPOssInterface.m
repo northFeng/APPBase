@@ -38,7 +38,7 @@
 ///获取
 - (void)getOSSClientWithBlock:(APPBackBlock)blockClient {
     
-    //!_ossClient
+    //!_ossClient  ——> 鉴权模式 ！必须每次都请求（否则，使用的时候 报错，在OSS的SDK中的 时间戳 中 会失败！！好像是时间戳过期！）
     if (1) {
         //client不存在
         /**
