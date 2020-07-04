@@ -21,7 +21,7 @@
 
 #import "APPAnalyticsHelper.h"//统计分析工具
 
-@interface AppDelegate () //<BuglyDelegate>
+@interface AppDelegate ()
 
 @end
 
