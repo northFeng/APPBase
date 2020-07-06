@@ -51,7 +51,7 @@
     [self addSubview:_backView];
     
     _labelTitle = [[UILabel alloc] init];
-    _labelTitle.tintColor = DynamicColor(APPColorFunction.textBlackColor, APPColorFunction.lightTextColor);
+    _labelTitle.textColor = DynamicColor(APPColorFunction.textBlackColor, APPColorFunction.lightTextColor);
     _labelTitle.font = kFontOfCustom(kMediumFont, 14*kIpadScale);
     _labelTitle.textAlignment = NSTextAlignmentCenter;
     _labelTitle.text = @"温馨提示";

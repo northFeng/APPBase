@@ -191,4 +191,49 @@
     return arrayDate;
 }
 
+///解析岁数
++ (NSString *)getBabyAgesWithBirthDate:(NSString *)birthTime {
+    
+    NSInteger time = birthTime.integerValue / 1000;
+    NSString *birthDate = [APPDateTool date_getDateWithTimeStamp:time timeType:@"yyyy-MM"];
+    NSArray *oneArray = [birthDate componentsSeparatedByString:@"-"];
+    NSString *yearStr = [oneArray gf_getItemWithIndex:0];
+    NSString *monthStr = [oneArray gf_getItemWithIndex:1];
+    
+    NSString *currrentDate = [APPDateTool date_getCurrentDateWithType:@"yyyy-MM"];
+    NSArray *twoArray = [currrentDate componentsSeparatedByString:@"-"];
+    NSString *yearNowStr = [twoArray gf_getItemWithIndex:0];
+    NSString *monthNowStr = [twoArray gf_getItemWithIndex:1];
+    
+    int year = yearStr.intValue;
+    int month = monthStr.intValue;
+    
+    int yearNow = yearNowStr.intValue;
+    int monthNow = monthNowStr.intValue;
+    
+    NSString *ages = @"";
+    
+    if (year > yearNow) {
+        ages = @"0岁";
+    }else{
+        if (year == yearNow) {
+            if (month >= monthNow) {
+                ages = @"0岁";
+            }else{
+                ages = [NSString stringWithFormat:@"%d月",monthNow - month];
+            }
+        }else{
+            //年数小于今年
+            int totalMonth = monthNow;
+            totalMonth += (12 - month);//生日那年的剩余月数
+            totalMonth += (yearNow - year - 1)*12;
+            
+            ages = [NSString stringWithFormat:@"%d岁%d月",totalMonth/12,totalMonth%12];
+        }
+    }
+    
+    return ages;
+}
+
+
 @end

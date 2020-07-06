@@ -39,6 +39,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///指定年月——>到现在的年月
 + (NSMutableArray *)date_getDateArrayToNowWithYear:(NSInteger)startYear startMonth:(NSInteger)startMonth;
 
+///解析岁数（时间戳）
++ (NSString *)getBabyAgesWithBirthDate:(NSString *)birthTime;
+
 @end
 
 NS_ASSUME_NONNULL_END
