@@ -377,6 +377,13 @@
 + (void)showAlertListWithTitle:(nullable NSString *)title message:(nullable NSString *)message listTitleArray:(NSArray *)listArray blockResult:(APPBackBlock)blockAction {
     
     UIAlertController *alertTellController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
+    if (kIsiPad) {
+        //方法一：
+        alertTellController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    }else{
+        //手机
+        alertTellController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
+    }
     
     for (int i = 0; i < listArray.count ; i++) {
         
@@ -397,6 +404,18 @@
     [alertTellController addAction:cancleAction];
     
     UIViewController *topVC = [self topViewControllerOfAPP];
+    
+    /**
+     //核心代码. 兼容ipad
+     if (kIsiPad) {
+         //方法二：
+         UIPopoverPresentationController *popPresenter = [alertTellController popoverPresentationController];
+         popPresenter.sourceView = topVC.view;//依附的view
+         popPresenter.sourceRect = CGRectMake(kScreenWidth / 2., kScreenHeight / 2., 0, 0);//弹出的位置
+         popPresenter.permittedArrowDirections = UIPopoverArrowDirectionUp;//泡泡弹框 箭头的位置
+     }
+     */
+    //上面的方法 只需要选择一个便可！ 方法一：弹框处于中间   方法二：位置类似泡泡，任意位置
     [topVC presentViewController:alertTellController animated:YES completion:nil];
 }
 

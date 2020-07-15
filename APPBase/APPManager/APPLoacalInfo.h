@@ -36,6 +36,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///app build版本
 + (NSString *)appBuildVersion;
 
+///获取 设备型号
++ (NSString *)deviceModel;
+
 
 ///判断iPhone && iPad
 + (BOOL)iPhoneOrIpad;
