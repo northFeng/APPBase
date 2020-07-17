@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///跳转到苹果商店
 + (void)gotoAppleStore;
 
-///App Store商店版本号
+///App Store商店版本号 （苹果商店信息也有不及时这个 ）
 + (NSString *)appStoreVersion;
 
 
