@@ -12,6 +12,17 @@
  OC项目中 ——>添加 Swift 文件，则会出来 （没有的话自己创建，文件就是项目的名字！在OC文件上 #import “工程名-Swift.h”  —> 就可以使用Swift的类和方法了）
 Swift项目中 ——> Packaging ——> build Settings的Defines Module设置为YES，这个文件不会出现， 但可以直接在 OC文件中  #import “工程名-Swift.h”  —> 可以使用swift中的类
  */
+/**
+ 有时候复制已有的项目后变更DisplayName时编译报错提示找不到Module Name-Swift.h
+ 首先验证Module Name-Swift.h是否生成
+ 第一步：打开命令行执行“cd ~/Library/Developer/Xcode/DerivedData”，默认情况下编译文件都在这个文件夹内
+ 第二步：执行“find * -iname '*Swift.h'”，此时会列表项目中编辑通过的所有swift文件，查看是否有Module Name-Swift.h。
+
+ 当Module Name-Swift.h不存在时，说明是DisplayName更改了所需要的编译文件名称
+ 请做如下修改
+ 项目名----Target----工程文件-----Build Settings-----Swift Compiler - General ----- Objective-C General Interface Header Name里面的值将“Module Name-Swift.h”替换为“$(PROJECT_NAME)-Swift.h”
+ 此时重新编译即可。
+ */
 
 #ifndef SwiftClass_h
 #define SwiftClass_h
