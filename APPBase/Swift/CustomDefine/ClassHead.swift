@@ -25,11 +25,15 @@ typealias APPNetClosure = (Bool, Any, Int)->Void
 
 //MARK: ********************************* 定义常量 *********************************
 
-///屏幕宽
-let kScreenWidth = UIScreen.main.bounds.size.width
+///APP屏幕宽
+var kAPPWidth: CGFloat {
+    UIScreen.main.bounds.size.width
+}
 
-///屏幕高
-let kScreenHeight = UIScreen.main.bounds.size.height
+///APP屏幕高
+var kAPPHeight: CGFloat {
+    UIScreen.main.bounds.size.height
+}
 
 ///状态栏高度
 let kStatusBarHeight = UIApplication.shared.statusBarFrame.size.height
@@ -43,17 +47,17 @@ func kScaleHeight(x:Float, y:Float, width:Float) -> Float {
 }
 
 ///屏幕宽度比例
-let kScaleW = kScreenWidth/375.0
+let kScaleW = kAPPWidth/375.0
 
 ///屏幕高度比例
-let kScaleH = kScreenHeight/667.0
+let kScaleH = kAPPHeight/667.0
 
 ///适配iPad比例 ( iPhone 1.  iPad 1.5)
 let kIpadScale = APPManager.iPhoneAndIpadTextAdapter()
 
 ///适配iPad尺寸
-func FitIpad(num:CGFloat) -> Float {
-    return Float(APPManager.iPhoneAndIpadTextAdapter(num))
+func FitIpad(_ num:CGFloat) -> CGFloat {
+    return APPManager.iPhoneAndIpadTextAdapter(num)
 }
 
 //MARK: 顶部条以及tabBar条的宽度，以及工具条距离安全区域的距离
@@ -77,7 +81,7 @@ let kBottomSafeHeight = kStatusBarHeight > 20 ? 34.0 : 0.0
 //MARK: ******************************** 定义颜色函数 *********************************
 
 ///颜色16进制字符串 —> UIColor
-func COLOR(color:String, alpha:CGFloat = 1.0) -> UIColor {
+func COLOR(_ color:String, alpha:CGFloat = 1.0) -> UIColor {
     // return APPColorFunction.color(withHexString: color, alpha: 1.0)
     
     // 存储转换后的数值
@@ -117,7 +121,7 @@ func RGB(r:Int, g:Int, b:Int, alpha:CGFloat = 1.0) -> UIColor {
 //MARK: ******************************** 定义动态颜色 *********************************
 
 ///动态颜色
-func DynamicColor(lightStylecolor:UIColor, darkStylecolor:UIColor) -> UIColor {
+func DynamicColor(_ lightStylecolor:UIColor, _ darkStylecolor:UIColor) -> UIColor {
     //return APPColorFunction.dynamicColor(withLightColor: lightStylecolor, darkColor: darkStylecolor)
     
     var color:UIColor = lightStylecolor

@@ -42,7 +42,7 @@ class OneSwiftController: APPBaseController {
                 
         self.view.addSubview(oneView)
         
-        oneView.backgroundColor = COLOR(color: "#65BAFF")//DynamicColor(lightStylecolor: UIColor.red, darkStylecolor: UIColor.green)
+        oneView.backgroundColor = COLOR("#65BAFF")//DynamicColor(lightStylecolor: UIColor.red, darkStylecolor: UIColor.green)
         
         
         oneView.snp.makeConstraints { (make) in
