@@ -25,7 +25,7 @@ typedef enum{
 
 
 typedef void (^Success) (id response , NSInteger code);//成功回调
-typedef void (^Failure) (NSError *error);//失败回调
+typedef void (^Failure) (NSError *error, NSInteger httpCode);//失败回调
 typedef void(^Preogress)(NSProgress *progress);//进度回调
 
 /**

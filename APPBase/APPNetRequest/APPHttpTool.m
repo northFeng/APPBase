@@ -157,11 +157,10 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
     } failCompletion:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
         [self.allSessionTask removeObject:task];//请求完成移除
         NSLog(@"error=%@",error);
-        if ([error.domain isEqualToString:@"NSURLErrorDomain"] && error.code == NSURLErrorNotConnectedToInternet) {
-            NSLog(@"没有网络");
-        }
+        NSHTTPURLResponse *respon = (NSHTTPURLResponse *)task.response;
+        
         if (fail) {
-            fail(error);
+            fail(error,respon.statusCode);
         }
     }];
     
@@ -249,7 +248,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         NSError *error = nil;
         [formData appendPartWithFileURL:[NSURL URLWithString:filePath] name:name error:&error];
         if (error && fail) {
-            fail(error);
+            fail(error,99);
         }
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         dispatch_sync(dispatch_get_main_queue(), ^{
@@ -263,8 +262,9 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error=%@",error);
+        NSHTTPURLResponse *respon = (NSHTTPURLResponse *)task.response;
         if (fail) {
-            fail(error);
+            fail(error,respon.statusCode);
         }
     }];
 }
@@ -309,8 +309,9 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error=%@",error);
+        NSHTTPURLResponse *respon = (NSHTTPURLResponse *)task.response;
         if (fail) {
-            fail(error);
+            fail(error,respon.statusCode);
         }
     }];
 }
@@ -348,8 +349,9 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         return [NSURL fileURLWithPath:filePath];
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
         if (error) {
+            NSHTTPURLResponse *responHttp = (NSHTTPURLResponse *)response;
             if (fail) {
-                fail(error);
+                fail(error,responHttp.statusCode);
             }
         } else {
             if (success) {
@@ -455,9 +457,8 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         
         [self netSucessAnalyticalNetdata:response block:block];
         
-    } fail:^(NSError *error) {
-        
-        [self netFailAnalyticalNetdata:error block:block];
+    } fail:^(NSError * _Nonnull error, NSInteger httpCode) {
+        [self netFailAnalyticalNetdata:error httpCode:httpCode block:block];
     }];
 }
 
@@ -468,9 +469,8 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         
         [self netSucessAnalyticalNetdata:response block:block];
         
-    } fail:^(NSError *error) {
-        
-        [self netFailAnalyticalNetdata:error block:block];
+    } fail:^(NSError * _Nonnull error, NSInteger httpCode) {
+        [self netFailAnalyticalNetdata:error httpCode:httpCode block:block];
     }];
 }
 
@@ -492,7 +492,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
     if (code == resultCode) {
         //请求成功
         if (block) {
-            block(YES,dataDic,100);
+            block(YES,dataDic,code);
         }
     }else{
         // 错误处理
@@ -510,7 +510,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
 }
 
 ///统一处理数据 失败
-+ (void)netFailAnalyticalNetdata:(NSError *)error block:(NetResult)block {
++ (void)netFailAnalyticalNetdata:(NSError *)error httpCode:(NSInteger)httpCode block:(NetResult)block {
     
     NSString *errorMessage = HTTPErrorOthersMessage;//error.localizedDescription;
     switch (error.code) {
@@ -531,8 +531,25 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
             
             break;
     }
+    
+    //后台协商进行用户登录异常提示 && 强制用户退出
+    if (httpCode == 401) {
+        //4XX 客户端错误
+        errorMessage = @"登录失效，请重新登录哦~";//清空
+        if (APPManagerObject.isLogined && APPManagerUserInfo.token.length) {
+            //用户登录过期 && 执行退出
+            [[APPManager sharedInstance] forcedExitUserWithShowControllerItemIndex:0];
+        }
+    }
+    //NSFileLockingError
+    if (httpCode / 500 == 1) {
+        //5XX 服务器错误
+        errorMessage = [NSString stringWithFormat:@"服务器错误：%@",[NSHTTPURLResponse localizedStringForStatusCode:httpCode]];
+        //在此可以上传错误信息 到后台
+    }
+    
     if (block) {
-        block(NO,errorMessage,99);
+        block(NO,errorMessage,httpCode);
     }
 }
 
