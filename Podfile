@@ -4,6 +4,7 @@ target 'APPBase' do
   inhibit_all_warnings!
   use_frameworks!
 
+# cd项目跟目录 ——> grep -r advertisingIdentifier .
 #***************** 常用第三方框架**************
 pod 'AFNetworking','~>3.2.1'
 
