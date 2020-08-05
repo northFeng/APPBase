@@ -29,6 +29,8 @@
 		83072544242871FE005D049E /* UIButton+Animate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8307253D242871FE005D049E /* UIButton+Animate.m */; };
 		83072545242871FE005D049E /* UIView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 8307253E242871FE005D049E /* UIView+Alert.m */; };
 		83072546242871FE005D049E /* NSObject+Auth.m in Sources */ = {isa = PBXBuildFile; fileRef = 83072542242871FE005D049E /* NSObject+Auth.m */; };
+		830C8E8924DAAF0700BDD2BB /* SPPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 830C8E8824DAAF0700BDD2BB /* SPPageMenu.m */; };
+		830C8E8B24DAB07900BDD2BB /* SPPageMenu-master.zip in Resources */ = {isa = PBXBuildFile; fileRef = 830C8E8A24DAB07900BDD2BB /* SPPageMenu-master.zip */; };
 		83188D2E2435948B009EB8FF /* APPBaseLandscapeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83188D2D2435948B009EB8FF /* APPBaseLandscapeController.m */; };
 		832DD2D924320A9500AD3FF1 /* UICollectionView+SideRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2CD24320A9500AD3FF1 /* UICollectionView+SideRefresh.m */; };
 		832DD2DA24320A9500AD3FF1 /* SideRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2CE24320A9500AD3FF1 /* SideRefreshHeader.m */; };
@@ -182,6 +184,9 @@
 		83072540242871FE005D049E /* NSString+URLCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLCheck.h"; sourceTree = "<group>"; };
 		83072541242871FE005D049E /* UIButton+Animate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Animate.h"; sourceTree = "<group>"; };
 		83072542242871FE005D049E /* NSObject+Auth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Auth.m"; sourceTree = "<group>"; };
+		830C8E8724DAAF0700BDD2BB /* SPPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPageMenu.h; sourceTree = "<group>"; };
+		830C8E8824DAAF0700BDD2BB /* SPPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPageMenu.m; sourceTree = "<group>"; };
+		830C8E8A24DAB07900BDD2BB /* SPPageMenu-master.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "SPPageMenu-master.zip"; sourceTree = "<group>"; };
 		83188D2C2435948B009EB8FF /* APPBaseLandscapeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPBaseLandscapeController.h; sourceTree = "<group>"; };
 		83188D2D2435948B009EB8FF /* APPBaseLandscapeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPBaseLandscapeController.m; sourceTree = "<group>"; };
 		832DD2CD24320A9500AD3FF1 /* UICollectionView+SideRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+SideRefresh.m"; sourceTree = "<group>"; };
@@ -433,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				147E502D2351FBCA00C2309B /* APPThirdHeader.h */,
+				830C8E8624DAAEBB00BDD2BB /* SPPageMenu */,
 				83B2D4922489EA2A002113D8 /* CardView */,
 				832DD2CC24320A9500AD3FF1 /* CollectionRefresh */,
 				83987FE5241242C800A71FC4 /* VideoPlayer */,
@@ -511,6 +517,16 @@
 				37BCAF33D89376F054993B8C /* Pods-APPBase.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		830C8E8624DAAEBB00BDD2BB /* SPPageMenu */ = {
+			isa = PBXGroup;
+			children = (
+				830C8E8A24DAB07900BDD2BB /* SPPageMenu-master.zip */,
+				830C8E8724DAAF0700BDD2BB /* SPPageMenu.h */,
+				830C8E8824DAAF0700BDD2BB /* SPPageMenu.m */,
+			);
+			path = SPPageMenu;
 			sourceTree = "<group>";
 		};
 		832DD2CC24320A9500AD3FF1 /* CollectionRefresh */ = {
@@ -1099,6 +1115,7 @@
 				8D69D3DA22B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive in Resources */,
 				8D95957822AE3A1F001A8345 /* JSPatch.js in Resources */,
 				8DAB5F0B21AB9954009662D5 /* FRLoginHomeVC.xib in Resources */,
+				830C8E8B24DAB07900BDD2BB /* SPPageMenu-master.zip in Resources */,
 				8DAB5E0421AB965B009662D5 /* Assets.xcassets in Resources */,
 				83B594AC23755D3900B7514E /* 分页查找.jpeg in Resources */,
 				83D59D3C247689810010CB5C /* apple-app-site-association.json in Resources */,
@@ -1221,6 +1238,7 @@
 				832DD2DA24320A9500AD3FF1 /* SideRefreshHeader.m in Sources */,
 				83987FF72412440100A71FC4 /* APPBaseController+ScreenRotation.m in Sources */,
 				8DAB5EE321AB98A6009662D5 /* GFButtonPress.m in Sources */,
+				830C8E8924DAAF0700BDD2BB /* SPPageMenu.m in Sources */,
 				8DAB5F0421AB993F009662D5 /* FRHomeVC.m in Sources */,
 				8DAB5EF721AB98E3009662D5 /* AppDelegate+RootConTroller.m in Sources */,
 				8DAB5EB821AB9839009662D5 /* UIView+GFExtension.m in Sources */,

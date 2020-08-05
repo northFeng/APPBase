@@ -212,7 +212,7 @@
                 NSLog(@"微信第一步接口返回授权数据---->%@",[response yy_modelToJSONString]);
                 NSDictionary *dicWx = (NSDictionary *)response;
                 [self wxUserInfoWithAccess_token:dicWx[@"access_token"] openId:dicWx[@"openid"]];
-            } fail:^(NSError * _Nonnull error) {
+            } fail:^(NSError * _Nonnull error, NSInteger httpCode) {
                 self.blockWX(NO, @"获取微信信息失败");
             }];
         }
@@ -249,7 +249,7 @@
     [APPHttpTool getWithUrl:@"https://api.weixin.qq.com/sns/userinfo" params:dicParam success:^(id  _Nonnull response, NSInteger code) {
         NSLog(@"微信第二步接口返回用户数据---->%@",[response yy_modelToJSONString]);
         self.blockWX(YES, response);//返回数据
-    } fail:^(NSError * _Nonnull error) {
+    } fail:^(NSError * _Nonnull error, NSInteger httpCode) {
         self.blockWX(NO, @"获取微信信息失败");
     }];
 }
