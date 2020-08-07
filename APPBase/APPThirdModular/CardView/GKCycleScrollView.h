@@ -87,7 +87,7 @@ typedef NS_ENUM(NSUInteger, GKCycleScrollViewScrollDirection) {
 // 左右间距，默认0
 @property (nonatomic, assign) CGFloat leftRightMargin;
 
-// 上下间距，默认0
+// 上下间距，默认0 (设置此属性中间选中的cell以外 会上下变小)
 @property (nonatomic, assign) CGFloat topBottomMargin;
 
 // 自动滚动时间间隔，默认3s

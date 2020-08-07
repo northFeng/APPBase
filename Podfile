@@ -14,6 +14,9 @@ pod 'AFNetworking','~>3.2.1'
 #刷新控件
 pod 'MJRefresh' , '~>3.1'
 
+#轮播图
+pod 'SDCycleScrollView','1.80'
+
 #约束1
 pod 'Masonry','~>1.1'
 #约束2

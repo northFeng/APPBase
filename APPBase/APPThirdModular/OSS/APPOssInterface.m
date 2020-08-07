@@ -96,7 +96,7 @@
      
      
      //if (!_ossClient) {
-         //上传阿里云服务器   endpoint 就是 域名！ 文件地址的 域名！！
+         //上传阿里云服务器   endpoint 就是 域名！ 文件地址的 域名！！ endpoint ——> 写死北京的oss
          NSString *endpoint = [dicOss objectForKey:@"endpoint"];//endpoint = "oss-cn-beijing.aliyuncs.com";  host = "http://w-y-audio.wdkid.net";
          _ossClient = [[OSSClient alloc] initWithEndpoint:endpoint credentialProvider:credential];
      //}
@@ -143,6 +143,9 @@
              if (!task.error) {
                  NSLog(@"upload object success!");
                  ///获取数据OSS连接
+                 NSString *url = [NSString stringWithFormat:@"%@/%@",self->_dicOss[@"download_host"],upId]; // 自定义自定的DNS域名
+                 blockResult(YES,url);
+                 下面的不用了去掉
                  [self getDataPublicUrlWithDataId:upId blockResult:^(BOOL result, id idObject) {
                      if (result) {
                          blockResult(YES,idObject);//返回链接
