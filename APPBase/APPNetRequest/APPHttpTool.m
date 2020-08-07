@@ -536,7 +536,7 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
     if (httpCode == 401) {
         //4XX 客户端错误
         errorMessage = @"登录失效，请重新登录哦~";//清空
-        if (APPManagerObject.isLogined && APPManagerUserInfo.token.length) {
+        if (APPManagerObject.isLogined) {
             //用户登录过期 && 执行退出
             [[APPManager sharedInstance] forcedExitUserWithShowControllerItemIndex:0];
         }
