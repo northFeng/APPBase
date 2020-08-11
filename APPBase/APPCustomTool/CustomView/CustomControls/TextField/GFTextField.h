@@ -37,9 +37,15 @@ typedef NS_ENUM(NSInteger,GFTFType) {
 ///是否为电话类型(默认为NO)
 @property (nonatomic,assign) BOOL isPhoneType;
 
+///是否显示输入框弹框(默认展示YES)
+@property (nonatomic,assign) BOOL isShowMenuAction;
+
 
 ///设置占位文字的颜色
 - (void)setPlaceholderTextColor:(UIColor *)placeholderColor;
+
+///设置占位文字属性  textField.font 和 placeholderLabel.font 大小不同引发的偏移：
+- (void)setPlaceholderTextColor:(UIColor *)placeholderColor textFont:(UIFont *)placeholderFont;
 
 ///设置清楚按钮的图片
 - (void)setCleatBtnImageWith:(UIImage *)image;
@@ -53,6 +59,18 @@ typedef NS_ENUM(NSInteger,GFTFType) {
  */
 - (void)switchToPasswordStyleWithBorderColor:(UIColor *)borderColor passwordType:(GFTFType)type;
 
+
+
+@end
+
+#pragma mark - 自定义输入框闪动竖线
+@interface GFLineTF : UIView
+
+///隐藏 && 停止闪烁
+- (void)stopFlashAndHide;
+
+///开始闪烁
+- (void)startFlash;
 
 
 @end
