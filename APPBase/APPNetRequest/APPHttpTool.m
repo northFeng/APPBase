@@ -564,6 +564,14 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         errorMessage = [NSString stringWithFormat:@"服务器错误：%@",[NSHTTPURLResponse localizedStringForStatusCode:httpCode]];
         //在此可以上传错误信息 到后台
     }
+    /**
+     分类    分类描述
+     1**    信息，服务器收到请求，需要请求者继续执行操作
+     2**    成功，操作被成功接收并处理
+     3**    重定向，需要进一步的操作以完成请求
+     4**    客户端错误，请求包含语法错误或无法完成请求
+     5**    服务器错误，服务器在处理请求的过程中发生了错误
+     */
     
     if (block) {
         block(NO,errorMessage,httpCode);
