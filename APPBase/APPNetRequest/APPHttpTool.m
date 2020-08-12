@@ -72,6 +72,23 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         _afNetManager.requestSerializer = [AFJSONRequestSerializer serializer];//设置请求数据为json
         _afNetManager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
         _afNetManager.requestSerializer.timeoutInterval = 15;//超时时间
+        /*忽略一切缓存,数据刷新比较及时！
+        NSURLRequestUseProtocolCachePolicy ——> 默认的cache policy，使用Protocol协议定义。 默认的缓存策略（取决于协议，取决于HTTP版本）
+         默认缓存策略下当客户端发起一个请求时首先会检查本地是否包含缓存，如果有缓存则继续检查缓存是否过期（通过Cache-Control:max-age或者Expires），如果没有过期则直接使用缓存数据。如果缓存过期了，则发起一个请求给服务器端，此时服务器端对比资源Last-Modified或者Etags(二者都存在的情况下下如果有一个不同则认为缓存已过期)，如果不同则返回新数据，否则返回304 Not Modified继续使用缓存数据（客户端可以再使用"max-age"秒缓存数据）。在这个过程中可以发现，客户端发送不发送请求主要看max-age是否过期，而过期后是否继续访问则需要重新发起请求，服务器端根据情况通知客户端是否可以继续使用缓存（这个过程是必须请求的，只是返回结果可能是200或者304）。
+
+         清楚了默认网络协议缓存相关的设置之后，要使用默认缓存就很简单了，通常对于NSURLSession你不做任何设置，只要服务器端响应头部加上Cache-Control:max-age:xxx就可以使用缓存了。
+         
+         
+         NSURLRequestUseProtocolCachePolicy NSURLRequest 默认的cache policy，使用Protocol协议定义。
+         NSURLRequestReloadIgnoringCacheData 忽略缓存，直接从原始地址下载，用于实时数据。
+         NSURLRequestReturnCacheDataDontLoad 只使用cache数据，如果不存在cache，请求失败；用于没有建立网络连接离线模式。
+         NSURLRequestReturnCacheDataElseLoad 只有在cache中不存在data时才从原始地址下载，适用一些不太会变化的数据。
+         注意以下策略是未实现的：
+
+         NSURLRequestReloadIgnoringLocalAndRemoteCacheData 忽略本地和远程的缓存数据，直接从原始地址下载，与NSURLRequestReloadIgnoringCacheData类似。
+         NSURLRequestReloadRevalidatingCacheData 验证本地数据与远程数据是否相同，如果不同则下载远程数据，否则使用本地数据。
+         */
+        _afNetManager.requestSerializer.cachePolicy = NSURLRequestReloadRevalidatingCacheData;
         
         //请求头信息设置
         /**
