@@ -35,6 +35,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///清理Cache下的所有缓存
 + (void)clearDiskItemsOfCacheEndBlock:(APPBackBlock)blockEnd;
 
+///获取缓存路径
++ (NSString *)getCachePathOfUrl:(NSString *)fileName cacheFilePath:(NSString *)cachePath;
+
 
 //-----------------------------------  APP内路径获取  ---------------------------------------
 ///获取音频缓存路径

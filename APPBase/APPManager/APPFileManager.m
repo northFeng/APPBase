@@ -94,6 +94,23 @@
     });
 }
 
+///获取缓存路径
++ (NSString *)getCachePathOfUrl:(NSString *)fileName cacheFilePath:(NSString *)cachePath  {
+
+    NSError *error;
+    NSArray *pathArray = [NSFileManager.defaultManager contentsOfDirectoryAtPath:cachePath error:&error];
+    
+    NSString *path = @"";
+    for (NSString *file in pathArray) {
+        if ([file isEqualToString:fileName]) {
+            path = [NSString stringWithFormat:@"%@/%@",cachePath,file];
+            break;
+        }
+    }
+    
+    return path;
+}
+
 
 //-----------------------------------  APP内路径获取  ---------------------------------------
 ///获取音频缓存路径
