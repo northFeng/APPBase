@@ -55,6 +55,9 @@ pod 'MMMaterialDesignSpinner'
 pod 'JGProgressHUD'
 
 
+#下载器 https://www.jianshu.com/p/6be80f0067ee
+pod 'MCDownloadManager', '~> 1.0.3'
+
 #***************** 第三方功能框架引入**************
 #bug追踪
 #pod 'Bugly','~>2.5.0'
