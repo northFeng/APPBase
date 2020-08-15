@@ -29,6 +29,20 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+/**
+loadView 、viewDidLoad 、viewDidUnload
+ 
+ 第一次访问UIViewController的view时，view为nil，然后就会调用loadView方法创建view
+
+ view创建完毕后会调用viewDidLoad方法进行界面元素的初始化
+
+ 当内存警告时，系统可能会释放UIViewController的view，将view赋值为nil，并且调用viewDidUnload方法
+
+ 当再次访问UIViewController的view时，view已经在3中被赋值为nil，所以又会调用loadView方法重新创建view
+
+ view被重新创建完毕后，还是会调用viewDidLoad方法进行界面元素的初始化
+ */
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
