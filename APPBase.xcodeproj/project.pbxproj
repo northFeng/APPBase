@@ -38,6 +38,7 @@
 		832DD2DC24320A9500AD3FF1 /* SideRefreshEmptyFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2D124320A9500AD3FF1 /* SideRefreshEmptyFooter.m */; };
 		832DD2DD24320A9500AD3FF1 /* SideRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2D224320A9500AD3FF1 /* SideRefresh.m */; };
 		832DD2DE24320A9500AD3FF1 /* UICollectionView+SideExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2D324320A9500AD3FF1 /* UICollectionView+SideExtension.m */; };
+		83452E5424EA23D2009F42C4 /* MCDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83452E5324EA23D2009F42C4 /* MCDownloadManager.m */; };
 		8346B46423C04377001154A7 /* APPOssInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46323C04377001154A7 /* APPOssInterface.m */; };
 		8346B46823C045C6001154A7 /* APPWXInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46723C045C6001154A7 /* APPWXInterface.m */; };
 		8346B46C23C04AD0001154A7 /* APPUMInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46B23C04AD0001154A7 /* APPUMInterface.m */; };
@@ -201,6 +202,8 @@
 		832DD2D624320A9500AD3FF1 /* UICollectionView+SideRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+SideRefresh.h"; sourceTree = "<group>"; };
 		832DD2D724320A9500AD3FF1 /* SideRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideRefresh.h; sourceTree = "<group>"; };
 		832DD2D824320A9500AD3FF1 /* SideRefreshEmptyFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideRefreshEmptyFooter.h; sourceTree = "<group>"; };
+		83452E5224EA23D2009F42C4 /* MCDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDownloadManager.h; sourceTree = "<group>"; };
+		83452E5324EA23D2009F42C4 /* MCDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDownloadManager.m; sourceTree = "<group>"; };
 		8346B46223C04377001154A7 /* APPOssInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPOssInterface.h; sourceTree = "<group>"; };
 		8346B46323C04377001154A7 /* APPOssInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPOssInterface.m; sourceTree = "<group>"; };
 		8346B46623C045C6001154A7 /* APPWXInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPWXInterface.h; sourceTree = "<group>"; };
@@ -438,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				147E502D2351FBCA00C2309B /* APPThirdHeader.h */,
+				83452E5124EA23C0009F42C4 /* DownApi */,
 				830C8E8624DAAEBB00BDD2BB /* SPPageMenu */,
 				83B2D4922489EA2A002113D8 /* CardView */,
 				832DD2CC24320A9500AD3FF1 /* CollectionRefresh */,
@@ -546,6 +550,15 @@
 				832DD2CD24320A9500AD3FF1 /* UICollectionView+SideRefresh.m */,
 			);
 			path = CollectionRefresh;
+			sourceTree = "<group>";
+		};
+		83452E5124EA23C0009F42C4 /* DownApi */ = {
+			isa = PBXGroup;
+			children = (
+				83452E5224EA23D2009F42C4 /* MCDownloadManager.h */,
+				83452E5324EA23D2009F42C4 /* MCDownloadManager.m */,
+			);
+			path = DownApi;
 			sourceTree = "<group>";
 		};
 		8346B46123C04358001154A7 /* OSS */ = {
@@ -1238,6 +1251,7 @@
 				832DD2DA24320A9500AD3FF1 /* SideRefreshHeader.m in Sources */,
 				83987FF72412440100A71FC4 /* APPBaseController+ScreenRotation.m in Sources */,
 				8DAB5EE321AB98A6009662D5 /* GFButtonPress.m in Sources */,
+				83452E5424EA23D2009F42C4 /* MCDownloadManager.m in Sources */,
 				830C8E8924DAAF0700BDD2BB /* SPPageMenu.m in Sources */,
 				8DAB5F0421AB993F009662D5 /* FRHomeVC.m in Sources */,
 				8DAB5EF721AB98E3009662D5 /* AppDelegate+RootConTroller.m in Sources */,
