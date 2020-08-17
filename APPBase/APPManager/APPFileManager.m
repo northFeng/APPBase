@@ -111,6 +111,47 @@
     return path;
 }
 
+///删除最旧的文件
++ (void)removeOldestFilePath:(NSString *)filePath suffix:(NSString *)suffix {
+    
+    NSError *error;
+    NSArray *pathArray = [NSFileManager.defaultManager contentsOfDirectoryAtPath:filePath error:&error];
+    
+    if (pathArray.count) {
+        //删除第一条视频
+        
+        NSString *fileName = @"";
+        NSString *removeName = @"";
+        NSDate *removeDate = nil;
+        for (NSInteger i = 0; i < pathArray.count ; i++) {
+            //倒着取
+            fileName = pathArray[i];
+            if ([fileName hasSuffix:suffix]) {
+                //是对应后缀文件
+                NSString *path = [filePath stringByAppendingPathComponent:fileName];
+                
+                //获取该文件属性
+                NSDictionary<NSString *, id> *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
+                NSDate *createDate = [attrs fileCreationDate];//创建日期
+                if (i == 0) {
+                    removeDate = createDate;
+                    removeName = fileName;
+                }else{
+                    if (createDate.timeIntervalSince1970 < removeDate.timeIntervalSince1970) {
+                        removeDate = createDate;
+                        removeName = fileName;
+                    }
+                }
+            }
+        }
+        
+        if (removeName.length) {
+            NSString *removePath = [filePath stringByAppendingPathComponent:removeName];
+            [NSFileManager.defaultManager removeItemAtPath:removePath error:nil];
+        }
+    }
+}
+
 
 //-----------------------------------  APP内路径获取  ---------------------------------------
 ///获取音频缓存路径

@@ -38,6 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 ///获取缓存路径
 + (NSString *)getCachePathOfUrl:(NSString *)fileName cacheFilePath:(NSString *)cachePath;
 
+///删除最旧的文件
++ (void)removeOldestFilePath:(NSString *)filePath suffix:(NSString *)suffix;
 
 //-----------------------------------  APP内路径获取  ---------------------------------------
 ///获取音频缓存路径
