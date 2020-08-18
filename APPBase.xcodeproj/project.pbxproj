@@ -70,6 +70,7 @@
 		83BC18CE2407A698005A056D /* APPWebHybridController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BC18CD2407A698005A056D /* APPWebHybridController.m */; };
 		83BC18D12407A7FB005A056D /* CBJSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BC18D02407A7FB005A056D /* CBJSModel.m */; };
 		83D59D3C247689810010CB5C /* apple-app-site-association.json in Resources */ = {isa = PBXBuildFile; fileRef = 83D59D3B247689810010CB5C /* apple-app-site-association.json */; };
+		83E9E17C24EBE5FE00872919 /* APPVideoDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E9E17B24EBE5FE00872919 /* APPVideoDownView.m */; };
 		83FC02B0244E9FED00D146C6 /* APPAudioNetPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FC02AE244E9FED00D146C6 /* APPAudioNetPlayer.m */; };
 		8D69D3DA22B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = 8D69D3D922B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive */; };
 		8D69D3DC22B4F9D800D4A325 /* MVVM与RAC.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = 8D69D3DB22B4F9D800D4A325 /* MVVM与RAC.webarchive */; };
@@ -263,6 +264,8 @@
 		83BC18CF2407A7FB005A056D /* CBJSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBJSModel.h; sourceTree = "<group>"; };
 		83BC18D02407A7FB005A056D /* CBJSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBJSModel.m; sourceTree = "<group>"; };
 		83D59D3B247689810010CB5C /* apple-app-site-association.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "apple-app-site-association.json"; sourceTree = "<group>"; };
+		83E9E17A24EBE5FE00872919 /* APPVideoDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPVideoDownView.h; sourceTree = "<group>"; };
+		83E9E17B24EBE5FE00872919 /* APPVideoDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPVideoDownView.m; sourceTree = "<group>"; };
 		83FC02AE244E9FED00D146C6 /* APPAudioNetPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPAudioNetPlayer.m; sourceTree = "<group>"; };
 		83FC02AF244E9FED00D146C6 /* APPAudioNetPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPAudioNetPlayer.h; sourceTree = "<group>"; };
 		8D69D3D922B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "ReactiveCocoa 讨论会 | 唐巧的博客.webarchive"; sourceTree = "<group>"; };
@@ -557,6 +560,8 @@
 			children = (
 				83452E5224EA23D2009F42C4 /* MCDownloadManager.h */,
 				83452E5324EA23D2009F42C4 /* MCDownloadManager.m */,
+				83E9E17A24EBE5FE00872919 /* APPVideoDownView.h */,
+				83E9E17B24EBE5FE00872919 /* APPVideoDownView.m */,
 			);
 			path = DownApi;
 			sourceTree = "<group>";
@@ -1239,6 +1244,7 @@
 				8DAB5E3D21AB976C009662D5 /* APPLoacalInfo.m in Sources */,
 				832DD2D924320A9500AD3FF1 /* UICollectionView+SideRefresh.m in Sources */,
 				14CE0FA8235080F00093E45C /* GFMineController.m in Sources */,
+				83E9E17C24EBE5FE00872919 /* APPVideoDownView.m in Sources */,
 				83188D2E2435948B009EB8FF /* APPBaseLandscapeController.m in Sources */,
 				8DAB5EC821AB9882009662D5 /* FSPromptView.m in Sources */,
 				8DAB5EB521AB9839009662D5 /* NSArray+GFExtension.m in Sources */,

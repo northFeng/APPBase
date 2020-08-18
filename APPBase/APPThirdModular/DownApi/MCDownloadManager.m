@@ -12,6 +12,7 @@
 
 NSString * const MCDownloadCacheFolderName = @"MCDownloadCache";
 
+///缓存路径
 static NSString * cacheFolder() {
     NSFileManager *filemgr = [NSFileManager defaultManager];
     static NSString *cacheFolder;
@@ -27,13 +28,22 @@ static NSString * cacheFolder() {
             cacheFolder = nil;
         }
     });
+    
+    if (cacheFolder.length) {
+        //判断文件路径是否存在（有可能被清除掉了）
+        if (![[NSFileManager defaultManager] fileExistsAtPath:cacheFolder]) {
+            [[NSFileManager defaultManager] createDirectoryAtPath:cacheFolder withIntermediateDirectories:YES attributes:nil error:nil];
+        }
+    }
     return cacheFolder;
 }
 
+//下载管理文件地址
 static NSString * LocalReceiptsPath() {
     return [cacheFolder() stringByAppendingPathComponent:@"receipts.data"];
 }
 
+///下载文件大小
 static unsigned long long fileSizeForPath(NSString *path) {
     
     signed long long fileSize = 0;
@@ -48,6 +58,7 @@ static unsigned long long fileSizeForPath(NSString *path) {
     return fileSize;
 }
 
+///获取MD5值
 static NSString * getMD5String(NSString *str) {
     
     if (str == nil) return nil;
@@ -74,8 +85,8 @@ static NSString * getMD5String(NSString *str) {
 @property (nonatomic, copy) NSString *speed;  // KB/s
 @property (nonatomic, assign) MCDownloadState state;
 
-@property (assign, nonatomic) long long totalBytesWritten;
-@property (assign, nonatomic) long long totalBytesExpectedToWrite;
+@property (assign, nonatomic) NSInteger totalBytesWritten;
+@property (assign, nonatomic) NSInteger totalBytesExpectedToWrite;
 @property (nonatomic, copy) NSProgress *progress;
 
 @property (strong, nonatomic) NSOutputStream *stream;
@@ -83,8 +94,9 @@ static NSString * getMD5String(NSString *str) {
 @property (nonatomic, assign) NSUInteger totalRead;
 @property (nonatomic, strong) NSDate *date;
 
-
 @end
+
+#pragma mark - ************************* 下载文件信息类 *************************
 @implementation MCDownloadReceipt
 
 - (NSOutputStream *)stream
@@ -99,10 +111,6 @@ static NSString * getMD5String(NSString *str) {
 
     NSString *path = [cacheFolder() stringByAppendingPathComponent:self.filename];
     if (![path isEqualToString:_filePath] ) {
-        if (_filePath && ![[NSFileManager defaultManager] fileExistsAtPath:_filePath]) {
-            NSString *dir = [_filePath stringByDeletingLastPathComponent];
-            [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:nil];
-        }
         _filePath = path;
     }
     
@@ -142,7 +150,7 @@ static NSString * getMD5String(NSString *str) {
     return _progress;
 }
 
-- (long long)totalBytesWritten {
+- (NSInteger)totalBytesWritten {
     
     return fileSizeForPath(self.filePath);
 }
@@ -212,6 +220,7 @@ static NSString * getMD5String(NSString *str) {
 
 @implementation MCDownloadManager
 
+#pragma mark - 下载Session配置信息
 + (NSURLSessionConfiguration *)defaultURLSessionConfiguration {
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     
@@ -274,6 +283,7 @@ static NSString * getMD5String(NSString *str) {
 }
 
 
+#pragma mark - ************************* 开始下载 *************************
 - (NSMutableDictionary *)allDownloadReceipts {
     if (_allDownloadReceipts == nil) {
          NSDictionary *receipts = [NSKeyedUnarchiver unarchiveObjectWithFile:LocalReceiptsPath()];
@@ -329,6 +339,7 @@ static NSString * getMD5String(NSString *str) {
             return ;
         }
         
+        //正在下载
         if (receipt.state == MCDownloadStateDownloading && receipt.totalBytesWritten != receipt.totalBytesExpectedToWrite) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (receipt.progressBlock) {
@@ -347,10 +358,13 @@ static NSString * getMD5String(NSString *str) {
             [request setValue:range forHTTPHeaderField:@"Range"];
             NSURLSessionDataTask *task = [self.session dataTaskWithRequest:request];
             task.taskDescription = receipt.url;
+            
+            //把task存储起来
             self.tasks[receipt.url] = task;
             [self.queuedTasks addObject:task];
         }
 
+        ///开始下载
         [self resumeWithDownloadReceipt:receipt];
 
         
@@ -359,9 +373,8 @@ static NSString * getMD5String(NSString *str) {
 }
 
 
-
-#pragma mark - -----------------------
-
+#pragma mark - ************************* 下载task管理 *************************
+///移除task任务
 - (NSURLSessionDataTask*)safelyRemoveTaskWithURLIdentifier:(NSString *)URLIdentifier {
     __block NSURLSessionDataTask *task = nil;
     dispatch_sync(self.synchronizationQueue, ^{
@@ -377,6 +390,7 @@ static NSString * getMD5String(NSString *str) {
     return task;
 }
 
+///正在下载的 task 数量
 - (void)safelyDecrementActiveTaskCount {
     dispatch_sync(self.synchronizationQueue, ^{
         if (self.activeRequestCount > 0) {
@@ -392,6 +406,7 @@ static NSString * getMD5String(NSString *str) {
                 NSURLSessionDataTask *task = [self dequeueTask];
                 MCDownloadReceipt *receipt = [self downloadReceiptForURL:task.taskDescription];
                 if (task.state == NSURLSessionTaskStateSuspended && receipt.state == MCDownloadStateWillResume) {
+                    //开始下载另一个
                     [self startTask:task];
                     break;
                 }
@@ -400,13 +415,22 @@ static NSString * getMD5String(NSString *str) {
     });
 }
 
+- (NSURLSessionDataTask *)dequeueTask {
+    NSURLSessionDataTask *task = nil;
+    task = [self.queuedTasks firstObject];
+    [self.queuedTasks removeObject:task];
+    return task;
+}
 
+///开始下载
 - (void)startTask:(NSURLSessionDataTask *)task {
     [task resume];
     ++self.activeRequestCount;
+    //更新下载信息表字典
     [self updateReceiptWithURL:task.taskDescription state:MCDownloadStateDownloading];
 }
 
+///进行按照指定顺序添加 task 任务
 - (void)enqueueTask:(NSURLSessionDataTask *)task {
     switch (self.downloadPrioritizaton) {
         case MCDownloadPrioritizationFIFO:  //
@@ -418,19 +442,13 @@ static NSString * getMD5String(NSString *str) {
     }
 }
 
-- (NSURLSessionDataTask *)dequeueTask {
-    NSURLSessionDataTask *task = nil;
-    task = [self.queuedTasks firstObject];
-    [self.queuedTasks removeObject:task];
-    return task;
-}
 
 - (BOOL)isActiveRequestCountBelowMaximumLimit {
     return self.activeRequestCount < self.maximumActiveDownloads;
 }
 
 
-#pragma mark - 
+#pragma mark - 这里我进行了修改！！
 - (MCDownloadReceipt *)downloadReceiptForURL:(NSString *)url {
     
     if (url == nil) return nil;
@@ -448,7 +466,16 @@ static NSString * getMD5String(NSString *str) {
     return receipt;
 }
 
-#pragma mark -  NSNotification
+//自己添加
+- (MCDownloadReceipt *)getReceiptForURL:(NSString *)url {
+    
+    if (url == nil) return nil;
+    MCDownloadReceipt *receipt = self.allDownloadReceipts[url];
+
+    return receipt;
+}
+
+#pragma mark - ************************* APP活跃状态通知处理 *************************
 - (void)applicationWillTerminate:(NSNotification *)not {
     
     [self suspendAll];
@@ -492,8 +519,8 @@ static NSString * getMD5String(NSString *str) {
     }
 }
 
-#pragma mark - MCDownloadControlDelegate
-
+#pragma mark - ************************* 代理MCDownloadControlDelegate *************************
+///恢复下载
 - (void)resumeWithURL:(NSString *)url {
     
     if (url == nil) return;
@@ -502,6 +529,7 @@ static NSString * getMD5String(NSString *str) {
     [self resumeWithDownloadReceipt:receipt];
     
 }
+///恢复下载2
 - (void)resumeWithDownloadReceipt:(MCDownloadReceipt *)receipt {
     
     if ([self isActiveRequestCountBelowMaximumLimit]) {
@@ -521,6 +549,7 @@ static NSString * getMD5String(NSString *str) {
     }
 }
 
+///暂停所有下载
 - (void)suspendAll {
     
     for (NSURLSessionDataTask *task in self.queuedTasks) {
@@ -533,6 +562,8 @@ static NSString * getMD5String(NSString *str) {
     [self saveReceipts:self.allDownloadReceipts];
 
 }
+
+///下载指定URL的task
 -(void)suspendWithURL:(NSString *)url {
     
      if (url == nil) return;
@@ -553,14 +584,13 @@ static NSString * getMD5String(NSString *str) {
 
 }
 
-
+///移除指定URL下载
 - (void)removeWithURL:(NSString *)url {
     
     if (url == nil) return;
     
     MCDownloadReceipt *receipt = [self downloadReceiptForURL:url];
     [self removeWithDownloadReceipt:receipt];
-    
 }
 - (void)removeWithDownloadReceipt:(MCDownloadReceipt *)receipt {
     
@@ -569,6 +599,7 @@ static NSString * getMD5String(NSString *str) {
         [task cancel];
     }
     
+    //移除task
     [self.queuedTasks removeObject:task];
     [self safelyRemoveTaskWithURLIdentifier:receipt.url];
 
@@ -577,11 +608,23 @@ static NSString * getMD5String(NSString *str) {
         [self saveReceipts:self.allDownloadReceipts];
     });
     
+    //移除已下载的文件
     NSFileManager *fileManager = [NSFileManager defaultManager];
     [fileManager removeItemAtPath:receipt.filePath error:nil];
 
 }
-#pragma mark - <NSURLSessionDataDelegate>
+
+///移除所有下载
+- (void)removeAllDownLoadFile {
+    
+    NSDictionary *receiptsDic = [self.allDownloadReceipts copy];
+    for (MCDownloadReceipt *receipt in receiptsDic.allValues) {
+        [self removeWithDownloadReceipt:receipt];
+    }
+}
+
+#pragma mark - ************************* 代理 NSURLSessionDataDelegate *************************
+
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSHTTPURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
 {
     MCDownloadReceipt *receipt = [self downloadReceiptForURL:dataTask.taskDescription];
@@ -597,7 +640,7 @@ static NSString * getMD5String(NSString *str) {
 {
 
     dispatch_sync(self.synchronizationQueue, ^{
-
+        
         __block NSError *error = nil;
         MCDownloadReceipt *receipt = [self downloadReceiptForURL:dataTask.taskDescription];
 
@@ -614,7 +657,7 @@ static NSString * getMD5String(NSString *str) {
         
         // Write Data
         NSInputStream *inputStream =  [[NSInputStream alloc] initWithData:data];
-        NSOutputStream *outputStream = [[NSOutputStream alloc] initWithURL:[NSURL fileURLWithPath:receipt.filePath] append:YES];
+        NSOutputStream *outputStream = [[NSOutputStream alloc] initWithURL:[NSURL fileURLWithPath:receipt.filePath] append:YES];//保存到指定的文件路径
         [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
         [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
         
@@ -660,6 +703,7 @@ static NSString * getMD5String(NSString *str) {
     MCDownloadReceipt *receipt = [self downloadReceiptForURL:task.taskDescription];
     
     if (error) {
+        NSLog(@"下载出错-->%@",error);
         receipt.state = MCDownloadStateFailed;
         dispatch_async(dispatch_get_main_queue(), ^{
             if (receipt.failureBlock) {
@@ -667,6 +711,7 @@ static NSString * getMD5String(NSString *str) {
             }
         });
     }else {
+        NSLog(@"下载完成");
         [receipt.stream close];
         receipt.stream = nil;
         receipt.state = MCDownloadStateCompleted;

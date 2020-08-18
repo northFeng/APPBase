@@ -54,8 +54,8 @@ typedef void (^MCProgressBlock)(NSProgress * _Nonnull,MCDownloadReceipt *);
 @property (nonatomic, copy, readonly, nullable) NSString *truename;
 @property (nonatomic, copy, readonly) NSString *speed;  // KB/s
 
-@property (assign, nonatomic, readonly) long long totalBytesWritten;
-@property (assign, nonatomic, readonly) long long totalBytesExpectedToWrite;
+@property (assign, nonatomic, readonly) NSInteger totalBytesWritten;
+@property (assign, nonatomic, readonly) NSInteger totalBytesExpectedToWrite;
 
 @property (nonatomic, copy, readonly, nonnull) NSProgress *progress;
 
@@ -74,6 +74,8 @@ typedef void (^MCProgressBlock)(NSProgress * _Nonnull,MCDownloadReceipt *);
 
 - (void)removeWithURL:(NSString * _Nonnull)url;
 - (void)removeWithDownloadReceipt:(MCDownloadReceipt * _Nonnull)receipt;
+///移除所有下载
+- (void)removeAllDownLoadFile;
 
 @end
 
@@ -100,7 +102,7 @@ typedef void (^MCProgressBlock)(NSProgress * _Nonnull,MCDownloadReceipt *);
 /**
  Initializes the `MCDownloadManager` instance with the given session manager, download prioritization, maximum active download count.
  
- @param sessionManager The session manager to use to download file.
+ @param session The session manager to use to download file.
  @param downloadPrioritization The download prioritization of the download queue.
  @param maximumActiveDownloads  The maximum number of active downloads allowed at any given time. Recommend `4`.
  
@@ -131,6 +133,9 @@ typedef void (^MCProgressBlock)(NSProgress * _Nonnull,MCDownloadReceipt *);
 
 
 - (MCDownloadReceipt * _Nullable)downloadReceiptForURL:(NSString *)url;
+
+//自己添加
+- (MCDownloadReceipt *)getReceiptForURL:(NSString *)url;
 
 @end
 
