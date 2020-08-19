@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param upData 二进制数据
 /// @param dataId 数据唯一Id(带类型 例如 xxx.mp3)
 /// @param blockResult 回调
-- (void)uploadData:(NSData *)upData dataId:(NSString *)dataId blockResult:(APPBackBlock)blockResult;
+- (void)uploadData:(NSData *)upData dataId:(NSString *)dataId pathType:(NSString *)filePath contentType:(NSString *)contentType blockResult:(APPBackBlock)blockResult;
 
 
 /// 获取OSS数据

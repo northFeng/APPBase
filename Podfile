@@ -15,7 +15,7 @@ pod 'AFNetworking','~>3.2.1'
 pod 'MJRefresh' , '~>3.1'
 
 #轮播图
-pod 'SDCycleScrollView','1.80'
+pod 'SDCycleScrollView'
 
 #约束1
 pod 'Masonry','~>1.1'
@@ -33,7 +33,7 @@ pod 'YYModel','~>1.0.4'
 pod 'MBProgressHUD','~>1.1.0'
 
 #加载图片
-pod 'SDWebImage','~>4.0.0'
+pod 'SDWebImage'
 
 # 集成VC日志输出
 pod 'Aspects', '~> 1.4.1'
@@ -85,7 +85,7 @@ pod "PLPlayerKit", :podspec => 'https://raw.githubusercontent.com/pili-engineeri
 pod 'WechatOpenSDK','~>1.8.6'
 
 #阿里OSS
-#pod 'AliyunOSSiOS','~> 2.10.7'
+pod 'AliyunOSSiOS','~> 2.10.8'
 
 #友盟公共组件
 #pod 'UMCCommon','~>2.1.1'
