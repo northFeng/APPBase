@@ -35,5 +35,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+/** 创建带JS脚本的 WKWebView配置类
+//js脚本（让文字显示适配viewport && 设置网页背景颜色）
+NSString *jScript = @"var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);document.body.style.backgroundColor = '#F7FBFC'";
+//注入
+WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:jScript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+WKUserContentController *wkUController = [[WKUserContentController alloc] init];
+[wkUController addUserScript:wkUScript];
+
+//配置对象
+WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+configuration.userContentController = wkUController;
+
+_audioTextView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) configuration:configuration];
+_audioTextView.hidden = YES;
+_audioTextView.backgroundColor = [UIColor redColor];
+ */
+
 
 NS_ASSUME_NONNULL_END
