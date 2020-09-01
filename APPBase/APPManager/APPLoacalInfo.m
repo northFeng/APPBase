@@ -88,6 +88,19 @@ NSString * const KEY_UDID_INSTEAD = @"com.appBase.udid";
     SecItemDelete((CFDictionaryRef)keychainQuery);
 }
 
+///存储字符串 到钥匙串本地
++ (void)storekeychain:(NSString *)chain key:(NSString *)key {
+    [self save:key data:chain];
+}
+
+///获取钥匙串
++ (NSString *)getKeyChainForKey:(NSString *)key {
+    
+    NSString *chain = [self load:key];
+    
+    return chain;
+}
+
 //----------------------------------------------------------------------------------------------
 
 ///获取UUID

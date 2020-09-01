@@ -11,6 +11,11 @@
 #import "GFNavigationController.h"
 #import "APPDataBase.h"//数据库
 
+///Apple 登录框架
+#import <AuthenticationServices/AuthenticationServices.h>
+
+#import "APPLoginApi.h"
+
 @interface FRHomeVC ()
 
 ///
@@ -59,6 +64,19 @@
     
     [_dataBase createDataBase];
     
+    
+    ASAuthorizationAppleIDButton * appleIDBtn = [ASAuthorizationAppleIDButton buttonWithType:ASAuthorizationAppleIDButtonTypeDefault style:ASAuthorizationAppleIDButtonStyleWhite];
+    appleIDBtn.frame = CGRectMake(30, 80, 60, 64);
+    [appleIDBtn addTarget:self action:@selector(didAppleIDBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:appleIDBtn];
+}
+
+///
+- (void)didAppleIDBtnClicked {
+    
+    NSLog(@"点击苹果登录按钮");
+    
+    [APPLoginApi.shareInstance appleLogin];
 }
 
 ///存储

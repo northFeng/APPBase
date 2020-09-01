@@ -18,6 +18,13 @@ NS_ASSUME_NONNULL_BEGIN
 ///获取设备唯一标识
 + (NSString *)getDeviceIDInKeychain;
 
+///存储字符串 到钥匙串本地
++ (void)storekeychain:(NSString *)chain key:(NSString *)key;
+
+///获取钥匙串
++ (NSString *)getKeyChainForKey:(NSString *)key;
+
+
 ///获取UUID
 + (NSString *)UUIDString;
 
