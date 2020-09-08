@@ -16,7 +16,7 @@
 
 #import "APPLoginApi.h"
 
-@interface FRHomeVC ()
+@interface FRHomeVC () <UIViewControllerPreviewingDelegate , UIContextMenuInteractionDelegate>
 
 ///
 @property (nonatomic,strong) APPDataBase *dataBase;
@@ -49,7 +49,8 @@
     
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeSystem];
     [btn2 setTitle:@"全部" forState:UIControlStateNormal];
-    btn2.frame = CGRectMake(200, 200, 50, 30);
+    btn2.backgroundColor = UIColor.yellowColor;
+    btn2.frame = CGRectMake(200, 300, 100, 50);
     [btn2 addTarget:self action:@selector(onClickBtnTake) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn2];
     
@@ -69,7 +70,63 @@
     appleIDBtn.frame = CGRectMake(30, 80, 60, 64);
     [appleIDBtn addTarget:self action:@selector(didAppleIDBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:appleIDBtn];
+    
+    
+    //添加3DTouch view
+    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+        NSLog(@"3D Touch  可用!");
+        //给cell注册3DTouch的peek（预览）和pop功能 ，注册(在哪个页面上使用该功能就注册在哪个页面上)
+        [self registerForPreviewingWithDelegate:self sourceView:btn2];
+    } else {
+        NSLog(@"3D Touch 无效");
+    }
 }
+
+//--------------------------------------- 3DTouch代理 ---------------------------------------
+//2.第二步
+#pragma mark - UIViewControllerPreviewingDelegate（实现代理的方法）
+- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+    
+    FROrderCellVC *cellVC = [[FROrderCellVC alloc] init];
+    
+    //获取按压的cell所在行，[previewingContext sourceView]就是按压的那个视图
+    //UIView *touchView = [previewingContext sourceView]];
+    
+    
+    //设定预览的界面
+    cellVC.preferredContentSize = CGSizeMake(0.0f,500.0f);
+    
+    //调整不被虚化的范围，按压的那个cell不被虚化（轻轻按压时周边会被虚化，再少用力展示预览，再加力跳页至设定界面）
+    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width,40);
+    previewingContext.sourceRect = rect;
+    
+    return cellVC;
+    
+}
+
+- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    [self.navigationController pushViewController:viewControllerToCommit animated:YES];
+}
+
+
+/*!
+ * @abstract Called when the interaction begins.
+ *
+ * @param interaction  The UIContextMenuInteraction.
+ * @param location     The location of the interaction in its view.
+ *
+ * @return A UIContextMenuConfiguration describing the menu to be presented. Return nil to prevent the interaction from beginning.
+ *         Returning an empty configuration causes the interaction to begin then fail with a cancellation effect. You might use this
+ *         to indicate to users that it's possible for a menu to be presented from this view, but that there are no actions to
+ *         present at this particular time.
+ */
+//- (nullable UIContextMenuConfiguration *)contextMenuInteraction:(UIContextMenuInteraction *)interaction configurationForMenuAtLocation:(CGPoint)location API_AVAILABLE(ios(13.0)) {
+//    //UIContextMenuInteraction
+//}
+
+//--------------------------------------------------------------------------------------------
+
+
 
 ///
 - (void)didAppleIDBtnClicked {

@@ -31,6 +31,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [self add3DTouch];//添加3DTouch功能
+    
     self.allowRotate = NO;//禁止屏幕旋转
     self.orientat = UIInterfaceOrientationMaskPortrait;//竖直方向
     

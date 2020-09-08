@@ -176,4 +176,59 @@
 
 
 
+#pragma mark - ************************* APPicon 3DTouch功能 *************************
+///添加3D touch功能，APP长按弹框
+- (void)add3DTouch {
+    
+    //1、静态添加 ——> 在info.plist文件中添加 字段
+    /**
+     UIApplicationShortcutItems —> Array 类型 ——> 添加Item ——> 四个字段
+     UIApplicationShortcutItems：数组中的元素就是我们那些快捷选项标签
+     
+     UIApplicationShortcutItemTitle：标签的标题(必填)
+     UIApplicationShortcutItemSubtitle：标签副标题（可选）
+     UIApplicationShortcutItemType：标签唯一标识（必填）
+     UIApplicationShortcutItemIcon：标签图标（可选）
+     */
+    
+    /**
+     静态添加 和 动态添加 可以同时使用, 但是系统会先加载 静态 items, 然后再加载 动态 items.
+
+     开发者自定义的貌似最多只能添加 4 个 item, 加上系统会自带一个 分享应用 一共 5 个.(虽然没有看到文档里面有写个数限制)
+     */
+    
+    //2、代码动态添加
+    //首先判断是否支持3DTouch
+    if (self.window.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+        //创建3DTouch模型
+        
+        //自定义图标  注意：自定义的 icon 必须是 35 * 35 的 「正方形 单色」(底层镂空，图形 黑色) 的图片
+        UIApplicationShortcutIcon *icon1 = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeSearch];//+ (instancetype)iconWithTemplateImageName:(NSString *)templateImageName; 自定义icon
+        UIApplicationShortcutIcon *icon2 = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeShare];
+        
+        //创建带有自定义图标的item
+        UIApplicationShortcutItem *item1 = [[UIApplicationShortcutItem alloc] initWithType:@"icon1" localizedTitle:@"搜索" localizedSubtitle:@"首页搜索" icon:icon1 userInfo:nil];
+        UIApplicationShortcutItem *item2 = [[UIApplicationShortcutItem alloc] initWithType:@"icon2" localizedTitle:@"分享" localizedSubtitle:@"课程分享" icon:icon2 userInfo:nil];
+        
+        [[UIApplication sharedApplication] setShortcutItems:@[item1,item2]];
+    }
+}
+
+///APPicon菜单弹框事件
+- (void)application:(UIApplication *)application performActionForShortcutItem:(nonnull UIApplicationShortcutItem *)shortcutItem completionHandler:(nonnull void (^)(BOOL))completionHandler {
+    
+    //获取 shortcutItem 的 type ，type就是初始化 item 的时候 传入的唯一标识符
+    NSString *type = shortcutItem.type;
+    
+    if ([type isEqualToString:@"icon1"]) {
+        //搜索
+        NSLog(@"点击弹框菜单—>搜索");
+    }else if ([type isEqualToString:@"icon2"]) {
+        //分享
+        NSLog(@"点击弹框菜单—>分享");
+    }
+
+}
+
+
 @end

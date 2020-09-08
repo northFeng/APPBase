@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setRootViewController;
 
+
+///添加3D touch功能，APP长按弹框
+- (void)add3DTouch;
+
 @end
 
 NS_ASSUME_NONNULL_END

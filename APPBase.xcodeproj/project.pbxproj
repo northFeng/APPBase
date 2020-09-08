@@ -46,6 +46,9 @@
 		8354DE6923D59000006B09C6 /* TwoSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE6823D59000006B09C6 /* TwoSwiftController.swift */; };
 		8354DE6B23D5B4B8006B09C6 /* ClassHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE6A23D5B4B8006B09C6 /* ClassHead.swift */; };
 		836FCBBE24FE074D00E2C195 /* APPButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 836FCBBD24FE074D00E2C195 /* APPButtonCell.m */; };
+		837DC185250784460041DEBA /* 标签图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 837DC183250784460041DEBA /* 标签图标.png */; };
+		837DC186250784460041DEBA /* 方法1.png in Resources */ = {isa = PBXBuildFile; fileRef = 837DC184250784460041DEBA /* 方法1.png */; };
+		837DC18925078BC70041DEBA /* Touch3DButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 837DC18825078BC70041DEBA /* Touch3DButton.m */; };
 		83987FDE241242C100A71FC4 /* CBAudioSmallAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FD5241242C100A71FC4 /* CBAudioSmallAlerView.m */; };
 		83987FDF241242C100A71FC4 /* CBSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FD7241242C100A71FC4 /* CBSlider.m */; };
 		83987FE0241242C100A71FC4 /* CBAudioListVierw.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FD8241242C100A71FC4 /* CBAudioListVierw.m */; };
@@ -222,6 +225,10 @@
 		836FCBBC24FE074D00E2C195 /* APPButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPButtonCell.h; sourceTree = "<group>"; };
 		836FCBBD24FE074D00E2C195 /* APPButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPButtonCell.m; sourceTree = "<group>"; };
 		83796D422463FFB6000B77C6 /* APPGlobalDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPGlobalDefine.h; sourceTree = "<group>"; };
+		837DC183250784460041DEBA /* 标签图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "标签图标.png"; sourceTree = "<group>"; };
+		837DC184250784460041DEBA /* 方法1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "方法1.png"; sourceTree = "<group>"; };
+		837DC18725078BC70041DEBA /* Touch3DButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Touch3DButton.h; sourceTree = "<group>"; };
+		837DC18825078BC70041DEBA /* Touch3DButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Touch3DButton.m; sourceTree = "<group>"; };
 		83987FCE241237A600A71FC4 /* ManagerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerHeader.h; sourceTree = "<group>"; };
 		83987FD0241242C100A71FC4 /* APPAudioPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPAudioPlayerController.h; sourceTree = "<group>"; };
 		83987FD1241242C100A71FC4 /* CBAudioListVierw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAudioListVierw.h; sourceTree = "<group>"; };
@@ -818,6 +825,8 @@
 				8DAB5EF321AB98E3009662D5 /* AppDelegate.m */,
 				8DAB5EF521AB98E3009662D5 /* AppDelegate+RootConTroller.h */,
 				8DAB5EF421AB98E3009662D5 /* AppDelegate+RootConTroller.m */,
+				837DC183250784460041DEBA /* 标签图标.png */,
+				837DC184250784460041DEBA /* 方法1.png */,
 			);
 			path = APPMain;
 			sourceTree = "<group>";
@@ -1001,6 +1010,8 @@
 				8DAB5F0121AB993F009662D5 /* FRHomeVC.m */,
 				8DAB5EFE21AB993F009662D5 /* FROrderCellVC.h */,
 				8DAB5F0021AB993F009662D5 /* FROrderCellVC.m */,
+				837DC18725078BC70041DEBA /* Touch3DButton.h */,
+				837DC18825078BC70041DEBA /* Touch3DButton.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1154,11 +1165,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				837DC186250784460041DEBA /* 方法1.png in Resources */,
 				8DAB5E0721AB965B009662D5 /* LaunchScreen.storyboard in Resources */,
 				8D69D3DA22B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive in Resources */,
 				8D95957822AE3A1F001A8345 /* JSPatch.js in Resources */,
 				8DAB5F0B21AB9954009662D5 /* FRLoginHomeVC.xib in Resources */,
 				830C8E8B24DAB07900BDD2BB /* SPPageMenu-master.zip in Resources */,
+				837DC185250784460041DEBA /* 标签图标.png in Resources */,
 				8DAB5E0421AB965B009662D5 /* Assets.xcassets in Resources */,
 				83B594AC23755D3900B7514E /* 分页查找.jpeg in Resources */,
 				83D59D3C247689810010CB5C /* apple-app-site-association.json in Resources */,
@@ -1313,6 +1326,7 @@
 				83B2D4992489EAF0002113D8 /* GKPageControl.m in Sources */,
 				832DD2DD24320A9500AD3FF1 /* SideRefresh.m in Sources */,
 				8DAB5E3A21AB976C009662D5 /* APPManager.m in Sources */,
+				837DC18925078BC70041DEBA /* Touch3DButton.m in Sources */,
 				839CDC9F2411193D00617294 /* APPRequest.swift in Sources */,
 				14BE128623506BA50047F00B /* APPAlertTool.m in Sources */,
 				83FC02B0244E9FED00D146C6 /* APPAudioNetPlayer.m in Sources */,

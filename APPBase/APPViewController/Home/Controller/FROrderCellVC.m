@@ -64,4 +64,28 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+//--------------------------------------- 3DTouch功能 ---------------------------------------
+- (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
+    // setup a list of preview actions
+    UIPreviewAction *action1 = [UIPreviewAction actionWithTitle:@"关注" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        NSLog(@"关注");
+    }];
+    
+    UIPreviewAction *action2 = [UIPreviewAction actionWithTitle:@"收藏" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        NSLog(@"收藏");
+    }];
+    
+    UIPreviewAction *action3 = [UIPreviewAction actionWithTitle:@"分享" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        NSLog(@"分享");
+    }];
+    
+    NSArray *actions = @[action1,action2,action3];
+    
+       return actions;
+}
+
+//--------------------------------------------------------------------------------------------
+
+
 @end
