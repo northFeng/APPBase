@@ -238,4 +238,23 @@
 }
 
 
+#pragma mark - ************************* Widget事件处理 *************************
+//iOS 9 之前
+//- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(nonnull id)annotation {
+//
+//
+//    return YES;
+//}
+
+//iOS9之后
+- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    
+    if ([url.absoluteString hasPrefix:@"appbaseWidget"]) {
+        //Widget事件
+        NSLog(@"Widget事件URL---->%@",url.absoluteString);
+    }
+    
+    return YES;
+}
+
 @end

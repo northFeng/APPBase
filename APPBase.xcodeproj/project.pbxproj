@@ -49,6 +49,12 @@
 		837DC185250784460041DEBA /* 标签图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 837DC183250784460041DEBA /* 标签图标.png */; };
 		837DC186250784460041DEBA /* 方法1.png in Resources */ = {isa = PBXBuildFile; fileRef = 837DC184250784460041DEBA /* 方法1.png */; };
 		837DC18925078BC70041DEBA /* Touch3DButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 837DC18825078BC70041DEBA /* Touch3DButton.m */; };
+		8398445B2508B6ED00A73B52 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8398445A2508B6ED00A73B52 /* NotificationCenter.framework */; };
+		8398445F2508B6ED00A73B52 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8398445E2508B6ED00A73B52 /* TodayViewController.m */; };
+		839844622508B6ED00A73B52 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839844602508B6ED00A73B52 /* MainInterface.storyboard */; };
+		839844662508B6ED00A73B52 /* APPWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 839844592508B6ED00A73B52 /* APPWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8398446C2508B9E500A73B52 /* Widget设置.png in Resources */ = {isa = PBXBuildFile; fileRef = 8398446B2508B9E400A73B52 /* Widget设置.png */; };
+		8398446E2508C69E00A73B52 /* Widget与宿主APP通信.png in Resources */ = {isa = PBXBuildFile; fileRef = 8398446D2508C69E00A73B52 /* Widget与宿主APP通信.png */; };
 		83987FDE241242C100A71FC4 /* CBAudioSmallAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FD5241242C100A71FC4 /* CBAudioSmallAlerView.m */; };
 		83987FDF241242C100A71FC4 /* CBSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FD7241242C100A71FC4 /* CBSlider.m */; };
 		83987FE0241242C100A71FC4 /* CBAudioListVierw.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FD8241242C100A71FC4 /* CBAudioListVierw.m */; };
@@ -128,6 +134,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		839844642508B6ED00A73B52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DAB5DEF21AB9659009662D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 839844582508B6ED00A73B52;
+			remoteInfo = APPWidget;
+		};
 		8DAB5E1021AB965B009662D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8DAB5DEF21AB9659009662D5 /* Project object */;
@@ -143,6 +156,20 @@
 			remoteInfo = APPBase;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		839844672508B6ED00A73B52 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				839844662508B6ED00A73B52 /* APPWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		140A8FB8234F1D1700B31672 /* APPToolHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPToolHeader.h; sourceTree = "<group>"; };
@@ -229,6 +256,15 @@
 		837DC184250784460041DEBA /* 方法1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "方法1.png"; sourceTree = "<group>"; };
 		837DC18725078BC70041DEBA /* Touch3DButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Touch3DButton.h; sourceTree = "<group>"; };
 		837DC18825078BC70041DEBA /* Touch3DButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Touch3DButton.m; sourceTree = "<group>"; };
+		839844592508B6ED00A73B52 /* APPWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = APPWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8398445A2508B6ED00A73B52 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		8398445D2508B6ED00A73B52 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		8398445E2508B6ED00A73B52 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		839844612508B6ED00A73B52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		839844632508B6ED00A73B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8398446B2508B9E400A73B52 /* Widget设置.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Widget设置.png"; sourceTree = "<group>"; };
+		8398446D2508C69E00A73B52 /* Widget与宿主APP通信.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Widget与宿主APP通信.png"; sourceTree = "<group>"; };
+		8398446F2508D7A000A73B52 /* APPWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = APPWidget.entitlements; sourceTree = "<group>"; };
 		83987FCE241237A600A71FC4 /* ManagerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerHeader.h; sourceTree = "<group>"; };
 		83987FD0241242C100A71FC4 /* APPAudioPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPAudioPlayerController.h; sourceTree = "<group>"; };
 		83987FD1241242C100A71FC4 /* CBAudioListVierw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAudioListVierw.h; sourceTree = "<group>"; };
@@ -380,6 +416,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		839844562508B6ED00A73B52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8398445B2508B6ED00A73B52 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DAB5DF421AB9659009662D5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -532,6 +576,7 @@
 			children = (
 				83E37C4224FD229A00355A96 /* AuthenticationServices.framework */,
 				2D142DF6F5A1313473EB8EC7 /* Pods_APPBase.framework */,
+				8398445A2508B6ED00A73B52 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -623,6 +668,20 @@
 				8354DE6823D59000006B09C6 /* TwoSwiftController.swift */,
 			);
 			path = Swift;
+			sourceTree = "<group>";
+		};
+		8398445C2508B6ED00A73B52 /* APPWidget */ = {
+			isa = PBXGroup;
+			children = (
+				8398446F2508D7A000A73B52 /* APPWidget.entitlements */,
+				8398446B2508B9E400A73B52 /* Widget设置.png */,
+				8398446D2508C69E00A73B52 /* Widget与宿主APP通信.png */,
+				8398445D2508B6ED00A73B52 /* TodayViewController.h */,
+				8398445E2508B6ED00A73B52 /* TodayViewController.m */,
+				839844602508B6ED00A73B52 /* MainInterface.storyboard */,
+				839844632508B6ED00A73B52 /* Info.plist */,
+			);
+			path = APPWidget;
 			sourceTree = "<group>";
 		};
 		83987FCF241242C100A71FC4 /* AudioPlayer */ = {
@@ -739,6 +798,7 @@
 				8DAB5DF921AB9659009662D5 /* APPBase */,
 				8DAB5E1221AB965B009662D5 /* APPBaseTests */,
 				8DAB5E1D21AB965B009662D5 /* APPBaseUITests */,
+				8398445C2508B6ED00A73B52 /* APPWidget */,
 				8DAB5DF821AB9659009662D5 /* Products */,
 				306191377A95C2E96E4AF91B /* Pods */,
 				2C20A1A11FB28C659380DB7C /* Frameworks */,
@@ -751,6 +811,7 @@
 				8DAB5DF721AB9659009662D5 /* APPBase.app */,
 				8DAB5E0F21AB965B009662D5 /* APPBaseTests.xctest */,
 				8DAB5E1A21AB965B009662D5 /* APPBaseUITests.xctest */,
+				839844592508B6ED00A73B52 /* APPWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1062,6 +1123,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		839844582508B6ED00A73B52 /* APPWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8398446A2508B6ED00A73B52 /* Build configuration list for PBXNativeTarget "APPWidget" */;
+			buildPhases = (
+				839844552508B6ED00A73B52 /* Sources */,
+				839844562508B6ED00A73B52 /* Frameworks */,
+				839844572508B6ED00A73B52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = APPWidget;
+			productName = APPWidget;
+			productReference = 839844592508B6ED00A73B52 /* APPWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		8DAB5DF621AB9659009662D5 /* APPBase */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DAB5E2321AB965B009662D5 /* Build configuration list for PBXNativeTarget "APPBase" */;
@@ -1071,10 +1149,12 @@
 				8DAB5DF421AB9659009662D5 /* Frameworks */,
 				8DAB5DF521AB9659009662D5 /* Resources */,
 				160E1479747BE045BB88B9E8 /* [CP] Embed Pods Frameworks */,
+				839844672508B6ED00A73B52 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				839844652508B6ED00A73B52 /* PBXTargetDependency */,
 			);
 			name = APPBase;
 			productName = APPBase;
@@ -1126,6 +1206,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = ishansong;
 				TargetAttributes = {
+					839844582508B6ED00A73B52 = {
+						CreatedOnToolsVersion = 11.7;
+					};
 					8DAB5DF621AB9659009662D5 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1130;
@@ -1156,11 +1239,22 @@
 				8DAB5DF621AB9659009662D5 /* APPBase */,
 				8DAB5E0E21AB965B009662D5 /* APPBaseTests */,
 				8DAB5E1921AB965B009662D5 /* APPBaseUITests */,
+				839844582508B6ED00A73B52 /* APPWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		839844572508B6ED00A73B52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				839844622508B6ED00A73B52 /* MainInterface.storyboard in Resources */,
+				8398446E2508C69E00A73B52 /* Widget与宿主APP通信.png in Resources */,
+				8398446C2508B9E500A73B52 /* Widget设置.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DAB5DF521AB9659009662D5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1242,6 +1336,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		839844552508B6ED00A73B52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8398445F2508B6ED00A73B52 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DAB5DF321AB9659009662D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1368,6 +1470,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		839844652508B6ED00A73B52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 839844582508B6ED00A73B52 /* APPWidget */;
+			targetProxy = 839844642508B6ED00A73B52 /* PBXContainerItemProxy */;
+		};
 		8DAB5E1121AB965B009662D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8DAB5DF621AB9659009662D5 /* APPBase */;
@@ -1381,6 +1488,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		839844602508B6ED00A73B52 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839844612508B6ED00A73B52 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		8DAB5E0021AB9659009662D5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1400,6 +1515,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		839844682508B6ED00A73B52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = APPWidget/APPWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T5N252L7YD;
+				INFOPLIST_FILE = APPWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.northFeng.APPBase.APPWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		839844692508B6ED00A73B52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = APPWidget/APPWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T5N252L7YD;
+				INFOPLIST_FILE = APPWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.northFeng.APPBase.APPWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		8DAB5E2121AB965B009662D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1714,6 +1869,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8398446A2508B6ED00A73B52 /* Build configuration list for PBXNativeTarget "APPWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				839844682508B6ED00A73B52 /* Debug */,
+				839844692508B6ED00A73B52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8DAB5DF221AB9659009662D5 /* Build configuration list for PBXProject "APPBase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
