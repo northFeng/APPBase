@@ -5,7 +5,7 @@
 //  Created by XinKun on 2018/3/5.
 //  Copyright © 2018年 North_feng. All rights reserved.
 //
-/**
+/** 检查 项目中 IDFA 收集
  1、打开终端cd到要检查的文件的根目录。
 
  2、执行下列语句：grep -r advertisingIdentifier .   （别少了最后那个点号）。

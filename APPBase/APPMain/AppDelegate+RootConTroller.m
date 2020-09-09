@@ -185,10 +185,14 @@
      UIApplicationShortcutItems —> Array 类型 ——> 添加Item ——> 四个字段
      UIApplicationShortcutItems：数组中的元素就是我们那些快捷选项标签
      
-     UIApplicationShortcutItemTitle：标签的标题(必填)
-     UIApplicationShortcutItemSubtitle：标签副标题（可选）
-     UIApplicationShortcutItemType：标签唯一标识（必填）
      UIApplicationShortcutItemIcon：标签图标（可选）
+     
+     UIApplicationShortcutItemType: 快捷可选项的特定字符串(必填)
+     UIApplicationShortcutItemTitle: 快捷可选项的标题(必填)
+     UIApplicationShortcutItemSubtitle: 快捷可选项的子标题(可选)
+     UIApplicationShortcutItemIconType: 快捷可选项的图标(可选)
+     UIApplicationShortcutItemIconFile: 快捷可选项的自定义图标(可选)
+     UIApplicationShortcutItemUserInfo: 快捷可选项的附加信息(可选)
      */
     
     /**
@@ -198,7 +202,6 @@
      */
     
     //2、代码动态添加
-    //首先判断是否支持3DTouch
     if (self.window.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
         //创建3DTouch模型
         
@@ -212,6 +215,10 @@
         
         [[UIApplication sharedApplication] setShortcutItems:@[item1,item2]];
     }
+    
+    /**
+     注: 在支持3D Touch的设备上,用户可以在程序运行期间通过设置 -> 通用 -> 辅助功能 -> 3D Touch来关闭3D Touch功能,所以我们有必要通过重写-traitCollectionDidChange:方法随时处理
+     */
 }
 
 ///APPicon菜单弹框事件

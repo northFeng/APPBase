@@ -82,7 +82,7 @@
     }
 }
 
-//--------------------------------------- 3DTouch代理 ---------------------------------------
+//--------------------------------------- 3DTouch代理  UIContextMenuInteractionDelegate ---------------------------------------
 //2.第二步
 #pragma mark - UIViewControllerPreviewingDelegate（实现代理的方法）
 - (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
@@ -93,11 +93,12 @@
     //UIView *touchView = [previewingContext sourceView]];
     
     
-    //设定预览的界面
-    cellVC.preferredContentSize = CGSizeMake(0.0f,500.0f);
+    //设定预览的界面 的 尺寸 (可不设置)
+    cellVC.preferredContentSize = CGSizeMake(0,0);// 默认 (0,0) ——>系统会自动适配 宽高 ， 非0的话，设置多少显示多少。默认居中显示
     
+    //设置 被按压区域view的尺寸 ——> 为了不让 按压的view 不被虚化
     //调整不被虚化的范围，按压的那个cell不被虚化（轻轻按压时周边会被虚化，再少用力展示预览，再加力跳页至设定界面）
-    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width,40);
+    CGRect rect = CGRectMake(0, 0, 100, 50); //这个尺寸 是以按压view的bounds,设置 不被虚化的 尺寸！！！！——>默认x,y为0， width/height为view的宽高
     previewingContext.sourceRect = rect;
     
     return cellVC;
