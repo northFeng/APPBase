@@ -19,12 +19,25 @@
 
 @implementation APPLoginApi
 
+static APPLoginApi *login;
+
 ///苹果登录
 + (instancetype)shareInstance {
-    static APPLoginApi *login = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         login = [[self alloc] init];
+    });
+    return login;
+}
+
++ (instancetype)alloc {
+    [self allocWithZone:NULL];
+}
+
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        login = [super allocWithZone:zone];
     });
     return login;
 }
