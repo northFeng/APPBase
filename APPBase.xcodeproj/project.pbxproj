@@ -20,6 +20,7 @@
 		147E502C2351EBDC00C2309B /* MMKV使用.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 147E502B2351EBDC00C2309B /* MMKV使用.rtf */; };
 		148459AF234E1B0A002ABA2F /* APPHttpCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 148459AE234E1B0A002ABA2F /* APPHttpCacheTool.m */; };
 		149265E42350CA6600A2C7FE /* APPConfirmAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 149265E32350CA6600A2C7FE /* APPConfirmAlertView.m */; };
+		149EA98B2519A6AB00D259C8 /* 单利的完善.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 149EA98A2519A6AA00D259C8 /* 单利的完善.rtf */; };
 		14BE128623506BA50047F00B /* APPAlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BE128523506BA50047F00B /* APPAlertTool.m */; };
 		14CE0F9D235077A40093E45C /* iOS-MBProgressHUD使用.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14CE0F9C235077A40093E45C /* iOS-MBProgressHUD使用.rtf */; };
 		14CE0FA123507C520093E45C /* GFTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CE0FA023507C510093E45C /* GFTabBarController.m */; };
@@ -199,6 +200,7 @@
 		148459AE234E1B0A002ABA2F /* APPHttpCacheTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPHttpCacheTool.m; sourceTree = "<group>"; };
 		149265E22350CA6600A2C7FE /* APPConfirmAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPConfirmAlertView.h; sourceTree = "<group>"; };
 		149265E32350CA6600A2C7FE /* APPConfirmAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPConfirmAlertView.m; sourceTree = "<group>"; };
+		149EA98A2519A6AA00D259C8 /* 单利的完善.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "单利的完善.rtf"; sourceTree = "<group>"; };
 		14BE128423506BA50047F00B /* APPAlertTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPAlertTool.h; sourceTree = "<group>"; };
 		14BE128523506BA50047F00B /* APPAlertTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPAlertTool.m; sourceTree = "<group>"; };
 		14CE0F9C235077A40093E45C /* iOS-MBProgressHUD使用.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "iOS-MBProgressHUD使用.rtf"; sourceTree = "<group>"; };
@@ -823,6 +825,7 @@
 				8D69D3DB22B4F9D800D4A325 /* MVVM与RAC.webarchive */,
 				8D69D3D922B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive */,
 				83D59D3B247689810010CB5C /* apple-app-site-association.json */,
+				149EA98A2519A6AA00D259C8 /* 单利的完善.rtf */,
 				8DAB5E2F21AB971C009662D5 /* APPManager */,
 				8DAB5E3121AB971C009662D5 /* APPCustomDefine */,
 				8DAB5E3021AB971C009662D5 /* APPNetRequest */,
@@ -1264,6 +1267,7 @@
 				8D69D3DA22B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive in Resources */,
 				8D95957822AE3A1F001A8345 /* JSPatch.js in Resources */,
 				8DAB5F0B21AB9954009662D5 /* FRLoginHomeVC.xib in Resources */,
+				149EA98B2519A6AB00D259C8 /* 单利的完善.rtf in Resources */,
 				830C8E8B24DAB07900BDD2BB /* SPPageMenu-master.zip in Resources */,
 				837DC185250784460041DEBA /* 标签图标.png in Resources */,
 				8DAB5E0421AB965B009662D5 /* Assets.xcassets in Resources */,
