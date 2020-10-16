@@ -131,6 +131,7 @@
 		8DAB5F0A21AB9954009662D5 /* FRLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0721AB9954009662D5 /* FRLoginManager.m */; };
 		8DAB5F0B21AB9954009662D5 /* FRLoginHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0821AB9954009662D5 /* FRLoginHomeVC.xib */; };
 		8DAB5F0C21AB9954009662D5 /* FRLoginHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0921AB9954009662D5 /* FRLoginHomeVC.m */; };
+		AB3DBD7B2539587D00129EFF /* iOS崩溃crash.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */; };
 		FF2D7458DF79A48A39B5A1E8 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D142DF6F5A1313473EB8EC7 /* Pods_APPBase.framework */; };
 /* End PBXBuildFile section */
 
@@ -415,6 +416,7 @@
 		8DAB5F0821AB9954009662D5 /* FRLoginHomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRLoginHomeVC.xib; sourceTree = "<group>"; };
 		8DAB5F0921AB9954009662D5 /* FRLoginHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRLoginHomeVC.m; sourceTree = "<group>"; };
 		8DAB5F1121AB9BED009662D5 /* APPPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPPrefixHeader.pch; sourceTree = "<group>"; };
+		AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS崩溃crash.webarchive"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -822,10 +824,7 @@
 			isa = PBXGroup;
 			children = (
 				83E37C3B24FCDCB900355A96 /* APPBase.entitlements */,
-				8D69D3DB22B4F9D800D4A325 /* MVVM与RAC.webarchive */,
-				8D69D3D922B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive */,
-				83D59D3B247689810010CB5C /* apple-app-site-association.json */,
-				149EA98A2519A6AA00D259C8 /* 单利的完善.rtf */,
+				AB3DBD792539584F00129EFF /* FilesMy */,
 				8DAB5E2F21AB971C009662D5 /* APPManager */,
 				8DAB5E3121AB971C009662D5 /* APPCustomDefine */,
 				8DAB5E3021AB971C009662D5 /* APPNetRequest */,
@@ -1123,6 +1122,18 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		AB3DBD792539584F00129EFF /* FilesMy */ = {
+			isa = PBXGroup;
+			children = (
+				AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */,
+				8D69D3DB22B4F9D800D4A325 /* MVVM与RAC.webarchive */,
+				8D69D3D922B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive */,
+				83D59D3B247689810010CB5C /* apple-app-site-association.json */,
+				149EA98A2519A6AA00D259C8 /* 单利的完善.rtf */,
+			);
+			path = FilesMy;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1263,6 +1274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				837DC186250784460041DEBA /* 方法1.png in Resources */,
+				AB3DBD7B2539587D00129EFF /* iOS崩溃crash.webarchive in Resources */,
 				8DAB5E0721AB965B009662D5 /* LaunchScreen.storyboard in Resources */,
 				8D69D3DA22B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive in Resources */,
 				8D95957822AE3A1F001A8345 /* JSPatch.js in Resources */,
