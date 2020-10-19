@@ -46,6 +46,12 @@
 - (void)initializeData{
     
     _stateHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    if (@available(iOS 11.0, *)) {
+        _iPhone_X = [[UIApplication sharedApplication].windows firstObject].safeAreaInsets.bottom > 0 ? YES : NO;
+    } else {
+        // Fallback on earlier versions
+        _iPhone_X = NO;
+    }
     
     _faceStyle = 0;//随系统
     

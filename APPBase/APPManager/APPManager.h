@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 ///状态栏高度
 @property (nonatomic,assign) CGFloat stateHeight;
 
+@property (nonatomic,assign) BOOL iPhone_X;
+
 ///APP内模式  0:所系统模式  1:白色模式  2:暗黑模式
 @property (nonatomic,assign) NSInteger faceStyle;
 

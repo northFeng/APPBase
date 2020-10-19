@@ -132,6 +132,7 @@
 		8DAB5F0B21AB9954009662D5 /* FRLoginHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0821AB9954009662D5 /* FRLoginHomeVC.xib */; };
 		8DAB5F0C21AB9954009662D5 /* FRLoginHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0921AB9954009662D5 /* FRLoginHomeVC.m */; };
 		AB3DBD7B2539587D00129EFF /* iOS崩溃crash.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */; };
+		AB3DBD7D25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB3DBD7C25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive */; };
 		FF2D7458DF79A48A39B5A1E8 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D142DF6F5A1313473EB8EC7 /* Pods_APPBase.framework */; };
 /* End PBXBuildFile section */
 
@@ -417,6 +418,7 @@
 		8DAB5F0921AB9954009662D5 /* FRLoginHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRLoginHomeVC.m; sourceTree = "<group>"; };
 		8DAB5F1121AB9BED009662D5 /* APPPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPPrefixHeader.pch; sourceTree = "<group>"; };
 		AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS崩溃crash.webarchive"; sourceTree = "<group>"; };
+		AB3DBD7C25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS应用崩溃日志分析.webarchive"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1126,6 +1128,7 @@
 			isa = PBXGroup;
 			children = (
 				AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */,
+				AB3DBD7C25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive */,
 				8D69D3DB22B4F9D800D4A325 /* MVVM与RAC.webarchive */,
 				8D69D3D922B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive */,
 				83D59D3B247689810010CB5C /* apple-app-site-association.json */,
@@ -1286,6 +1289,7 @@
 				83B594AC23755D3900B7514E /* 分页查找.jpeg in Resources */,
 				83D59D3C247689810010CB5C /* apple-app-site-association.json in Resources */,
 				147E502C2351EBDC00C2309B /* MMKV使用.rtf in Resources */,
+				AB3DBD7D25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive in Resources */,
 				14CE0F9D235077A40093E45C /* iOS-MBProgressHUD使用.rtf in Resources */,
 				8D69D3DC22B4F9D800D4A325 /* MVVM与RAC.webarchive in Resources */,
 				83E37C3A24FCDC8900355A96 /* 应用配置中勾选苹果登录申请.png in Resources */,
