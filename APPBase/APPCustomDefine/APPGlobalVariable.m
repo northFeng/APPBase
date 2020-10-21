@@ -8,6 +8,28 @@
 
 #import "APPGlobalVariable.h"
 
+#pragma mark - ******************* 全局函数 *******************
+// GCD —> 回到主线程执行
+void APP_GCD_async_nain_safe(dispatch_block_t block) {
+    if ([NSThread isMainThread]) {
+        if (block) {
+            block();
+        }
+    }else{
+        dispatch_async(dispatch_get_main_queue(), block);
+    }
+}
+
+///延迟执行函数
+void APP_GCD_after(NSTimeInterval seconds, dispatch_queue_t queue, dispatch_block_t block) {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(seconds * NSEC_PER_SEC)), queue, ^{
+        if (block) {
+            block();
+        }
+    });
+}
+
+
 #pragma mark - 全局常量
 
 NSString * const _kGlobal_LightOrDarkModelChange = @"APPLightOrDarkModelChange";

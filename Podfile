@@ -55,6 +55,13 @@ pod 'MMMaterialDesignSpinner'
 pod 'JGProgressHUD'
 
 
+#block的扩展 ——> 各种使用block 来执行
+#pod 'BlocksKit'
+
+#KVO的自封装
+#pod 'KVOController'
+
+
 #***************** 第三方功能框架引入**************
 #bug追踪
 #pod 'Bugly','~>2.5.0'
