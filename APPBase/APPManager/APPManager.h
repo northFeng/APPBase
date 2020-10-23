@@ -4,7 +4,7 @@
 //  APP管理者
 //  Created by XinKun on 2018/3/5.
 //  Copyright © 2018年 North_feng. All rights reserved.
-//  临时修改
+//
 /** 检查 项目中 IDFA 收集
  1、打开终端cd到要检查的文件的根目录。
 
