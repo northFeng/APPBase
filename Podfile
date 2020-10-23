@@ -31,6 +31,7 @@ pod 'YYModel','~>1.0.4'
 
 #提示框
 pod 'MBProgressHUD','~>1.1.0'
+#pod 'SVProgressHUD'
 
 #加载图片
 pod 'SDWebImage'
@@ -55,11 +56,51 @@ pod 'MMMaterialDesignSpinner'
 pod 'JGProgressHUD'
 
 
+#**************** 小功能框架 *****************
 #block的扩展 ——> 各种使用block 来执行
 #pod 'BlocksKit'
 
 #KVO的自封装
 #pod 'KVOController'
+
+# Cell 左滑、右滑 按钮
+#pod 'MGSwipeTableCell', '= 1.6.11'
+
+# Animation 动画
+#pod 'JazzHands', '= 2.0.8' #手势滑动动画
+#pod 'lottie-ios', '= 2.5.0'#各种高级动画封装
+
+#Log高级日志
+#pod 'CocoaLumberjack', '= 3.4.2'  #可写本地日志
+#pod 'CrabCrashReporter', '= 3.6.7'
+
+#钥匙串存储
+#pod 'SAMKeychain', '= 1.5.3'
+
+#内存监控组件
+#pod 'OOMDetector'
+
+#自动增高的输入框——聊天输入框的组件
+#pod 'HPGrowingTextView'
+
+#富文本
+#pod 'HPGrowingTextView', :git => 'https://github.com/GlareCH/GrowingTextView.git'
+#pod 'OHAttributedLabel', :git => 'https://github.com/GlareCH/OHAttributedLabel.git'
+#pod 'TTTAttributedLabel', '= 2.0.0'
+#pod 'YYText', '= 1.0.7'
+
+#DEBUG
+#常用工具 : App信息展示，沙盒浏览、MockGPS、H5任意门、子线程UI检查、日志显示。
+#性能工具 : 帧率监控、CPU监控、内存监控、流量监控、自定义监控。
+#视觉工具 : 颜色吸管、组件检查、对齐标尺。
+#业务专区 : 支持业务测试组件接入到DoraemonKit面板中。
+#pod 'DoraemonKit'
+
+
+#单元测试
+#pod 'OCMock'
+
+
 
 
 #***************** 第三方功能框架引入**************
