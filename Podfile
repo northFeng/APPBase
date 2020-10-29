@@ -48,7 +48,7 @@ pod 'AvoidCrash', '~> 2.5.2'
 #FMDB数据库
 pod 'FMDB','~>2.7.5'
 
-#block编程
+#block编程 ——> 各种使用block 来执行
 pod 'BlocksKit', '>= 2.2.5'
 
 #吐字弹框菊花
@@ -57,11 +57,9 @@ pod 'JGProgressHUD'
 
 
 #**************** 小功能框架 *****************
-#block的扩展 ——> 各种使用block 来执行
-#pod 'BlocksKit'
 
 #KVO的自封装
-#pod 'KVOController'
+pod 'KVOController'
 
 # Cell 左滑、右滑 按钮
 #pod 'MGSwipeTableCell', '= 1.6.11'
@@ -71,7 +69,7 @@ pod 'JGProgressHUD'
 #pod 'lottie-ios', '= 2.5.0'#各种高级动画封装
 
 #Log高级日志
-#pod 'CocoaLumberjack', '= 3.4.2'  #可写本地日志
+pod 'CocoaLumberjack'  #可写本地日志
 #pod 'CrabCrashReporter', '= 3.6.7'
 
 #钥匙串存储

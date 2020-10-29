@@ -31,7 +31,7 @@ static APPLoginApi *login;
 }
 
 + (instancetype)alloc {
-    [self allocWithZone:NULL];
+    return [self allocWithZone:NULL];
 }
 
 + (instancetype)allocWithZone:(struct _NSZone *)zone {
