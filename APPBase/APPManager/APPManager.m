@@ -45,7 +45,11 @@
 ///初始化信息
 - (void)initializeData{
     
+    //这个方法不准，当有地图导航、热点时，或者打电话时，状态栏的高度会 大于正常值20
     _stateHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    //通过设备尺寸来判断手机型号 来 判断是否是刘海屏
+    //_stateHeight =
+    
     if (@available(iOS 11.0, *)) {
         _iPhone_X = [[UIApplication sharedApplication].windows firstObject].safeAreaInsets.bottom > 0 ? YES : NO;
     } else {

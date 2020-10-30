@@ -16,6 +16,10 @@
 
 #import <sys/utsname.h>//要导入头文件
 
+//获取IP地址
+#import <ifaddrs.h>
+#import <arpa/inet.h>
+
 ///UUID
 NSString * const KEY_UDID_INSTEAD = @"com.appBase.udid";
 
@@ -252,6 +256,21 @@ NSString * const KEY_UDID_INSTEAD = @"com.appBase.udid";
     return deviceModel;
 }
 
+
+
+static NSUInteger DeviceMember;
+///获取设备内存 MB
++ (NSUInteger)DeviceMember {
+    if (DeviceMember >0) {
+        return DeviceMember;
+    }
+    
+    double currentDeviceMemory= [NSProcessInfo processInfo].physicalMemory/1024/1024.f;
+    DeviceMember = (NSUInteger)currentDeviceMemory;
+    
+    return DeviceMember;
+}
+
 ///手机运营商
 + (NSString *)mobileOperators {
     
@@ -329,6 +348,73 @@ NSString * const KEY_UDID_INSTEAD = @"com.appBase.udid";
     }
     return isIphone;
 }
+
+// 设备是否越狱
++ (BOOL)isJailbroken {
+    BOOL jailbroken = NO;
+    NSString *cydiaPath = @"/Applications/Cydia.app";
+    NSString *aptPath = @"/private/var/lib/apt/";
+    if ([[NSFileManager defaultManager] fileExistsAtPath:cydiaPath])
+    {
+        jailbroken = YES;
+    }
+    if ([[NSFileManager defaultManager] fileExistsAtPath:aptPath])
+    {
+        jailbroken = YES;
+    }
+    
+#if TARGET_IS_IPHONE
+    struct stat s;
+    if (lstat("/Applications", &s) != 0) {
+        if (s.st_mode & S_IFLNK) {
+            //设备被感染
+            jailbroken = YES;
+        }
+    }
+#endif
+    
+    return jailbroken;
+}
+
+//获取IP地址
++ (NSString *)iPAddress {
+    NSString *address = @"error";
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    int success = 0;
+    // retrieve the current interfaces - returns 0 on success
+    success = getifaddrs(&interfaces);
+    if (success == 0) {
+        // Loop through linked list of interfaces
+        temp_addr = interfaces;
+        while(temp_addr != NULL) {
+            if(temp_addr->ifa_addr->sa_family == AF_INET) {
+                // Check if interface is en0 which is the wifi connection on the iPhone
+                if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"]) {
+                    // Get NSString from C String
+                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+                }
+            }
+            temp_addr = temp_addr->ifa_next;
+        }
+    }
+    // Free memory
+    freeifaddrs(interfaces);
+    return address;
+}
+
+///是否按照SIM卡
++ (BOOL)isSIMInstalled {
+    CTTelephonyNetworkInfo *networkInfo = [[CTTelephonyNetworkInfo alloc] init];
+    CTCarrier *carrier = [networkInfo subscriberCellularProvider];
+    if (!carrier.isoCountryCode && !carrier.carrierName) {
+        NSLog(@"No sim present Or No cellular coverage or phone is on airplane mode.");
+        return NO;
+    }
+    return YES;
+}
+
+
 
 ///跳转到苹果商店
 + (void)gotoAppleStore{

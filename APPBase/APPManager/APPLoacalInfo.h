@@ -46,9 +46,21 @@ NS_ASSUME_NONNULL_BEGIN
 ///获取 设备型号
 + (NSString *)deviceModel;
 
-
 ///判断iPhone && iPad
 + (BOOL)iPhoneOrIpad;
+
+///获取设备内存 MB
++ (NSUInteger)DeviceMember;
+
+
+// 设备是否越狱
++ (BOOL)isJailbroken;
+
+//获取IP地址
++ (NSString *)iPAddress;
+
+///是否按照SIM卡
++ (BOOL)isSIMInstalled;
 
 
 ///跳转到苹果商店
