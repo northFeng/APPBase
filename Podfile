@@ -99,6 +99,18 @@ pod 'YYText'
 #pod 'OCMock'
 
 
+#XML解析 https://www.cnblogs.com/macrohong/p/4946618.html
+#pod 'KissXML'
+
+#压缩 解压
+#pod 'SSZipArchive'
+
+#长连接 TCP框架
+#pod 'GCDWebServer'
+#pod 'WebSocket'
+#TCP和UDP框架
+#pod 'CocoaAsyncSocket'
+
 
 
 #***************** 第三方功能框架引入**************
