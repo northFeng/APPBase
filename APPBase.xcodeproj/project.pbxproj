@@ -133,6 +133,8 @@
 		8DAB5F0C21AB9954009662D5 /* FRLoginHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0921AB9954009662D5 /* FRLoginHomeVC.m */; };
 		AB3DBD7B2539587D00129EFF /* iOS崩溃crash.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */; };
 		AB3DBD7D25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB3DBD7C25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive */; };
+		ABBF9E292553F87100BEE44E /* UIViewController+SafeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBF9E282553F87100BEE44E /* UIViewController+SafeLayout.m */; };
+		ABBF9E2C2553F99200BEE44E /* UIView+SafeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBF9E2B2553F99200BEE44E /* UIView+SafeLayout.m */; };
 		FF2D7458DF79A48A39B5A1E8 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D142DF6F5A1313473EB8EC7 /* Pods_APPBase.framework */; };
 /* End PBXBuildFile section */
 
@@ -419,6 +421,10 @@
 		8DAB5F1121AB9BED009662D5 /* APPPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPPrefixHeader.pch; sourceTree = "<group>"; };
 		AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS崩溃crash.webarchive"; sourceTree = "<group>"; };
 		AB3DBD7C25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS应用崩溃日志分析.webarchive"; sourceTree = "<group>"; };
+		ABBF9E272553F87100BEE44E /* UIViewController+SafeLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SafeLayout.h"; sourceTree = "<group>"; };
+		ABBF9E282553F87100BEE44E /* UIViewController+SafeLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SafeLayout.m"; sourceTree = "<group>"; };
+		ABBF9E2A2553F99200BEE44E /* UIView+SafeLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SafeLayout.h"; sourceTree = "<group>"; };
+		ABBF9E2B2553F99200BEE44E /* UIView+SafeLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SafeLayout.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -458,6 +464,7 @@
 		140A8FB7234F1C9900B31672 /* CustomExtend */ = {
 			isa = PBXGroup;
 			children = (
+				ABBF9E262553F7FF00BEE44E /* AutoLayout */,
 				8DAB5EA321AB9839009662D5 /* NSArray+GFExtension.h */,
 				8DAB5EAA21AB9839009662D5 /* NSArray+GFExtension.m */,
 				8DAB5EAC21AB9839009662D5 /* NSMutableArray+GFExtension.h */,
@@ -1137,6 +1144,17 @@
 			path = FilesMy;
 			sourceTree = "<group>";
 		};
+		ABBF9E262553F7FF00BEE44E /* AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				ABBF9E272553F87100BEE44E /* UIViewController+SafeLayout.h */,
+				ABBF9E282553F87100BEE44E /* UIViewController+SafeLayout.m */,
+				ABBF9E2A2553F99200BEE44E /* UIView+SafeLayout.h */,
+				ABBF9E2B2553F99200BEE44E /* UIView+SafeLayout.m */,
+			);
+			path = AutoLayout;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1427,6 +1445,7 @@
 				8346B46423C04377001154A7 /* APPOssInterface.m in Sources */,
 				83E37C3824FCB52E00355A96 /* APPLoginApi.m in Sources */,
 				8DAB5F0321AB993F009662D5 /* FROrderCellVC.m in Sources */,
+				ABBF9E2C2553F99200BEE44E /* UIView+SafeLayout.m in Sources */,
 				8D95957722AE3A1F001A8345 /* JPEngine.m in Sources */,
 				8DAB5EE821AB98A6009662D5 /* UILabel+Text.m in Sources */,
 				83987FF1241242C800A71FC4 /* APPVideoPromptView.m in Sources */,
@@ -1452,6 +1471,7 @@
 				839CDC9F2411193D00617294 /* APPRequest.swift in Sources */,
 				14BE128623506BA50047F00B /* APPAlertTool.m in Sources */,
 				83FC02B0244E9FED00D146C6 /* APPAudioNetPlayer.m in Sources */,
+				ABBF9E292553F87100BEE44E /* UIViewController+SafeLayout.m in Sources */,
 				8DAB5EE721AB98A6009662D5 /* GFTextField.m in Sources */,
 				83987FF3241242C800A71FC4 /* APPVideoPlayerController.m in Sources */,
 				83987FF2241242C800A71FC4 /* APPVideoInfoView.m in Sources */,

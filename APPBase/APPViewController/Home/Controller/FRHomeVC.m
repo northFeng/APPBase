@@ -16,8 +16,6 @@
 
 #import "APPLoginApi.h"
 
-#import <YYText/YYText.h>//yytext 框架
-
 @interface FRHomeVC () <UIViewControllerPreviewingDelegate , UIContextMenuInteractionDelegate>
 
 ///
