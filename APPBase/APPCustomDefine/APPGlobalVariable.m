@@ -29,6 +29,16 @@ void APP_GCD_after(NSTimeInterval seconds, dispatch_queue_t queue, dispatch_bloc
     });
 }
 
+///安全区域
+UIEdgeInsets safeAreaInset(UIView *view) {
+    if (@available(iOS 11.0, *)) {
+        return view.safeAreaInsets;
+    }else{
+        return UIEdgeInsetsZero;
+    }
+}
+
+
 
 #pragma mark - 全局常量
 

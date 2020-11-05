@@ -85,7 +85,7 @@ pod 'CocoaLumberjack'  #可写本地日志
 #pod 'HPGrowingTextView', :git => 'https://github.com/GlareCH/GrowingTextView.git'
 #pod 'OHAttributedLabel', :git => 'https://github.com/GlareCH/OHAttributedLabel.git'
 #pod 'TTTAttributedLabel', '= 2.0.0'
-#pod 'YYText', '= 1.0.7'
+pod 'YYText'
 
 #DEBUG
 #常用工具 : App信息展示，沙盒浏览、MockGPS、H5任意门、子线程UI检查、日志显示。

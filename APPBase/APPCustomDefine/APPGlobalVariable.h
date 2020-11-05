@@ -32,6 +32,9 @@ void APP_GCD_async_nain_safe(dispatch_block_t block);
 ///延迟执行函数
 void APP_GCD_after(NSTimeInterval seconds, dispatch_queue_t queue, dispatch_block_t block);
 
+///安全区域
+UIEdgeInsets safeAreaInset(UIView *view);
+
 
 #pragma mark - ******************* 全局常量 *******************
 

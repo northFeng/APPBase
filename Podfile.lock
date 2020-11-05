@@ -76,6 +76,7 @@ PODS:
   - XYColorOC (1.1.1)
   - YYCache (1.0.4)
   - YYModel (1.0.4)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.2.1)
@@ -110,6 +111,7 @@ DEPENDENCIES:
   - XYColorOC
   - YYCache (~> 1.0.4)
   - YYModel (~> 1.0.4)
+  - YYText
 
 SPEC REPOS:
   trunk:
@@ -146,6 +148,7 @@ SPEC REPOS:
     - XYColorOC
     - YYCache
     - YYModel
+    - YYText
 
 EXTERNAL SOURCES:
   PLPlayerKit:
@@ -186,7 +189,8 @@ SPEC CHECKSUMS:
   XYColorOC: f80477e6a16aa8ca452ddc004606bbb4636efa03
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: f70879f69c2215fe23529340b7409586d708183d
+PODFILE CHECKSUM: b6f24b3b10368e0611d772345068a7bfa69a076e
 
 COCOAPODS: 1.9.3

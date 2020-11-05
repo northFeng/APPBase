@@ -16,6 +16,8 @@
 
 #import "APPLoginApi.h"
 
+#import <YYText/YYText.h>//yytext 框架
+
 @interface FRHomeVC () <UIViewControllerPreviewingDelegate , UIContextMenuInteractionDelegate>
 
 ///
@@ -39,7 +41,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
     [btn setTitle:@"SwiftOne" forState:UIControlStateNormal];
