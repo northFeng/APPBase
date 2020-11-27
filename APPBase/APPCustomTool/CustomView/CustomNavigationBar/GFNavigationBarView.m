@@ -258,3 +258,73 @@
 
 
 @end
+
+
+@implementation APPUINavigationBar
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    self.topItem.titleView.width = self.width - 8*2;
+    self.topItem.titleView.gf_X = 8;
+    
+    //适配iOS 11 自定义导航栏上移20
+    if (@available(iOS 11, *)) {
+        if ([[UIScreen mainScreen] bounds].size.height >= 812.f) {
+            self.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), 88);
+            for (UIView *view in self.subviews) {
+                if([NSStringFromClass([view class]) containsString:@"Background"]) {
+                    view.frame = self.bounds;
+                }
+                else if ([NSStringFromClass([view class]) containsString:@"ContentView"]) {
+                    CGRect frame = view.frame;
+                    frame.origin.y = 44;
+                    frame.size.height = self.bounds.size.height - frame.origin.y;
+                    view.frame = frame;
+                }
+            }
+        }else{
+            self.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), 64);
+            for (UIView *view in self.subviews) {
+                if([NSStringFromClass([view class]) containsString:@"Background"]) {
+                    view.frame = self.bounds;
+                }
+                else if ([NSStringFromClass([view class]) containsString:@"ContentView"]) {
+                    CGRect frame = view.frame;
+                    frame.origin.y = 20;
+                    frame.size.height = self.bounds.size.height - frame.origin.y;
+                    view.frame = frame;
+                }
+            }
+        }
+    }
+    
+    //适配iOS11 消除导航栏AdaptorView两侧多余宽度
+    if (@available(iOS 11, *)) {
+        for (UIView *contentView in self.subviews) {
+            if([NSStringFromClass([contentView class]) containsString:@"ContentView"]) {
+                for (UIView *contentSubView in contentView.subviews) {
+                    if ([NSStringFromClass([contentSubView class]) containsString:@"AdaptorView"]) {
+                        CGRect frame         = contentSubView.frame;
+                        frame.origin.x       = 0;
+                        frame.size.width     = self.width;
+                        contentSubView.frame = frame;
+                    }
+                }
+                break;
+            }
+        }
+    }
+}
+
+- (CGSize)intrinsicContentSize {
+    return UILayoutFittingExpandedSize;
+}
+
+- (void)makeBackgroundClearWithColor:(UIColor *)color
+{
+    [self setShadowImage:[UIImage new]];
+    [self setBackgroundImage:[UIImage imageNamed:@""] forBarMetrics:UIBarMetricsDefault];
+}
+
+@end

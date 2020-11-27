@@ -67,4 +67,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
+@interface APPUINavigationBar : UINavigationBar
+
+- (void)makeBackgroundClearWithColor:(UIColor*)color;
+
+@end
+
 NS_ASSUME_NONNULL_END
