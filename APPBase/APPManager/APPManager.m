@@ -49,6 +49,13 @@
     _stateHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
     //通过设备尺寸来判断手机型号 来 判断是否是刘海屏【目前12mini外 其他的大于5.5寸都为刘海屏】
     //_stateHeight =
+//    _iPhone_X = NO;
+//    if (UIScreen.mainScreen.bounds.size.height >= 812) {
+//        if (UIScreen.mainScreen.bounds.size.width != 412) {
+//            //412为plus
+//            _iPhone_X = YES;
+//        }
+//    }
     
     if (@available(iOS 11.0, *)) {
         _iPhone_X = [[UIApplication sharedApplication].windows firstObject].safeAreaInsets.bottom > 0 ? YES : NO;
