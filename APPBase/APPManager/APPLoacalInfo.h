@@ -49,6 +49,13 @@ NS_ASSUME_NONNULL_BEGIN
 ///判断iPhone && iPad
 + (BOOL)iPhoneOrIpad;
 
+///是否是刘海屏
++ (BOOL)iPhone_X;
+
++ (BOOL)iPad;
+
++ (BOOL)iPhone;
+
 ///获取设备内存 MB
 + (NSUInteger)DeviceMember;
 

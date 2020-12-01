@@ -354,6 +354,50 @@ static NSUInteger DeviceMember;
     return isIphone;
 }
 
+///是否是刘海屏
++ (BOOL)iPhone_X {
+   
+    BOOL iPhone_x = NO;
+    if ([self iPhone]) {
+        if (UIScreen.mainScreen.bounds.size.height >= 812) {
+            if (UIScreen.mainScreen.bounds.size.width != 412) {
+                //412为plus
+                iPhone_x = YES;
+            }
+        }
+    }
+    
+    return iPhone_x;
+}
+
++ (BOOL)iPad {
+    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+}
+
++ (BOOL)iPhone {
+    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone);
+}
+
++ (BOOL)iPhone3_5Inch {
+    return ([self iPhone] && [[UIScreen mainScreen] bounds].size.height < 568.0f);
+}
+
++ (BOOL)iPhone4_0Inch {
+    return ([self iPhone] && [[UIScreen mainScreen] bounds].size.height >= 568.0f && [[UIScreen mainScreen] bounds].size.height < 667.0f);
+}
+
++ (BOOL) isIPhone4_7Inch {
+    return ([self iPhone] && [[UIScreen mainScreen] bounds].size.height >= 667.0f && [[UIScreen mainScreen] bounds].size.height < 736.0f);
+}
+
++ (BOOL) isIPhone5_5Inch {
+    return ([self iPhone] && [[UIScreen mainScreen] bounds].size.height >= 736.0f &&  [UIScreen mainScreen].bounds.size.height < 812.f);
+}
+
++ (BOOL) isIPhone5_8Inch {
+    return ([self iPhone] && [[UIScreen mainScreen] bounds].size.height >= 812.f);
+}
+
 // 设备是否越狱
 + (BOOL)isJailbroken {
     BOOL jailbroken = NO;
@@ -665,9 +709,9 @@ static NSUInteger DeviceMember;
 + (NSInteger)getSDWebImageFileSize{
     
     //缓存
-    SDImageCache *saImage = [SDImageCache sharedImageCache];
+    //SDImageCache *saImage = [SDImageCache sharedImageCache];
     
-    return saImage.getSize;
+    return 1000;//saImage.getSize;
 }
 
 ///清理缓存路径下的文件
