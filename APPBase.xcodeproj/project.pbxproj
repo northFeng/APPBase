@@ -131,6 +131,8 @@
 		8DAB5F0A21AB9954009662D5 /* FRLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0721AB9954009662D5 /* FRLoginManager.m */; };
 		8DAB5F0B21AB9954009662D5 /* FRLoginHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0821AB9954009662D5 /* FRLoginHomeVC.xib */; };
 		8DAB5F0C21AB9954009662D5 /* FRLoginHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0921AB9954009662D5 /* FRLoginHomeVC.m */; };
+		AB24C5222577B8310068D237 /* iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB24C5202577B8300068D237 /* iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive */; };
+		AB24C5232577B8310068D237 /* iOS-NSUserDefaults详解.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB24C5212577B8310068D237 /* iOS-NSUserDefaults详解.webarchive */; };
 		AB3DBD7B2539587D00129EFF /* iOS崩溃crash.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */; };
 		AB3DBD7D25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB3DBD7C25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive */; };
 		ABBF9E292553F87100BEE44E /* UIViewController+SafeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBF9E282553F87100BEE44E /* UIViewController+SafeLayout.m */; };
@@ -419,6 +421,8 @@
 		8DAB5F0821AB9954009662D5 /* FRLoginHomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRLoginHomeVC.xib; sourceTree = "<group>"; };
 		8DAB5F0921AB9954009662D5 /* FRLoginHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRLoginHomeVC.m; sourceTree = "<group>"; };
 		8DAB5F1121AB9BED009662D5 /* APPPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPPrefixHeader.pch; sourceTree = "<group>"; };
+		AB24C5202577B8300068D237 /* iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive"; sourceTree = "<group>"; };
+		AB24C5212577B8310068D237 /* iOS-NSUserDefaults详解.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS-NSUserDefaults详解.webarchive"; sourceTree = "<group>"; };
 		AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS崩溃crash.webarchive"; sourceTree = "<group>"; };
 		AB3DBD7C25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS应用崩溃日志分析.webarchive"; sourceTree = "<group>"; };
 		ABBF9E272553F87100BEE44E /* UIViewController+SafeLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SafeLayout.h"; sourceTree = "<group>"; };
@@ -1140,6 +1144,8 @@
 				8D69D3D922B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive */,
 				83D59D3B247689810010CB5C /* apple-app-site-association.json */,
 				149EA98A2519A6AA00D259C8 /* 单利的完善.rtf */,
+				AB24C5212577B8310068D237 /* iOS-NSUserDefaults详解.webarchive */,
+				AB24C5202577B8300068D237 /* iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive */,
 			);
 			path = FilesMy;
 			sourceTree = "<group>";
@@ -1304,7 +1310,9 @@
 				830C8E8B24DAB07900BDD2BB /* SPPageMenu-master.zip in Resources */,
 				837DC185250784460041DEBA /* 标签图标.png in Resources */,
 				8DAB5E0421AB965B009662D5 /* Assets.xcassets in Resources */,
+				AB24C5232577B8310068D237 /* iOS-NSUserDefaults详解.webarchive in Resources */,
 				83B594AC23755D3900B7514E /* 分页查找.jpeg in Resources */,
+				AB24C5222577B8310068D237 /* iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive in Resources */,
 				83D59D3C247689810010CB5C /* apple-app-site-association.json in Resources */,
 				147E502C2351EBDC00C2309B /* MMKV使用.rtf in Resources */,
 				AB3DBD7D25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive in Resources */,
