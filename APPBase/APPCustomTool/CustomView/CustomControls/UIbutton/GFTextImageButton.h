@@ -99,3 +99,64 @@ typedef NS_ENUM(NSInteger,ButtonType) {
 @end
 
 NS_ASSUME_NONNULL_END
+
+//https://github.com/mushao1990/UIButtonAdjust
+//- (void) ddddd {
+//    CGFloat space = 5;// 图片和文字的间距
+//    NSString *titleString = [NSString stringWithFormat:@"我是测试我是测"];
+//    CGFloat titleWidth = [titleString sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}].width;
+//    UIImage *btnImage = [UIImage imageNamed:@"home_s"];// 11*6
+//    CGFloat imageWidth = btnImage.size.width;
+//
+//    CGFloat btnWidth = 200;// 按钮的宽度
+//    if (titleWidth > btnWidth - imageWidth - space) {
+//        titleWidth = btnWidth- imageWidth - space;
+//    }
+//
+//    UIButton *testButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 100, btnWidth, 40)];
+//    testButton.titleLabel.font = [UIFont systemFontOfSize:14];
+//    [testButton setBackgroundColor:[UIColor greenColor]];
+//    [testButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [testButton setTitle:titleString forState:UIControlStateNormal];
+//    [testButton setImage:btnImage forState:UIControlStateNormal];
+//    [self.view addSubview:testButton];
+//
+//
+//    //默认 图片在左，文字在右   添加间距
+//    //[testButton setTitleEdgeInsets:UIEdgeInsetsMake(0, (space*0.5), 0, -(space*0.5))];
+//    //[testButton setImageEdgeInsets:UIEdgeInsetsMake(0, -(space*0.5), 0, (space*0.5))];
+//
+//    /**
+//     那么，想实现文字在左，图片在右，就需要文字向左边调整，图片向右边调整
+//      1.按钮文字向左边调整，就需要按钮文字左边扩展，右边收缩   按钮文字向左边扩展，即left方向需要扩展图片的宽度+间距*0.5； 按钮文字向右边需要收缩，即right方向需要收缩图片的宽度+间距*0.5；
+//      2.按钮图片向右边调整，就需要按钮图片右边扩展，左边收缩   按钮图片向右边扩展，即right方向需要扩展文字的宽度+间距*0.5； 按钮图片向左边收缩，即left方向需要搜索文字的宽度+间距*0.5
+//
+//      PS:扩展就是设置负值。收缩就是设置正值
+//     */
+//
+//    //文字在左，图片在右
+//    //[testButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -(imageWidth + space*0.5), 0, (imageWidth + space*0.5))];
+//    //[testButton setImageEdgeInsets:UIEdgeInsetsMake(0, (titleWidth + space*0.5), 0, -(titleWidth + space*0.5))];
+//
+//
+//
+//
+//    /*
+//     需要先获取图片和文字的高度**
+//     CGFloat    imageHeight = btnImage.size.height;
+//     CGFloat    titleHeight = [titleString sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}].height;
+//
+//      如果要实现上下,比如图片在上，文字在下：
+//
+//      图片上移：顶部向上扩展，底部收缩 因为本身就是垂直居中的，所以移动的距离是：imageHeight*0.5 + space*0.5
+//      文字下移：顶部收缩，底部扩展 移动距离是：titleHeight*0.5 + space*0.5;
+//
+//      这样做还不够，因为默认图片在左，文字在右。所以还要想办法让他们左右居中：
+//      1.图片左边收缩，右边扩展 移动的距离是：(titleWidth+imageWidth)*0.5-imageWidth*0.5 即 titleWidth*0.5;
+//      2.文字左边扩展，右边收缩 移动的距离是：(titleWidth+imageWidth)*0.5-titleWidth*0.5 即 imageWidth*0.5;
+//     */
+//    CGFloat imageHeight = btnImage.size.height;
+//    CGFloat titleHeight = [titleString sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}].height;
+//    [testButton setImageEdgeInsets:UIEdgeInsetsMake(-(imageHeight*0.5 + space*0.5), titleWidth*0.5, imageHeight*0.5 + space*0.5, -titleWidth*0.5)];
+//    [testButton setTitleEdgeInsets:UIEdgeInsetsMake(titleHeight*0.5 + space*0.5, -imageWidth*0.5, -(titleHeight*0.5 + space*0.5), imageWidth*0.5)];
+//}

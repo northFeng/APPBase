@@ -105,7 +105,7 @@
                     confirmationAsked = NO;
                     __strong __typeof(wH) sH = wH;
                     
-                    sH.indicatorView = [[JGProgressHUDIndeterminateIndicatorView alloc] initWithHUDStyle:sH.style];
+                    sH.indicatorView = nil;//[[JGProgressHUDIndeterminateIndicatorView alloc] initWithHUDStyle:sH.style];
                     sH.textLabel.text = tip;
                     [h.HUDView.layer removeAnimationForKey:@"glow"];
                 }
@@ -116,7 +116,7 @@
     HUD.tapOutsideBlock = ^(JGProgressHUD *h) {
         if (confirmationAsked) {
             confirmationAsked = NO;
-            h.indicatorView = [[JGProgressHUDIndeterminateIndicatorView alloc] initWithHUDStyle:h.style];
+            h.indicatorView = nil;//[[JGProgressHUDIndeterminateIndicatorView alloc] initWithHUDStyle:h.style];
             h.textLabel.text = tip;
             [h.HUDView.layer removeAnimationForKey:@"glow"];
         }

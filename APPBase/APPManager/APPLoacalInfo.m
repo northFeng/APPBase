@@ -717,8 +717,8 @@ static NSUInteger DeviceMember;
 ///清理缓存路径下的文件
 + (void)clearDiskMemory{
     
-    [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
-    [[SDImageCache sharedImageCache] clearMemory];//可有可无
+//    [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
+//    [[SDImageCache sharedImageCache] clearMemory];//可有可无
 }
 
 

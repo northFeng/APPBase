@@ -562,8 +562,8 @@
     }
     path = [[NSBundle mainBundle] pathForResource:gifName ofType:@"gif"];
     
-    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-    UIImage *image = [UIImage sd_animatedGIFWithData:data];
+    //NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    UIImage *image = nil;//[UIImage sd_animatedGIFWithData:data];
     imgView.image = image;
 }
 
