@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///导航条
 @property (nonatomic, strong,nullable) GFNavigationBarView *naviBar;
 
+@property (nonatomic, strong) UIView *safeAreaBottomView; //下方安全区域，默认为纯白色 AVAILABLE(ios(11.0))
 
 
 #pragma mark - 状态栏设置

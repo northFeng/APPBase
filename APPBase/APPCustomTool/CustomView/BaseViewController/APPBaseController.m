@@ -78,6 +78,18 @@ loadView 、viewDidLoad 、viewDidUnload
         [self.naviBar setLeftFirstButtonWithImageName:@"back_s2"];
     }
     
+    // bottom
+    _safeAreaBottomView = [[UIView alloc] init];
+    _safeAreaBottomView.backgroundColor = UIColor.whiteColor;
+    _safeAreaBottomView.hidden = YES;
+    [self.view addSubview:_safeAreaBottomView];
+    [_safeAreaBottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(0);
+        make.left.right.bottom.equalTo(@(0));
+    }];
+    
+    [self.view layoutIfNeeded];
+    
     //请求数据
     [self initData];
     
@@ -259,6 +271,20 @@ loadView 、viewDidLoad 、viewDidUnload
     NSLog(@"登录状态发生变化");
     
 }
+
+- (void)viewLayoutMarginsDidChange {
+    [super viewLayoutMarginsDidChange];
+}
+
+///安全区域变化 ——>例如 屏幕旋转 ——>这里可以进行重新布局
+- (void)viewSafeAreaInsetsDidChange {
+    [super viewSafeAreaInsetsDidChange];
+    //填充底部的留白
+    [_safeAreaBottomView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(self.view.safeAreaInsets.bottom);
+    }];
+}
+
 
 #pragma mark - 网络状态发生变化触发事件
 - (void)reachabilityNetStateChanged:(NSNotification *)noti{
