@@ -168,6 +168,13 @@ static NSMutableArray<NSURLSessionTask *> *_allSessionTask;
         NSLog(@"请求结果=%@",responseObject);
         
         if (success) {
+            /**
+             if ([responseObject isKindOfClass:[NSData class]]) {
+                 //将返回的值直接转化为 json 格式，然后再返回
+                 NSDictionary *dicJson = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+                 responseObject = dicJson;
+             }
+             */
             success(responseObject,100);
         }
         
