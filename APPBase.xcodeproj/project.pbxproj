@@ -133,10 +133,137 @@
 		8DAB5F0C21AB9954009662D5 /* FRLoginHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0921AB9954009662D5 /* FRLoginHomeVC.m */; };
 		AB24C5222577B8310068D237 /* iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB24C5202577B8300068D237 /* iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive */; };
 		AB24C5232577B8310068D237 /* iOS-NSUserDefaults详解.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB24C5212577B8310068D237 /* iOS-NSUserDefaults详解.webarchive */; };
+		AB2A8E46257F25BC00D05DB0 /* APPHttpCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 148459AE234E1B0A002ABA2F /* APPHttpCacheTool.m */; };
+		AB2A8E47257F25BC00D05DB0 /* APPDateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A1E783238F6B6A0020F626 /* APPDateTool.m */; };
+		AB2A8E48257F25BC00D05DB0 /* FRLoginHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0921AB9954009662D5 /* FRLoginHomeVC.m */; };
+		AB2A8E49257F25BC00D05DB0 /* APPVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FE8241242C800A71FC4 /* APPVideoPlayer.m */; };
+		AB2A8E4A257F25BC00D05DB0 /* APPAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FDA241242C100A71FC4 /* APPAudioPlayer.m */; };
+		AB2A8E4B257F25BC00D05DB0 /* APPBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FC9234F4B6800B31672 /* APPBaseTableViewController.m */; };
+		AB2A8E4C257F25BC00D05DB0 /* ClassHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE6A23D5B4B8006B09C6 /* ClassHead.swift */; };
+		AB2A8E4D257F25BC00D05DB0 /* UICollectionView+SideExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2D324320A9500AD3FF1 /* UICollectionView+SideExtension.m */; };
+		AB2A8E4E257F25BC00D05DB0 /* APPBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EC021AB9882009662D5 /* APPBaseCell.m */; };
+		AB2A8E4F257F25BC00D05DB0 /* UIButton+Animate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8307253D242871FE005D049E /* UIButton+Animate.m */; };
+		AB2A8E50257F25BC00D05DB0 /* CBSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FD7241242C100A71FC4 /* CBSlider.m */; };
+		AB2A8E51257F25BC00D05DB0 /* CBAudioSmallAlerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FD5241242C100A71FC4 /* CBAudioSmallAlerView.m */; };
+		AB2A8E52257F25BC00D05DB0 /* GFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5ECF21AB9895009662D5 /* GFNavigationController.m */; };
+		AB2A8E53257F25BC00D05DB0 /* NSString+TextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428088E2351C80000D24D08 /* NSString+TextSize.m */; };
+		AB2A8E54257F25BC00D05DB0 /* APPAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EDB21AB98A6009662D5 /* APPAlertView.m */; };
+		AB2A8E55257F25BC00D05DB0 /* APPWebHybridController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BC18CD2407A698005A056D /* APPWebHybridController.m */; };
+		AB2A8E56257F25BC00D05DB0 /* APPLoadWaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EC421AB9882009662D5 /* APPLoadWaitView.m */; };
+		AB2A8E57257F25BC00D05DB0 /* GFEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EA921AB9839009662D5 /* GFEncryption.m */; };
+		AB2A8E58257F25BC00D05DB0 /* APPKeyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5E3321AB976C009662D5 /* APPKeyInfo.m */; };
+		AB2A8E59257F25BC00D05DB0 /* MBProgressHUDTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EBE21AB9882009662D5 /* MBProgressHUDTool.m */; };
+		AB2A8E5A257F25BC00D05DB0 /* GFTextImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FC3234F2F7800B31672 /* GFTextImageButton.m */; };
+		AB2A8E5B257F25BC00D05DB0 /* APPDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B594882372CDF600B7514E /* APPDataBase.m */; };
+		AB2A8E5C257F25BC00D05DB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5E0921AB965B009662D5 /* main.m */; };
+		AB2A8E5D257F25BC00D05DB0 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EA821AB9839009662D5 /* NSString+Hash.m */; };
+		AB2A8E5E257F25BC00D05DB0 /* APPHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EEC21AB98CD009662D5 /* APPHttpTool.m */; };
+		AB2A8E5F257F25BC00D05DB0 /* APPFunctionMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EAD21AB9839009662D5 /* APPFunctionMethod.m */; };
+		AB2A8E60257F25BC00D05DB0 /* FSValidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EAB21AB9839009662D5 /* FSValidate.m */; };
+		AB2A8E61257F25BC00D05DB0 /* APPButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 836FCBBD24FE074D00E2C195 /* APPButtonCell.m */; };
+		AB2A8E62257F25BC00D05DB0 /* APPCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 147E50292351EBB000C2309B /* APPCache.m */; };
+		AB2A8E63257F25BC00D05DB0 /* NSMutableArray+GFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EA521AB9839009662D5 /* NSMutableArray+GFExtension.m */; };
+		AB2A8E64257F25BC00D05DB0 /* APPUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5E3821AB976C009662D5 /* APPUserInfoModel.m */; };
+		AB2A8E65257F25BC00D05DB0 /* APPVersionAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EDA21AB98A6009662D5 /* APPVersionAlert.m */; };
+		AB2A8E66257F25BC00D05DB0 /* FRLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0721AB9954009662D5 /* FRLoginManager.m */; };
+		AB2A8E67257F25BC00D05DB0 /* GKCycleScrollViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B2D4982489EAF0002113D8 /* GKCycleScrollViewCell.m */; };
+		AB2A8E68257F25BC00D05DB0 /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EC221AB9882009662D5 /* ExampleViewController.m */; };
+		AB2A8E69257F25BC00D05DB0 /* APPLoacalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5E3921AB976C009662D5 /* APPLoacalInfo.m */; };
+		AB2A8E6A257F25BC00D05DB0 /* UICollectionView+SideRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2CD24320A9500AD3FF1 /* UICollectionView+SideRefresh.m */; };
+		AB2A8E6B257F25BC00D05DB0 /* GFMineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CE0FA7235080F00093E45C /* GFMineController.m */; };
+		AB2A8E6C257F25BC00D05DB0 /* APPVideoDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E9E17B24EBE5FE00872919 /* APPVideoDownView.m */; };
+		AB2A8E6D257F25BC00D05DB0 /* APPBaseLandscapeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83188D2D2435948B009EB8FF /* APPBaseLandscapeController.m */; };
+		AB2A8E6E257F25BC00D05DB0 /* FSPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EBC21AB9882009662D5 /* FSPromptView.m */; };
+		AB2A8E6F257F25BC00D05DB0 /* NSArray+GFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EAA21AB9839009662D5 /* NSArray+GFExtension.m */; };
+		AB2A8E70257F25BC00D05DB0 /* CBAudioListVierw.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FD8241242C100A71FC4 /* CBAudioListVierw.m */; };
+		AB2A8E71257F25BC00D05DB0 /* APPBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EE921AB98CD009662D5 /* APPBaseModel.m */; };
+		AB2A8E72257F25BC00D05DB0 /* GFMiddleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CE0FA4235080E10093E45C /* GFMiddleController.m */; };
+		AB2A8E73257F25BC00D05DB0 /* APPGlobalVariable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5E4021AB9795009662D5 /* APPGlobalVariable.m */; };
+		AB2A8E74257F25BC00D05DB0 /* SideRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2CF24320A9500AD3FF1 /* SideRefreshFooter.m */; };
+		AB2A8E75257F25BC00D05DB0 /* NSURL+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 839B993123B30D3E006A8049 /* NSURL+Category.m */; };
+		AB2A8E76257F25BC00D05DB0 /* SideRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2CE24320A9500AD3FF1 /* SideRefreshHeader.m */; };
+		AB2A8E77257F25BC00D05DB0 /* APPBaseController+ScreenRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FF62412440100A71FC4 /* APPBaseController+ScreenRotation.m */; };
+		AB2A8E78257F25BC00D05DB0 /* GFButtonPress.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5ED721AB98A6009662D5 /* GFButtonPress.m */; };
+		AB2A8E79257F25BC00D05DB0 /* MCDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83452E5324EA23D2009F42C4 /* MCDownloadManager.m */; };
+		AB2A8E7A257F25BC00D05DB0 /* SPPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 830C8E8824DAAF0700BDD2BB /* SPPageMenu.m */; };
+		AB2A8E7B257F25BC00D05DB0 /* FRHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0121AB993F009662D5 /* FRHomeVC.m */; };
+		AB2A8E7C257F25BC00D05DB0 /* AppDelegate+RootConTroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EF421AB98E3009662D5 /* AppDelegate+RootConTroller.m */; };
+		AB2A8E7D257F25BC00D05DB0 /* UIView+GFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EB021AB9839009662D5 /* UIView+GFExtension.m */; };
+		AB2A8E7E257F25BC00D05DB0 /* APPOssInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46323C04377001154A7 /* APPOssInterface.m */; };
+		AB2A8E7F257F25BC00D05DB0 /* APPLoginApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E37C3724FCB52E00355A96 /* APPLoginApi.m */; };
+		AB2A8E80257F25BC00D05DB0 /* FROrderCellVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0021AB993F009662D5 /* FROrderCellVC.m */; };
+		AB2A8E81257F25BC00D05DB0 /* UIView+SafeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBF9E2B2553F99200BEE44E /* UIView+SafeLayout.m */; };
+		AB2A8E82257F25BC00D05DB0 /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D95957422AE3A1F001A8345 /* JPEngine.m */; };
+		AB2A8E83257F25BC00D05DB0 /* UILabel+Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EE021AB98A6009662D5 /* UILabel+Text.m */; };
+		AB2A8E84257F25BC00D05DB0 /* APPVideoPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FE9241242C800A71FC4 /* APPVideoPromptView.m */; };
+		AB2A8E85257F25BC00D05DB0 /* NSString+URLCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8307253B242871FE005D049E /* NSString+URLCheck.m */; };
+		AB2A8E86257F25BC00D05DB0 /* APPAnalyticsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EB921AB9857009662D5 /* APPAnalyticsHelper.m */; };
+		AB2A8E87257F25BC00D05DB0 /* APPConfirmAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 149265E32350CA6600A2C7FE /* APPConfirmAlertView.m */; };
+		AB2A8E88257F25BC00D05DB0 /* APPBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FC0234F2ED800B31672 /* APPBaseController.m */; };
+		AB2A8E89257F25BC00D05DB0 /* APPNetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2658C241CE40600F4B6EB /* APPNetTool.swift */; };
+		AB2A8E8A257F25BC00D05DB0 /* APPViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 142808912351C8DD00D24D08 /* APPViewTool.m */; };
+		AB2A8E8B257F25BC00D05DB0 /* APPAudioLocalPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FDB241242C100A71FC4 /* APPAudioLocalPlayer.m */; };
+		AB2A8E8C257F25BC00D05DB0 /* APPVideoListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FED241242C800A71FC4 /* APPVideoListView.m */; };
+		AB2A8E8D257F25BC00D05DB0 /* APPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EED21AB98CD009662D5 /* APPModel.m */; };
+		AB2A8E8E257F25BC00D05DB0 /* GFNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5ECE21AB9895009662D5 /* GFNavigationBarView.m */; };
+		AB2A8E8F257F25BC00D05DB0 /* GKCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B2D4972489EAF0002113D8 /* GKCycleScrollView.m */; };
+		AB2A8E90257F25BC00D05DB0 /* APPNoDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428088B2351C5B800D24D08 /* APPNoDataView.m */; };
+		AB2A8E91257F25BC00D05DB0 /* APPFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 142808942351CAC900D24D08 /* APPFileManager.m */; };
+		AB2A8E92257F25BC00D05DB0 /* NSObject+Auth.m in Sources */ = {isa = PBXBuildFile; fileRef = 83072542242871FE005D049E /* NSObject+Auth.m */; };
+		AB2A8E93257F25BC00D05DB0 /* UIView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 8307253E242871FE005D049E /* UIView+Alert.m */; };
+		AB2A8E94257F25BC00D05DB0 /* GKPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B2D4932489EAF0002113D8 /* GKPageControl.m */; };
+		AB2A8E95257F25BC00D05DB0 /* SideRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2D224320A9500AD3FF1 /* SideRefresh.m */; };
+		AB2A8E96257F25BC00D05DB0 /* APPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5E3221AB976C009662D5 /* APPManager.m */; };
+		AB2A8E97257F25BC00D05DB0 /* Touch3DButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 837DC18825078BC70041DEBA /* Touch3DButton.m */; };
+		AB2A8E98257F25BC00D05DB0 /* APPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839CDC9E2411193D00617294 /* APPRequest.swift */; };
+		AB2A8E99257F25BC00D05DB0 /* APPAlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BE128523506BA50047F00B /* APPAlertTool.m */; };
+		AB2A8E9A257F25BC00D05DB0 /* APPAudioNetPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FC02AE244E9FED00D146C6 /* APPAudioNetPlayer.m */; };
+		AB2A8E9B257F25BC00D05DB0 /* UIViewController+SafeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBF9E282553F87100BEE44E /* UIViewController+SafeLayout.m */; };
+		AB2A8E9C257F25BC00D05DB0 /* GFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EDD21AB98A6009662D5 /* GFTextField.m */; };
+		AB2A8E9D257F25BC00D05DB0 /* APPVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FEB241242C800A71FC4 /* APPVideoPlayerController.m */; };
+		AB2A8E9E257F25BC00D05DB0 /* APPVideoInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FEA241242C800A71FC4 /* APPVideoInfoView.m */; };
+		AB2A8E9F257F25BC00D05DB0 /* APPColorFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FBD234F258300B31672 /* APPColorFunction.m */; };
+		AB2A8EA0257F25BC00D05DB0 /* NSMutableDictionary+GFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EA121AB9839009662D5 /* NSMutableDictionary+GFExtension.m */; };
+		AB2A8EA1257F25BC00D05DB0 /* APPWXInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46723C045C6001154A7 /* APPWXInterface.m */; };
+		AB2A8EA2257F25BC00D05DB0 /* CBJSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BC18D02407A7FB005A056D /* CBJSModel.m */; };
+		AB2A8EA3257F25BC00D05DB0 /* APPAudioPlayerVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FDC241242C100A71FC4 /* APPAudioPlayerVM.m */; };
+		AB2A8EA4257F25BC00D05DB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EF321AB98E3009662D5 /* AppDelegate.m */; };
+		AB2A8EA5257F25BC00D05DB0 /* GFTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CE0FA023507C510093E45C /* GFTabBarController.m */; };
+		AB2A8EA6257F25BC00D05DB0 /* APPLog.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA2E09257E16B8001D1F19 /* APPLog.m */; };
+		AB2A8EA7257F25BC00D05DB0 /* TwoSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE6823D59000006B09C6 /* TwoSwiftController.swift */; };
+		AB2A8EA8257F25BC00D05DB0 /* APPAudioPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FD9241242C100A71FC4 /* APPAudioPlayerController.m */; };
+		AB2A8EA9257F25BC00D05DB0 /* APPUMInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46B23C04AD0001154A7 /* APPUMInterface.m */; };
+		AB2A8EAA257F25BC00D05DB0 /* OneSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE6523D58445006B09C6 /* OneSwiftController.swift */; };
+		AB2A8EAB257F25BC00D05DB0 /* SideRefreshEmptyFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2D124320A9500AD3FF1 /* SideRefreshEmptyFooter.m */; };
+		AB2A8EAC257F25BC00D05DB0 /* UIButton+GFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FC6234F37A300B31672 /* UIButton+GFExtension.m */; };
+		AB2A8EAE257F25BC00D05DB0 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D142DF6F5A1313473EB8EC7 /* Pods_APPBase.framework */; };
+		AB2A8EB0257F25BC00D05DB0 /* 方法1.png in Resources */ = {isa = PBXBuildFile; fileRef = 837DC184250784460041DEBA /* 方法1.png */; };
+		AB2A8EB1257F25BC00D05DB0 /* iOS崩溃crash.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */; };
+		AB2A8EB2257F25BC00D05DB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB5E0521AB965B009662D5 /* LaunchScreen.storyboard */; };
+		AB2A8EB3257F25BC00D05DB0 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = 8D69D3D922B4F81A00D4A325 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive */; };
+		AB2A8EB4257F25BC00D05DB0 /* JSPatch.js in Resources */ = {isa = PBXBuildFile; fileRef = 8D95957622AE3A1F001A8345 /* JSPatch.js */; };
+		AB2A8EB5257F25BC00D05DB0 /* FRLoginHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0821AB9954009662D5 /* FRLoginHomeVC.xib */; };
+		AB2A8EB6257F25BC00D05DB0 /* 单利的完善.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 149EA98A2519A6AA00D259C8 /* 单利的完善.rtf */; };
+		AB2A8EB7257F25BC00D05DB0 /* SPPageMenu-master.zip in Resources */ = {isa = PBXBuildFile; fileRef = 830C8E8A24DAB07900BDD2BB /* SPPageMenu-master.zip */; };
+		AB2A8EB8257F25BC00D05DB0 /* 标签图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 837DC183250784460041DEBA /* 标签图标.png */; };
+		AB2A8EB9257F25BC00D05DB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB5E0321AB965B009662D5 /* Assets.xcassets */; };
+		AB2A8EBA257F25BC00D05DB0 /* iOS-NSUserDefaults详解.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB24C5212577B8310068D237 /* iOS-NSUserDefaults详解.webarchive */; };
+		AB2A8EBB257F25BC00D05DB0 /* 分页查找.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 83B594AB23755D3900B7514E /* 分页查找.jpeg */; };
+		AB2A8EBC257F25BC00D05DB0 /* iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB24C5202577B8300068D237 /* iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive */; };
+		AB2A8EBD257F25BC00D05DB0 /* apple-app-site-association.json in Resources */ = {isa = PBXBuildFile; fileRef = 83D59D3B247689810010CB5C /* apple-app-site-association.json */; };
+		AB2A8EBE257F25BC00D05DB0 /* MMKV使用.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 147E502B2351EBDC00C2309B /* MMKV使用.rtf */; };
+		AB2A8EBF257F25BC00D05DB0 /* iOS应用崩溃日志分析.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB3DBD7C25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive */; };
+		AB2A8EC0257F25BC00D05DB0 /* iOS-MBProgressHUD使用.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14CE0F9C235077A40093E45C /* iOS-MBProgressHUD使用.rtf */; };
+		AB2A8EC1257F25BC00D05DB0 /* MVVM与RAC.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = 8D69D3DB22B4F9D800D4A325 /* MVVM与RAC.webarchive */; };
+		AB2A8EC2257F25BC00D05DB0 /* 应用配置中勾选苹果登录申请.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E37C3924FCDC8800355A96 /* 应用配置中勾选苹果登录申请.png */; };
+		AB2A8EC3257F25BC00D05DB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB5E0021AB9659009662D5 /* Main.storyboard */; };
+		AB2A8EC6257F25BC00D05DB0 /* APPWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 839844592508B6ED00A73B52 /* APPWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AB3DBD7B2539587D00129EFF /* iOS崩溃crash.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */; };
 		AB3DBD7D25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB3DBD7C25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive */; };
+		AB699979257F553B00BE1491 /* iOS项目之多Targets和多环境配置.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB699978257F553B00BE1491 /* iOS项目之多Targets和多环境配置.webarchive */; };
 		ABBF9E292553F87100BEE44E /* UIViewController+SafeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBF9E282553F87100BEE44E /* UIViewController+SafeLayout.m */; };
 		ABBF9E2C2553F99200BEE44E /* UIView+SafeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBF9E2B2553F99200BEE44E /* UIView+SafeLayout.m */; };
+		ABDA2E0A257E16B8001D1F19 /* APPLog.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA2E09257E16B8001D1F19 /* APPLog.m */; };
 		FF2D7458DF79A48A39B5A1E8 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D142DF6F5A1313473EB8EC7 /* Pods_APPBase.framework */; };
 /* End PBXBuildFile section */
 
@@ -162,6 +289,13 @@
 			remoteGlobalIDString = 8DAB5DF621AB9659009662D5;
 			remoteInfo = APPBase;
 		};
+		AB2A8E43257F25BC00D05DB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DAB5DEF21AB9659009662D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 839844582508B6ED00A73B52;
+			remoteInfo = APPWidget;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -172,6 +306,17 @@
 			dstSubfolderSpec = 13;
 			files = (
 				839844662508B6ED00A73B52 /* APPWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB2A8EC5257F25BC00D05DB0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AB2A8EC6257F25BC00D05DB0 /* APPWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,12 +568,16 @@
 		8DAB5F1121AB9BED009662D5 /* APPPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPPrefixHeader.pch; sourceTree = "<group>"; };
 		AB24C5202577B8300068D237 /* iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive"; sourceTree = "<group>"; };
 		AB24C5212577B8310068D237 /* iOS-NSUserDefaults详解.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS-NSUserDefaults详解.webarchive"; sourceTree = "<group>"; };
+		AB2A8ECA257F25BC00D05DB0 /* APPBase_dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APPBase_dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS崩溃crash.webarchive"; sourceTree = "<group>"; };
 		AB3DBD7C25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS应用崩溃日志分析.webarchive"; sourceTree = "<group>"; };
+		AB699978257F553B00BE1491 /* iOS项目之多Targets和多环境配置.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS项目之多Targets和多环境配置.webarchive"; sourceTree = "<group>"; };
 		ABBF9E272553F87100BEE44E /* UIViewController+SafeLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SafeLayout.h"; sourceTree = "<group>"; };
 		ABBF9E282553F87100BEE44E /* UIViewController+SafeLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SafeLayout.m"; sourceTree = "<group>"; };
 		ABBF9E2A2553F99200BEE44E /* UIView+SafeLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SafeLayout.h"; sourceTree = "<group>"; };
 		ABBF9E2B2553F99200BEE44E /* UIView+SafeLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SafeLayout.m"; sourceTree = "<group>"; };
+		ABDA2E08257E16B8001D1F19 /* APPLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPLog.h; sourceTree = "<group>"; };
+		ABDA2E09257E16B8001D1F19 /* APPLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPLog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -459,6 +608,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB2A8EAD257F25BC00D05DB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB2A8EAE257F25BC00D05DB0 /* Pods_APPBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,17 +680,18 @@
 			children = (
 				147E502D2351FBCA00C2309B /* APPThirdHeader.h */,
 				83E37C3524FCB51000355A96 /* APPLogin */,
-				83452E5124EA23C0009F42C4 /* DownApi */,
-				830C8E8624DAAEBB00BDD2BB /* SPPageMenu */,
+				83987FCF241242C100A71FC4 /* AudioPlayer */,
 				83B2D4922489EA2A002113D8 /* CardView */,
 				832DD2CC24320A9500AD3FF1 /* CollectionRefresh */,
-				83987FE5241242C800A71FC4 /* VideoPlayer */,
-				83987FCF241242C100A71FC4 /* AudioPlayer */,
-				8346B46923C04AA8001154A7 /* UM */,
-				8346B46523C045AC001154A7 /* WX */,
-				8346B46123C04358001154A7 /* OSS */,
+				83452E5124EA23C0009F42C4 /* DownApi */,
 				147E50272351EB7500C2309B /* DataCache */,
 				83B594862372CDBD00B7514E /* FMDB */,
+				ABDA2E07257E15FB001D1F19 /* Log */,
+				8346B46123C04358001154A7 /* OSS */,
+				830C8E8624DAAEBB00BDD2BB /* SPPageMenu */,
+				8346B46923C04AA8001154A7 /* UM */,
+				83987FE5241242C800A71FC4 /* VideoPlayer */,
+				8346B46523C045AC001154A7 /* WX */,
 			);
 			path = APPThirdModular;
 			sourceTree = "<group>";
@@ -829,6 +987,7 @@
 				8DAB5E0F21AB965B009662D5 /* APPBaseTests.xctest */,
 				8DAB5E1A21AB965B009662D5 /* APPBaseUITests.xctest */,
 				839844592508B6ED00A73B52 /* APPWidget.appex */,
+				AB2A8ECA257F25BC00D05DB0 /* APPBase_dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1146,6 +1305,7 @@
 				149EA98A2519A6AA00D259C8 /* 单利的完善.rtf */,
 				AB24C5212577B8310068D237 /* iOS-NSUserDefaults详解.webarchive */,
 				AB24C5202577B8300068D237 /* iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive */,
+				AB699978257F553B00BE1491 /* iOS项目之多Targets和多环境配置.webarchive */,
 			);
 			path = FilesMy;
 			sourceTree = "<group>";
@@ -1159,6 +1319,15 @@
 				ABBF9E2B2553F99200BEE44E /* UIView+SafeLayout.m */,
 			);
 			path = AutoLayout;
+			sourceTree = "<group>";
+		};
+		ABDA2E07257E15FB001D1F19 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				ABDA2E08257E16B8001D1F19 /* APPLog.h */,
+				ABDA2E09257E16B8001D1F19 /* APPLog.m */,
+			);
+			path = Log;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1238,6 +1407,27 @@
 			productReference = 8DAB5E1A21AB965B009662D5 /* APPBaseUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		AB2A8E41257F25BC00D05DB0 /* APPBase_dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB2A8EC7257F25BC00D05DB0 /* Build configuration list for PBXNativeTarget "APPBase_dev" */;
+			buildPhases = (
+				AB2A8E44257F25BC00D05DB0 /* [CP] Check Pods Manifest.lock */,
+				AB2A8E45257F25BC00D05DB0 /* Sources */,
+				AB2A8EAD257F25BC00D05DB0 /* Frameworks */,
+				AB2A8EAF257F25BC00D05DB0 /* Resources */,
+				AB2A8EC4257F25BC00D05DB0 /* [CP] Embed Pods Frameworks */,
+				AB2A8EC5257F25BC00D05DB0 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB2A8E42257F25BC00D05DB0 /* PBXTargetDependency */,
+			);
+			name = APPBase_dev;
+			productName = APPBase;
+			productReference = AB2A8ECA257F25BC00D05DB0 /* APPBase_dev.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1278,6 +1468,7 @@
 			projectRoot = "";
 			targets = (
 				8DAB5DF621AB9659009662D5 /* APPBase */,
+				AB2A8E41257F25BC00D05DB0 /* APPBase_dev */,
 				8DAB5E0E21AB965B009662D5 /* APPBaseTests */,
 				8DAB5E1921AB965B009662D5 /* APPBaseUITests */,
 				839844582508B6ED00A73B52 /* APPWidget */,
@@ -1319,6 +1510,7 @@
 				14CE0F9D235077A40093E45C /* iOS-MBProgressHUD使用.rtf in Resources */,
 				8D69D3DC22B4F9D800D4A325 /* MVVM与RAC.webarchive in Resources */,
 				83E37C3A24FCDC8900355A96 /* 应用配置中勾选苹果登录申请.png in Resources */,
+				AB699979257F553B00BE1491 /* iOS项目之多Targets和多环境配置.webarchive in Resources */,
 				8DAB5E0221AB9659009662D5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1334,6 +1526,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB2A8EAF257F25BC00D05DB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB2A8EB0257F25BC00D05DB0 /* 方法1.png in Resources */,
+				AB2A8EB1257F25BC00D05DB0 /* iOS崩溃crash.webarchive in Resources */,
+				AB2A8EB2257F25BC00D05DB0 /* LaunchScreen.storyboard in Resources */,
+				AB2A8EB3257F25BC00D05DB0 /* ReactiveCocoa 讨论会 | 唐巧的博客.webarchive in Resources */,
+				AB2A8EB4257F25BC00D05DB0 /* JSPatch.js in Resources */,
+				AB2A8EB5257F25BC00D05DB0 /* FRLoginHomeVC.xib in Resources */,
+				AB2A8EB6257F25BC00D05DB0 /* 单利的完善.rtf in Resources */,
+				AB2A8EB7257F25BC00D05DB0 /* SPPageMenu-master.zip in Resources */,
+				AB2A8EB8257F25BC00D05DB0 /* 标签图标.png in Resources */,
+				AB2A8EB9257F25BC00D05DB0 /* Assets.xcassets in Resources */,
+				AB2A8EBA257F25BC00D05DB0 /* iOS-NSUserDefaults详解.webarchive in Resources */,
+				AB2A8EBB257F25BC00D05DB0 /* 分页查找.jpeg in Resources */,
+				AB2A8EBC257F25BC00D05DB0 /* iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive in Resources */,
+				AB2A8EBD257F25BC00D05DB0 /* apple-app-site-association.json in Resources */,
+				AB2A8EBE257F25BC00D05DB0 /* MMKV使用.rtf in Resources */,
+				AB2A8EBF257F25BC00D05DB0 /* iOS应用崩溃日志分析.webarchive in Resources */,
+				AB2A8EC0257F25BC00D05DB0 /* iOS-MBProgressHUD使用.rtf in Resources */,
+				AB2A8EC1257F25BC00D05DB0 /* MVVM与RAC.webarchive in Resources */,
+				AB2A8EC2257F25BC00D05DB0 /* 应用配置中勾选苹果登录申请.png in Resources */,
+				AB2A8EC3257F25BC00D05DB0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1377,6 +1596,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB2A8E44257F25BC00D05DB0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-APPBase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB2A8EC4257F25BC00D05DB0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APPBase/Pods-APPBase-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APPBase/Pods-APPBase-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-APPBase/Pods-APPBase-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1490,6 +1748,7 @@
 				83987FE4241242C100A71FC4 /* APPAudioPlayerVM.m in Sources */,
 				8DAB5EF621AB98E3009662D5 /* AppDelegate.m in Sources */,
 				14CE0FA123507C520093E45C /* GFTabBarController.m in Sources */,
+				ABDA2E0A257E16B8001D1F19 /* APPLog.m in Sources */,
 				8354DE6923D59000006B09C6 /* TwoSwiftController.swift in Sources */,
 				83987FE1241242C100A71FC4 /* APPAudioPlayerController.m in Sources */,
 				8346B46C23C04AD0001154A7 /* APPUMInterface.m in Sources */,
@@ -1515,6 +1774,116 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB2A8E45257F25BC00D05DB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB2A8E46257F25BC00D05DB0 /* APPHttpCacheTool.m in Sources */,
+				AB2A8E47257F25BC00D05DB0 /* APPDateTool.m in Sources */,
+				AB2A8E48257F25BC00D05DB0 /* FRLoginHomeVC.m in Sources */,
+				AB2A8E49257F25BC00D05DB0 /* APPVideoPlayer.m in Sources */,
+				AB2A8E4A257F25BC00D05DB0 /* APPAudioPlayer.m in Sources */,
+				AB2A8E4B257F25BC00D05DB0 /* APPBaseTableViewController.m in Sources */,
+				AB2A8E4C257F25BC00D05DB0 /* ClassHead.swift in Sources */,
+				AB2A8E4D257F25BC00D05DB0 /* UICollectionView+SideExtension.m in Sources */,
+				AB2A8E4E257F25BC00D05DB0 /* APPBaseCell.m in Sources */,
+				AB2A8E4F257F25BC00D05DB0 /* UIButton+Animate.m in Sources */,
+				AB2A8E50257F25BC00D05DB0 /* CBSlider.m in Sources */,
+				AB2A8E51257F25BC00D05DB0 /* CBAudioSmallAlerView.m in Sources */,
+				AB2A8E52257F25BC00D05DB0 /* GFNavigationController.m in Sources */,
+				AB2A8E53257F25BC00D05DB0 /* NSString+TextSize.m in Sources */,
+				AB2A8E54257F25BC00D05DB0 /* APPAlertView.m in Sources */,
+				AB2A8E55257F25BC00D05DB0 /* APPWebHybridController.m in Sources */,
+				AB2A8E56257F25BC00D05DB0 /* APPLoadWaitView.m in Sources */,
+				AB2A8E57257F25BC00D05DB0 /* GFEncryption.m in Sources */,
+				AB2A8E58257F25BC00D05DB0 /* APPKeyInfo.m in Sources */,
+				AB2A8E59257F25BC00D05DB0 /* MBProgressHUDTool.m in Sources */,
+				AB2A8E5A257F25BC00D05DB0 /* GFTextImageButton.m in Sources */,
+				AB2A8E5B257F25BC00D05DB0 /* APPDataBase.m in Sources */,
+				AB2A8E5C257F25BC00D05DB0 /* main.m in Sources */,
+				AB2A8E5D257F25BC00D05DB0 /* NSString+Hash.m in Sources */,
+				AB2A8E5E257F25BC00D05DB0 /* APPHttpTool.m in Sources */,
+				AB2A8E5F257F25BC00D05DB0 /* APPFunctionMethod.m in Sources */,
+				AB2A8E60257F25BC00D05DB0 /* FSValidate.m in Sources */,
+				AB2A8E61257F25BC00D05DB0 /* APPButtonCell.m in Sources */,
+				AB2A8E62257F25BC00D05DB0 /* APPCache.m in Sources */,
+				AB2A8E63257F25BC00D05DB0 /* NSMutableArray+GFExtension.m in Sources */,
+				AB2A8E64257F25BC00D05DB0 /* APPUserInfoModel.m in Sources */,
+				AB2A8E65257F25BC00D05DB0 /* APPVersionAlert.m in Sources */,
+				AB2A8E66257F25BC00D05DB0 /* FRLoginManager.m in Sources */,
+				AB2A8E67257F25BC00D05DB0 /* GKCycleScrollViewCell.m in Sources */,
+				AB2A8E68257F25BC00D05DB0 /* ExampleViewController.m in Sources */,
+				AB2A8E69257F25BC00D05DB0 /* APPLoacalInfo.m in Sources */,
+				AB2A8E6A257F25BC00D05DB0 /* UICollectionView+SideRefresh.m in Sources */,
+				AB2A8E6B257F25BC00D05DB0 /* GFMineController.m in Sources */,
+				AB2A8E6C257F25BC00D05DB0 /* APPVideoDownView.m in Sources */,
+				AB2A8E6D257F25BC00D05DB0 /* APPBaseLandscapeController.m in Sources */,
+				AB2A8E6E257F25BC00D05DB0 /* FSPromptView.m in Sources */,
+				AB2A8E6F257F25BC00D05DB0 /* NSArray+GFExtension.m in Sources */,
+				AB2A8E70257F25BC00D05DB0 /* CBAudioListVierw.m in Sources */,
+				AB2A8E71257F25BC00D05DB0 /* APPBaseModel.m in Sources */,
+				AB2A8E72257F25BC00D05DB0 /* GFMiddleController.m in Sources */,
+				AB2A8E73257F25BC00D05DB0 /* APPGlobalVariable.m in Sources */,
+				AB2A8E74257F25BC00D05DB0 /* SideRefreshFooter.m in Sources */,
+				AB2A8E75257F25BC00D05DB0 /* NSURL+Category.m in Sources */,
+				AB2A8E76257F25BC00D05DB0 /* SideRefreshHeader.m in Sources */,
+				AB2A8E77257F25BC00D05DB0 /* APPBaseController+ScreenRotation.m in Sources */,
+				AB2A8E78257F25BC00D05DB0 /* GFButtonPress.m in Sources */,
+				AB2A8E79257F25BC00D05DB0 /* MCDownloadManager.m in Sources */,
+				AB2A8E7A257F25BC00D05DB0 /* SPPageMenu.m in Sources */,
+				AB2A8E7B257F25BC00D05DB0 /* FRHomeVC.m in Sources */,
+				AB2A8E7C257F25BC00D05DB0 /* AppDelegate+RootConTroller.m in Sources */,
+				AB2A8E7D257F25BC00D05DB0 /* UIView+GFExtension.m in Sources */,
+				AB2A8E7E257F25BC00D05DB0 /* APPOssInterface.m in Sources */,
+				AB2A8E7F257F25BC00D05DB0 /* APPLoginApi.m in Sources */,
+				AB2A8E80257F25BC00D05DB0 /* FROrderCellVC.m in Sources */,
+				AB2A8E81257F25BC00D05DB0 /* UIView+SafeLayout.m in Sources */,
+				AB2A8E82257F25BC00D05DB0 /* JPEngine.m in Sources */,
+				AB2A8E83257F25BC00D05DB0 /* UILabel+Text.m in Sources */,
+				AB2A8E84257F25BC00D05DB0 /* APPVideoPromptView.m in Sources */,
+				AB2A8E85257F25BC00D05DB0 /* NSString+URLCheck.m in Sources */,
+				AB2A8E86257F25BC00D05DB0 /* APPAnalyticsHelper.m in Sources */,
+				AB2A8E87257F25BC00D05DB0 /* APPConfirmAlertView.m in Sources */,
+				AB2A8E88257F25BC00D05DB0 /* APPBaseController.m in Sources */,
+				AB2A8E89257F25BC00D05DB0 /* APPNetTool.swift in Sources */,
+				AB2A8E8A257F25BC00D05DB0 /* APPViewTool.m in Sources */,
+				AB2A8E8B257F25BC00D05DB0 /* APPAudioLocalPlayer.m in Sources */,
+				AB2A8E8C257F25BC00D05DB0 /* APPVideoListView.m in Sources */,
+				AB2A8E8D257F25BC00D05DB0 /* APPModel.m in Sources */,
+				AB2A8E8E257F25BC00D05DB0 /* GFNavigationBarView.m in Sources */,
+				AB2A8E8F257F25BC00D05DB0 /* GKCycleScrollView.m in Sources */,
+				AB2A8E90257F25BC00D05DB0 /* APPNoDataView.m in Sources */,
+				AB2A8E91257F25BC00D05DB0 /* APPFileManager.m in Sources */,
+				AB2A8E92257F25BC00D05DB0 /* NSObject+Auth.m in Sources */,
+				AB2A8E93257F25BC00D05DB0 /* UIView+Alert.m in Sources */,
+				AB2A8E94257F25BC00D05DB0 /* GKPageControl.m in Sources */,
+				AB2A8E95257F25BC00D05DB0 /* SideRefresh.m in Sources */,
+				AB2A8E96257F25BC00D05DB0 /* APPManager.m in Sources */,
+				AB2A8E97257F25BC00D05DB0 /* Touch3DButton.m in Sources */,
+				AB2A8E98257F25BC00D05DB0 /* APPRequest.swift in Sources */,
+				AB2A8E99257F25BC00D05DB0 /* APPAlertTool.m in Sources */,
+				AB2A8E9A257F25BC00D05DB0 /* APPAudioNetPlayer.m in Sources */,
+				AB2A8E9B257F25BC00D05DB0 /* UIViewController+SafeLayout.m in Sources */,
+				AB2A8E9C257F25BC00D05DB0 /* GFTextField.m in Sources */,
+				AB2A8E9D257F25BC00D05DB0 /* APPVideoPlayerController.m in Sources */,
+				AB2A8E9E257F25BC00D05DB0 /* APPVideoInfoView.m in Sources */,
+				AB2A8E9F257F25BC00D05DB0 /* APPColorFunction.m in Sources */,
+				AB2A8EA0257F25BC00D05DB0 /* NSMutableDictionary+GFExtension.m in Sources */,
+				AB2A8EA1257F25BC00D05DB0 /* APPWXInterface.m in Sources */,
+				AB2A8EA2257F25BC00D05DB0 /* CBJSModel.m in Sources */,
+				AB2A8EA3257F25BC00D05DB0 /* APPAudioPlayerVM.m in Sources */,
+				AB2A8EA4257F25BC00D05DB0 /* AppDelegate.m in Sources */,
+				AB2A8EA5257F25BC00D05DB0 /* GFTabBarController.m in Sources */,
+				AB2A8EA6257F25BC00D05DB0 /* APPLog.m in Sources */,
+				AB2A8EA7257F25BC00D05DB0 /* TwoSwiftController.swift in Sources */,
+				AB2A8EA8257F25BC00D05DB0 /* APPAudioPlayerController.m in Sources */,
+				AB2A8EA9257F25BC00D05DB0 /* APPUMInterface.m in Sources */,
+				AB2A8EAA257F25BC00D05DB0 /* OneSwiftController.swift in Sources */,
+				AB2A8EAB257F25BC00D05DB0 /* SideRefreshEmptyFooter.m in Sources */,
+				AB2A8EAC257F25BC00D05DB0 /* UIButton+GFExtension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1532,6 +1901,11 @@
 			isa = PBXTargetDependency;
 			target = 8DAB5DF621AB9659009662D5 /* APPBase */;
 			targetProxy = 8DAB5E1B21AB965B009662D5 /* PBXContainerItemProxy */;
+		};
+		AB2A8E42257F25BC00D05DB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 839844582508B6ED00A73B52 /* APPWidget */;
+			targetProxy = AB2A8E43257F25BC00D05DB0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1914,6 +2288,131 @@
 			};
 			name = Release;
 		};
+		AB2A8EC8257F25BC00D05DB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6136454A595A21CCA2D817AF /* Pods-APPBase.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = APPBase/APPBase.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = T5N252L7YD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Aspects\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AvoidCrash\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MMKV\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDAutoLayout\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SQLCipher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel\"",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/APPBase/SupportingFiles/APPPrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Aspects/Aspects.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AvoidCrash/AvoidCrash.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MMKV/MMKV.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC/ReactiveObjC.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDAutoLayout/SDAutoLayout.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SQLCipher/SQLCipher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					SQLCipher,
+					"$(PODS_ROOT)/SQLCipher",
+				);
+				INFOPLIST_FILE = "APPBase copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.northFeng.APPBase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "APPBase/Swift/APPBase-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB2A8EC9257F25BC00D05DB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37BCAF33D89376F054993B8C /* Pods-APPBase.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = APPBase/APPBase.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = T5N252L7YD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Aspects\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AvoidCrash\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MMKV\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDAutoLayout\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SQLCipher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel\"",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/APPBase/SupportingFiles/APPPrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Aspects/Aspects.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AvoidCrash/AvoidCrash.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MMKV/MMKV.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC/ReactiveObjC.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDAutoLayout/SDAutoLayout.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SQLCipher/SQLCipher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					SQLCipher,
+					"$(PODS_ROOT)/SQLCipher",
+				);
+				INFOPLIST_FILE = "APPBase copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.northFeng.APPBase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "APPBase/Swift/APPBase-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1958,6 +2457,15 @@
 			buildConfigurations = (
 				8DAB5E2A21AB965B009662D5 /* Debug */,
 				8DAB5E2B21AB965B009662D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB2A8EC7257F25BC00D05DB0 /* Build configuration list for PBXNativeTarget "APPBase_dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB2A8EC8257F25BC00D05DB0 /* Debug */,
+				AB2A8EC9257F25BC00D05DB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

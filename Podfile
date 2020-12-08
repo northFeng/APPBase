@@ -68,8 +68,10 @@ pod 'KVOController'
 #pod 'JazzHands', '= 2.0.8' #手势滑动动画
 #pod 'lottie-ios', '= 2.5.0'#各种高级动画封装
 
-#Log高级日志
-pod 'CocoaLumberjack'  #可写本地日志
+#Log高级日志 最新 3.7.0
+pod 'CocoaLumberjack','= 3.4.2'  #可写本地日志
+#swift版本
+#pod 'CocoaLumberjack/Swift'
 #pod 'CrabCrashReporter', '= 3.6.7'
 
 #钥匙串存储
@@ -179,4 +181,5 @@ pod 'Kingfisher','5.13.1'
 
 
 end
+
 

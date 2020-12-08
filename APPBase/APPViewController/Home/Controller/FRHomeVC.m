@@ -16,6 +16,8 @@
 
 #import "APPLoginApi.h"
 
+#import "APPLog.h"
+
 @interface FRHomeVC () <UIViewControllerPreviewingDelegate , UIContextMenuInteractionDelegate>
 
 ///
@@ -79,6 +81,8 @@
     } else {
         NSLog(@"3D Touch 无效");
     }
+    
+    [APPLog initDDLogConfiguration];
 }
 
 //--------------------------------------- 3DTouch代理  UIContextMenuInteractionDelegate ---------------------------------------

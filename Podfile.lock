@@ -33,9 +33,12 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - CocoaLumberjack (3.7.0):
-    - CocoaLumberjack/Core (= 3.7.0)
-  - CocoaLumberjack/Core (3.7.0)
+  - CocoaLumberjack (3.4.2):
+    - CocoaLumberjack/Default (= 3.4.2)
+    - CocoaLumberjack/Extensions (= 3.4.2)
+  - CocoaLumberjack/Default (3.4.2)
+  - CocoaLumberjack/Extensions (3.4.2):
+    - CocoaLumberjack/Default
   - FBRetainCycleDetector (0.1.4)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
@@ -85,7 +88,7 @@ DEPENDENCIES:
   - Aspects (~> 1.4.1)
   - AvoidCrash (~> 2.5.2)
   - BlocksKit (>= 2.2.5)
-  - CocoaLumberjack
+  - CocoaLumberjack (= 3.4.2)
   - FMDB (~> 2.7.5)
   - FreeStreamer (~> 4.0.0)
   - IQKeyboardManager
@@ -161,7 +164,7 @@ SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
-  CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
+  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FreeStreamer: 7e9c976045701ac2f7e9c14c17245203c37bf2ea
@@ -191,6 +194,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: a201cda47cc11a11dc32accfbc870df719dff747
+PODFILE CHECKSUM: 0f090ddcccc1f17fd14512932033a3f7d4ed35c9
 
 COCOAPODS: 1.10.0
