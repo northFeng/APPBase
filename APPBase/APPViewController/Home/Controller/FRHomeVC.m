@@ -42,6 +42,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    //self.view.backgroundColor = RGB(225, 203, 240);//[UIColor colorWithRed:225 green:203 blue:240 alpha:1];
+    
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
     [btn setTitle:@"SwiftOne" forState:UIControlStateNormal];
     btn.frame = CGRectMake(100, 200, 50, 30);
@@ -50,7 +52,10 @@
     
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeSystem];
     [btn2 setTitle:@"全部" forState:UIControlStateNormal];
-    btn2.backgroundColor = UIColor.yellowColor;
+    [btn2 setTitleColor:COLOR(@"#684BFA") forState:UIControlStateNormal];
+    
+    btn2.backgroundColor = [COLOR(@"#684BFA") colorWithAlphaComponent:0.1];//UIColor.yellowColor;
+    
     btn2.frame = CGRectMake(200, 300, 100, 50);
     [btn2 addTarget:self action:@selector(onClickBtnTake) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn2];

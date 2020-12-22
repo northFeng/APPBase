@@ -11,7 +11,6 @@
 #import "CBSlider.h"//自定义滑动条
 
 #import "CBAudioListVierw.h"//弹框列表view
-#import "APPVideoPlayerController.h"//视频
 #import "APPAudioPlayerVM.h"//ViewModel
 
 #import <WebKit/WebKit.h>
@@ -320,16 +319,7 @@
 ///跳进视频播放
 - (void)gotoVideoVCWithPlayIndex:(NSInteger)indexPlay {
     
-    NSMutableArray *videoArray = [NSMutableArray array];
-    for (APPAudioItem *model in _audioArray) {
-        //CBHomeClassroomModel *model = _homeVM.classrommArray[indexPath.row];
-        APPVideoItemModel *videoModel = [[APPVideoItemModel alloc] init];
-        videoModel.videoName = model.subTitle;
-        videoModel.videoUrl = model.videoUrl;
-        videoModel.videoImgUrl = model.imgUrl;
-        [videoArray addObject:videoModel];
-    }
-    [APPVideoPlayerController gotoVideoVCWithDataArray:[videoArray copy] playIndex:indexPlay fromSuperVC:self videoType:2];
+    
 }
 
 

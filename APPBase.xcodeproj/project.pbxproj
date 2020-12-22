@@ -63,11 +63,6 @@
 		83987FE2241242C100A71FC4 /* APPAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FDA241242C100A71FC4 /* APPAudioPlayer.m */; };
 		83987FE3241242C100A71FC4 /* APPAudioLocalPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FDB241242C100A71FC4 /* APPAudioLocalPlayer.m */; };
 		83987FE4241242C100A71FC4 /* APPAudioPlayerVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FDC241242C100A71FC4 /* APPAudioPlayerVM.m */; };
-		83987FF0241242C800A71FC4 /* APPVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FE8241242C800A71FC4 /* APPVideoPlayer.m */; };
-		83987FF1241242C800A71FC4 /* APPVideoPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FE9241242C800A71FC4 /* APPVideoPromptView.m */; };
-		83987FF2241242C800A71FC4 /* APPVideoInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FEA241242C800A71FC4 /* APPVideoInfoView.m */; };
-		83987FF3241242C800A71FC4 /* APPVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FEB241242C800A71FC4 /* APPVideoPlayerController.m */; };
-		83987FF4241242C800A71FC4 /* APPVideoListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FED241242C800A71FC4 /* APPVideoListView.m */; };
 		83987FF72412440100A71FC4 /* APPBaseController+ScreenRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FF62412440100A71FC4 /* APPBaseController+ScreenRotation.m */; };
 		839B993223B30D3E006A8049 /* NSURL+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 839B993123B30D3E006A8049 /* NSURL+Category.m */; };
 		839CDC9F2411193D00617294 /* APPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839CDC9E2411193D00617294 /* APPRequest.swift */; };
@@ -131,12 +126,13 @@
 		8DAB5F0A21AB9954009662D5 /* FRLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0721AB9954009662D5 /* FRLoginManager.m */; };
 		8DAB5F0B21AB9954009662D5 /* FRLoginHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0821AB9954009662D5 /* FRLoginHomeVC.xib */; };
 		8DAB5F0C21AB9954009662D5 /* FRLoginHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0921AB9954009662D5 /* FRLoginHomeVC.m */; };
+		941765495EFD551041E60894 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D142DF6F5A1313473EB8EC7 /* Pods_APPBase.framework */; };
+		AB14DC56257FA3F100C8BA76 /* VideoPlayer.zip in Resources */ = {isa = PBXBuildFile; fileRef = AB14DC55257FA3F100C8BA76 /* VideoPlayer.zip */; };
 		AB24C5222577B8310068D237 /* iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB24C5202577B8300068D237 /* iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive */; };
 		AB24C5232577B8310068D237 /* iOS-NSUserDefaults详解.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB24C5212577B8310068D237 /* iOS-NSUserDefaults详解.webarchive */; };
 		AB2A8E46257F25BC00D05DB0 /* APPHttpCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 148459AE234E1B0A002ABA2F /* APPHttpCacheTool.m */; };
 		AB2A8E47257F25BC00D05DB0 /* APPDateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A1E783238F6B6A0020F626 /* APPDateTool.m */; };
 		AB2A8E48257F25BC00D05DB0 /* FRLoginHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5F0921AB9954009662D5 /* FRLoginHomeVC.m */; };
-		AB2A8E49257F25BC00D05DB0 /* APPVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FE8241242C800A71FC4 /* APPVideoPlayer.m */; };
 		AB2A8E4A257F25BC00D05DB0 /* APPAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FDA241242C100A71FC4 /* APPAudioPlayer.m */; };
 		AB2A8E4B257F25BC00D05DB0 /* APPBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FC9234F4B6800B31672 /* APPBaseTableViewController.m */; };
 		AB2A8E4C257F25BC00D05DB0 /* ClassHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE6A23D5B4B8006B09C6 /* ClassHead.swift */; };
@@ -195,7 +191,6 @@
 		AB2A8E81257F25BC00D05DB0 /* UIView+SafeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBF9E2B2553F99200BEE44E /* UIView+SafeLayout.m */; };
 		AB2A8E82257F25BC00D05DB0 /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D95957422AE3A1F001A8345 /* JPEngine.m */; };
 		AB2A8E83257F25BC00D05DB0 /* UILabel+Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EE021AB98A6009662D5 /* UILabel+Text.m */; };
-		AB2A8E84257F25BC00D05DB0 /* APPVideoPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FE9241242C800A71FC4 /* APPVideoPromptView.m */; };
 		AB2A8E85257F25BC00D05DB0 /* NSString+URLCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8307253B242871FE005D049E /* NSString+URLCheck.m */; };
 		AB2A8E86257F25BC00D05DB0 /* APPAnalyticsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EB921AB9857009662D5 /* APPAnalyticsHelper.m */; };
 		AB2A8E87257F25BC00D05DB0 /* APPConfirmAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 149265E32350CA6600A2C7FE /* APPConfirmAlertView.m */; };
@@ -203,7 +198,6 @@
 		AB2A8E89257F25BC00D05DB0 /* APPNetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2658C241CE40600F4B6EB /* APPNetTool.swift */; };
 		AB2A8E8A257F25BC00D05DB0 /* APPViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 142808912351C8DD00D24D08 /* APPViewTool.m */; };
 		AB2A8E8B257F25BC00D05DB0 /* APPAudioLocalPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FDB241242C100A71FC4 /* APPAudioLocalPlayer.m */; };
-		AB2A8E8C257F25BC00D05DB0 /* APPVideoListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FED241242C800A71FC4 /* APPVideoListView.m */; };
 		AB2A8E8D257F25BC00D05DB0 /* APPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EED21AB98CD009662D5 /* APPModel.m */; };
 		AB2A8E8E257F25BC00D05DB0 /* GFNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5ECE21AB9895009662D5 /* GFNavigationBarView.m */; };
 		AB2A8E8F257F25BC00D05DB0 /* GKCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B2D4972489EAF0002113D8 /* GKCycleScrollView.m */; };
@@ -220,8 +214,6 @@
 		AB2A8E9A257F25BC00D05DB0 /* APPAudioNetPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FC02AE244E9FED00D146C6 /* APPAudioNetPlayer.m */; };
 		AB2A8E9B257F25BC00D05DB0 /* UIViewController+SafeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBF9E282553F87100BEE44E /* UIViewController+SafeLayout.m */; };
 		AB2A8E9C257F25BC00D05DB0 /* GFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EDD21AB98A6009662D5 /* GFTextField.m */; };
-		AB2A8E9D257F25BC00D05DB0 /* APPVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FEB241242C800A71FC4 /* APPVideoPlayerController.m */; };
-		AB2A8E9E257F25BC00D05DB0 /* APPVideoInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83987FEA241242C800A71FC4 /* APPVideoInfoView.m */; };
 		AB2A8E9F257F25BC00D05DB0 /* APPColorFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FBD234F258300B31672 /* APPColorFunction.m */; };
 		AB2A8EA0257F25BC00D05DB0 /* NSMutableDictionary+GFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB5EA121AB9839009662D5 /* NSMutableDictionary+GFExtension.m */; };
 		AB2A8EA1257F25BC00D05DB0 /* APPWXInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346B46723C045C6001154A7 /* APPWXInterface.m */; };
@@ -236,7 +228,6 @@
 		AB2A8EAA257F25BC00D05DB0 /* OneSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE6523D58445006B09C6 /* OneSwiftController.swift */; };
 		AB2A8EAB257F25BC00D05DB0 /* SideRefreshEmptyFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 832DD2D124320A9500AD3FF1 /* SideRefreshEmptyFooter.m */; };
 		AB2A8EAC257F25BC00D05DB0 /* UIButton+GFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 140A8FC6234F37A300B31672 /* UIButton+GFExtension.m */; };
-		AB2A8EAE257F25BC00D05DB0 /* Pods_APPBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D142DF6F5A1313473EB8EC7 /* Pods_APPBase.framework */; };
 		AB2A8EB0257F25BC00D05DB0 /* 方法1.png in Resources */ = {isa = PBXBuildFile; fileRef = 837DC184250784460041DEBA /* 方法1.png */; };
 		AB2A8EB1257F25BC00D05DB0 /* iOS崩溃crash.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */; };
 		AB2A8EB2257F25BC00D05DB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB5E0521AB965B009662D5 /* LaunchScreen.storyboard */; };
@@ -324,6 +315,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07D219D5C779648B2CED256B /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
 		140A8FB8234F1D1700B31672 /* APPToolHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPToolHeader.h; sourceTree = "<group>"; };
 		140A8FBC234F258300B31672 /* APPColorFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPColorFunction.h; sourceTree = "<group>"; };
 		140A8FBD234F258300B31672 /* APPColorFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPColorFunction.m; sourceTree = "<group>"; };
@@ -362,8 +354,6 @@
 		14CE0FA6235080F00093E45C /* GFMineController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GFMineController.h; path = APPBase/APPViewController/Middle/GFMineController.h; sourceTree = SOURCE_ROOT; };
 		14CE0FA7235080F00093E45C /* GFMineController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GFMineController.m; path = APPBase/APPViewController/Middle/GFMineController.m; sourceTree = SOURCE_ROOT; };
 		2D142DF6F5A1313473EB8EC7 /* Pods_APPBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APPBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		37BCAF33D89376F054993B8C /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
-		6136454A595A21CCA2D817AF /* Pods-APPBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.debug.xcconfig"; sourceTree = "<group>"; };
 		8307253B242871FE005D049E /* NSString+URLCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLCheck.m"; sourceTree = "<group>"; };
 		8307253C242871FE005D049E /* NSObject+Auth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Auth.h"; sourceTree = "<group>"; };
 		8307253D242871FE005D049E /* UIButton+Animate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Animate.m"; sourceTree = "<group>"; };
@@ -433,16 +423,6 @@
 		83987FDB241242C100A71FC4 /* APPAudioLocalPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPAudioLocalPlayer.m; sourceTree = "<group>"; };
 		83987FDC241242C100A71FC4 /* APPAudioPlayerVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPAudioPlayerVM.m; sourceTree = "<group>"; };
 		83987FDD241242C100A71FC4 /* CBAudioSmallAlerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBAudioSmallAlerView.h; sourceTree = "<group>"; };
-		83987FE6241242C800A71FC4 /* APPVideoPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPVideoPlayerController.h; sourceTree = "<group>"; };
-		83987FE7241242C800A71FC4 /* APPVideoListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPVideoListView.h; sourceTree = "<group>"; };
-		83987FE8241242C800A71FC4 /* APPVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPVideoPlayer.m; sourceTree = "<group>"; };
-		83987FE9241242C800A71FC4 /* APPVideoPromptView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPVideoPromptView.m; sourceTree = "<group>"; };
-		83987FEA241242C800A71FC4 /* APPVideoInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPVideoInfoView.m; sourceTree = "<group>"; };
-		83987FEB241242C800A71FC4 /* APPVideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPVideoPlayerController.m; sourceTree = "<group>"; };
-		83987FEC241242C800A71FC4 /* APPVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPVideoPlayer.h; sourceTree = "<group>"; };
-		83987FED241242C800A71FC4 /* APPVideoListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPVideoListView.m; sourceTree = "<group>"; };
-		83987FEE241242C800A71FC4 /* APPVideoPromptView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPVideoPromptView.h; sourceTree = "<group>"; };
-		83987FEF241242C800A71FC4 /* APPVideoInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPVideoInfoView.h; sourceTree = "<group>"; };
 		83987FF52412440100A71FC4 /* APPBaseController+ScreenRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "APPBaseController+ScreenRotation.h"; sourceTree = "<group>"; };
 		83987FF62412440100A71FC4 /* APPBaseController+ScreenRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "APPBaseController+ScreenRotation.m"; sourceTree = "<group>"; };
 		839B993023B30D3E006A8049 /* NSURL+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+Category.h"; sourceTree = "<group>"; };
@@ -566,6 +546,7 @@
 		8DAB5F0821AB9954009662D5 /* FRLoginHomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FRLoginHomeVC.xib; sourceTree = "<group>"; };
 		8DAB5F0921AB9954009662D5 /* FRLoginHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRLoginHomeVC.m; sourceTree = "<group>"; };
 		8DAB5F1121AB9BED009662D5 /* APPPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPPrefixHeader.pch; sourceTree = "<group>"; };
+		AB14DC55257FA3F100C8BA76 /* VideoPlayer.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = VideoPlayer.zip; sourceTree = "<group>"; };
 		AB24C5202577B8300068D237 /* iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS通过NSUserDefaults实现简单的应用间数据传递 - 珲少的个人空间 - OSCHINA - 中文开源技术交流社区.webarchive"; sourceTree = "<group>"; };
 		AB24C5212577B8310068D237 /* iOS-NSUserDefaults详解.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS-NSUserDefaults详解.webarchive"; sourceTree = "<group>"; };
 		AB2A8ECA257F25BC00D05DB0 /* APPBase_dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APPBase_dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -578,6 +559,7 @@
 		ABBF9E2B2553F99200BEE44E /* UIView+SafeLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SafeLayout.m"; sourceTree = "<group>"; };
 		ABDA2E08257E16B8001D1F19 /* APPLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPLog.h; sourceTree = "<group>"; };
 		ABDA2E09257E16B8001D1F19 /* APPLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APPLog.m; sourceTree = "<group>"; };
+		C56C8B43FF6D2B9F25A4037C /* Pods-APPBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APPBase.release.xcconfig"; path = "Pods/Target Support Files/Pods-APPBase/Pods-APPBase.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -594,6 +576,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF2D7458DF79A48A39B5A1E8 /* Pods_APPBase.framework in Frameworks */,
+				941765495EFD551041E60894 /* Pods_APPBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,7 +598,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB2A8EAE257F25BC00D05DB0 /* Pods_APPBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +660,7 @@
 		142808962351CB4000D24D08 /* APPThirdModular */ = {
 			isa = PBXGroup;
 			children = (
+				AB14DC55257FA3F100C8BA76 /* VideoPlayer.zip */,
 				147E502D2351FBCA00C2309B /* APPThirdHeader.h */,
 				83E37C3524FCB51000355A96 /* APPLogin */,
 				83987FCF241242C100A71FC4 /* AudioPlayer */,
@@ -690,7 +673,6 @@
 				8346B46123C04358001154A7 /* OSS */,
 				830C8E8624DAAEBB00BDD2BB /* SPPageMenu */,
 				8346B46923C04AA8001154A7 /* UM */,
-				83987FE5241242C800A71FC4 /* VideoPlayer */,
 				8346B46523C045AC001154A7 /* WX */,
 			);
 			path = APPThirdModular;
@@ -759,8 +741,8 @@
 		306191377A95C2E96E4AF91B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6136454A595A21CCA2D817AF /* Pods-APPBase.debug.xcconfig */,
-				37BCAF33D89376F054993B8C /* Pods-APPBase.release.xcconfig */,
+				07D219D5C779648B2CED256B /* Pods-APPBase.debug.xcconfig */,
+				C56C8B43FF6D2B9F25A4037C /* Pods-APPBase.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -880,23 +862,6 @@
 				83987FD5241242C100A71FC4 /* CBAudioSmallAlerView.m */,
 			);
 			path = AudioPlayer;
-			sourceTree = "<group>";
-		};
-		83987FE5241242C800A71FC4 /* VideoPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				83987FEC241242C800A71FC4 /* APPVideoPlayer.h */,
-				83987FE8241242C800A71FC4 /* APPVideoPlayer.m */,
-				83987FE6241242C800A71FC4 /* APPVideoPlayerController.h */,
-				83987FEB241242C800A71FC4 /* APPVideoPlayerController.m */,
-				83987FE7241242C800A71FC4 /* APPVideoListView.h */,
-				83987FED241242C800A71FC4 /* APPVideoListView.m */,
-				83987FEE241242C800A71FC4 /* APPVideoPromptView.h */,
-				83987FE9241242C800A71FC4 /* APPVideoPromptView.m */,
-				83987FEF241242C800A71FC4 /* APPVideoInfoView.h */,
-				83987FEA241242C800A71FC4 /* APPVideoInfoView.m */,
-			);
-			path = VideoPlayer;
 			sourceTree = "<group>";
 		};
 		83A2658A241CE3A600F4B6EB /* CustomDefine */ = {
@@ -1411,11 +1376,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB2A8EC7257F25BC00D05DB0 /* Build configuration list for PBXNativeTarget "APPBase_dev" */;
 			buildPhases = (
-				AB2A8E44257F25BC00D05DB0 /* [CP] Check Pods Manifest.lock */,
 				AB2A8E45257F25BC00D05DB0 /* Sources */,
 				AB2A8EAD257F25BC00D05DB0 /* Frameworks */,
 				AB2A8EAF257F25BC00D05DB0 /* Resources */,
-				AB2A8EC4257F25BC00D05DB0 /* [CP] Embed Pods Frameworks */,
 				AB2A8EC5257F25BC00D05DB0 /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -1491,6 +1454,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB14DC56257FA3F100C8BA76 /* VideoPlayer.zip in Resources */,
 				837DC186250784460041DEBA /* 方法1.png in Resources */,
 				AB3DBD7B2539587D00129EFF /* iOS崩溃crash.webarchive in Resources */,
 				8DAB5E0721AB965B009662D5 /* LaunchScreen.storyboard in Resources */,
@@ -1598,45 +1562,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AB2A8E44257F25BC00D05DB0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-APPBase-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AB2A8EC4257F25BC00D05DB0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-APPBase/Pods-APPBase-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-APPBase/Pods-APPBase-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-APPBase/Pods-APPBase-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1655,7 +1580,6 @@
 				148459AF234E1B0A002ABA2F /* APPHttpCacheTool.m in Sources */,
 				83A1E785238F6B6A0020F626 /* APPDateTool.m in Sources */,
 				8DAB5F0C21AB9954009662D5 /* FRLoginHomeVC.m in Sources */,
-				83987FF0241242C800A71FC4 /* APPVideoPlayer.m in Sources */,
 				83987FE2241242C100A71FC4 /* APPAudioPlayer.m in Sources */,
 				140A8FCA234F4B6800B31672 /* APPBaseTableViewController.m in Sources */,
 				8354DE6B23D5B4B8006B09C6 /* ClassHead.swift in Sources */,
@@ -1714,7 +1638,6 @@
 				ABBF9E2C2553F99200BEE44E /* UIView+SafeLayout.m in Sources */,
 				8D95957722AE3A1F001A8345 /* JPEngine.m in Sources */,
 				8DAB5EE821AB98A6009662D5 /* UILabel+Text.m in Sources */,
-				83987FF1241242C800A71FC4 /* APPVideoPromptView.m in Sources */,
 				83072543242871FE005D049E /* NSString+URLCheck.m in Sources */,
 				8DAB5EBB21AB9857009662D5 /* APPAnalyticsHelper.m in Sources */,
 				149265E42350CA6600A2C7FE /* APPConfirmAlertView.m in Sources */,
@@ -1722,7 +1645,6 @@
 				83A2658D241CE40600F4B6EB /* APPNetTool.swift in Sources */,
 				142808922351C8DD00D24D08 /* APPViewTool.m in Sources */,
 				83987FE3241242C100A71FC4 /* APPAudioLocalPlayer.m in Sources */,
-				83987FF4241242C800A71FC4 /* APPVideoListView.m in Sources */,
 				8DAB5EF121AB98CD009662D5 /* APPModel.m in Sources */,
 				8DAB5ED221AB9895009662D5 /* GFNavigationBarView.m in Sources */,
 				83B2D49A2489EAF0002113D8 /* GKCycleScrollView.m in Sources */,
@@ -1739,8 +1661,6 @@
 				83FC02B0244E9FED00D146C6 /* APPAudioNetPlayer.m in Sources */,
 				ABBF9E292553F87100BEE44E /* UIViewController+SafeLayout.m in Sources */,
 				8DAB5EE721AB98A6009662D5 /* GFTextField.m in Sources */,
-				83987FF3241242C800A71FC4 /* APPVideoPlayerController.m in Sources */,
-				83987FF2241242C800A71FC4 /* APPVideoInfoView.m in Sources */,
 				140A8FBE234F258300B31672 /* APPColorFunction.m in Sources */,
 				8DAB5EB121AB9839009662D5 /* NSMutableDictionary+GFExtension.m in Sources */,
 				8346B46823C045C6001154A7 /* APPWXInterface.m in Sources */,
@@ -1781,7 +1701,6 @@
 				AB2A8E46257F25BC00D05DB0 /* APPHttpCacheTool.m in Sources */,
 				AB2A8E47257F25BC00D05DB0 /* APPDateTool.m in Sources */,
 				AB2A8E48257F25BC00D05DB0 /* FRLoginHomeVC.m in Sources */,
-				AB2A8E49257F25BC00D05DB0 /* APPVideoPlayer.m in Sources */,
 				AB2A8E4A257F25BC00D05DB0 /* APPAudioPlayer.m in Sources */,
 				AB2A8E4B257F25BC00D05DB0 /* APPBaseTableViewController.m in Sources */,
 				AB2A8E4C257F25BC00D05DB0 /* ClassHead.swift in Sources */,
@@ -1840,7 +1759,6 @@
 				AB2A8E81257F25BC00D05DB0 /* UIView+SafeLayout.m in Sources */,
 				AB2A8E82257F25BC00D05DB0 /* JPEngine.m in Sources */,
 				AB2A8E83257F25BC00D05DB0 /* UILabel+Text.m in Sources */,
-				AB2A8E84257F25BC00D05DB0 /* APPVideoPromptView.m in Sources */,
 				AB2A8E85257F25BC00D05DB0 /* NSString+URLCheck.m in Sources */,
 				AB2A8E86257F25BC00D05DB0 /* APPAnalyticsHelper.m in Sources */,
 				AB2A8E87257F25BC00D05DB0 /* APPConfirmAlertView.m in Sources */,
@@ -1848,7 +1766,6 @@
 				AB2A8E89257F25BC00D05DB0 /* APPNetTool.swift in Sources */,
 				AB2A8E8A257F25BC00D05DB0 /* APPViewTool.m in Sources */,
 				AB2A8E8B257F25BC00D05DB0 /* APPAudioLocalPlayer.m in Sources */,
-				AB2A8E8C257F25BC00D05DB0 /* APPVideoListView.m in Sources */,
 				AB2A8E8D257F25BC00D05DB0 /* APPModel.m in Sources */,
 				AB2A8E8E257F25BC00D05DB0 /* GFNavigationBarView.m in Sources */,
 				AB2A8E8F257F25BC00D05DB0 /* GKCycleScrollView.m in Sources */,
@@ -1865,8 +1782,6 @@
 				AB2A8E9A257F25BC00D05DB0 /* APPAudioNetPlayer.m in Sources */,
 				AB2A8E9B257F25BC00D05DB0 /* UIViewController+SafeLayout.m in Sources */,
 				AB2A8E9C257F25BC00D05DB0 /* GFTextField.m in Sources */,
-				AB2A8E9D257F25BC00D05DB0 /* APPVideoPlayerController.m in Sources */,
-				AB2A8E9E257F25BC00D05DB0 /* APPVideoInfoView.m in Sources */,
 				AB2A8E9F257F25BC00D05DB0 /* APPColorFunction.m in Sources */,
 				AB2A8EA0257F25BC00D05DB0 /* NSMutableDictionary+GFExtension.m in Sources */,
 				AB2A8EA1257F25BC00D05DB0 /* APPWXInterface.m in Sources */,
@@ -2091,7 +2006,7 @@
 		};
 		8DAB5E2421AB965B009662D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6136454A595A21CCA2D817AF /* Pods-APPBase.debug.xcconfig */;
+			baseConfigurationReference = 07D219D5C779648B2CED256B /* Pods-APPBase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -2154,7 +2069,7 @@
 		};
 		8DAB5E2521AB965B009662D5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37BCAF33D89376F054993B8C /* Pods-APPBase.release.xcconfig */;
+			baseConfigurationReference = C56C8B43FF6D2B9F25A4037C /* Pods-APPBase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -2290,7 +2205,6 @@
 		};
 		AB2A8EC8257F25BC00D05DB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6136454A595A21CCA2D817AF /* Pods-APPBase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -2353,7 +2267,6 @@
 		};
 		AB2A8EC9257F25BC00D05DB0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37BCAF33D89376F054993B8C /* Pods-APPBase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
