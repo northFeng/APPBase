@@ -50,7 +50,11 @@ static const DDLogLevel ddLogLevel = DDLogLevelError;
 }
 
 
-
+/// 输出
++ (void)logString:(NSString *)info {
+    
+    DDLogInfo(info);
+}
 
 
 @end

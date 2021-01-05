@@ -160,8 +160,9 @@
 ///读取
 - (void)onClickBtnTake {
    
-    [_dataBase getData];
+    //[_dataBase getData];
     
+    [APPLog logString:@"输入info信息"];
 }
 
 ///

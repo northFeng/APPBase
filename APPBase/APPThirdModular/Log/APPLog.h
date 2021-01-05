@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 ///初始化Log配置
 + (void)initDDLogConfiguration;
 
+/// 输出
++ (void)logString:(NSString *)info;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
