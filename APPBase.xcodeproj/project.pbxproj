@@ -252,6 +252,8 @@
 		AB3DBD7B2539587D00129EFF /* iOS崩溃crash.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */; };
 		AB3DBD7D25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB3DBD7C25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive */; };
 		AB699979257F553B00BE1491 /* iOS项目之多Targets和多环境配置.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AB699978257F553B00BE1491 /* iOS项目之多Targets和多环境配置.webarchive */; };
+		AB76EE2925B6C5B7008ECAEE /* UIDevice+Info.m in Sources */ = {isa = PBXBuildFile; fileRef = AB76EE2825B6C5B7008ECAEE /* UIDevice+Info.m */; };
+		AB76EE2A25B6C5B7008ECAEE /* UIDevice+Info.m in Sources */ = {isa = PBXBuildFile; fileRef = AB76EE2825B6C5B7008ECAEE /* UIDevice+Info.m */; };
 		ABBF9E292553F87100BEE44E /* UIViewController+SafeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBF9E282553F87100BEE44E /* UIViewController+SafeLayout.m */; };
 		ABBF9E2C2553F99200BEE44E /* UIView+SafeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBF9E2B2553F99200BEE44E /* UIView+SafeLayout.m */; };
 		ABDA2E0A257E16B8001D1F19 /* APPLog.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA2E09257E16B8001D1F19 /* APPLog.m */; };
@@ -553,6 +555,8 @@
 		AB3DBD7A2539587D00129EFF /* iOS崩溃crash.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS崩溃crash.webarchive"; sourceTree = "<group>"; };
 		AB3DBD7C25395DAE00129EFF /* iOS应用崩溃日志分析.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS应用崩溃日志分析.webarchive"; sourceTree = "<group>"; };
 		AB699978257F553B00BE1491 /* iOS项目之多Targets和多环境配置.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "iOS项目之多Targets和多环境配置.webarchive"; sourceTree = "<group>"; };
+		AB76EE2725B6C5B7008ECAEE /* UIDevice+Info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Info.h"; sourceTree = "<group>"; };
+		AB76EE2825B6C5B7008ECAEE /* UIDevice+Info.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Info.m"; sourceTree = "<group>"; };
 		ABBF9E272553F87100BEE44E /* UIViewController+SafeLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SafeLayout.h"; sourceTree = "<group>"; };
 		ABBF9E282553F87100BEE44E /* UIViewController+SafeLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SafeLayout.m"; sourceTree = "<group>"; };
 		ABBF9E2A2553F99200BEE44E /* UIView+SafeLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SafeLayout.h"; sourceTree = "<group>"; };
@@ -634,6 +638,8 @@
 				8307253D242871FE005D049E /* UIButton+Animate.m */,
 				8307253F242871FE005D049E /* UIView+Alert.h */,
 				8307253E242871FE005D049E /* UIView+Alert.m */,
+				AB76EE2725B6C5B7008ECAEE /* UIDevice+Info.h */,
+				AB76EE2825B6C5B7008ECAEE /* UIDevice+Info.m */,
 			);
 			path = CustomExtend;
 			sourceTree = "<group>";
@@ -1590,6 +1596,7 @@
 				83987FDE241242C100A71FC4 /* CBAudioSmallAlerView.m in Sources */,
 				8DAB5ED321AB9895009662D5 /* GFNavigationController.m in Sources */,
 				1428088F2351C80000D24D08 /* NSString+TextSize.m in Sources */,
+				AB76EE2925B6C5B7008ECAEE /* UIDevice+Info.m in Sources */,
 				8DAB5EE621AB98A6009662D5 /* APPAlertView.m in Sources */,
 				83BC18CE2407A698005A056D /* APPWebHybridController.m in Sources */,
 				8DAB5ECD21AB9882009662D5 /* APPLoadWaitView.m in Sources */,
@@ -1711,6 +1718,7 @@
 				AB2A8E51257F25BC00D05DB0 /* CBAudioSmallAlerView.m in Sources */,
 				AB2A8E52257F25BC00D05DB0 /* GFNavigationController.m in Sources */,
 				AB2A8E53257F25BC00D05DB0 /* NSString+TextSize.m in Sources */,
+				AB76EE2A25B6C5B7008ECAEE /* UIDevice+Info.m in Sources */,
 				AB2A8E54257F25BC00D05DB0 /* APPAlertView.m in Sources */,
 				AB2A8E55257F25BC00D05DB0 /* APPWebHybridController.m in Sources */,
 				AB2A8E56257F25BC00D05DB0 /* APPLoadWaitView.m in Sources */,
