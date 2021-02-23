@@ -39,6 +39,8 @@
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    //self.tableView.scrollsToTop = YES;//默认点击状态栏会把tableView列表置顶
+    
     //是否可以多选
     //self.tableView.shouldBeginMultipleSelectionInteractionAtIndexPath = YES;
     
