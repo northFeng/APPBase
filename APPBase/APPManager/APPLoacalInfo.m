@@ -359,11 +359,17 @@ static NSUInteger DeviceMember;
    
     BOOL iPhone_x = NO;
     if ([self iPhone]) {
-        if (UIScreen.mainScreen.bounds.size.height >= 812) {
-            if (UIScreen.mainScreen.bounds.size.width != 412) {
+        // 5.5plus 412*812 iPhone_X 375*812  12mini 360*780 12&12pro 390*844  12promax 428*926
+        CGFloat screenWidth = UIScreen.mainScreen.bounds.size.width;
+        CGFloat screenHeight = UIScreen.mainScreen.bounds.size.height;
+        if (screenHeight >= 812) {
+            if (screenWidth != 412) {
                 //412为plus
                 iPhone_x = YES;
             }
+        } else if (screenWidth == 360 && screenHeight == 360) {
+            //12mini
+            iPhone_x = YES;
         }
     }
     
